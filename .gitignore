@@ -172,3 +172,56 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+# Entornos virtuales
+venv/
+.venv/
+ENV/
+env/
+
+# Archivos de Python compilados
+*.pyc
+__pycache__/
+
+# Archivos de bases de datos locales
+*.sqlite3
+
+# Archivos de configuración local
+*.env
+.env
+*.local
+
+# Archivos de logs
+*.log
+
+# Archivos de sistema
+.DS_Store
+Thumbs.db
+
+# Archivos de configuración de PyCharm/VSCode
+.idea/
+.vscode/
+
+# Archivos de migraciones (opcional, si no deseas versionarlos al inicio)
+**/migrations/*.py
+!**/migrations/__init__.py
+
+# Archivos estáticos recolectados por collectstatic
+/staticfiles/
+/static/
+
+# Media subida por usuarios (si se usa media)
+media/
+
+# Archivos de coverage y testing
+htmlcov/
+.coverage
+.tox/
+.nox/
+.cache/
+
+# Archivos de build
+build/
+dist/
+*.egg-info/
+
