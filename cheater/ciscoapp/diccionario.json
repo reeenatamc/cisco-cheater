@@ -238,5 +238,7 @@
   "67. ¿Qué término describe un campo en el encabezado de un paquete IPv4 utilizado para limitar la duración de un paquete?": [
     4,
     "TTL"
-  ]
+  ],
+  "Un enrutador arranca e ingresa al modo de configuración. ¿Por qué razón?":
+          [3, "Falta el archivo de configuración en NVRAM."]
 }
