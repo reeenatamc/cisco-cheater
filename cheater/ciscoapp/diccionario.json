@@ -1,0 +1,242 @@
+{
+  "1. Una PC puede tener acceso a los dispositivos en la misma red, pero no puede tener acceso a los dispositivos en otras redes. ¿Cuál es la causa probable de este problema?": [
+    2,
+    "La dirección de gateway predeterminado de la PC no es válida."
+  ],
+  "2. ¿Cuál de estas afirmaciones describe una característica del Protocolo IP?": [
+    4,
+    "IP utiliza los servicios de capa superior para manejar situaciones de paquetes faltantes o fuera de orden."
+  ],
+  "3. ¿Por qué no se necesita NAT en IPv6?": [
+    1,
+    "Cualquier host o usuario puede obtener una dirección de red IPv6 pública porque la cantidad de direcciones IPv6 disponibles es extremadamente grande."
+  ],
+  "4. ¿Cuál de estos parámetros utiliza el router para elegir la ruta hacia el destino cuando existen varias rutas disponibles?": [
+    4,
+    "El valor de métrica más bajo que se asocia a la red de destino"
+  ],
+  "5. ¿Cuáles de los siguientes son dos servicios que proporciona la capa de red OSI? Elija dos opciones.": [
+    "1, 4",
+    "Encapsulamiento de PDU de la capa de transporte. Routing de paquetes hacia el destino"
+  ],
+  "6. ¿Cuál de las siguientes es una característica básica del protocolo IP?": [
+    3,
+    "Sin conexión"
+  ],
+  "7. ¿Cuál es el campo de encabezado IPv4 que identifica el protocolo de capa superior transportado en el paquete?": [
+    2,
+    "Protocolo"
+  ],
+  "9. ¿Qué información proporciona la prueba de loopback?": [
+    5,
+    "El stack de TCP/IP del dispositivo funciona correctamente."
+  ],
+  "10. ¿Cuál de estas afirmaciones describe la función del protocolo de resolución de direcciones?": [
+    4,
+    "El protocolo ARP se utiliza para descubrir la dirección MAC de cualquier host en la red local."
+  ],
+  "11. ¿Qué dirección de destino se utiliza en un marco de solicitud ARP?": [
+    1,
+    "FFFF.FFFF.FFFF"
+  ],
+  "12. ¿Qué dos tipos de mensajes IPv6 se utilizan en lugar de ARP para la resolución de direcciones?": [
+    "4, 5",
+    "Anuncio de vecino (NA). Solicitud de vecino (NS)"
+  ],
+  "13. ¿Cuál es el objetivo de un ataque de suplantación de ARP?": [
+    2,
+    "Asociar direcciones IP con direcciones MAC incorrectas."
+  ],
+  "14. Consulte la exhibición. La PC1 intenta conectarse a Servidor_de_archivos1 y envía una solicitud de ARP para obtener una dirección MAC de destino. ¿Qué dirección MAC recibe la PC1 en la respuesta de ARP?": [
+    2,
+    "La dirección MAC de la interfaz G0/0 del R1"
+  ],
+  "15. ¿Dónde se mantienen las asignaciones de direcciones IPv4 a direcciones Ethernet de capa 2 en una computadora host?": [
+    1,
+    "Caché ARP"
+  ],
+  "16. ¿Qué información importante examina un dispositivo de capa 2 en el encabezado de la trama de Ethernet para continuar con el reenvío de los datos?": [
+    5,
+    "Dirección MAC de destino"
+  ],
+  "21. ¿Cuáles de las siguientes son dos funciones de la NVRAM? Elija dos opciones.": [
+    "1, 4",
+    "Almacenar el archivo de configuración de inicio.. Retener el contenido cuando se corta la energía."
+  ],
+  "22. Un router arranca e ingresa al modo de configuración. ¿Por qué razón?": [
+    3,
+    "Falta el archivo de configuración en NVRAM."
+  ],
+  "23. El comando de configuración global ip default-gateway 172.16.100.1 se aplica a un switch. ¿Cuál es el efecto de este comando?": [
+    3,
+    "El switch se puede administrar de forma remota desde un host en otra red."
+  ],
+  "25. ¿Cuáles son los tres comandos que se utilizan para configurar el acceso seguro a un router mediante una conexión a la interfaz de consola? Elija tres opciones.": [
+    "1, 2, 4",
+    "login. password cisco. line console 0"
+  ],
+  "26. Consulte la ilustración. Considere la configuración de dirección IP que se muestra para la PC1. ¿Cuál de las siguientes es una descripción de la dirección de gateway predeterminado?": [
+    3,
+    "Es la dirección IP de la interfaz del Router1 que conecta la LAN de la PC1 al router1."
+  ],
+  "27. ¿Cuál es el efecto de usar el comando Router# copy running-config startup-config en un router?": [
+    2,
+    "El contenido de NVRAM cambiará."
+  ],
+  "28. ¿Qué sucede si se configura de forma incorrecta la dirección de gateway predeterminado en un host?": [
+    1,
+    "El host no puede comunicarse con hosts en otras redes."
+  ],
+  "29. ¿Cuáles de los siguientes son dos problemas de red potenciales que pueden surgir del funcionamiento del protocolo ARP? (Elija dos).": [
+    "1, 4",
+    "En redes grandes que tienen un ancho de banda bajo, varios broadcasts de ARP pueden causar retrasos en la comunicación de datos.. Los atacantes de la red podrían manipular las asignaciones de direcciones MAC e IP en mensajes ARP con el objetivo de interceptar el tráfico de la red."
+  ],
+  "31. ¿Qué término describe un campo en el encabezado de un paquete IPv4 que contiene un valor binario de 4 bits establecido en 0100?": [
+    1,
+    "versión"
+  ],
+  "32. ¿Qué propiedad de ARP permite a los hosts de una LAN enviar tráfico a redes remotas?": [
+    4,
+    "Los host locales aprenden la dirección MAC del la puerta de enlace predeterminada."
+  ],
+  "33. Observe la imagen. Un administrador de red está conectando un nuevo host a la LAN Tienda. El host necesita comunicarse con redes remotas. Cual direccion IP debería ser configurada como la puerta de enlace predeterminada de el nuevo host?": [
+    1,
+    "172.19.98.230"
+  ],
+  "34. Dentro de una red de producción, ¿cuál es el propósito de configurar un switch con una dirección de gateway predeterminado?": [
+    3,
+    "La dirección de gateway predeterminado se utiliza para reenviar los paquetes originados en el switch a las redes remotas."
+  ],
+  "35. ¿Cuál es una de las ventajas que ofrece el encabezado de IPv6 simplificado sobre el IPv4?": [
+    3,
+    "Manejo eficaz de paquetes"
+  ],
+  "36. ¿Cuáles son las dos circunstancias en las que un switch satura una trama por todos los puertos, excepto aquel por el que la recibió? Elija dos opciones.": [
+    "1, 5",
+    "La trama tiene la dirección de difusión como dirección de destino.. El switch no conoce la dirección de destino."
+  ],
+  "37. ¿Cuál de las siguientes afirmaciones describe el tratamiento de las solicitudes de ARP en el enlace local?": [
+    4,
+    "Las reciben y las procesan todos los dispositivos de la red local."
+  ],
+  "38. Se ha pedido a un nuevo administrador de red que introduzca un banner en un dispositivo Cisco. ¿Cuál es la forma más rápida en que un administrador de red podría probar si el banner está configurado correctamente?": [
+    3,
+    "Salgir del modo EXEC privilegiado y pulsar Enter ."
+  ],
+  "39. Consulte la ilustración. Un usuario en una PC ha transmitido correctamente paquetes a www.cisco.com. ¿A qué dirección IP envia el PC del usuario sus datos fuera de la red local?": [
+    4,
+    "172.20.0.254"
+  ],
+  "40. ¿Cuáles son las dos funciones principales de un router? Elija dos opciones.": [
+    "1, 3",
+    "Selección de rutas. Envío de paquetes"
+  ],
+  "41. ¿Qué término describe un campo en el encabezado del paquete IPv4 que contiene un valor binario de 4 bits establecido en 0100?": [
+    3,
+    "versión"
+  ],
+  "42. ¿Qué propiedad de ARP hace que las NIC que reciben una solicitud ARP pasen la parte de datos de la trama Ethernet al proceso ARP?": [
+    1,
+    "El campo de tipo 0x806 aparece en el encabezado de la trama Ethernet."
+  ],
+  "43. Observe la imagen. Un administrador de red está conectando un nuevo host a la LAN médica. El host necesita comunicarse con redes remotas. Cual direccion IP debería ser configurada como la puerta de enlace predeterminada de el nuevo host?": [
+    3,
+    "192.168.201.200"
+  ],
+  "44. ¿Cuál es el campo del encabezado de IPv4 que se utiliza para evitar que un paquete atraviese una red incesantemente?": [
+    2,
+    "Tiempo de duración"
+  ],
+  "45. ¿Qué entrada de la tabla de routing tiene una dirección de siguiente salto asociada con una red de destino?": [
+    2,
+    "Rutas remotas"
+  ],
+  "45. ¿Cómo aseguran los hosts que los paquetes se dirijan al destino de red correcto?": [
+    4,
+    "Deben mantener su propia tabla de enrutamiento local que contenga una ruta a la interfaz loopback, una ruta de red local y una ruta predeterminada remota."
+  ],
+  "47. Cuando se transportan datos de aplicaciones en tiempo real, como streaming audio y video, ¿qué campo en el encabezado de IPv6 se puede utilizar para informar a los routers y los switches que deben mantener la misma ruta para los paquetes en la misma conversación?": [
+    1,
+    "Identificador de flujo"
+  ],
+  "48. Un técnico de red emite el comando arp -d * en una PC después de volver a configurar el router que está conectado a la LAN. ¿Cuál es el resultado después de emitir este comando?": [
+    4,
+    "Se borra la caché ARP."
+  ],
+  "49. Consulte la ilustración. En la ilustración, se muestra una pequeña red conmutada y el contenido de la tabla de direcciones MAC del switch. La PC1 envió una trama dirigida a la PC3. ¿Qué hará el switch con la trama?": [
+    1,
+    "El switch reenviará la trama a todos los puertos, excepto al puerto 4."
+  ],
+  "50. ¿Qué término describe un campo en el encabezado de un paquete IPv4 utilizado para identificar el protocolo de siguiente nivel?": [
+    4,
+    "protocolo"
+  ],
+  "51. ¿Qué propiedad de ARP obliga a todas las NIC Ethernet a procesar una solicitud ARP?": [
+    1,
+    "La dirección MAC de destino FF-FF-FF-FF-FF-FF aparece en el encabezado de la trama Ethernet."
+  ],
+  "52. Observe la imagen. Un administrador de red está conectando un nuevo host a la LAN Payroll. El host necesita comunicarse con redes remotas. Cual direccion IP debería ser configurada como la puerta de enlace predeterminada de el nuevo host?": [
+    3,
+    "10.27.14.148"
+  ],
+  "53. ¿Qué sucede cuando se ingresa el comando transport input ssh en las líneas vty del switch?": [
+    4,
+    "La comunicación entre el switch y los usuarios remotos está cifrada."
+  ],
+  "54. ¿Qué término describe un campo en el encabezado del paquete IPv4 que contiene una dirección de unidifusión, multidifusión o difusión?": [
+    4,
+    "dirección IPv4 de destino"
+  ],
+  "55. ¿Qué propiedad de ARP causa una respuesta sólo a origen que envía una solicitud ARP?": [
+    4,
+    "La dirección MAC de origen aparece en el encabezado de la trama Ethernet."
+  ],
+  "56. Observe la imagen. Un administrador de red está conectando un nuevo host a la LAN de servicio. El host necesita comunicarse con redes remotas. Cual direccion IP debería ser configurada como la puerta de enlace predeterminada de el nuevo host?": [
+    2,
+    "192.168.167.166"
+  ],
+  "57. ¿Qué término describe un campo en el encabezado de un paquete IPv4 utilizado para detectar daños en el encabezado IPv4?": [
+    3,
+    "header checksum"
+  ],
+  "58. Observe la imagen. Un administrador de red está conectando un nuevo host a Manager LAN. El host necesita comunicarse con redes remotas. Cual direccion IP debería ser configurada como la puerta de enlace predeterminada de el nuevo host?": [
+    1,
+    "10.118.62.196"
+  ],
+  "59. ¿Qué término describe un campo en el encabezado de un paquete IPv4 que contiene un valor binario de 32 bits asociado a una interfaz en el dispositivo de envío?": [
+    1,
+    "Dirección IPv4 de origen"
+  ],
+  "60. ¿Qué propiedad de ARP hace que las asignaciones de IP a MAC almacenadas en caché permanezcan más tiempo en la memoria?": [
+    3,
+    "Las entradas de una tabla ARP tienen una marca de tiempo y se purgan después de que expire el tiempo de espera."
+  ],
+  "61. Refiérase a la exposición. Un administrador de red está conectando un nuevo host a la LAN del Registrador. El host necesita comunicarse con redes remotas. Cual direccion IP debería ser configurada como la puerta de enlace predeterminada de el nuevo host?": [
+    4,
+    "192.168.235.234"
+  ],
+  "62. ¿Qué propiedad de ARP permite que las direcciones MAC de los servidores de uso frecuente se fijen en la tabla ARP?": [
+    4,
+    "Una entrada de dirección IP a MAC estática se puede introducir manualmente en una tabla ARP."
+  ],
+  "63. ¿Qué término describe un campo en el encabezado de un paquete IPv4 que contiene un valor binario de 8 bits utilizado para determinar la prioridad de cada paquete?": [
+    3,
+    "Servicios diferenciados"
+  ],
+  "64. Observe la imagen. Un administrador de red está conectando un nuevo host a la LAN del Registrador. El host necesita comunicarse con redes remotas. Cual direccion IP debería ser configurada como la puerta de enlace predeterminada de el nuevo host?": [
+    3,
+    "192.168.225.223"
+  ],
+  "65. ¿Qué propiedad de ARP hace que la solicitud inunde todos los puertos de un switch excepto el puerto que recibe la solicitud ARP?": [
+    3,
+    "La dirección MAC de destino FF-FF-FF-FF-FF-FF aparece en el encabezado de la trama Ethernet."
+  ],
+  "66. Observe la imagen. Un administrador de red está conectando un nuevo host a la LAN médica. El host necesita comunicarse con redes remotas. Cual direccion IP debería ser configurada como la puerta de enlace predeterminada de el nuevo host?": [
+    5,
+    "192.168.191.189"
+  ],
+  "67. ¿Qué término describe un campo en el encabezado de un paquete IPv4 utilizado para limitar la duración de un paquete?": [
+    4,
+    "TTL"
+  ]
+}
