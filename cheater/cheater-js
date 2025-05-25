@@ -28,12 +28,10 @@ function mostrarRespuesta(respuesta) {
 
   document.body.appendChild(box);
 
-  // Fade in
   requestAnimationFrame(() => {
     box.style.opacity = "1";
   });
 
-  // Fade out y remover después de 6 segundos
   setTimeout(() => {
     box.style.opacity = "0";
     setTimeout(() => box.remove(), 500);
