@@ -4,10 +4,9 @@ import os
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))  # Esto apunta a ciscoapp/
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 json_path = os.path.join(BASE_DIR, 'diccionario.json')
 
-# Cargar el diccionario
 with open(json_path, encoding='utf-8') as f:
     DICCIONARIO = json.load(f)
 
