@@ -91,6 +91,8 @@
     "1, 4",
     "En redes grandes que tienen un ancho de banda bajo, varios broadcasts de ARP pueden causar retrasos en la comunicación de datos.. Los atacantes de la red podrían manipular las asignaciones de direcciones MAC e IP en mensajes ARP con el objetivo de interceptar el tráfico de la red."
   ],
+  "30. Abra la actividad de PT. Realice las tareas detalladas en las instrucciones de la actividad y, a continuación, responda la pregunta.\n¿Qué interfaces están activas y operativas en cada router?":
+          [2, "R1: G0/0 y S0/0/0\nR2: G0/1 y S0/0/0"],
   "31. ¿Qué término describe un campo en el encabezado de un paquete IPv4 que contiene un valor binario de 4 bits establecido en 0100?": [
     1,
     "versión"
@@ -239,6 +241,64 @@
     4,
     "TTL"
   ],
-  "Un enrutador arranca e ingresa al modo de configuración. ¿Por qué razón?":
-          [3, "Falta el archivo de configuración en NVRAM."]
+  "Un enrutador arranca e ingresa al modo de configuración. ¿Por qué razón?": [
+    3,
+    "Falta el archivo de configuración en NVRAM."
+  ],
+  "2. ¿Cuáles son las dos características del método SLAAC para la configuración de direcciones IPv6? (Elija dos opciones).": [
+    "4, 5",
+    "La puerta de enlace predeterminada de un cliente IPv6 en una LAN será la dirección local del vínculo de la interfaz del enrutador conectada a la LAN.. El direccionamiento IPv6 se asigna dinámicamente a los clientes mediante el uso de ICMPv6."
+  ],
+  "3. ¿Qué tipo de dirección se asigna automáticamente a una interfaz de un enrutador Cisco cuando se asigna una dirección de unidifusión global IPv6 en esa interfaz?": [
+    4,
+    "Enlace local"
+  ],
+  "4. ¿Qué serie de números hexadecimales es probablemente una ID de interfaz GUA IPv6 creada mediante el proceso EUI-64?": [
+    4,
+    "fe99:47ff:fe75:cee0"
+  ],
+  "6. Un dispositivo con IPv6 habilitado envía un paquete de datos con la dirección de destino FF02::1. ¿Cuál es el destino de este paquete?": [
+    4,
+    "todos los nodos habilitados para IPv6 en el enlace local"
+  ],
+  "7. Un dispositivo tiene una dirección IPv6 listada como 2001:0DB8:75a3:0214:0607:1234:aa10:ba01. ¿Cuál es la ID de interfaz del dispositivo?": [
+    4,
+    "0607:1234:aa10:ba01"
+  ],
+  "8. Un dispositivo con IPv6 habilitado envía un paquete de datos con la dirección de destino FF02::2. ¿Cuál es el destino de este paquete?": [
+    4,
+    "todos los servidores IPv6 DHCP"
+  ],
+  "9. ¿Qué protocolo admite la configuración automática de direcciones sin estado (SLAAC) para la asignación dinámica de direcciones IPv6 a un host?": [
+    2,
+    "ICMPv6"
+  ],
+  "10. Un host IPv6 recibe una solicitud de resolución de dirección MAC. ¿Qué mensaje enviaría el host en respuesta a la solicitud?": [
+    2,
+    "mensaje de anuncio de vecino"
+  ],
+  "12. Un host IPv6 debe enviar un mensaje para resolver la dirección MAC de otro host. ¿Qué mensaje se usaría para iniciar el proceso?": [
+    3,
+    "Mensaje de solicitud de vecino de multidifusión"
+  ],
+  "13. Un host IPv6 debe iniciar la comunicación con otro host IPv6 en la misma red. ¿Qué mensaje debe enviar el host de envío para encontrar la dirección MAC del host de destino?": [
+    4,
+    "mensaje de solicitud de vecino"
+  ],
+  "14. ¿Qué tipo de mensaje ICMPv6 contiene información de configuración de red para los clientes que realizan SLAAC?": [
+    3,
+    "Anuncio de enrutador"
+  ],
+  "15. ¿Cuáles son los tres servicios proporcionados por el protocolo de detección de vecinos IPv6? (Elija tres opciones).": [
+    "1, 5, 6",
+    "descubrimiento de enrutador. resolución de direcciones. servicios de redirección"
+  ],
+  "16. ¿Cuáles son dos mensajes ICMPv6 que no están presentes en ICMP para IPv4? (Elija dos opciones).": [
+    "2, 4",
+    "Solicitud de vecino. Anuncio de enrutador"
+  ],
+  "17. El host A de IPv6 está enviando un mensaje de solicitud de vecino al host B de IPv6 en la misma red Ethernet. ¿Qué tipo de dirección se utiliza en el campo MAC de destino del encabezado de trama Ethernet?": [
+    4,
+    "una dirección MAC de multidifusión asociada con la información de la dirección IPv6 de destino"
+  ]
 }
