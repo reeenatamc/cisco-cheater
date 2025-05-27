@@ -1,0 +1,1 @@
+web: gunicorn cisco-cheater.wsgi:application
