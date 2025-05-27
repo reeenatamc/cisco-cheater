@@ -1,1 +1,1 @@
-web: gunicorn cisco-cheater.wsgi:application
+web: gunicorn cheater.wsgi:application
