@@ -16,10 +16,11 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
-from ciscoapp.cheatmain import buscar
+from ciscoapp.cheatmain import buscar, activate, verify_activation
 
 urlpatterns = [
     path("admin/", admin.site.urls),
     path('buscar/', buscar, name='buscar'),
+    path('activate/', activate, name='activate'),
+    path('verify_activation/', verify_activation, name='verify_activation'),
 ]
