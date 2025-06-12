@@ -79,13 +79,13 @@ WSGI_APPLICATION = "cheater.wsgi.application"
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": os.environ.get("DB_NAME", "cisco_cheater"),
-        "USER": os.environ.get("DB_USER", "postgres"),
-        "PASSWORD": os.environ.get("DB_PASSWORD", "12345"),
-        "HOST": os.environ.get("DB_HOST", "localhost"),
-        "PORT": os.environ.get("DB_PORT", "5432"),
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'cisco_cheater',
+        'USER': 'admin',
+        'PASSWORD': 'FqDcuEmkZn86bFzcV9j1J1jTtgBnYXU6',
+        'HOST': 'dpg-d156nme3jp1c73fhistg-a',
+        'PORT': '5432',
     }
 }
 
