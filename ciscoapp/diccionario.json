@@ -91,8 +91,10 @@
     "1, 4",
     "En redes grandes que tienen un ancho de banda bajo, varios broadcasts de ARP pueden causar retrasos en la comunicación de datos.. Los atacantes de la red podrían manipular las asignaciones de direcciones MAC e IP en mensajes ARP con el objetivo de interceptar el tráfico de la red."
   ],
-  "30. Abra la actividad de PT. Realice las tareas detalladas en las instrucciones de la actividad y, a continuación, responda la pregunta.\n¿Qué interfaces están activas y operativas en cada router?":
-          [2, "R1: G0/0 y S0/0/0\nR2: G0/1 y S0/0/0"],
+  "30. Abra la actividad de PT. Realice las tareas detalladas en las instrucciones de la actividad y, a continuación, responda la pregunta.\n¿Qué interfaces están activas y operativas en cada router?": [
+    2,
+    "R1: G0/0 y S0/0/0\nR2: G0/1 y S0/0/0"
+  ],
   "31. ¿Qué término describe un campo en el encabezado de un paquete IPv4 que contiene un valor binario de 4 bits establecido en 0100?": [
     1,
     "versión"
@@ -300,5 +302,209 @@
   "17. El host A de IPv6 está enviando un mensaje de solicitud de vecino al host B de IPv6 en la misma red Ethernet. ¿Qué tipo de dirección se utiliza en el campo MAC de destino del encabezado de trama Ethernet?": [
     4,
     "una dirección MAC de multidifusión asociada con la información de la dirección IPv6 de destino"
+  ],
+  "3. ¿Cuántas direcciones de host se encuentran disponibles en la red 192.168.10.128/26?": [
+    4,
+    "62"
+  ],
+  "5. ¿Cuántas direcciones de host están disponibles en la red 172.16.128.0 con la máscara de subred 255.255.252.0?": [
+    3,
+    "1022"
+  ],
+  "7. ¿Cuáles son los tres bloques de direcciones definidos por la RFC 1918 para el uso en redes privadas? Elija tres opciones.": [
+    "2, 4, 6",
+    "192.168.0.0/16. 10.0.0.0/8. 172.16.0.0/12"
+  ],
+  "8. El administrador de un sitio debe hacer que una red específica del sitio debe admitir 126 hosts. ¿Cuál de las siguientes máscaras de subred tiene la cantidad de bits de host requerida?": [
+    4,
+    "255.255.255.128"
+  ],
+  "9. Consulte la ilustración. Considerando las direcciones ya utilizadas y la indicación de mantenerse dentro del rango de red 10.16.10.0/24, ¿cuál de las siguientes direcciones de subred se podría asignar a la red que tiene 25 hosts?": [
+    5,
+    "10.16.10.64/27"
+  ],
+  "10. ¿Cuál es la cantidad de direcciones IP de host disponibles en una red que tiene la máscara /26?": [
+    1,
+    "62"
+  ],
+  "11. ¿Qué rango de prefijos de direcciones se reserva para las direcciones IPv4 de multidifusión?": [
+    4,
+    "224.0.0.0 – 239.255.255.255"
+  ],
+  "12. Un mensaje se envía a todos los hosts en una red remota. ¿Qué tipo de mensaje es?": [
+    4,
+    "Broadcast dirigido"
+  ],
+  "13. ¿Qué dirección es una dirección unicast local de enlace IPv6 válida?": [
+    4,
+    "FE80::1:4545:6578:ABC1"
+  ],
+  "14. ¿Cuál de estas direcciones es la abreviatura más corta para la dirección IP: 3FFE:1044:0000:0000:00AB:0000:0000:0057?": [
+    6,
+    "3FFE:1044:00:AB::57"
+  ],
+  "15. ¿Qué tipo de dirección IPv6 es FE80::1?": [
+    2,
+    "Link-local"
+  ],
+  "16. Consulte la ilustración. Una empresa implementa un esquema de direccionamiento IPv6 para su red. En el documento de diseño de la empresa, se indica que la porción de subred de las direcciones IPv6 se utiliza para el nuevo diseño de red jerárquico. En él, la subsección de sitio representa los diferentes sitios geográficos de la empresa, la subsección de subsitio representa los diferentes campus de cada sitio, y la subsección de subred indica cada segmento de la red separado por routers. Con este esquema, ¿cuál es la cantidad máxima de subredes que se obtiene por subsitio ?": [
+    3,
+    "16"
+  ],
+  "17. ¿Qué se utiliza en el proceso EUI-64 para crear una ID de interfaz IPv6 en una interfaz habilitada IPv6?": [
+    2,
+    "La dirección MAC de la interfaz habilitada IPv6"
+  ],
+  "18. ¿Cuál es el prefijo de la dirección de host 2001:DB8:BC15:A:12AB::1/64?": [
+    2,
+    "2001:DB8:BC15:A"
+  ],
+  "20. ¿Qué prefijo IPv6 se reserva para la comunicación entre dispositivos en el mismo enlace?": [
+    4,
+    "FE80::/10"
+  ],
+  "21. ¿Qué tipo de dirección IPv6 hace referencia a cualquier dirección de unidifusión asignada a varios hosts?": [
+    1,
+    "anycast"
+  ],
+  "22. ¿Cuáles de los siguientes son dos tipos de direcciones IPv6 unicast? (Elija dos).": [
+    "3, 4",
+    "Link-local. Loopback"
+  ],
+  "23. ¿Qué servicio proporciona direccionamiento IPv6 dinámicas globales a las terminales sin utilizar un servidor que registre las direcciones IPv6 disponibles?": [
+    3,
+    "SLAAC"
+  ],
+  "24. Un técnico utiliza el comando ping 127.0.0.1 . ¿Qué está probando el técnico?": [
+    5,
+    "El stack de TCP/IP en un host de red"
+  ],
+  "25. Consulte la ilustración. Un administrador intenta resolver problemas de conectividad entre la PC1 y la PC2 y, para lograrlo, utiliza el comando tracert en la PC1. Sobre la base del resultado que se muestra, ¿por dónde debería comenzar a resolver el problema el administrador?": [
+    5,
+    "R1"
+  ],
+  "26. ¿Qué protocolo utiliza el comando traceroute para enviar y recibir solicitudes y respuestas de eco?": [
+    4,
+    "ICMP"
+  ],
+  "28. ¿Cuál de las siguientes es la notación de duración de prefijo para la máscara de subred 255.255.255.224?": [
+    3,
+    "/27"
+  ],
+  "29. ¿Cuál de las siguientes subredes incluiría la dirección 192.168.1.96 como dirección de host utilizable?": [
+    3,
+    "192.168.1.64/26"
+  ],
+  "31. Un host está transmitiendo un multicast. ¿Qué host o hosts lo recibirán?": [
+    1,
+    "un grupo de hosts especialmente definido"
+  ],
+  "32. ¿Cuál es el formato comprimido de la dirección IPv6 2002:0420:00c4:1008:0025:0190:0000:0990?": [
+    2,
+    "2002:420:c4:1008:25:190::990"
+  ],
+  "33. Un usuario emite un comando ping fe 80:65 ab:dcc1::100 y recibe una respuesta que incluye un código 4 . ¿Qué representa este código?": [
+    4,
+    "Puerto inalcanzable"
+  ],
+  "34. ¿Cuántos bits se deben tomar prestados de la porción de host de una dirección para admitir un router con cinco redes conectadas?": [
+    4,
+    "Tres"
+  ],
+  "36. ¿Qué tres direcciones son direcciones públicas válidas? (Escoja tres opciones).": [
+    "2, 4, 6",
+    "198.133.219.17. 128.107.12.117. 64.104.78.227"
+  ],
+  "37. Una compañía tiene la dirección de red 192.168.1.64 con la máscara de subred 255.255.255.192. La compañía desea crear dos subredes que contengan 10 hosts y 18 hosts, respectivamente. ¿Cuáles son las dos redes con las que se lograría eso? (Elija dos).": [
+    "1, 2",
+    "192.168.1.64/27. 192.168.1.96/28"
+  ],
+  "38. Un administrador de red recibió el prefijo IPv6 2001:DB8::/48 para realizar la división en subredes. Suponiendo que el administrador no realiza la división en subredes en la porción de ID de interfaz del espacio de direcciones, ¿cuántas subredes puede crear a partir del prefijo /48?": [
+    2,
+    "65 536"
+  ],
+  "39. Dado el prefijo de dirección IPv6 2001:db8::/48, ¿cuál es la última subred que se crea si se cambia el prefijo de subred a /52?": [
+    2,
+    "2001:db8:0:f000::/52"
+  ],
+  "40. Un dispositivo con IPv6 habilitado envía un paquete de datos con la dirección de destino FF02::1. ¿Cuál es el destino de este paquete?": [
+    1,
+    "Todos los dispositivos con IPv6 habilitado en el enlace local o en la red"
+  ],
+  "41. ¿Qué protocolo admite la configuración automática de dirección sin estado (SLAAC) para permitir la asignación dinámica de direcciones IPv6 a un host?": [
+    2,
+    "ICMPv6"
+  ],
+  "42. ¿Qué mensaje ICMPv6 se envía cuando el campo de límite de saltos IPv6 de un paquete se reduce a cero y el paquete no se puede reenviar?": [
+    2,
+    "Tiempo excedido"
+  ],
+  "43. ¿Cuál es el formato comprimido de la dirección IPv6 2001:0db8:0000:0000:0000:a0b0:0008:0001?": [
+    3,
+    "2001:db8::a0b0:8:1"
+  ],
+  "44. Consulte la ilustración. Un administrador debe enviar un mensaje a todos los integrantes de la red del router A. ¿Cuál de las siguientes es la dirección de difusión para la red 172.16.16.0/22?": [
+    3,
+    "172.16.19.255"
+  ],
+  "45. Una escuela secundaria de Nueva York (escuela A) utiliza tecnología de videoconferencia para establecer interacciones entre los estudiantes y otra escuela secundaria (escuela B) en Rusia. La videoconferencia se realiza entre dos terminales a través de Internet. El administrador de red de la escuela A configura el terminal con la dirección IP 209.165.201.10. El administrador envía una solicitud de dirección IP del terminal en la escuela B, y la respuesta es 192.168.25.10. Ninguna de las dos escuelas usa una VPN. El administrador sabe de inmediato que esta dirección IP no funcionará. ¿Por qué?": [
+    1,
+    "Es una dirección IP privada."
+  ],
+  "46. Un host está transmitiendo un broadcast. ¿Qué host o hosts lo recibirán?": [
+    3,
+    "todos los hosts de la misma subred"
+  ],
+  "47. Un usuario emite un comando ping 10.10.14.67 y recibe una respuesta que incluye un código 0 . ¿Qué representa este código?": [
+    2,
+    "Red inalcanzable"
+  ],
+  "48. ¿Cuál es el formato comprimido de la dirección IPv6 fe80:0000:0000:0000:0220:0b3f:f0e0:0029?": [
+    4,
+    "fe80::220:b3f:f0e0:29"
+  ],
+  "49. ¿Cuál es el propósito de los mensajes de ICMP?": [
+    2,
+    "Proporcionar comentarios acerca de las transmisiones de paquetes IP."
+  ],
+  "50. ¿Cuál es el formato comprimido de la dirección IPv6 fe80:09ea:0000:2200:0000:0000:0fe0:0290?": [
+    3,
+    "fe80:9ea:0:2200::fe0:290"
+  ],
+  "51. Un host está transmitiendo un unicast. ¿Qué host o hosts lo recibirán?": [
+    3,
+    "un host específico"
+  ],
+  "52. Un usuario ejecuta un traceroute a través de IPv6. ¿En qué momento dejaría de reenviar el paquete un router que se encuentra en la ruta hacia el dispositivo de destino?": [
+    2,
+    "cuando el valor del campo Límite de saltos alcanza cero"
+  ],
+  "53. Un usuario emite un comando ping fe 80:65 ab:dcc1::100 y recibe una respuesta que incluye un código 3 . ¿Qué representa este código?": [
+    1,
+    "No se puede alcanzar la dirección"
+  ],
+  "54. ¿Cuál es el formato comprimido de la dirección IPv6 2002:0042:0010:c400:0000:0000:0000:0909?": [
+    3,
+    "2002:42:10:c400::909"
+  ],
+  "55. Un usuario emite un comando ping 2001:db8:face:39::10 y recibe una respuesta que incluye un código 2 . ¿Qué representa este código?": [
+    3,
+    "más allá del alcance de la dirección de origen"
+  ],
+  "56. ¿Cuál es la dirección IP de origen que utiliza un router de forma predeterminada cuando emite el comando traceroute ?": [
+    4,
+    "La dirección IP de la interfaz saliente"
+  ],
+  "57. Un usuario emite un comando ping 192.135.250.103 y recibe una respuesta que incluye un código 1 . ¿Qué representa este código?": [
+    1,
+    "Host fuera de alcance"
+  ],
+  "58. ¿Cuál es el formato comprimido de la dirección IPv6 2001:0db8:0000:0000:0ab8:0001:0000:1000?": [
+    4,
+    "2001:db8::ab8:1:0:1000"
+  ],
+  "59. A host is transmitting a multicast. ¿Qué host o hosts lo recibirán?": [
+    "1, 1, 2",
+    "un grupo de hosts especialmente definido. No se puede alcanzar la dirección. Puerto inalcanzable"
   ]
 }
