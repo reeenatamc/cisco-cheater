@@ -506,5 +506,7 @@
   "59. A host is transmitting a multicast. ¿Qué host o hosts lo recibirán?": [
     "1, 1, 2",
     "un grupo de hosts especialmente definido. No se puede alcanzar la dirección. Puerto inalcanzable"
-  ]
+  ],
+  "¿Qué comando se puede utilizar para cifrar todas las contraseñas presentes en el archivo de configuración?":
+          ["2", "Router_A (configuración) # service password-encryption"]
 }
