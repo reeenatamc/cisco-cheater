@@ -303,14 +303,22 @@
     4,
     "una dirección MAC de multidifusión asociada con la información de la dirección IPv6 de destino"
   ],
+  "1. Una la subred con una dirección de host que debería estar incluida dentro de la subred. (No se utilizan todas las opciones).":
+          ["Unir", "192.168.1.32/27 con 192.168.1.48 // 192.168.1.64/27 con 192.168.1.68 // 192.168.1.96/27 con 192.168.1.96/27"],
+  "2. Un administrador desea crear cuatro subredes a partir de la dirección de red 192.168.1.0/24. ¿Cuál es la dirección de red y la máscara de subred de la segunda subred utilizable?":
+          ["4", "Subred 192.168.1.64 Máscara de subred 255.255.255.192"],
   "3. ¿Cuántas direcciones de host se encuentran disponibles en la red 192.168.10.128/26?": [
     4,
     "62"
   ],
+  "4. Existen tres métodos que permiten que IPv6 e IPv4 coexistan. Una cada método con su descripción. (No se utilizan todas las opciones.)":
+          ["Unir", "Los paquetes IPV4 e IPV6 coexisten en la misma red con Dual-Stack // El paquete IPV6 se transporta dentro de un paquete IPV4 con Tunelización // Los paquetes IPV6 se convierten en paquetes IPV4 y viceversa con traducción."],
   "5. ¿Cuántas direcciones de host están disponibles en la red 172.16.128.0 con la máscara de subred 255.255.252.0?": [
     3,
     "1022"
   ],
+  "6. Haga coincidir cada dirección IPv4 con la categoría de dirección adecuada. (No se utilizan todas las opciones).":
+          ["unir", "192.168.100.161/25 con 203.0.113.100/24 // 172.110.12.64/28 con 10.10.10.128/25 // 10.0.0.159/27 con 192.168.1.191/26"],
   "7. ¿Cuáles son los tres bloques de direcciones definidos por la RFC 1918 para el uso en redes privadas? Elija tres opciones.": [
     "2, 4, 6",
     "192.168.0.0/16. 10.0.0.0/8. 172.16.0.0/12"
@@ -359,6 +367,8 @@
     2,
     "2001:DB8:BC15:A"
   ],
+  "19. Una la dirección IPv6 con el tipo de dirección IPv6. (No se utilizan todas las opciones.)":
+          ["unir", "2001:DB8::BAF:3F57:FE94 con Unidifusión global // FF02::1 con Dirección de Multidifusión de todos los nodos. // ::1 con Bucle invertido // FF02::1:FFAE:F85F con Dirección de Multidifusión de nodo solicitado"],
   "20. ¿Qué prefijo IPv6 se reserva para la comunicación entre dispositivos en el mismo enlace?": [
     4,
     "FE80::/10"
@@ -387,6 +397,8 @@
     4,
     "ICMP"
   ],
+  "27. Una cada descripción con una dirección IP adecuada. (No se utilizan todas las opciones).":
+          ["Unir", "169.254.1.5 con Una dirección link local // 192.0.2.123 con Una dirección TestNet // 240.2.6.255 con una dirección experimental // 172.19.20.5 con una dirección privada. // 127.0.0.1 con Una dirección de loopback"],
   "28. ¿Cuál de las siguientes es la notación de duración de prefijo para la máscara de subred 255.255.255.224?": [
     3,
     "/27"
@@ -395,6 +407,8 @@
     3,
     "192.168.1.64/26"
   ],
+  "30. ¿Cuales son las tres direcciones IPv6 mostradas cuando se ratrea la ruta entre PC1 a PC2?":
+          ["1, 4, 6", "2001:DB8:1:1::1, 2001:DB8:1:2::1, 2001:DB8:1:3::2"],
   "31. Un host está transmitiendo un multicast. ¿Qué host o hosts lo recibirán?": [
     1,
     "un grupo de hosts especialmente definido"
@@ -411,6 +425,8 @@
     4,
     "Tres"
   ],
+  "35. Observe la ilustración. Haga coincidir la red con la dirección IP y el prefijo correctos que satisfagan los requisitos de direccionamiento de host utilizables para cada red.":
+  ["Unir", "RED A con 192.168.0.128/25 // RED B con 192.168.0.0/26 // RED C con 192.168.0.96/27, RED D con 192.168.0.80/30"],
   "36. ¿Qué tres direcciones son direcciones públicas válidas? (Escoja tres opciones).": [
     "2, 4, 6",
     "198.133.219.17. 128.107.12.117. 64.104.78.227"
@@ -508,5 +524,9 @@
     "un grupo de hosts especialmente definido. No se puede alcanzar la dirección. Puerto inalcanzable"
   ],
   "¿Qué comando se puede utilizar para cifrar todas las contraseñas presentes en el archivo de configuración?":
-          ["2", "Router_A (configuración) # service password-encryption"]
+          ["2", "Router_A (configuración) # service password-encryption"],
+  "60. Un usuario emite un comando ping 2001:db8:face:39::10 y recibe una respuesta que incluye un código 3 . ¿Qué representa este código?":
+          ["1", "No se puede alcanzar la dirección"],
+  "61. Un usuario emite un comando ping 2001:db 8:3040:114::88 y recibe una respuesta que incluye un código 4 . ¿Qué representa este código?":
+          ["2", "Puerto inalcanzable"]
 }
