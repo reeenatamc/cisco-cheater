@@ -523,6 +523,10 @@
     "1, 1, 2",
     "un grupo de hosts especialmente definido. No se puede alcanzar la dirección. Puerto inalcanzable"
   ],
+  "59. Un host está transmitiendo un multicast. ¿Qué host o hosts lo recibirán?": [
+    "1, 1, 2",
+    "un grupo de hosts especialmente definido. No se puede alcanzar la dirección. Puerto inalcanzable"
+  ],
   "¿Qué comando se puede utilizar para cifrar todas las contraseñas presentes en el archivo de configuración?":
           ["2", "Router_A (configuración) # service password-encryption"],
   "60. Un usuario emite un comando ping 2001:db8:face:39::10 y recibe una respuesta que incluye un código 3 . ¿Qué representa este código?":
