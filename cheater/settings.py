@@ -60,7 +60,7 @@ ROOT_URLCONF = "cheater.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / 'templates'],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -78,14 +78,24 @@ WSGI_APPLICATION = "cheater.wsgi.application"
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'cisco_cheater',
+#         'USER': 'admin',
+#         'PASSWORD': 'FqDcuEmkZn86bFzcV9j1J1jTtgBnYXU6',
+#         'HOST': 'dpg-d156nme3jp1c73fhistg-a',
+#         'PORT': '5432',
+#     }
+# }
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'cisco_cheater',
-        'USER': 'admin',
-        'PASSWORD': 'FqDcuEmkZn86bFzcV9j1J1jTtgBnYXU6',
-        'HOST': 'dpg-d156nme3jp1c73fhistg-a',
-        'PORT': '5432',
+        'NAME': 'cisco_cheater',       # Nombre de tu base de datos local
+        'USER': 'postgres',               # Usuario de PostgreSQL que creaste
+        'PASSWORD': '12345',           # Contraseña sencilla (solo para uso local)
+        'HOST': 'localhost',           # 'localhost' si es una instalación local
+        'PORT': '5432',                # Puerto por defecto de PostgreSQL
     }
 }
 
@@ -114,7 +124,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = "en-us"
 
-TIME_ZONE = "UTC"
+TIME_ZONE = 'America/Guayaquil'  # o 'America/Bogota'
 
 USE_I18N = True
 
