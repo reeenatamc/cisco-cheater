@@ -1007,5 +1007,13 @@
   "60. Un administrador decide usar «Elizabeth» como contraseña en un enrutador recién instalado. ¿Qué declaración se aplica a la elección de contraseña?": [
     2,
     "Es débil porque utiliza información personal fácilmente encontrada."
-  ]
+  ],
+  "1. Haga coincidir cada debilidad con un ejemplo. (No se utilizan todas las opciones).":
+          ["", "debilidad tecnologica con un ingeniero de red // debilidad en la configuracion con al implementar // debilidad de la directiva con el administrador de la red"],
+  "Una el tipo de amenaza de seguridad de la información con la situación. No se utilizan todas las opciones.":
+          ["", "Robo de informacion con obtener documentos//Robo de identidad con Hacerse pasar por otra persona // Interrumpcion del servicio con Impedir que los usuarios // Perdida de datos con Instalar codigo"],
+  "Identifique los pasos necesarios para configurar un switch para SSH. El orden de la respuesta no es importante. (No se utilizan todas las opciones.)":
+          ["", "1. Crear un usuario local, 2. Generar claves RSA, 3. Configurar un nombre de dominio. 4. Usar el comando login local. 5. Usar el comando password cisco, 5. Usar el comando transport input ssh"],
+  "Haga coincidir la descripción con el tipo de filtrado del firewall. (No se utilizan todas las opciones).":
+          ["","Inspeccion de paquetes con estado con impide o permite el acceso en funcion de si el trafico responde // Filtrado de URL con impide o permite el acceso basado en direcciones web o palabras clave // Filtrado de aplicaciones con impide o permite el acceso en funcion de los numeros de puertos // Filtrado de paquetes con en funcion de la direcciones ip o MAC "]
 }
