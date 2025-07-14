@@ -556,464 +556,472 @@
     "Puerto inalcanzable"
   ],
   "1. ¿Cuáles son los tres campos que se utilizan en el encabezado de un segmento UDP? (Elija tres).": [
-    "2, 4, 5",
+    " ",
     "Longitud. Puerto de origen. Checksum"
   ],
   "2. ¿Cuáles son dos roles de la capa de transporte en la comunicación de datos en una red? (Escoja dos opciones).": [
-    "1, 2",
+    " ",
     "Identificar la aplicación apropiada para cada transmisión de comunicación. Hacer un seguimiento de las transmisiones de comunicación individuales entre las aplicaciones en los hosts de origen y de destino."
   ],
   "3. ¿Qué información utiliza TCP para rearmar y reordenar los segmentos recibidos?": [
-    3,
+    " ",
     "Números de secuencia"
   ],
   "4. ¿Qué información importante se agrega al encabezado de la capa de transporte TCP/IP para asegurar la comunicación y la conectividad a un dispositivo de red remoto?": [
-    2,
+    " ",
     "Números de puerto de destino y origen"
   ],
   "5. ¿Cuáles son las dos características relacionadas con las sesiones UDP? Elija dos opciones.": [
-    "3, 4",
+    " ",
     "Los dispositivos de destino reciben el tráfico con una demora mínima.. No se realiza el acuse de recibo de los datos recibidos."
   ],
   "7. ¿Cuál es el indicador del encabezado TCP que se utiliza en respuesta a un FIN recibido para finalizar la conectividad entre dos dispositivos de red?": [
-    4,
+    " ",
     "ACK"
   ],
   "8. ¿Qué protocolo o servicio utiliza UDP para una comunicación cliente a servidor y TCP para la comunicación servidor a servidor?": [
-    4,
+    " ",
     "DNS"
   ],
   "9. ¿Qué clase de puerto se le debe solicitar a la IANA para utilizar con una aplicación específica?": [
-    2,
+    " ",
     "Puerto registrado"
   ],
   "10. ¿Cuáles son los tres protocolos de la capa de aplicación que utilizan TCP? Elija tres opciones.": [
-    "1, 4, 5",
+    " ",
     "SMTP. HTTP. FTP"
   ],
   "11. ¿Cuáles son las tres afirmaciones que caracterizan el protocolo UDP? Elija tres opciones.": [
-    "1, 3, 6",
+    " ",
     "UDP proporciona funciones básicas sin conexión de la capa de transporte.. UDP es un protocolo de sobrecarga baja que no proporciona mecanismo de control del flujo o secuenciación.. UDP se basa en los protocolos de la capa de aplicación para la detección de errores."
   ],
   "12. ¿Qué dos campos se incluyen en el encabezado TCP pero no en el encabezado UDP? (Escoja dos opciones).": [
-    "2, 3",
+    " ",
     "ventana. número de secuencia"
   ],
   "13. ¿Qué campo en el encabezado TCP indica el estado del three-way handshake?": [
-    3,
+    " ",
     "control bits"
   ],
   "14. ¿Cómo se utilizan los números de puerto en el proceso de encapsulación TCP/IP?": [
-    4,
+    " ",
     "Si se producen varias conversaciones que utilizan el mismo servicio, el número de puerto de origen se utiliza para realizar un seguimiento de las conversaciones separadas."
   ],
   "15. ¿Qué tres afirmaciones describen un mensaje de descubrimiento de DHCP? (Elija tres).": [
-    "1, 3, 4",
+    " ",
     "Todos los hosts reciben el mensaje pero sólo responde un servidor de DHCP.. La dirección IP de destino es 255.255.255.255.. El mensaje proviene de un cliente que busca una dirección IP."
   ],
   "16. ¿Qué dos protocolos pueden utilizar los dispositivos en el proceso de solicitud que implica el envío de un correo electrónico? (Elija dos opciones).": [
-    "5, 6",
+    " ",
     "SMTP. DNS"
   ],
   "17. Cual capa del modelo OSI proporcionar la interfaz entre las aplicaciones y la red subyacente a través de la cual se transmiten los mensajes?": [
-    4,
+    " ",
     "Aplicación"
   ],
   "18. ¿Cuál de las siguientes es una característica clave del modelo de red entre pares?": [
-    3,
+    " ",
     "Uso compartido de recursos sin un servidor exclusivo"
   ],
   "19. La capa de aplicación del modelo TCP/IP realiza las funciones de tres capas del modelo OSI. ¿De cuáles? Elija tres opciones.": [
-    "2, 4, 7",
+    " ",
     "Sesión. Aplicación. Presentación"
   ],
   "20. ¿Cuál es la capa del modelo TCP/IP que se utiliza para dar formato a los datos, comprimirlos y cifrarlos?": [
-    3,
+    " ",
     "Aplicación"
   ],
   "21. Una compañía fabricante se suscribe a ciertos servicios alojados por parte de su ISP. Entre los servicios requeridos, se incluyen el alojamiento web, la transferencia de archivos y el correo electrónico. ¿Qué protocolos representan estas tres aplicaciones clave? Elija tres opciones.": [
-    "2, 3, 5",
+    " ",
     "SMTP. FTP. HTTP"
   ],
   "22. ¿Qué protocolo de la capa de aplicación utiliza mensajes de tipo GET, PUT y POST?": [
-    4,
+    " ",
     "HTTP"
   ],
   "23. ¿Cuáles son los tres protocolos que funcionan en la capa de aplicación del modelo TCP/IP? (Elija tres opciones).": [
-    "1, 2, 3",
+    " ",
     "DHCP. FTP. POP3"
   ],
   "24. ¿Cuál de estas situaciones describe una función proporcionada por la capa de transporte?": [
-    3,
+    " ",
     "Un alumno tiene dos ventanas de explorador Web abiertas a fin de acceder a dos sitios Web. La capa de transporte garantiza que se entregue la página Web correcta a la ventana de explorador adecuada."
   ],
   "25. ¿Cuáles son las tres capas del modelo OSI que proporcionan servicios de red similares a los que proporciona la capa de aplicación del modelo TCP/IP? (Elija tres).": [
-    "2, 4, 6",
+    " ",
     "Capa de presentación. Capa de aplicación. Capa de sesión"
   ],
   "26. Un cliente crea un paquete para enviar a un servidor. El cliente está solicitando el servicio SSH. ¿Qué número se utilizará como número de puerto de destino en el paquete de envío?": [
-    3,
+    " ",
     "22"
   ],
   "27. Un equipo que se está comunicando con un servidor web tiene un tamaño de ventana TCP de 6.000 bytes al enviar datos y un tamaño de paquete de 1.500 bytes. ¿Qué byte de información confirmará el servidor web después de haber recibido tres paquetes de datos del PC?": [
-    1,
+    " ",
     "4501"
   ],
   "28. ¿Cuál de los siguientes es un ejemplo de comunicación de red que utiliza el modelo cliente-servidor?": [
-    1,
+    " ",
     "Una estación de trabajo inicia una solicitud de DNS cuando el usuario escribe www.cisco.com en la barra de direcciones de un explorador Web."
   ],
   "29. ¿En qué modelo de red se utilizarían eDonkey, eMule, BitTorrent, Bitcoin y LionShare?": [
-    2,
+    " ",
     "Red entre pares"
   ],
   "30. ¿Qué aplicaciones o servicios permiten que los hosts actúen como cliente y servidor al mismo tiempo?": [
-    2,
+    " ",
     "Aplicaciones P2P"
   ],
   "31. ¿Cuál es la función del mensaje HTTP GET?": [
-    4,
+    " ",
     "Solicitar una página HTML de un servidor web."
   ],
   "32. ¿Qué protocolo utiliza un cliente para comunicarse en forma segura con el servidor web?": [
-    2,
+    " ",
     "HTTPS"
   ],
   "33. Una PC está descargando un archivo grande de un servidor. La ventana TCP es de 1000 bytes. El servidor envía el archivo utilizando segmentos de100 bytes. ¿Cuántos segmentos enviará el servidor antes de requerir un acuse de recibo de la PC?": [
-    1,
+    " ",
     "10 segmentos"
   ],
   "34. ¿Cuál de las siguientes es una característica de UDP?": [
-    4,
+    " ",
     "UDP rearma los datagramas recibidos en el orden en que se recibieron."
   ],
   "35. ¿Por qué HTTP utiliza TCP como protocolo de la capa de transporte?": [
-    3,
+    " ",
     "Porque HTTP requiere entrega confiable."
   ],
   "36. ¿Qué tipos de aplicaciones son los más adecuados para el uso de UDP? (Escoja dos opciones).": [
-    "2, 4",
+    " ",
     "Aplicaciones que pueden tolerar cierta pérdida de datos, pero requieren demoras breves o que no haya demoras.. aplicaciones que manejan la confiabilidad por su cuenta."
   ],
   "37. ¿Cuáles de las siguientes son tres responsabilidades de la capa de transporte? (Elija tres opciones.)": [
-    "1, 4, 6",
+    " ",
     "Identificar las aplicaciones y los servicios que deben manejar los datos transmitidos en el servidor y el cliente.. Cumplir con los requisitos de confiabilidad de las aplicaciones, si corresponde.. Realizar la multiplexación de varias transmisiones de comunicación desde muchos usuarios o aplicaciones en la misma red."
   ],
   "38. ¿Cuál de los siguientes enunciados sobre el protocolo de bloque de mensajes del servidor es verdadero?": [
-    1,
+    " ",
     "Los clientes establecen una conexión a largo plazo con los servidores."
   ],
   "39. ¿Qué modelo de red se utiliza cuando un autor carga el documento de un capítulo al servidor de archivos de una editorial?": [
-    2,
+    " ",
     "Cliente/servidor"
   ],
   "40. ¿Qué tienen en común los modelos de red entre pares y de cliente/servidor?": [
-    3,
+    " ",
     "Ambos modelos admiten dispositivos en el papel de servidor y de cliente."
   ],
   "41. ¿Cuál de los siguientes es un protocolo común que se usa con aplicaciones entre pares como WireShare, Bearshare y Shareaza?": [
-    3,
+    " ",
     "Gnutella"
   ],
   "42. ¿Cuál es una de las ventajas de usar SMB en lugar de FTP?": [
-    4,
+    " ",
     "Los clientes SMB pueden establecer una conexión a largo plazo con el servidor."
   ],
   "43. ¿Qué tipo de información contiene un registro MX de DNS?": [
-    3,
+    " ",
     "El nombre de dominio asignado a los servidores de intercambio de correos"
   ],
   "44. Un equipo que se está comunicando con un servidor web tiene un tamaño de ventana TCP de 6.000 bytes al enviar datos y un tamaño de paquete de 1.500 bytes. ¿Qué byte de información confirmará el servidor web después de haber recibido cuatro paquetes de datos del PC?": [
-    3,
+    " ",
     "6001"
   ],
   "45. Un cliente crea un paquete para enviar a un servidor. El cliente está solicitando el servicio POP3. ¿Qué número se utilizará como número de puerto de destino en el paquete de envío?": [
-    3,
+    " ",
     "110"
   ],
   "46. ¿Qué hace un cliente cuando tiene datagramas UDP para enviar?": [
-    2,
+    " ",
     "Simplemente envía los datagramas."
   ],
   "47. ¿Cuáles son dos características de una red entre pares? (Escoja dos opciones).": [
-    "2, 5",
+    " ",
     "Uso compartido de recursos sin un servidor exclusivo. recursos descentralizados"
   ],
   "48. Un equipo que se está comunicando con un servidor web tiene un tamaño de ventana TCP de 6.000 bytes al enviar datos y un tamaño de paquete de 1.500 bytes. ¿Qué byte de información confirmará el servidor web después de haber recibido dos paquetes de datos del PC?": [
-    1,
+    " ",
     "3001"
   ],
   "49. Un cliente crea un paquete para enviar a un servidor. El cliente solicita el servicio SNMP. ¿Qué número se utilizará como número de puerto de destino en el paquete de envío?": [
-    4,
+    " ",
     "161"
   ],
   "50. ¿En qué dos situaciones se prefiere el protocolo de transporte UDP en lugar del TCP? Elija dos opciones.": [
-    "1, 2",
+    " ",
     "Cuando las aplicaciones no necesitan garantizar la distribución de los datos. Cuando se necesita un mecanismo de distribución rápido"
   ],
   "51. ¿Cuál de estos factores determina el tamaño de la ventana TCP?": [
-    1,
+    " ",
     "La cantidad de datos que el destino puede procesar por vez"
   ],
   "52. Un cliente crea un paquete para enviar a un servidor. El cliente está solicitando el servicio SMTP. ¿Qué número se utilizará como número de puerto de destino en el paquete de envío?": [
-    2,
+    " ",
     "25"
   ],
   "53. Un cliente crea un paquete para enviar a un servidor. El cliente está solicitando el servicio FTP. ¿Qué número se utilizará como número de puerto de destino en el paquete de envío?": [
-    4,
+    " ",
     "21"
   ],
   "54. Un cliente crea un paquete para enviar a un servidor. El cliente está solicitando el servicio HTTP. ¿Qué número se utilizará como número de puerto de destino en el paquete de envío?": [
-    1,
+    " ",
     "80"
   ],
   "55. Un cliente crea un paquete para enviar a un servidor. El cliente está solicitando el servicio TFTP. ¿Qué número se utilizará como número de puerto de destino en el paquete de envío?": [
-    1,
+    " ",
     "69"
   ],
   "56. Un cliente crea un paquete para enviar a un servidor. El cliente está solicitando el servicio telnet. ¿Qué número se utilizará como número de puerto de destino en el paquete de envío?": [
-    "2, 1, 1",
+    " ",
     "23. Aplicación. 443"
   ],
   "57. Cuál es la capa del modelo OSI que puede proporcionar la interfaz entre las aplicaciones y la red subyacente a través de la cual se transmiten los mensajes?": [
-    1,
+    " ",
     "Aplicacion"
   ],
   "Un cliente crea un paquete para enviar a un servidor. El cliente está solicitando el servicio HTTPS. ¿Qué número se utilizará como número de puerto de destino en el paquete de envío?": [
-    1,
+    " ",
     "443"
   ],
   "Una aplicación cliente necesita finalizar una sesión de comunicación TCP con un servidor. Coloque los pasos del proceso de finalización en el orden en que suceden. (No se utilizan todas las opciones.)": [],
   "3. ¿Cuál ejemplo de código malicioso se clasificaría como un caballo de Troya?": [
-    2,
+    " ",
     "Malware escrito para parecerse a un videojuego"
   ],
   "4. ¿Qué ataque involucra el compromiso de datos , el cual ocurre entre dos puntos finales?": [
-    3,
+    " ",
     "Ataque man-in-the-middle"
   ],
   "5. ¿Qué tipo de ataque implica que un atacante intente recopilar información sobre una red para identificar vulnerabilidades?": [
-    3,
+    " ",
     "Reconocimiento"
   ],
   "7. ¿Cuál es el propósito de la función de autenticación de seguridad de red?": [
-    1,
+    " ",
     "Requerir que los usuarios prueben quiénes son."
   ],
   "8. ¿Cuál es la característica del firewall que se utiliza para asegurar que los paquetes que ingresan a una red sean respuestas legítimas a solicitudes originadas en los hosts internos?": [
-    1,
+    " ",
     "Inspección de paquetes con estado"
   ],
   "10. ¿Qué característica de SSH lo hace más seguro que Telnet para la administración de dispositivos?": [
-    4,
+    " ",
     "información de inicio de sesión y datos cifrados"
   ],
   "11. ¿Qué función cumple un IPS?": [
-    2,
+    " ",
     "Detección y bloqueo de ataques en tiempo real"
   ],
   "12. ¿Qué es una descripción exacta de redundancia?": [
-    1,
+    " ",
     "el diseño de la red para utilizar rutas múltiples entre los switches para garantizar que no haya ningún punto de falla"
   ],
   "13. Consulte la ilustración. Un administrador está probando la conectividad a un dispositivo remoto con la dirección IP 10.1.1.1. ¿Qué indica el resultado de este comando?": [
-    1,
+    " ",
     "Alguno de los routers en la ruta no tenía una ruta hacia el destino."
   ],
   "14. ¿Qué método se utiliza para enviar un mensaje ping especificando la dirección de origen para el ping?": [
-    4,
+    " ",
     "Ejecute el comando ping sin especificar una dirección IP de destino."
   ],
   "15. Un ingeniero de redes está analizando informes de una línea de base de red realizada recientemente. ¿Qué situación representaría un posible problema de latencia?": [
-    4,
+    " ",
     "Un aumento en los tiempos de respuesta de ping de host a host"
   ],
   "16. ¿Cuál de estas afirmaciones sobre los indicadores de ping de Cisco IOS es verdadera?": [
-    4,
+    " ",
     "La “U” indica que un router de la ruta no contenía una ruta hacia la dirección de destino y que el ping fue incorrecto."
   ],
   "17. Un técnico en redes emite el comando C:\\> tracert -6 www.cisco.com en un equipo con Windows. ¿Cuál es el propósito de la opción del comando -6 ?": [
-    3,
+    " ",
     "Obliga a que se utilice IPv6 para el seguimiento."
   ],
   "18. Un ping falla cuando se realiza desde el router R1 al router R2 conectado directamente. A continuación, el administrador de red procede a emitir el comando show cdp neighbors . ¿Por qué el administrador de red emitiría este comando si falló el ping entre los dos routers?": [
-    2,
+    " ",
     "El administrador de red desea verificar la conectividad de capa 2."
   ],
   "19. ¿Qué información acerca del router Cisco puede verificarse con el comando show version ?": [
-    3,
+    " ",
     "El valor del registro de configuración"
   ],
   "20. ¿Qué comando se debe utilizar en un router o switch Cisco para que los mensajes de registro puedan visualizarse en sesiones conectadas de forma remota a través de Telnet o SSH?": [
-    3,
+    " ",
     "terminal monitor"
   ],
   "21. ¿Qué comando puede ejecutar un administrador en un router Cisco para enviar mensajes de depuración a las líneas vty?": [
-    1,
+    " ",
     "terminal monitor"
   ],
   "22. Al seguir un enfoque estructurado de solución de problemas, un administrador de red identificó un problema de red después de una conversación con el usuario. ¿Cuál es el siguiente paso que debe tomar el administrador?": [
-    3,
+    " ",
     "Establecer una teoría de causas probables."
   ],
   "23. Un empleado se queja de que un PC con Windows no puede conectarse a Internet. Un técnico de red emite el comando ipconfig en el PC y se muestra una dirección IP de 169.254.10.3. ¿Qué conclusiones se pueden sacar? (Escoja dos opciones).": [
-    "2, 4",
+    " ",
     "El PC no puede ponerse en contacto con un servidor DHCP.. La PC está configurada para obtener una dirección IP automáticamente"
   ],
   "24. Consulte la ilustración. El host H3 tiene problemas para comunicarse con el host H1. El administrador de red sospecha que existe un problema con la estación de trabajo H3 y desea demostrar que no hay ningún problema con la configuración R2.¿Qué herramienta podría usar el administrador de red en el router R2 para demostrar que existe comunicación para alojar H1 desde la interfaz en R2, que es la interfaz que utiliza H3 cuando se comunica con redes remotas?": [
-    2,
+    " ",
     "Ping extendido"
   ],
   "25. Consulte la ilustración. La documentación de referencia para una pequeña empresa tenía estadísticas de tiempo de ida y vuelta ping de 36/97/132 entre hosts H1 y H3. Hoy, el administrador de red comprobó la conectividad haciendo ping entre los hosts H1 y H3, lo que resultó en un tiempo de ida y vuelta de 1458/2390/6066. ¿Qué indica esto al administrador de red?": [
-    1,
+    " ",
     "Algo está causando un retraso de tiempo entre las redes."
   ],
   "26. ¿Qué servicio de red asigna automáticamente direcciones IP a los dispositivos en la red?": [
-    3,
+    " ",
     "DHCP"
   ],
   "27. ¿Qué comando puede ejecutar un administrador para determinar qué interfaz utilizará un router para llegar a redes remotas?": [
-    4,
+    " ",
     "show ip route"
   ],
   "28. ¿Cuáles son las dos interfaces o los dos puertos en los que se puede mejorar la seguridad mediante la configuración de tiempos de espera de ejecución? (Elija dos).": [
-    "1, 2",
+    " ",
     "Puertos VTY. Puertos de consola"
   ],
   "29. Al configurar SSH en un router para implementar una gestión segura de red, un ingeniero de red ha emitido los comandos login local y transport input ssh line vty. ¿Qué tres acciones de configuración adicionales se deben realizar para completar la configuración SSH? (Escoja tres opciones).": [
-    "4, 5, 6",
+    " ",
     "Generar las claves RSA asimétricas.. Crear un base de datos de nombre de usuario y de contraseñas locales.. Configurar el nombre de dominio IP correcto."
   ],
   "30. ¿Cuál es la forma que se considera más eficaz para mitigar un ataque de gusano?": [
-    4,
+    " ",
     "Descargar actualizaciones de seguridad del proveedor del sistema operativo y aplicar parches a todos los sistemas vulnerables."
   ],
   "31. ¿Qué afirmación describe a los comandos ping y tracert ?": [
-    3,
+    " ",
     "tracert muestra cada salto, mientras que ping solo muestra una respuesta de destino."
   ],
   "32. Un técnico debe registrar las configuraciones actuales de todos los dispositivos de red de una universidad, incluidos los de los edificios que se encuentran en otra ubicación. ¿Cuál sería el mejor protocolo para tener acceso a los dispositivos de red de forma segura?": [
-    2,
+    " ",
     "SSH"
   ],
   "33. Abra la actividad de PT. Complete las instrucciones de la actividad y luego responda la pregunta.¿Cual comando debe ser ingresado en el router para terminar la configuración de SSH?": [
-    2,
+    " ",
     "transport input ssh"
   ],
   "34. Un administrador decide usar «admin» como contraseña en un enrutador recién instalado. ¿Qué declaración se aplica a la elección de contraseña?": [
-    1,
+    " ",
     "Es débil porque a menudo es la contraseña predeterminada en los nuevos dispositivos."
   ],
   "35. Un usuario quiere saber la dirección IP de la PC. ¿Cuál es el mejor comando para realizar la tarea?": [
-    3,
+    " ",
     "ipconfig"
   ],
   "36. Cuando se aplica a un router, ¿cuál de estos comandos ayudaría a mitigar los ataques a contraseñas por fuerza bruta contra el router?": [
-    3,
+    " ",
     "login block-for 60 attempts 5 within 60"
   ],
   "37. ¿Cuál es la ventaja de utilizar SSH en lugar de Telnet?": [
-    4,
+    " ",
     "SSH proporciona comunicaciones seguras para acceder a los hosts."
   ],
   "38. Un administrador de red está actualizando una red de pequeñas empresas para dar alta prioridad al tráfico de aplicaciones en tiempo real. ¿Qué dos tipos de servicios de red intenta acomodar el administrador de red? (Escoja dos opciones).": [
-    "3, 5",
+    " ",
     "Voz. Video"
   ],
   "39. ¿Cuál es el propósito de una pequeña empresa que utiliza una utilidad de analizador de protocolos para capturar el tráfico de red en los segmentos de red en los que la empresa está considerando una actualización de red?": [
-    1,
+    " ",
     "para documentar y analizar los requisitos de tráfico de red en cada segmento de red"
   ],
   "40. Un usuario informa la falta de conectividad de red. El técnico toma control del equipo del usuario y los intentos de hacer ping a otras computadoras de la red fallan. El técnico hace ping al gateway predeterminado, pero también falla. ¿Qué se puede determinar con certeza sobre los resultados de estas pruebas?": [
-    1,
+    " ",
     "Nada se puede determinar con certeza en este momento."
   ],
   "41. ¿Para qué usaría la utilidad tracert un administrador de red?": [
-    1,
+    " ",
     "Para identificar dónde se perdió o retrasó un paquete en una red."
   ],
   "42. Los usuarios se están quejando porque no pueden navegar por determinados sitios web en Internet. Un administrador puede hacer ping correctamente a un servidor web mediante su dirección IP, pero no puede navegar hasta el nombre de dominio del sitio web. ¿Qué herramienta de solución de problemas sería la más útil para determinar dónde está el problema?": [
-    2,
+    " ",
     "nslookup"
   ],
   "43. Un administrador decide usar «12345678! «como contraseña en un router recién instalado. ¿Qué declaración se aplica a la elección de contraseña?": [
-    1,
+    " ",
     "Es débil porque usa una serie de números o letras."
   ],
   "44. Un técnico de red está solucionando un problema y necesita verificar todas las direcciones de interfaz IPv6 en un router. ¿Cuál es el mejor comando para realizar la tarea?": [
-    4,
+    " ",
     "show ipv6 interface"
   ],
   "45. ¿Cuál es la diferencia entre un virus y un gusano?": [
-    3,
+    " ",
     "Los gusanos se autoreplican, pero los virus no."
   ],
   "46. Un ingeniero de redes está resolviendo problemas de conectividad entre routers y switches de Cisco interconectados. ¿Qué comando debe utilizar el ingeniero para encontrar la información de la dirección IP, el nombre de host y la versión de IOS de los dispositivos de red vecinos?": [
-    2,
+    " ",
     "show cdp neighbors detail"
   ],
   "47. Un administrador decide usar «PR3s!d7n&0″ como contraseña en un router recién instalado. ¿Qué declaración se aplica a la elección de contraseña?": [
-    2,
+    " ",
     "Es fuerte porque utiliza un mínimo de 10 números, letras y caracteres especiales."
   ],
   "48. Un técnico de soporte necesita conocer la dirección IP de la interfaz inalámbrica en un MAC. ¿Cuál es el mejor comando para realizar la tarea?": [
-    2,
+    " ",
     "ipconfig getifaddr es0"
   ],
   "49. Un usuario está rediseñando una red para una pequeña empresa y desea garantizar la seguridad a un precio razonable. El usuario implementa un nuevo firewall sensible a las aplicaciones con capacidades de detección de intrusiones en la conexión ISP. El usuario instala un segundo firewall para separar la red de la empresa de la red pública. Además, el usuario instala un IPS en la red interna de la empresa. ¿Qué enfoque está implementando el usuario?": [
-    2,
+    " ",
     "en capas"
   ],
   "50. Sólo los empleados conectados a interfaces IPv6 tienen dificultades para conectarse a redes remotas. El analista desea comprobar que se ha habilitado el enrutamiento IPv6. ¿Cuál es el mejor comando para realizar la tarea?": [
-    1,
+    " ",
     "show running-config"
   ],
   "51. Un profesor tiene dificultades para conectar su PC a la red del aula. Necesita verificar que una puerta de enlace predeterminada esté configurada correctamente. ¿Cuál es el mejor comando para realizar la tarea?": [
-    2,
+    " ",
     "ipconfig"
   ],
   "52. Un administrador decide usar «contraseña» como contraseña en un enrutador recién instalado. ¿Qué declaración se aplica a la elección de contraseña?": [
-    2,
+    " ",
     "Es una contraseña que se utiliza comúnmente."
   ],
   "53. Los estudiantes que están conectados al mismo switch tienen tiempos de respuesta más lentos que los normales. El administrador sospecha un problema de configuración dúplex. ¿Cuál es el mejor comando para realizar la tarea?": [
-    4,
+    " ",
     "show interfaces"
   ],
   "54. Un administrador decide usar «Feb121978″ como contraseña en un enrutador recién instalado. ¿Qué declaración se aplica a la elección de contraseña?": [
-    2,
+    " ",
     "Es débil porque utiliza información personal fácilmente encontrada."
   ],
   "55. Un estudiante quiere guardar una configuración de router en NVRAM. ¿Cuál es el mejor comando para realizar la tarea?": [
-    3,
+    " ",
     "copy running-config startup-config"
   ],
   "56. Un administrador está solucionando problemas de conectividad y necesita determinar la dirección IP de un sitio web. ¿Cuál es el mejor comando a utilizar para realizar la tarea?": [
-    1,
+    " ",
     "nslookup"
   ],
   "57. Un administrador decide usar «WhatAreyouwaiting4» como contraseña en un router recién instalado. ¿Qué declaración se aplica a la elección de la contraseña?": [
-    4,
+    " ",
     "Es débil porque es una palabra que se encuentra fácilmente en el diccionario."
   ],
   "58. Un administrador decide usar «Robert» como contraseña en un enrutador recién instalado. ¿Qué declaración se aplica a la elección de contraseña?": [
-    1,
+    " ",
     "Es débil porque utiliza información personal fácil de encontrar."
   ],
   "59. Un técnico de red está solucionando un problema y necesita verificar las direcciones IP de todas las interfaces de un router. ¿Cuál es el mejor comando para realizar la tarea?": [
-    1,
+    " ",
     "show ip interface brief"
   ],
   "60. Un administrador decide usar «Elizabeth» como contraseña en un enrutador recién instalado. ¿Qué declaración se aplica a la elección de contraseña?": [
-    2,
+    " ",
     "Es débil porque utiliza información personal fácilmente encontrada."
   ],
-  "1. Haga coincidir cada debilidad con un ejemplo. (No se utilizan todas las opciones).":
-          ["", "debilidad tecnologica con un ingeniero de red // debilidad en la configuracion con al implementar // debilidad de la directiva con el administrador de la red"],
-  "Una el tipo de amenaza de seguridad de la información con la situación. No se utilizan todas las opciones.":
-          ["", "Robo de informacion con obtener documentos//Robo de identidad con Hacerse pasar por otra persona // Interrumpcion del servicio con Impedir que los usuarios // Perdida de datos con Instalar codigo"],
-  "Identifique los pasos necesarios para configurar un switch para SSH. El orden de la respuesta no es importante. (No se utilizan todas las opciones.)":
-          ["", "1. Crear un usuario local, 2. Generar claves RSA, 3. Configurar un nombre de dominio. 4. Usar el comando login local. 5. Usar el comando password cisco, 5. Usar el comando transport input ssh"],
-  "Haga coincidir la descripción con el tipo de filtrado del firewall. (No se utilizan todas las opciones).":
-          ["","Inspeccion de paquetes con estado con impide o permite el acceso en funcion de si el trafico responde // Filtrado de URL con impide o permite el acceso basado en direcciones web o palabras clave // Filtrado de aplicaciones con impide o permite el acceso en funcion de los numeros de puertos // Filtrado de paquetes con en funcion de la direcciones ip o MAC "]
+  "1. Haga coincidir cada debilidad con un ejemplo. (No se utilizan todas las opciones).": [
+    " ",
+    "debilidad tecnologica con un ingeniero de red // debilidad en la configuracion con al implementar // debilidad de la directiva con el administrador de la red"
+  ],
+  "Una el tipo de amenaza de seguridad de la información con la situación. No se utilizan todas las opciones.": [
+    " ",
+    "Robo de informacion con obtener documentos//Robo de identidad con Hacerse pasar por otra persona // Interrumpcion del servicio con Impedir que los usuarios // Perdida de datos con Instalar codigo"
+  ],
+  "Identifique los pasos necesarios para configurar un switch para SSH. El orden de la respuesta no es importante. (No se utilizan todas las opciones.)": [
+    " ",
+    "1. Crear un usuario local, 2. Generar claves RSA, 3. Configurar un nombre de dominio. 4. Usar el comando login local. 5. Usar el comando password cisco, 5. Usar el comando transport input ssh"
+  ],
+  "Haga coincidir la descripción con el tipo de filtrado del firewall. (No se utilizan todas las opciones).": [
+    " ",
+    "Inspeccion de paquetes con estado con impide o permite el acceso en funcion de si el trafico responde // Filtrado de URL con impide o permite el acceso basado en direcciones web o palabras clave // Filtrado de aplicaciones con impide o permite el acceso en funcion de los numeros de puertos // Filtrado de paquetes con en funcion de la direcciones ip o MAC "
+  ]
 }
