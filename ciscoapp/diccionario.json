@@ -783,7 +783,8 @@
     " ",
     "443"
   ],
-  "Una aplicación cliente necesita finalizar una sesión de comunicación TCP con un servidor. Coloque los pasos del proceso de finalización en el orden en que suceden. (No se utilizan todas las opciones.)": [],
+  "Una aplicación cliente necesita finalizar una sesión de comunicación TCP con un servidor. Coloque los pasos del proceso de finalización en el orden en que suceden. (No se utilizan todas las opciones.)":
+  ["", "Paso 1: El cliente envia un FIN. Paso 2: El servidor envia un ACK. Paso 3: El servidor envia un FIN. Paso 4: El cliente envia un ACK"],
   "3. ¿Cuál ejemplo de código malicioso se clasificaría como un caballo de Troya?": [
     " ",
     "Malware escrito para parecerse a un videojuego"
