@@ -209,27 +209,51 @@ import dj_database_url
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ===================== SECURITY =====================
-SECRET_KEY = "django-insecure-1^pagal2tm&(yhx+!$^)60q*2y2a$e6-5m&_hxc-@as2+8@s3_"
+SECRET_KEY = os.environ.get(
+    "DJANGO_SECRET_KEY",
+    "django-insecure-1^pagal2tm&(yhx+!$^)60q*2y2a$e6-5m&_hxc-@as2+8@s3_"  # fallback para local
+)
 
-# Cambiar a False en producción
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
+# ===================== ALLOWED HOSTS =====================
 ALLOWED_HOSTS = [
     "localhost",
     "127.0.0.1",
-    os.environ.get("RAILWAY_STATIC_URL", ""),
-    os.environ.get("RAILWAY_PUBLIC_DOMAIN", ""),
     "web-production-064ec.up.railway.app",
     "web-production-0481a.up.railway.app",
     "cisco-cheater.onrender.com",
+    ".up.railway.app",  # Allow all Railway subdomains
+    ".railway.app",     # Allow Railway domains
 ]
 
 # ===================== CSRF =====================
+# Get Railway domain from environment variable if available
+RAILWAY_PUBLIC_DOMAIN = os.environ.get("RAILWAY_PUBLIC_DOMAIN", "")
+RAILWAY_STATIC_URL = os.environ.get("RAILWAY_STATIC_URL", "")
+
 CSRF_TRUSTED_ORIGINS = [
     "https://web-production-064ec.up.railway.app",
     "https://web-production-0481a.up.railway.app",
     "https://cisco-cheater.onrender.com",
+    "http://web-production-0481a.up.railway.app",  # Add HTTP version as backup
+    "web-production-0481a.up.railway.app",  # Add without protocol
 ]
+
+# Add Railway domains from environment variables
+if RAILWAY_PUBLIC_DOMAIN:
+    CSRF_TRUSTED_ORIGINS.extend([
+        f"https://{RAILWAY_PUBLIC_DOMAIN}",
+        f"http://{RAILWAY_PUBLIC_DOMAIN}",
+        RAILWAY_PUBLIC_DOMAIN,
+    ])
+
+if RAILWAY_STATIC_URL:
+    CSRF_TRUSTED_ORIGINS.extend([
+        f"https://{RAILWAY_STATIC_URL}",
+        f"http://{RAILWAY_STATIC_URL}",
+        RAILWAY_STATIC_URL,
+    ])
 
 # ===================== APPLICATIONS =====================
 INSTALLED_APPS = [
@@ -290,10 +314,10 @@ DATABASES = {
 
 # ===================== PASSWORD VALIDATION =====================
 AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator",},
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator",},
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator",},
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator",},
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
 
 # ===================== INTERNATIONALIZATION =====================
@@ -305,9 +329,7 @@ USE_TZ = True
 # ===================== STATIC FILES =====================
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
-STATICFILES_DIRS = [
-    BASE_DIR / 'static',
-]
+STATICFILES_DIRS = [BASE_DIR / 'static']
 
 if not DEBUG:
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
@@ -316,7 +338,7 @@ if not DEBUG:
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # ===================== CORS =====================
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = False
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
