@@ -165,6 +165,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:8000",
     "http://127.0.0.1:8000",
     "https://cisco-cheater.onrender.com",
+    "https://web-production-064ec.up.railway.app",
 ]
 
 CORS_ALLOWED_METHODS = [
