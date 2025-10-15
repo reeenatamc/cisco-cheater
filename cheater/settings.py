@@ -367,3 +367,16 @@ CORS_ALLOWED_HEADERS = [
     "x-csrftoken",
     "x-requested-with",
 ]
+
+# ===================== SECURITY HEADERS =====================
+# Configure security headers to fix COOP issues
+SECURE_CROSS_ORIGIN_OPENER_POLICY = 'same-origin-allow-popups'
+SECURE_REFERRER_POLICY = 'strict-origin-when-cross-origin'
+
+# Force HTTPS in production
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+    SECURE_HSTS_SECONDS = 31536000  # 1 year
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
