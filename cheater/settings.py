@@ -237,7 +237,6 @@ CSRF_TRUSTED_ORIGINS = [
     "https://web-production-0481a.up.railway.app",
     "https://cisco-cheater.onrender.com",
     "http://web-production-0481a.up.railway.app",  # Add HTTP version as backup
-    "web-production-0481a.up.railway.app",  # Add without protocol
 ]
 
 # Add Railway domains from environment variables
