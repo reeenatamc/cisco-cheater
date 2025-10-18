@@ -1,9 +1,13 @@
 import json
 import os
 from datetime import datetime
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.views.decorators.csrf import csrf_exempt
 from .models import ActivationKey
+
+
+def home(request):
+    return HttpResponse("you never gonna catch me hahahahaha")
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 json_path = os.path.join(BASE_DIR, 'diccionario.json')
