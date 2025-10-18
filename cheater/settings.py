@@ -33,8 +33,7 @@ ALLOWED_HOSTS = [
     os.environ.get("RAILWAY_STATIC_URL", ""),
     os.environ.get("RAILWAY_PUBLIC_DOMAIN", ""),
     "web-production-064ec.up.railway.app",
-    "https://web-production-0481a.up.railway.app",
-    "'0.0.0.0"
+    "feuoir.com"
 ]
 # Application definition
 
