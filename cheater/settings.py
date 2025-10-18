@@ -28,6 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     "localhost",
+    "104.248.177.44",
     "127.0.0.1",
     os.environ.get("RAILWAY_STATIC_URL", ""),
     os.environ.get("RAILWAY_PUBLIC_DOMAIN", ""),
