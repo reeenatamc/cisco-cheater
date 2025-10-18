@@ -18,9 +18,10 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from ciscoapp.cheatmain import buscar, activate, verify_activation
+from ciscoapp.cheatmain import buscar, activate, verify_activation, home
 
 urlpatterns = [
+    path("", home, name="home"),
     path("admin/", admin.site.urls),
     path('buscar/', buscar, name='buscar'),
     path('activate/', activate, name='activate'),
