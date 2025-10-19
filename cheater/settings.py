@@ -393,3 +393,118 @@ SESSION_COOKIE_SECURE = True
 # -------------------------
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
+# -------------------------
+from django.urls import reverse_lazy
+from django.utils.translation import gettext_lazy as _
+from django.templatetags.static import static
+
+UNFOLD = {
+    "SITE_TITLE": "cisco-cheater admin",
+    "SITE_HEADER": "cisco cheater",
+    "SITE_SUBHEADER": "renata xd",
+    "SITE_URL": "/",
+    "SITE_SYMBOL": "bolt",  # Relámpago - súper cool
+    "SHOW_HISTORY": True,
+    "SHOW_VIEW_ON_SITE": True,
+    "SHOW_BACK_BUTTON": False,
+    "THEME": "light",  # Tema claro
+    "BORDER_RADIUS": "8px",
+    "COLORS": {
+        "primary": {
+            "50": "#fefae0",   # fefae0 - crema claro
+            "100": "#faedcd",  # faedcd - beige claro
+            "200": "#e9edc9",  # e9edc9 - verde menta claro
+            "300": "#ccd5ae",  # ccd5ae - verde menta
+            "400": "#d4a373",  # d4a373 - marrón dorado
+            "500": "#d4a373",  # d4a373 - marrón dorado (principal)
+            "600": "#b8956a",  # versión más oscura
+            "700": "#9c7a5a",  # versión más oscura
+            "800": "#80604a",  # versión más oscura
+            "900": "#64453a",  # versión más oscura
+            "950": "#482a2a",  # versión más oscura
+        },
+        "base": {
+            "50": "#fefae0",   # fefae0 - crema claro
+            "100": "#faedcd",  # faedcd - beige claro
+            "200": "#e9edc9",  # e9edc9 - verde menta claro
+            "300": "#ccd5ae",  # ccd5ae - verde menta
+            "400": "#d4a373",  # d4a373 - marrón dorado
+            "500": "#d4a373",  # d4a373 - marrón dorado
+            "600": "#b8956a",  # versión más oscura
+            "700": "#9c7a5a",  # versión más oscura
+            "800": "#80604a",  # versión más oscura
+            "900": "#64453a",  # versión más oscura
+            "950": "#482a2a",  # versión más oscura
+        },
+        "font": {
+            "subtle-light": "var(--color-base-600)",
+            "subtle-dark": "var(--color-base-400)",
+            "default-light": "var(--color-base-700)",
+            "default-dark": "var(--color-base-300)",
+            "important-light": "var(--color-base-900)",
+            "important-dark": "var(--color-base-100)",
+        },
+    },
+    "SIDEBAR": {
+        "show_search": True,
+        "show_all_applications": True,
+        "navigation": [
+            {
+                "title": _("Dashboard"),
+                "separator": True,
+                "items": [
+                    {
+                        "title": _("Overview"),
+                        "icon": "dashboard",
+                        "link": reverse_lazy("admin:index"),
+                    },
+                ],
+            },
+            {
+                "title": _("Activation Keys"),
+                "separator": True,
+                "items": [
+                    {
+                        "title": _("All Keys"),
+                        "icon": "key",
+                        "link": reverse_lazy("admin:ciscoapp_activationkey_changelist"),
+                    },
+                ],
+            },
+            {
+                "title": _("User Management"),
+                "separator": True,
+                "items": [
+                    {
+                        "title": _("Users"),
+                        "icon": "people",
+                        "link": reverse_lazy("admin:auth_user_changelist"),
+                    },
+                    {
+                        "title": _("Groups"),
+                        "icon": "groups",
+                        "link": reverse_lazy("admin:auth_group_changelist"),
+                    },
+                ],
+            },
+            {
+                "title": _("Site"),
+                "separator": True,
+                "items": [
+                    {
+                        "title": _("Home Page"),
+                        "icon": "home",
+                        "link": "/",
+                    },
+                ],
+            },
+        ],
+    },
+    "LOGIN": {
+        "redirect_after": lambda request: reverse_lazy("admin:index"),
+    },
+    "STYLES": [
+        lambda request: static("admin/custom.css"),
+    ],
+}
+
