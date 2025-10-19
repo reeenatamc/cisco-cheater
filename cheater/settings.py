@@ -226,3 +226,11 @@ CORS_ALLOWED_HEADERS = [
     "x-csrftoken",
     "x-requested-with",
 ]
+
+CSRF_COOKIE_SECURE = True
+SESSION_COOKIE_SECURE = True
+
+# Si quieres permitir admin desde cualquier origen (solo testing)
+CSRF_TRUSTED_ORIGINS = [
+    "https://web-production-d583.up.railway.app"
+]
