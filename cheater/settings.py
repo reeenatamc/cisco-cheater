@@ -34,7 +34,7 @@ ALLOWED_HOSTS = [
     os.environ.get("RAILWAY_STATIC_URL", ""),
     os.environ.get("RAILWAY_PUBLIC_DOMAIN", ""),
     "web-production-064ec.up.railway.app",
-    "feuoir.com",
+    ".feuoir.com",
     "www.feuoir.com"
 ]
 # Application definition
@@ -97,11 +97,17 @@ WSGI_APPLICATION = "cheater.wsgi.application"
 #     }
 # }
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',  # Default path for SQLite DB
+#     }
+# }
+
+import dj_database_url
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',  # Default path for SQLite DB
-    }
+    'default': dj_database_url.config(default='sqlite:///db.sqlite3')
 }
 
 # DATABASES = {
@@ -184,6 +190,7 @@ CORS_ALLOWED_ORIGINS = [
     "https://cisco-cheater.onrender.com",
     "https://web-production-064ec.up.railway.app",
     "https://web-production-0481a.up.railway.app",
+    "https://feuoir.com"
 ]
 
 CORS_ALLOWED_METHODS = [
