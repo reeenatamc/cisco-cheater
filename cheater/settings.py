@@ -35,7 +35,8 @@ ALLOWED_HOSTS = [
     os.environ.get("RAILWAY_PUBLIC_DOMAIN", ""),
     "web-production-064ec.up.railway.app",
     ".feuoir.com",
-    "www.feuoir.com"
+    "www.feuoir.com",
+    "web-production-d583.up.railway.app"
 ]
 # Application definition
 
@@ -190,7 +191,8 @@ CORS_ALLOWED_ORIGINS = [
     "https://cisco-cheater.onrender.com",
     "https://web-production-064ec.up.railway.app",
     "https://web-production-0481a.up.railway.app",
-    "https://feuoir.com"
+    "https://feuoir.com",
+    "https://web-production-d583.up.railway.app"
 ]
 
 CORS_ALLOWED_METHODS = [
