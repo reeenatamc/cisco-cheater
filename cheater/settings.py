@@ -105,10 +105,21 @@ WSGI_APPLICATION = "cheater.wsgi.application"
 #     }
 # }
 
-import dj_database_url
+# import dj_database_url
+#
+# DATABASES = {
+#     'default': dj_database_url.config(default='sqlite:///db.sqlite3')
+# }
 
 DATABASES = {
-    'default': dj_database_url.config(default='sqlite:///db.sqlite3')
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'uTqosJfPREVyCHBerXjflrKaNFPCoFaB',
+        'HOST': 'switchyard.proxy.rlwy.net',
+        'PORT': '27212',
+    }
 }
 
 # DATABASES = {
