@@ -784,7 +784,7 @@
     "443"
   ],
   "Una aplicación cliente necesita finalizar una sesión de comunicación TCP con un servidor. Coloque los pasos del proceso de finalización en el orden en que suceden. (No se utilizan todas las opciones.)": [
-    "",
+    " ",
     "Paso 1: El cliente envia un FIN. Paso 2: El servidor envia un ACK. Paso 3: El servidor envia un FIN. Paso 4: El cliente envia un ACK"
   ],
   "3. ¿Cuál ejemplo de código malicioso se clasificaría como un caballo de Troya?": [
@@ -1028,573 +1028,855 @@
     "Inspeccion de paquetes con estado con impide o permite el acceso en funcion de si el trafico responde // Filtrado de URL con impide o permite el acceso basado en direcciones web o palabras clave // Filtrado de aplicaciones con impide o permite el acceso en funcion de los numeros de puertos // Filtrado de paquetes con en funcion de la direcciones ip o MAC "
   ],
   "1. Un administrador de red esté diseñando la disposición de una nueva red inalámbrica. ¿Cuáles son las tres áreas de importancia que se deben tener en cuenta al crear una red inalámbrica? (Elija tres).": [
-    "1, 3, 6",
+    " ",
     "Seguridad. Interferencia. Área de cobertura"
   ],
   "2. ¿Cuáles son los tres estándares comúnmente seguidos para construir e instalar cableado? (Escoja tres opciones).": [
-    "1, 2, 6",
+    " ",
     "longitudes de cable. clavijas. Tipos de conector"
   ],
   "3. ¿Qué tecnología inalámbrica tiene requisitos de baja potencia y de velocidad de transmisión de datos que la convierte en popular para las aplicaciones de automatización doméstica?": [
-    1,
+    " ",
     "ZigBee"
   ],
   "4. Un servidor recibe un paquete del cliente. El paquete tiene el número de puerto de destino 21. ¿Qué aplicación de servicio solicita el cliente?": [
-    1,
+    " ",
     "FTP"
   ],
   "5. ¿Cuáles son los dos protocolos que operan en la capa superior del modelo TCP/IP? (Elija dos opciones).": [
-    "2, 6",
+    " ",
     "DNS. POP"
   ],
   "6. Consulte la ilustración. Si la PC1 envía un paquete a la PC2 y se configuró el routing entre los dos routers, ¿qué hará el R1 con el encabezado de la trama de Ethernet conectado por la PC1?": [
-    3,
+    " ",
     "Eliminar el encabezado de Ethernet y configurar un nuevo encabezado de capa 2 antes de enviarlo a través de S0/0/0."
   ],
   "7. Un empleado de una gran corporación inicia sesión de forma remota en la empresa utilizando el nombre de usuario y la contraseña apropiados. El empleado está asistiendo a una importante videoconferencia con un cliente sobre una gran venta. Es importante que la calidad del video sea excelente durante la reunión. El empleado no sabe que después de un inicio de sesión exitoso, la conexión con el ISP de la empresa falló. La conexión secundaria, sin embargo, se activa en cuestión de segundos. La interrupción no fue notada por el empleado u otros empleados.": [
-    "3, 5, 6",
+    " ",
     "Seguridad. Calidad de servicio. Tolerancia a fallas"
   ],
   "8. ¿Cuál es la consecuencia de configurar un router con el comando de configuración global ipv6 unicast-routing ?": [
-    1,
+    " ",
     "Las interfaces de router habilitadas para IPv6 comienzan a enviar mensajes RA de ICMPv6."
   ],
   "9. ¿Cuál de las siguientes subredes incluiría la dirección 192.168.1.96 como dirección de host utilizable?": [
-    4,
+    " ",
     "192.168.1.64/26"
   ],
   "11. ¿Cuáles son las tres capas del modelo OSI que se asignan a la capa de aplicación del modelo TCP/IP? (Elija tres opciones.)": [
-    "2, 3, 6",
+    " ",
     "Aplicación. Presentación. Sesión"
   ],
   "12. ¿Cuáles de las siguientes son dos características de IP? (Elija dos opciones.)": [
-    "2, 5",
+    " ",
     "No requiere una conexión completa exclusiva.. Opera independientemente de los medios de red."
   ],
   "13. ¿Cuáles de las siguientes son dos características de ARP? (Elija dos).": [
-    "3, 4, 1, 2, 6",
+    " ",
     "Si hay un dispositivo que recibe una solicitud de ARP y tiene la dirección IPv4 de destino, responde con una respuesta de ARP.. Si un host está listo para enviar un paquete a un dispositivo de destino local y tiene la dirección IP pero no la dirección MAC de destino, este genera un broadcast de ARP.. Tamaño del mensaje. Codificación del mensaje. Opciones de entrega"
   ],
   "15. ¿Cuál de estas situaciones describe una función proporcionada por la capa de transporte?": [
-    4,
+    " ",
     "Un alumno tiene dos ventanas de explorador Web abiertas a fin de acceder a dos sitios Web. La capa de transporte garantiza que se entregue la página Web correcta a la ventana de explorador adecuada."
   ],
   "16. Consulte la ilustración. Un administrador intenta configurar el switch pero recibe el mensaje de error que se muestra en la ilustración. ¿Cuál es el problema?": [
-    4,
+    " ",
     "El administrador primero debe ingresar al modo EXEC privilegiado antes de emitir el comando."
   ],
   "17. Una compañía tiene un servidor de archivos que comparte una carpeta con el nombre Pública. La política de seguridad de la red especifica que, en relación con la carpeta Pública, se asignen derechos de solo lectura a cualquier persona que puede iniciar sesión en el servidor y derechos de edición solo al grupo de administradores de la red. ¿Qué componente se aborda en la estructura de servicios de red de AAA?": [
-    2,
+    " ",
     "Autorización"
   ],
   "18. ¿Qué sucede si se configura de forma incorrecta la dirección de gateway predeterminado en un host?": [
-    4,
+    " ",
     "El host no puede comunicarse con hosts en otras redes."
   ],
   "19. ¿Cuáles son dos causas comunes de degradación de la señal cuando se utiliza el cableado UTP? (Escoja dos opciones).": [
-    "1, 4",
+    " ",
     "terminación incorrecta. cable o conectores de baja calidad"
   ],
   "21. ¿Qué significa el término “atenuación” en la comunicación de datos?": [
-    4,
+    " ",
     "pérdida de intensidad de la señal a medida que aumenta la distancia"
   ],
   "22. ¿Cuáles son las dos afirmaciones que describen cómo evaluar los patrones de flujo de tráfico y los tipos de tráfico de red mediante un analizador de protocolos? (Elija dos opciones.)": [
-    "2, 4",
+    " ",
     "Realizar la captura en diferentes segmentos de la red.. Capturar tráfico en horas de uso pico para obtener una buena representación de los diferentes tipos de tráfico."
   ],
   "23. Los usuarios informan que el acceso a la red es lento. Después de preguntar a los empleados, el administrador de red descubrió que un empleado descargó un programa de análisis de terceros para la impresora. ¿Qué tipo de malware puede introducirse, que provoque el rendimiento lento de la red?": [
-    1,
+    " ",
     "Gusano"
   ],
   "24. Consulte la ilustración. Según el resultado, ¿cuáles son las dos afirmaciones correctas sobre la conectividad de red? Elija dos opciones.": [
-    "1, 4",
+    " ",
     "Hay conectividad entre este dispositivo y el que se encuentra en 192.168.100.1.. Hay cuatro saltos entre este dispositivo y el que se encuentra en 192.168.100.1."
   ],
   "25. Los usuarios informan retrasos más prolongados en la autenticación y en el acceso a los recursos de red durante determinados períodos de la semana. ¿Qué tipo de información deben revisar los ingenieros de red para descubrir si esta situación forma parte del comportamiento normal de la red?": [
-    3,
+    " ",
     "La línea de base de rendimiento de la red"
   ],
   "26. ¿Qué dos tipos de tráfico utilizan el Protocolo de transporte en tiempo real (RTP)? (Escoja dos opciones).": [
-    "1, 4",
+    " ",
     "Video. Voz"
   ],
   "27. Un empleado descontento está usando algunas herramientas de red inalámbrica gratuitas para determinar información sobre las redes inalámbricas de la empresa. Esta persona está planeando usar esta información para hackear la red inalámbrica. ¿Qué tipo de ataque es este?": [
-    1,
+    " ",
     "Reconocimiento"
   ],
   "28. ¿Cuáles son los dos métodos más eficaces para defenderse del malware? (Elija dos opciones).": [
-    "2, 5",
+    " ",
     "Actualizar el sistema operativo y otro software de la aplicación.. Instalar y actualizar el software antivirus."
   ],
   "29. El comando de configuración global ip default-gateway 172.16.100.1 se aplica a un switch. ¿Cuál es el efecto de este comando?": [
-    2,
+    " ",
     "El switch se puede administrar de forma remota desde un host en otra red."
   ],
   "30. ¿Qué sucede cuando se ingresa el comando transport input ssh en las líneas vty del switch?": [
-    4,
+    " ",
     "La comunicación entre el switch y los usuarios remotos está cifrada."
   ],
   "31. ¿Qué tipo de servidor se basa en tipos de registro como A, NS, AAAA y MX para proporcionar servicios?": [
-    1,
+    " ",
     "DNS"
   ],
   "32. ¿Cuál de las siguientes es una ventaja de adoptar IMAP en lugar de POP para organizaciones pequeñas?": [
-    3,
+    " ",
     "Los mensajes se mantienen en los servidores de correo electrónico hasta que se eliminan manualmente del cliente de correo electrónico."
   ],
   "33. ¿Qué dos funciones se realizan en la subcapa LLC de la capa de enlace de datos OSI para facilitar la comunicación Ethernet? (Escoja dos opciones).": [
-    "2, 4",
+    " ",
     "agrega información en la trama Ethernet que identifica cual protocolo de la capa de red esta siendo encapsulado en la trama.. permite que IPv4 e IPv6 utilicen el mismo medio físico"
   ],
   "35. ¿Qué máscara de subred se necesita si una red IPv4 tiene 40 dispositivos que necesitan direcciones IP y si no se debe desperdiciar espacio de direcciones?": [
-    1,
+    " ",
     "255.255.255.192"
   ],
   "36. Consulte la ilustración. El administrador de red ha asignado a la LAN de LBMISS un rango de direcciones de 192.168.10.0. Este intervalo de direcciones se ha segregado utilizando un prefijo /29. Para acomodar un nuevo edificio, el técnico ha decidido utilizar la quinta subred para configurar la nueva red (la subred cero es la primera subred). Según las directivas de la empresa, a la interfaz del router siempre se le asigna la primera dirección de host utilizable y al servidor del grupo de trabajo se le asigna la última dirección de host utilizable. ¿Qué configuración se debe introducir en las propiedades del servidor de grupo de trabajo para permitir la conectividad a Internet?": [
-    5,
+    " ",
     "Dirección IP: 192.168.10.38 máscara de subred: 255.255.255.248, puerta de enlace predeterminada: 192.168.10.33"
   ],
   "37. ¿Cuáles son dos mensajes ICMPv6 que no están presentes en ICMP para IPv4? (Escoja dos opciones).": [
-    "1, 3",
+    " ",
     "Solicitud de vecino. Anuncio de router"
   ],
   "38. ¿Qué característica describe el software antivirus?": [
-    3,
+    " ",
     "aplicaciones que protegen a los dispositivos finales de infectarse con software malintencionado"
   ],
   "39. Un usuario está ejecutando el comando tracert a un dispositivo remoto. ¿En qué momento dejaría de reenviar el paquete un router que se encuentra en la ruta hacia el dispositivo de destino?": [
-    4,
+    " ",
     "Cuando el valor en el campo TTL llega a cero"
   ],
   "40. ¿Qué servicio proporciona DNS?": [
-    3,
+    " ",
     "Traduce los nombres de dominio tales como cisco.com a direcciones IP"
   ],
   "41. ¿Por qué un switch de capa 2 necesitaría una dirección IP?": [
-    2,
+    " ",
     "Para habilitar el switch de modo que se administre de forma remota."
   ],
   "42. ¿Cuál de estos comandos se puede utilizar en un equipo Windows para ver la configuración IP de esa PC?": [
-    2,
+    " ",
     "ipconfig"
   ],
   "43. ¿Qué atributo de una NIC lo colocaría en la capa de enlace de datos del modelo OSI?": [
-    1,
+    " ",
     "Dirección MAC"
   ],
   "44. ¿Cual campo/sección de una trama es creado por un nodo de origen y utilizado por un nodo de destino para garantizar que una señal de datos transmitida no se ha alterado por interferencia, distorsión o pérdida de señal?": [
-    4,
+    " ",
     "campo Secuencia de Verificación de la Trama (FCS)"
   ],
   "45. ¿Qué método se utiliza para administrar el acceso por contienda en una red inalámbrica?": [
-    4,
+    " ",
     "CSMA/CA"
   ],
   "46. ¿Cuál es la ventaja de utilizar un protocolo definido por un estándar abierto?": [
-    2,
+    " ",
     "Fomenta la competencia y promueve las opciones."
   ],
   "48. ¿Cuáles de las siguientes son dos funciones que proporciona la capa de red? (Elija dos).": [
-    "3, 5",
+    " ",
     "Proporcionar a los dispositivos finales un identificador de red único.. Dirigir los paquetes de datos a los hosts de destino en otras redes."
   ],
   "49. Durante el proceso de reenvío de tráfico, ¿qué hace el router de inmediato después de identificar la dirección IP de destino con una red en una entrada de la tabla de enrutamiento conectada directamente?": [
-    3,
+    " ",
     "Conmutar el paquete a la interfaz conectada directamente."
   ],
   "50. ¿Cuáles son las dos afirmaciones correctas en una comparación de encabezados de paquetes IPv4 e IPv6? (Elija dos).": [
-    "1, 2",
+    " ",
     "En IPv6, el campo Límite de saltos reemplazó al campo Tiempo de vida de IPv4.. El nombre del campo Dirección de origen del encabezado de IPv4 se mantiene en IPv6."
   ],
   "52. ¿Cuál es el propósito de la ventana deslizante de TCP?": [
-    3,
+    " ",
     "Solicitar a un origen que reduzca la velocidad de transferencia de datos."
   ],
   "53. ¿Cuáles son las tres partes de una dirección IPv6 unicast global? (Elija tres).": [
-    "2, 4, 5",
+    " ",
     "ID de interfaz. ID de subred. Prefijo de enrutamiento global"
   ],
   "54. ¿Cuál sería el ID de interfaz, de una interfaz habilitada para IPv6 con una dirección MAC de 1C-6F-65-C2-BD-F8, cuando el ID de interfaz se genera mediante el proceso EUI-64?": [
-    1,
+    " ",
     "1E6F:65FF:FEC2:BDF8"
   ],
   "55. ¿Cuál de estos intervalos de direcciones link-local se puede asignar a una interfaz con IPv6 habilitado?": [
-    3,
+    " ",
     "FE80::/10"
   ],
   "56. ¿Cuál de los siguientes es un beneficio del uso de la computación en la nube en las redes?": [
-    3,
+    " ",
     "Se extienden las funcionalidades de red sin necesidad de invertir en infraestructura, personal ni software nuevos."
   ],
   "57. Un administrador de red está agregando una nueva LAN a una sucursal. La nueva LAN debe admitir 4 dispositivos conectados. ¿Cuál es la máscara de red más pequeña que el administrador de red puede usar para la nueva red?": [
-    4,
+    " ",
     "255.255.255.248"
   ],
   "58. ¿Cuáles son las dos afirmaciones correctas sobre direcciones MAC e IP durante la transmisión de datos si no hay NAT? (Elija dos).": [
-    "4, 5",
+    " ",
     "Las direcciones IP de destino en un encabezado del paquete se mantienen constantes a lo largo de toda la ruta a un host de destino.. Las direcciones MAC de destino y de origen tienen importancia local y cambian cada vez que una trama va de una LAN a otra."
   ],
   "62. Consulte la ilustración. ¿Cuál es el problema con la terminación que se muestra?": [
-    2,
+    " ",
     "La longitud de la parte sin trenzar de cada cable es demasiado larga."
   ],
   "63. Un técnico con una PC está utilizando varias aplicaciones mientras está conectado a Internet. ¿Cómo hace la PC para no perder de vista el flujo de datos entre las sesiones de varias aplicaciones y para que cada una de ellas reciba los flujos de paquetes correctos?": [
-    1,
+    " ",
     "Se realiza el seguimiento del flujo de datos según el número de puerto de origen utilizado por cada aplicación."
   ],
   "64. Tres empleados de un banco utilizan la red corporativa. El primer empleado utiliza un explorador Web para ver una página Web de la compañía con el objetivo de leer algunos anuncios. El segundo empleado accede a la base de datos corporativa para realizar algunas transacciones financieras. El tercer empleado participa en una importante conferencia de audio en vivo con otros gerentes corporativos ubicados en sucursales. Si se implementa QoS en esta red, ¿cuál será el orden de prioridad de los diversos tipos de datos, de mayor a menor importancia?": [
-    2,
+    " ",
     "Conferencia de audio, transacciones financieras, página Web"
   ],
   "65. Un técnico puede hacer ping a la dirección IP del servidor web de una empresa remota, pero no puede hacer ping correctamente a la dirección URL del mismo servidor web. ¿Qué utilidad de software puede utilizar para diagnosticar el problema?": [
-    4,
+    " ",
     "nslookup"
   ],
   "66. Un administrador definió una cuenta de usuario local con una contraseña secreta en el router R1 para usarla con SSH. ¿Qué tres pasos adicionales se requieren para configurar R1 para aceptar solo conexiones SSH cifradas? (Escoja tres opciones).": [
-    "1, 4, 5",
+    " ",
     "Habilitar las sesiones SSH de entrada vty.. Configurar el nombre de dominio IP en el router.. Generar las claves SSH."
   ],
   "68. ¿Qué información muestra el comando show startup-config ?": [
-    2,
+    " ",
     "El contenido del archivo de configuración guardado en la NVRAM"
   ],
   "69. ¿Cómo mejora la seguridad de las contraseñas en los routers y switches Cisco el comando service password-encryption ?": [
-    4,
+    " ",
     "Cifra las contraseñas que se almacenan en los archivos de configuración del router o del switch."
   ],
   "70. Consulte la ilustración. Los switches tienen su configuración predeterminada. El host A debe comunicarse con el host D, pero no tiene la dirección MAC del gateway predeterminado. ¿Qué hosts de la red reciben la solicitud de ARP que envía el host A?": [
-    4,
+    " ",
     "Solo los hosts B y C, y el router R1"
   ],
   "71. ¿Qué servicio proporciona DHCP?": [
-    3,
+    " ",
     "Asigna direcciones IP dinámicamente a dispositivos finales e intermedios."
   ],
   "72. ¿Qué dos funciones se realizan en la subcapa MAC de la capa de enlace de datos OSI para facilitar la comunicación Ethernet? (Escoja dos opciones).": [
-    "1, 4, 1, 3, 2, 5, 2, 3",
+    " ",
     "implementa CSMA/CD sobre medios semidúplex compartidos heredados. integra flujos de Capa 2 entre 10 Gigabit Ethernet sobre fibra y 1 Gigabit Ethernet sobre cobre. responsable de la estructura interna de la trama Ethernet. implementa un trailer con secuencia de verificación de trama para la detección de errores. implementa un trailer con secuencia de verificación de trama para la detección de errores. implementa un proceso para delimitar campos dentro de una trama Ethernet 2. aplica direcciones MAC de origen y destino a la trama Ethernet. aplica la delimitación de campos de trama Ethernet para sincronizar la comunicación entre nodos"
   ],
   "73. Un administrador de red está agregando una nueva LAN a una sucursal. La nueva LAN debe admitir 200 dispositivos conectados. ¿Cuál es la máscara de red más pequeña que el administrador de red puede usar para la nueva red?": [
-    2,
+    " ",
     "255.255.255.0"
   ],
   "74. ¿Qué valor incluido en un campo de encabezado de IPv4 reduce cada router cuando recibe un paquete?": [
-    3,
+    " ",
     "Tiempo de vida"
   ],
   "75. ¿Cuáles dos instrucciones describen las características de una tabla de enrutamiento IPv4 en un router? (Escoja dos opciones).": [
-    "2, 3",
+    " ",
     "Si se configura una ruta estática predeterminada en el router, se incluirá una entrada en la tabla de enrutamiento con el código fuente S.. Almacena información sobre rutas derivadas de las interfaces del router activas."
   ],
   "76. ¿Cuáles son los dos comandos que se pueden utilizar en un host de Windows para mostrar la tabla de enrutamiento? (Elija dos).": [
-    "4, 5",
+    " ",
     "netstat -r. route print"
   ],
   "77. Se asigna un bloque de direcciones IPv6 2001:db8:0:ca00::/56 a una organización. ¿Cuántas subredes se pueden crea sin usar bits en el espacio de ID de interfaz?": [
-    2,
+    " ",
     "256"
   ],
   "79. ¿Qué característica describe un adware?": [
-    4,
+    " ",
     "software instalado en una computadora para recolectar información del usuario"
   ],
   "80. Se ha pedido a un nuevo administrador de red que introduzca un banner en un dispositivo Cisco. ¿Cuál es la forma más rápida en que un administrador de red podría probar si el banner está configurado correctamente?": [
-    4,
+    " ",
     "Salgir del modo EXEC privilegiado y pulsar Enter ."
   ],
   "84. Un usuario envía una solicitud HTTP a un servidor Web en una red remota. Durante la encapsulación para esta solicitud, ¿qué información se agrega al campo de dirección de una trama para indicar el destino?": [
-    4,
+    " ",
     "La dirección MAC del gateway predeterminado"
   ],
   "85. ¿Qué son los protocolos exclusivos?": [
-    1,
+    " ",
     "Protocolos desarrollados por organizaciones que tienen control sobre su definición y operación."
   ],
   "86. Cuando la configuración de un switch incluye un umbral de error por puerto definido por el usuario, ¿a qué método de switching se revierte el switch cuando se alcanza el umbral de error?": [
-    4,
+    " ",
     "Almacenamiento y envío"
   ],
   "87. Consulte la ilustración. Si el host A envía un paquete IP al host B, ¿cuál es la dirección de destino en la trama cuando deja el host A?": [
-    1,
+    " ",
     "BB:BB:BB:BB:BB:BB"
   ],
   "88. Un servidor recibe un paquete del cliente. El paquete tiene el número de puerto de destino 143. ¿Qué aplicación de servicio solicita el cliente?": [
-    3,
+    " ",
     "IMAP"
   ],
   "89. ¿Qué servicio proporciona Internet Messenger?": [
-    1,
+    " ",
     "Una aplicación que permite chatear en tiempo real entre usuarios remotos."
   ],
   "90. ¿Qué característica describe mejor a un virus?": [
-    1,
+    " ",
     "software malintencionado o código que se ejecuta en un dispositivo final"
   ],
   "91. ¿Qué técnica se utiliza con el cable UTP para la protección contra la interferencia de señal del crosstalk?": [
-    2,
+    " ",
     "Trenzar los cables entre sí en pares."
   ],
   "92. Consulte la ilustración. ¿Cuáles son los tres hechos que se pueden determinar a partir del resultado visible del comando show ip interface brief ? (Elija tres opciones.)": [
-    "1, 2, 4",
+    " ",
     "El switch se puede administrar de manera remota.. Un dispositivo está conectado a una interfaz física.. Se configuró la SVI predeterminada."
   ],
   "93. Un servidor recibe un paquete del cliente. El paquete tiene el número de puerto de destino 69. ¿Qué aplicación de servicio solicita el cliente?": [
-    1,
+    " ",
     "TFTP"
   ],
   "94. Un dispositivo con IPv6 habilitado envía un paquete de datos con la dirección de destino FF02::2. ¿Cuál es el destino de este paquete?": [
-    2,
+    " ",
     "Todos los routers con IPv6 configurado en el enlace local"
   ],
   "95. ¿Cuál es el ID de subred asociado a la dirección IPv6 2001:DA48:FC5:A 4:3 D1B::1/64?": [
-    3,
+    " ",
     "2001:DA48:FC5:A4::/64"
   ],
   "96. ¿Qué tipo de amenaza de seguridad sería responsable si un complemento de la hoja de cálculo deshabilita el firewall de software local?": [
-    2,
+    " ",
     "Caballo de Troya"
   ],
   "97. ¿Qué dos tipos de mensajes ICMPv6 se deben permitir a través de listas de control de acceso IPv6 para permitir la resolución de direcciones de Capa 3 a direcciones MAC de Capa 2? (Escoja dos opciones).": [
-    "3, 5",
+    " ",
     "Solicitud de vecino (NS). Anuncio de vecino (NA)"
   ],
   "98. ¿Qué dos instrucciones describen con precisión una ventaja o una desventaja al implementar NAT para IPv4 en una red? (Escoja dos opciones).": [
-    "3, 6",
+    " ",
     "NAT proporciona una solución para ralentizar el agotamiento de direcciones IPv4.. NAT presenta problemas para algunas aplicaciones que requieren conectividad de extremo a extremo."
   ],
   "99. Un usuario se queja de que una página web externa está tardando más de lo normal en cargarse. La página web eventualmente se carga en el equipo del usuario. ¿Qué herramienta debe usar el técnico con privilegios de administrador para localizar dónde está el problema en la red?": [
-    2,
+    " ",
     "tracert"
   ],
   "100. Un técnico de red está investigando el uso del cableado de fibra óptica en un nuevo centro tecnológico. ¿Cuáles dos puntos deben considerarse antes de implementar medios de fibra óptica? (Escoja dos opciones).": [
-    "3, 5",
+    " ",
     "El cableado de fibra óptica requiere diferentes conocimientos de terminación y empalme de lo que requiere el cableado de cobre.. La fibra óptica proporciona una mayor capacidad de datos, pero es más costosa que el cableado de cobre."
   ],
   "101. Un administrador de red advierte que algunos cables Ethernet instalados recientemente transportan señales de datos distorsionadas y con errores. Los cables nuevos se instalaron en el cielo raso, cerca de tubos fluorescentes y equipos eléctricos. ¿Cuáles son los dos factores que pueden interferir con el cableado de cobre y provocar una distorsión de la señal y daños en los datos? (Elija dos).": [
-    "1, 3",
+    " ",
     "EMI. RFI"
   ],
   "102. ¿Qué característica describe el robo de identidad?": [
-    4,
+    " ",
     "el uso de credenciales robadas para acceder a datos privados"
   ],
   "103. Los datos se envían de una PC de origen a un servidor de destino. ¿Qué afirmaciones describen correctamente la función del TCP o UDP en esta situación? (Elija tres opciones.)": [
-    "1, 4, 5",
+    " ",
     "El campo del puerto de origen identifica la aplicación o el servicio en ejecución que maneja la devolución de datos a la PC.. Los segmentos UDP se encapsulan en paquetes IP para ser transportados a través de la red.. El número de puerto de destino de UDP identifica la aplicación o los servicios en el servidor que maneja los datos."
   ],
   "104. ¿Qué método de switching descarta las tramas que no pasan la revisión FCS?": [
-    3,
+    " ",
     "Switching por almacenamiento y envío"
   ],
   "106. ¿Cuál es una característica principal de la capa de enlace de datos?": [
-    1,
+    " ",
     "Protege el protocolo de la capa superior de conocer el medio físico que se utilizará en la comunicación."
   ],
   "107. ¿Cuáles son las dos responsabilidades principales de la subcapa MAC Ethernet? (Escoja dos opciones).": [
-    "4, 5",
+    " ",
     "encapsulamiento de datos. acceso a los medios de comunicación"
   ],
   "108. Consulte la ilustración. Una compañía utiliza el bloque de direcciones 128.107.0.0/16 para su red. ¿Cuál de estas máscaras de subred proporcionaría la cantidad máxima de subredes de igual tamaño y, a la vez, suficientes direcciones de host para cada subred que se muestra en la ilustración?": [
-    3,
+    " ",
     "255.255.255.128"
   ],
   "109. Un administrador de red debe mantener la privacidad de la ID de usuario, la contraseña y el contenido de la sesión cuando establece conectividad remota con la CLI con un switch para administrarla. ¿Qué método de acceso se debe elegir?": [
-    4,
+    " ",
     "SSH"
   ],
   "110. ¿Cuáles son dos problemas que pueden ser causados por un gran número de mensajes de solicitud y respuesta ARP? (Escoja dos opciones).": [
-    "1, 5",
+    " ",
     "La solicitud ARP se envía como un broadcast e inundará toda la subred.. Todos los mensajes de solicitud ARP deben ser procesados por todos los nodos de la red local."
   ],
   "111. Una impresora láser está conectada por cables a una computadora doméstica. Se compartió la impresora para que otras computadoras de la red doméstica también puedan usarla. ¿Qué modelo de red se usa?": [
-    3,
+    " ",
     "Entre pares (P2P)"
   ],
   "112. ¿Cuáles son las tres características del proceso de CSMA/CD? (Elija tres opciones.)": [
-    "2, 4, 6",
+    " ",
     "Antes de transmitir, un dispositivo escucha y espera hasta que los medios no se encuentren ocupados.. Luego de detectar una colisión, los hosts pueden intentar reanudar la transmisión después de que ha caducado el retardo de tiempo aleatorio.. Todos los dispositivos de un segmento ven los datos que pasan en el medio de red."
   ],
   "113. Un cliente usa SLAAC para obtener una dirección IPv6 para su interfaz. Una vez que se genera una dirección y se aplica a la interfaz, ¿qué debe hacer el cliente antes de que pueda comenzar a usar esta dirección IPv6?": [
-    2,
+    " ",
     "Debe enviar un mensaje ICMPv6 de solicitud de vecino para asegurarse de que la dirección no esté en uso en la red."
   ],
   "114. Un host intenta enviar un paquete a un dispositivo en un segmento de red LAN remoto, pero actualmente no hay asignaciones en su caché ARP. ¿Cómo obtiene el dispositivo una dirección MAC de destino?": [
-    3,
+    " ",
     "Envía una solicitud de ARP para la dirección MAC del gateway predeterminado."
   ],
   "115. Consulte la ilustración. ¿Qué protocolo fue responsable de construir la tabla que se muestra?": [
-    2,
+    " ",
     "ARP"
   ],
   "116. Un servidor recibe un paquete del cliente. El paquete tiene el número de puerto de destino 80. ¿Qué aplicación de servicio solicita el cliente?": [
-    1,
+    " ",
     "HTTP"
   ],
   "117. Observe la ilustración. A un ingeniero de red se le ha dado la dirección de red 192.168.99.0 y una máscara de subred 255.255.255.192 para dividirla en las cuatro redes mostradas. ¿Cuántas direcciones de host totales no se utilizan en las cuatro subredes?": [
-    3,
+    " ",
     "200"
   ],
   "118. Consulte la ilustración. ¿Cuáles son las dos direcciones de red que se pueden asignar a la red con los 10 hosts? Sus respuestas deben desperdiciar la menor cantidad de direcciones posible, no se pueden reutilizar direcciones que ya se hayan asignado y se debe permanecer dentro del intervalo de direcciones 10.18.10.0/24. (Elija dos opciones.)": [
-    "2, 6",
+    " ",
     "10.18.10.208/28. 10.18.10.224/28"
   ],
   "119. Un usuario intenta acceder a http://www.cisco.com/ sin éxito. ¿Cuáles son los dos valores de configuración que se deben establecer en el host para permitir el acceso? (Elija dos opciones.)": [
-    "1, 2",
+    " ",
     "Gateway predeterminado. Servidor DNS"
   ],
   "120. ¿Cual es una función de la capa de enlace de datos?": [
-    4,
+    " ",
     "proporciona el intercambio de tramas a través de un medio común"
   ],
   "121. ¿Qué servicio proporciona SMTP?": [
-    3,
+    " ",
     "Permite a los clientes enviar correo electrónico a un servidor de correo y a los servidores enviar correo electrónico a otros servidores."
   ],
   "122. Consulte la ilustración. Si el Host1 transfiriera un archivo al servidor, ¿qué capas del modelo TCP/IP se utilizarían?": [
-    2,
+    " ",
     "Solo las capas de aplicación, de transporte, de Internet y de acceso a la red"
   ],
   "123. Se emitieron dos pings desde un host en una red local. El primer ping se emitió a la dirección IP del gateway predeterminado del host y falló. El segundo ping se emitió a la dirección IP de un host fuera de la red local y se realizó correctamente. ¿Cuál de las siguientes es una posible causa del ping fallido?": [
-    3,
+    " ",
     "Se aplican reglas de seguridad al dispositivo de gateway predeterminado, lo cual evita que procese solicitudes de ping."
   ],
   "124. Se agregó un grupo de equipos Windows en una nueva subred a una red Ethernet. Al probar la conectividad, un técnico descubre que estas computadoras pueden acceder a los recursos de red local, pero no a los recursos de Internet. Para resolver el problema, el técnico desea confirmar inicialmente las configuraciones de direcciones IP y DNS en las computadoras, además de verificar la conectividad al router local. ¿Cuáles son los tres comandos y utilidades de CLI de Windows que proporcionan la información necesaria? (Elija tres).": [
-    "1, 2, 5, 3",
+    " ",
     "ping. nslookup. ipconfig. Internet"
   ],
   "126. Consulte la ilustración. La PC1 emite una solicitud de ARP porque necesita enviar un paquete a la PC2. En esta situación, ¿qué sucede a continuación?": [
-    4,
+    " ",
     "La PC2 envía una respuesta de ARP con la dirección MAC."
   ],
   "131. ¿Qué característica describe un spyware?": [
-    3,
+    " ",
     "software instalado en una computadora para recolectat informacion del usuario"
   ],
   "132. Un servidor recibe un paquete del cliente. El paquete tiene el número de puerto de destino 22. ¿Qué servicio solicita el cliente?": [
-    1,
+    " ",
     "SSH"
   ],
   "133. ¿Cuáles de las siguientes son dos características que comparten TCP y UDP? (Elija dos opciones.)": [
-    "1, 4",
+    " ",
     "Numeración de puertos. Uso de checksum"
   ],
   "134. ¿Qué mecanismo utiliza un router para evitar que un paquete IPv4 recibido viaje interminablemente en una red?": [
-    3,
+    " ",
     "Reduce el valor del campo TTL en 1 y si el resultado es 0, descarta el paquete y envía un mensaje de Tiempo excedido al host de origen."
   ],
   "135. ¿Qué servicio ofrece POP3?": [
-    3,
+    " ",
     "Recupera el correo electrónico del servidor descargándolo a la aplicación de correo local del cliente."
   ],
   "137. Un administrador de red está agregando una nueva LAN a una sucursal. La nueva LAN debe admitir 61 dispositivos conectados. ¿Cuál es la máscara de red más pequeña que el administrador de red puede usar para la nueva red?": [
-    1,
+    " ",
     "255.255.255.192"
   ],
   "138. Observe la ilustración. ¿Cual es la dirección IP se debe utilizar como puerta de enlace predeterminada del host H1?": [
-    1,
+    " ",
     "R1: G0/0"
   ],
   "139. Un administrador de red está agregando una nueva LAN a una sucursal. La nueva LAN debe admitir 90 dispositivos conectados. ¿Cuál es la máscara de red más pequeña que el administrador de red puede usar para la nueva red?": [
-    4,
+    " ",
     "255.255.255.128"
   ],
   "140. Un servidor recibe un paquete del cliente. El paquete tiene el número de puerto de destino 53. ¿Qué aplicación de servicio solicita el cliente?": [
-    4,
+    " ",
     "DNS"
   ],
   "141. ¿Cuáles son las dos soluciones de seguridad más probables que se utilizan solo en un entorno corporativo? (Escoja dos opciones).": [
-    "1, 5",
+    " ",
     "Sistemas de prevención de intrusiones. Redes privadas virtuales"
   ],
   "142. Un servidor recibe un paquete del cliente. El paquete tiene el número de puerto de destino 110. ¿Qué aplicación de servicio solicita el cliente?": [
-    3,
+    " ",
     "POP3"
   ],
   "143. ¿Cuáles son los dos datos que se muestran en el resultado del comando show ip interface brief? (Elija dos).": [
-    "1, 4",
+    " ",
     "direcciones IP. Estados de la capa 1"
   ],
   "144. ¿Qué servicio proporciona HTTP ?": [
-    1,
+    " ",
     "Un Conjunto de reglas para intercambiar texto, imágenes gráficas, sonido, video y otros archivos multimedia en la World Wide Web."
   ],
   "145. Un administrador de red está agregando una nueva LAN a una sucursal. La nueva LAN debe admitir 25 dispositivos conectados. ¿Cuál es la máscara de red más pequeña que el administrador de red puede usar para la nueva red?": [
-    3,
+    " ",
     "255.255.255.224"
   ],
   "146. Un administrador de red está agregando una nueva LAN a una sucursal. La nueva LAN debe admitir 10 dispositivos conectados. ¿Cuál es la máscara de red más pequeña que el administrador de red puede usar para la nueva red?": [
-    1,
+    " ",
     "255.255.255.240"
   ],
   "147. Un servidor recibe un paquete del cliente. El paquete tiene el número de puerto de destino 67. ¿Qué aplicación de servicio solicita el cliente?": [
-    2,
+    " ",
     "DHCP"
   ],
   "148. Un técnico ha capturado paquetes en una red que se ejecuta lentamente en el acceso a Internet. ¿Qué número de puerto debe buscar el técnico en el material capturado para ubicar los paquetes HTTP?": [
-    2,
+    " ",
     "80"
   ],
   "150. ¿Qué característica describe el antispyware?": [
-    2,
+    " ",
     "aplicaciones que protegen a los dispositivos finales de infectarse con software malintencionado"
   ],
   "151. Se ha agregado un grupo de PC con Windows en una nueva subred a una red Ethernet. Al probar la conectividad, un técnico descubre que estas PC pueden acceder a los recursos de la red local pero no a los recursos de Internet. Para solucionar el problema, el técnico desea confirmar inicialmente la dirección IP y las configuraciones de DNS en las PC, y también verificar la conectividad al enrutador local. ¿Qué tres comandos y utilidades de la CLI de Windows proporcionarán la información necesaria? (Elija tres).": [
-    "4, 5, 6",
+    " ",
     "ping. ipconfig. nslookup"
   ],
   "152. ¿Qué característica describe el software espía?": [
-    2,
+    " ",
     "software que se instala en el dispositivo de un usuario y recopila información sobre el usuario"
   ],
   "153. ¿Qué servicio proporciona FTP?": [
-    "3, 4",
+    " ",
     "Permite transferencias de datos entre un cliente y un servidor de archivos.. Permite la transferencia de datos entre un cliente y un servidor."
   ],
   "155. ¿Qué característica describe un caballo de Troya?": [
-    3,
+    " ",
     "software malintencionado o código que se ejecuta en un dispositivo final"
   ],
   "156. ¿Qué característica describe un ataque DoS?": [
-    "4, 2",
+    " ",
     "un ataque que ralentiza o bloquea un dispositivo o servicio de red. un dispositivo de red que filtra el acceso y el tráfico que ingresa a una red"
   ],
   "158. Consulte la ilustración. Los switches tienen una configuración predeterminada. El host A necesita comunicarse con el host D, pero el host A no tiene la dirección MAC de la gateway predeterminado. ¿Qué dispositivos de red recibirán la solicitud ARP enviada por el host A?": [
-    4,
+    " ",
     "solo hosts B, C y enrutador R1"
   ],
   "159. ¿Qué tecnología inalámbrica tiene requisitos de baja potencia y baja velocidad de datos que la hacen popular en entornos de IoT?": [
-    2,
+    " ",
     "Zigbee"
   ],
   "160. Qué servicio proporciona HTTPS ?": [
-    4,
+    " ",
     "Utiliza el cifrado para asegurar el intercambio de texto, imágenes gráficas, sonido y vídeo en la web."
   ],
   "161. ¿En qué capa OSI se agrega una dirección IP de origen a una PDU durante el proceso de encapsulación?": [
-    3,
+    " ",
     "Capa de red"
   ],
   "162. ¿Qué paso en el proceso de enrutamiento del estado del vínculo es descrito por un router que ejecuta un algoritmo para determinar la mejor ruta a cada destino?": [
-    2,
+    " ",
     "Ejecucuta el algoritmo SPF"
   ],
   "163. ¿Qué banda de RF inalámbrica utilizan los dispositivos IEEE 802.11b/g?": [
-    4,
+    " ",
     "2.4 GHz"
   ],
   "164. Un servidor recibe un paquete del cliente. El paquete tiene el número de puerto de destino 548. ¿Qué aplicación de servicio solicita el cliente?": [
-    1,
+    " ",
     "AFP"
   ],
-  "34. Consulte la ilustración. Una la red con la dirección IP y el prefijo correctos que cumplan con los requisitos de direccionamiento de host utilizable para cada red. (No se utilizan todas las opciones).": ["", "RED A /25. RED B /26. RED C /27. RED D /30"],
-  "47. Una cada descripción con el término correspondiente. No se utilizan todas las opciones.": ["", "Codificación del mensajeg\tProceso de convertir la información de un formato a otro aceptable para la transmisión. Encapsulamiento del mensaje\tProceso de colocar un formato de mensaje dentro de otro. Estimación de tamaño del mensaje\tProceso de dividir un mensaje largo en partes individuales antes de enviarlo por la red"],
-  "Una los protocolos de aplicación con los protocolos de transporte correctos.": ["", "TCP: FTP, HTTP, SMTP. UDP: DHCP, TFTP"],
-  "59. Una la característica con el método de reenvío. (No se utilizan todas las opciones).59. Una la característica con el método de reenvío. (No se utilizan todas las opciones).": ["", "Baja latencia.\tpor método de corte\nPuede reenviar runt frames.\tpor método de corte\nComienza a reenviar cuando se recibe la dirección de destino.\tpor método de corte. Siempre almacena la trama completa.\tpor almacenamiento y envío. Realiza la CRC antes de reenviar.\tpor almacenamiento y envío\nRevisa la longitud de la trama antes de reenviar.\tpor almacenamiento y envío"],
-  "61. ¿Qué conector se utiliza con el cableado de par trenzado en una LAN Ethernet?\n\n": ["","el mas transparente"],
-  "67. Una el tipo de amenaza con la causa. (No se utilizan todas las opciones).": ["", "Amenazas ambientales\tExtremos de temperatura (demasiado calor o demasiado frío) o extremos de humedad (demasiado húmedo o demasiado seco)\nAmenazas eléctricas\tVoltage spikes, insufficient supply voltage (brownouts), unconditioned power (noise), and total power loss\nAmenazas de mantenimiento\tManejo deficiente de componentes eléctricos clave (descarga electrostática), falta de repuestos críticos, cableado y etiquetado deficientes\nAmenazas de hardware\tDaño físico a servidores, routers, switches, planta de cableado y estaciones de trabajo"],
-  "78. Una la descripción con el componente de direccionamiento IPv6. (No se utilizan todas las opciones).": ["", "identificar subredes con ID de subred. el proveedor con prefijo. esa parte de la direccion con interfaz"],
-  "¿Qué comando mostrará un resumen de todas las interfaces habilitadas para IPv6 en un router que incluya la dirección IPv6 y el estado operativo?": [" ", "show ip interface brief"],
-  "Cursos gratuitos en línea. Aprendizaje presencial.":["", "Recorridos formativos"]
-
+  "34. Consulte la ilustración. Una la red con la dirección IP y el prefijo correctos que cumplan con los requisitos de direccionamiento de host utilizable para cada red. (No se utilizan todas las opciones).": [
+    " ",
+    "RED A /25. RED B /26. RED C /27. RED D /30"
+  ],
+  "47. Una cada descripción con el término correspondiente. No se utilizan todas las opciones.": [
+    " ",
+    "Codificación del mensajeg\tProceso de convertir la información de un formato a otro aceptable para la transmisión. Encapsulamiento del mensaje\tProceso de colocar un formato de mensaje dentro de otro. Estimación de tamaño del mensaje\tProceso de dividir un mensaje largo en partes individuales antes de enviarlo por la red"
+  ],
+  "Una los protocolos de aplicación con los protocolos de transporte correctos.": [
+    " ",
+    "TCP: FTP, HTTP, SMTP. UDP: DHCP, TFTP"
+  ],
+  "59. Una la característica con el método de reenvío. (No se utilizan todas las opciones).59. Una la característica con el método de reenvío. (No se utilizan todas las opciones).": [
+    " ",
+    "Baja latencia.\tpor método de corte\nPuede reenviar runt frames.\tpor método de corte\nComienza a reenviar cuando se recibe la dirección de destino.\tpor método de corte. Siempre almacena la trama completa.\tpor almacenamiento y envío. Realiza la CRC antes de reenviar.\tpor almacenamiento y envío\nRevisa la longitud de la trama antes de reenviar.\tpor almacenamiento y envío"
+  ],
+  "61. ¿Qué conector se utiliza con el cableado de par trenzado en una LAN Ethernet?\n\n": [
+    " ",
+    "el mas transparente"
+  ],
+  "67. Una el tipo de amenaza con la causa. (No se utilizan todas las opciones).": [
+    " ",
+    "Amenazas ambientales\tExtremos de temperatura (demasiado calor o demasiado frío) o extremos de humedad (demasiado húmedo o demasiado seco)\nAmenazas eléctricas\tVoltage spikes, insufficient supply voltage (brownouts), unconditioned power (noise), and total power loss\nAmenazas de mantenimiento\tManejo deficiente de componentes eléctricos clave (descarga electrostática), falta de repuestos críticos, cableado y etiquetado deficientes\nAmenazas de hardware\tDaño físico a servidores, routers, switches, planta de cableado y estaciones de trabajo"
+  ],
+  "78. Una la descripción con el componente de direccionamiento IPv6. (No se utilizan todas las opciones).": [
+    " ",
+    "identificar subredes con ID de subred. el proveedor con prefijo. esa parte de la direccion con interfaz"
+  ],
+  "¿Qué comando mostrará un resumen de todas las interfaces habilitadas para IPv6 en un router que incluya la dirección IPv6 y el estado operativo?": [
+    " ",
+    "show ip interface brief"
+  ],
+  "Cursos gratuitos en línea. Aprendizaje presencial.": [
+    " ",
+    "Recorridos formativos"
+  ],
+  "1. ¿Qué protocolo aumenta la seguridad en las conexiones remotas?": [
+    " ",
+    "SSH"
+  ],
+  "2. ¿Cuál es una característica de una interfaz de bucle invertido IPv4 en un router Cisco IOS?": [
+    " ",
+    "Es una interfaz lógica interna del router."
+  ],
+  "3. ¿Después de qué paso de la secuencia de arranque del switch se ejecuta el gestor de arranque?": [
+    " ",
+    "después de la ejecución POST"
+  ],
+  "4. ¿Qué repercusión tendrá en una red agregar un switch de capa 2?": [
+    " ",
+    "un aumento del tamaño del dominio de difusión"
+  ],
+  "5. ¿Qué característica describe el switching por método de corte?": [
+    " ",
+    "Las tramas se reenvían sin ninguna verificación de errores."
+  ],
+  "6. ¿Qué afirmación es correcta acerca de las decisiones de reenvío de tramas del switch Ethernet?": [
+    " ",
+    "Las decisiones de reenvío de tramas se basan en la asignación de puertos y la dirección MAC en la tabla CAM."
+  ],
+  "7. ¿Qué información de las tramas entrantes se agrega a la tabla del switch?": [
+    " ",
+    "La dirección MAC de origen y el número de puerto de entrada"
+  ],
+  "8. Consulte la ilustración. ¿Cuántos dominios de difusión se muestran?": [
+    " ",
+    "8"
+  ],
+  "9. ¿Cuáles son las dos situaciones en las que un administrador debe inhabilitar DTP mientras administra una red de área local? (Elija dos).": [
+    " ",
+    "Cuando se conecta un switch Cisco a un switch que no es de Cisco.. En enlaces que no deben ser troncales."
+  ],
+  "10. ¿Cuáles son las dos características que describen la VLAN nativa? (Elija dos).": [
+    " ",
+    "El tráfico de VLAN nativa no tiene etiquetas en todo el enlace troncal.. La VLAN nativa proporciona un identificador común para ambos extremos del enlace troncal."
+  ],
+  "11. Una red contiene varias VLAN que abarcan varios switches. ¿Qué sucede cuando un dispositivo en la VLAN 20 envía una trama de Ethernet de difusión?": [
+    " ",
+    "Solo los dispositivos de la VLAN 20 ven la trama."
+  ],
+  "12. Consulte la exhibición. Todas las estaciones de trabajo están configuradas correctamente en la VLAN 20. Las estaciones de trabajo que están conectadas al switch SW1 no pueden enviar tráfico a las estaciones de trabajo en el SW2. ¿Qué se puede hacer para solucionar el problema?": [
+    " ",
+    "Permitir la VLAN 20 en el enlace troncal."
+  ],
+  "13. ¿Qué ocurre con los puertos de switch después de eliminar la VLAN a la que están asignados?": [
+    " ",
+    "Los puertos dejan de comunicarse con los dispositivos conectados."
+  ],
+  "14. Se asignó el puerto Fa0/11 de un switch a la VLAN 30. Si se introduce el comando no switchport access vlan 30 en la interfaz Fa0/11, ¿qué sucede?": [
+    " ",
+    "El puerto Fa0/11 regresa a la VLAN 1."
+  ],
+  "15. ¿Qué comando muestra el tipo de encapsulación, la ID de VLAN de voz y la VLAN de modo de acceso para la interfaz Fa0/1?": [
+    " ",
+    "show interfaces Fa0/1 switchport"
+  ],
+  "16. Consulte la ilustración. Un técnico programa el switch SW3 para administrar el tráfico de voz y de datos a través del puerto Fa0/20. ¿Qué problema, si existiera, hay en la configuración?": [
+    " ",
+    "El comando utilizado para asignar la red VLAN de voz al puerto de switch es incorrecto."
+  ],
+  "17. Consulte la exhibición. Un administrador de red ha configurado el router CiscoVille con los comandos anteriores, para proporcionar routing entre redes VLAN. ¿Qué comando se requiere en un switch que está conectado a la interfaz Gi0/0 del router CiscoVille para permitir el routing entre VLAN?": [
+    " ",
+    "switchport mode trunk"
+  ],
+  "18. Cuando se enruta un gran número de VLAN, ¿cuáles de las siguientes son dos desventajas de usar el método de routing entre VLAN de router-on-a-stick en lugar del método de routing entre VLAN de switch multicapa? (Elija dos).": [
+    " ",
+    "El hecho de que haya varias subinterfaces puede afectar la velocidad del flujo de tráfico.. Se requiere un router dedicado."
+  ],
+  "19. Consulte la exhibición. Un administrador de red ha configurado el router CiscoVille con los comandos anteriores, para proporcionar routing entre redes VLAN. ¿Qué tipo de puerto se requiere en un switch que está conectado a Gi0/0 en el router CiscoVille para permitir el routing entre VLAN?": [
+    " ",
+    "Puerto de enlace troncal"
+  ],
+  "20. ¿Cuál es una de las características de un puerto enrutado en un switch de capa 3?": [
+    " ",
+    "No se asigna a una VLAN."
+  ],
+  "21. Consulte la exhibición. Un administrador de red debe configurar router-on-a-stick para las redes que se muestran. ¿Cuántas subinterfaces debe crear en el router si cada VLAN que se muestra se debe enrutar y cada VLAN tiene su propia subinterfaz?": [
+    " ",
+    "4"
+  ],
+  "22. Un técnico está configurando un nuevo switch Cisco 2960. ¿Cuál es el efecto de emitir el comando branchSW (config-if) # mdix auto ?": [
+    " ",
+    "Ajusta automáticamente el puerto para permitir que las conexiones del dispositivo utilicen un cable directo o un cable cruzado."
+  ],
+  "23. Consulte la exhibición. Un administrador de red configuró el R1 tal como se muestra. Cuando el administrador revisa el estado de la interfaz serial, esta se muestra como administratively down (administrativamente inactiva). ¿Qué comando adicional se debe introducir en la interfaz serial del R1 para activarla?": [
+    " ",
+    "no shutdown:"
+  ],
+  "24. Consulte la ilustración. El administrador de red quiere configurar el Switch1 para permitir las conexiones SSH y prohibir las conexiones Telnet. ¿Cómo debe cambiar el administrador de red la configuración que se despliega para cumplir con el requisito?": [
+    " ",
+    "Modifique el comando transport input ."
+  ],
+  "25. ¿Qué solución ayudaría a una universidad a aliviar la congestión de la red debido a colisiones?": [
+    " ",
+    "Un switch de alta densidad de puertos"
+  ],
+  "26. Consulte la exhibición. Un administrador de red configura el routing entre VLAN en una red. De momento, solo se usa una VLAN, pero pronto se agregarán más. ¿Cuál es el parámetro que falta y que se muestra como signo de interrogación destacado en el gráfico?": [
+    " ",
+    "El que identifica el número de VLAN."
+  ],
+  "27. ¿Qué tipo de VLAN se usa para indicar qué tráfico está sin etiquetar al cruzar un puerto de enlace troncal?": [
+    " ",
+    "Nativa"
+  ],
+  "28. Un administrador de redes emite el comando show vlan brief cuando soluciona el problema de un ticket de soporte de usuario. ¿Qué resultado se mostrará?": [
+    " ",
+    "La pertenencia y la asignación de red VLAN de todos los puertos de switch"
+  ],
+  "29. Abra la actividad de PT. Realice las tareas en las instrucciones de la actividad y luego responda la pregunta. ¿Qué mensaje se muestra cuando se ingresa 10.10.10.1 en la barra de direcciones del navegador web PC1": [
+    " ",
+    "Servidor de archivos"
+  ],
+  "30. ¿Qué comando muestra información sobre la configuración de auto-MDIX para una interfaz específica?": [
+    " ",
+    "show controllers"
+  ],
+  "31. Si un extremo de una conexión Ethernet está configurado en el modo dúplex completo y el otro extremo de la conexión está configurado en el modo semidúplex, ¿dónde se observan las colisiones tardías?": [
+    " ",
+    "En el extremo semidúplex de la conexión"
+  ],
+  "32. Consulte la exhibición. Un administrador de red revisa la asignación de puertos y de VLAN en el switch S2, y advierte que no se incluyen las interfaces Gi0/1 y Gi0/2 en el resultado. ¿Por qué motivo faltarían las interfaces en el resultado?": [
+    " ",
+    "Están configuradas como interfaces de enlace troncal."
+  ],
+  "34. ¿Cuáles son los cuatro pasos necesarios para configurar una red VLAN de voz en un puerto de switch? (Elija cuatro opciones.)": [
+    " ",
+    "Asignar la red VLAN de voz al puerto de switch.. Asegurar que el tráfico de voz sea confiable y que se etiqueta con un valor de prioridad CoS.. Agregar una red VLAN de voz.. Configurar los puertos de switch en modo de acceso."
+  ],
+  "35. Una escuela secundaria utiliza VLAN15 para la red de laboratorio y VLAN30 para la red del cuerpo docente. ¿Qué se necesita para permitir la comunicación entre estas dos VLAN mientras se utiliza el enfoque router-on-a-stick?": [
+    " ",
+    "Se necesita un switch con un puerto configurado como enlace troncal al conectarse a un router."
+  ],
+  "36. Consulte la exhibición. Un administrador de red está verificando la configuración del routing entre VLAN. Los usuarios se quejan de que las computadoras de distintas VLAN no se pueden comunicar. Sobre la base del resultado, ¿cuáles de los siguientes son dos errores de configuración en la interfaz de switch Gi1/1? (Elija dos).": [
+    " ",
+    "Gi1/1 está configurada en modo de enlace troncal.. Gi1/1 se encuentra en la VLAN predeterminada."
+  ],
+  "37. Consulte la ilustración. De acuerdo con el resultado del comando show running-config , se implementó una configuración de router-on-a-stick para las VLAN 15, 30 y 45. Las computadoras de la VLAN 45 que usan la red 172.16.45.0 /24 tienen problemas para conectarse a las computadoras de la VLAN 30 en la red 172.16.30.0 /24. ¿Cuál de estos errores es la causa más probable del problema?": [
+    " ",
+    "Se configuró una dirección IP incorrecta en GigabitEthernet 0/0.30."
+  ],
+  "38. ¿Cuál es el tamaño mínimo de una trama de Ethernet que el receptor no descartará como marco runt?": [
+    " ",
+    "64 bytes"
+  ],
+  "39. En un switch configurado con varias VLAN, ¿qué comando elimina solo la VLAN 100 del switch?": [
+    " ",
+    "Switch(config)# no vlan 100"
+  ],
+  "41. Consulte la ilustración. La PC1 no puede comunicarse con el servidor 1. El administrador de redes emite el comando show interfaces trunk para comenzar a resolver los problemas. ¿Qué conclusión puede sacarse conforme al resultado del comando?": [
+    " ",
+    "La interfaz G0/2 no está configurada como enlace troncal."
+  ],
+  "42. Consulte la exhibición. ¿Cuál es la causa del error que se muestra en la configuración del routing entre VLAN en el router CiscoVille?": [
+    " ",
+    "El comando encapsulation dot1Q 20 no se configuró."
+  ],
+  "43. Consulte la exhibición. Un administrador de red está verificando la configuración del routing entre VLAN. Los usuarios se quejan de que la PC2 no puede comunicarse con la PC1. Sobre la base del resultado, ¿cuál es la posible causa del problema?": [
+    " ",
+    "El comando encapsulation dot1Q 5 contiene una VLAN incorrecta."
+  ],
+  "44. Consulte la exhibición. Un administrador de red configura RT1 para el routing entre VLAN. El switch se configuró correctamente y funciona. El Host1, el Host2 y el Host3 no pueden comunicarse entre sí. Sobre la base de la configuración del router, ¿cuál es la causa del problema?": [
+    " ",
+    "No se asignaron correctamente las direcciones IP en las subinterfaces a las VLAN."
+  ],
+  "45. Un técnico está configurando un nuevo switch Cisco 2960. ¿Cuál es el efecto de emitir el comando branchSW (config-if) # ip address 172.18.33.88 255.255.255.0 ?": [
+    " ",
+    "Aplica una dirección IPv4 a la interfaz virtual."
+  ],
+  "47. Consulte la ilustración. ¿En qué modo de switch se debe asignar el puerto G0/1 si se utilizan las mejores prácticas de Cisco?": [
+    " ",
+    "Troncal"
+  ],
+  "48. ¿Qué comando se utiliza para establecer la variable de entorno BOOT que define dónde encontrar el archivo de imagen del IOS en un switch?": [
+    " ",
+    "boot system"
+  ],
+  "49. ¿Qué tipo de VLAN admite tráfico sin etiqueta?": [
+    " ",
+    "VLAN nativa"
+  ],
+  "50. ¿Cuáles dos instrucciones son correctas con respecto al enrutamiento entre VLAN de SVI? (Escoja dos opciones).": [
+    " ",
+    "No hay necesidad de una conexión a un router.. Cambiar paquetes es más rápido con SVI."
+  ],
+  "51. ¿Qué característica del switch ayuda a mantener el tráfico local y alivia la congestión de la red?": [
+    " ",
+    "Alta densidad del puerto"
+  ],
+  "52. ¿Cuál es la diferencia significativa entre un hub y un switch LAN de capa 2?": [
+    " ",
+    "Un concentrador extiende un dominio de colisión y un switch divide los dominios de colisión."
+  ],
+  "53. ¿Cómo afectan los búferes de switch al rendimiento de la red?": [
+    " ",
+    "Almacenan tramas recibidas, evitando así el descarte prematuro de tramas cuando se produce la congestión de la red."
+  ],
+  "54. ¿Qué tipo de VLAN está configurado específicamente para el tráfico de red como SSH, Telnet, HTTPS, HHTP y SNMP?": [
+    " ",
+    "VLAN de administración"
+  ],
+  "55. ¿Qué utiliza un switch para localizar y cargar la imagen del IOS?": [
+    " ",
+    "Variable de entorno de BOOT"
+  ],
+  "56. ¿Qué componente del switch reduce la cantidad de tiempo de manejo de paquetes dentro del switch?": [
+    " ",
+    "ASIC"
+  ],
+  "58. ¿Qué tipo de VLAN está diseñada para reservar ancho de banda para garantizar la calidad del teléfono IP?": [
+    " ",
+    "VLAN de voz"
+  ],
+  "59. Un técnico está configurando un nuevo switch Cisco 2960. ¿Cuál es el efecto de emitir el comando BranchSW# configure terminal ?": [
+    " ",
+    "Ingresa al modo de configuración global."
+  ],
+  "60. ¿Qué tipo de VLAN no debe transportar tráfico de administración de voz y red?": [
+    " ",
+    "VLAN de datos"
+  ],
+  "61. ¿Qué método de conmutación garantiza que la trama entrante está libre de errores antes de reenviarla?": [
+    " ",
+    "Almacenamiento y envío"
+  ],
+  "62. ¿Qué tipo de VLAN se usa para separar la red en grupos de usuarios o dispositivos?": [
+    " ",
+    "VLAN de datos"
+  ],
+  "63. Un técnico está configurando un nuevo switch Cisco 2960. ¿Cuál es el efecto de emitir el comando branchSW> enable ?": [
+    " ",
+    "Entra en modo privilegiado."
+  ],
+  "64. ¿Qué tipo de VLAN está diseñada para tener un retraso de menos de 150 ms en toda la red?": [
+    " ",
+    "VLAN de voz"
+  ],
+  "65. Un técnico esta configurando un nuevo switch Cisco 2960 ¿Cuál es el efecto de emitir el comando branchSW(Config-if)#ipv6 address 2001:db8:a2b 4:88::1/64?": [
+    " ",
+    "Aplica una dirección IPv6 a la interfaz virtual."
+  ],
+  "66. Un técnico está configurando un nuevo switch Cisco 2960. ¿Cuál es el efecto de emitir el comando branchSW (config-if) # duplex full ?": [
+    " ",
+    "Permite que los datos fluyan en ambas direcciones al mismo tiempo en la interfaz."
+  ],
+  "67. Un técnico está configurando un nuevo switch Cisco 2960. ¿Cuál es el efecto de emitir el comando branchSW (config-if) # exit ?": [
+    " ",
+    "Vuelve al modo de configuración global."
+  ],
+  "68. Un técnico está configurando un nuevo switch Cisco 2960. ¿Cuál es el efecto de emitir el comando branchSW (config-if) # shutdown?": [
+    " ",
+    "Deshabilita una interfaz de switch virtual o física."
+  ]
 }
