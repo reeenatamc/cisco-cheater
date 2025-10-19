@@ -104,7 +104,7 @@ chrome_options = Options()
 chrome_options.add_argument("--start-maximized")
 
 driver = webdriver.Chrome(options=chrome_options)
-driver.get("https://examenredes.com/modulos-8-10-examen-de-comunicacion-entre-redes-respuestas/#goog_rewarded")
+driver.get("https://examenredes.com/modulos-1-4-examen-de-conceptos-de-conmutacion-vlan-y-enrutamiento-entre-vlan-respuestas/")
 # driver.get("https://examenredes.com/examen-de-punto-de-control-direccionamiento-ip/")
 
 time.sleep(15)  # Ajusta según tu conexión y carga de la pagina
@@ -114,7 +114,7 @@ elementos = contenedor.find_elements(By.XPATH, "./*")
 
 preguntas_y_respuestas = []
 pregunta_actual = None
-preguntas_a_ignorar = {8, 17, 18, 19, 20, 24}
+preguntas_a_ignorar = {46, 40, 33}
 # preguntas_a_ignorar = {1, 5, 11}
 
 
