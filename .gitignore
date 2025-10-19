@@ -211,7 +211,7 @@ Thumbs.db
 /static/
 
 # Media subida por usuarios (si se usa media)
-media/
+
 
 # Archivos de coverage y testing
 htmlcov/
