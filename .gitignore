@@ -208,7 +208,6 @@ Thumbs.db
 
 # Archivos estáticos recolectados por collectstatic
 /staticfiles/
-/static/
 
 # Media subida por usuarios (si se usa media)
 
