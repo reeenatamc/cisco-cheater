@@ -64,10 +64,13 @@
     </style>
 </head>
 <body>
+    {% load static %}
+
     <div class="main-text">catch me if you can</div>
     <div class="university">made ft santiago de guayaquil university</div>
     <div class="gif-container">
-        <img src="/media/catch_me.gif" alt="catch me if you can" class="gif">
+        <img src="{% static 'catch_me.gif' %}"
+             alt="catch me if you can" >
     </div>
 </body>
 </html>
