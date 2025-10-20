@@ -1751,6 +1751,7 @@
     " ",
     "Están configuradas como interfaces de enlace troncal."
   ],
+  "33. Una el campo de la etiqueta de VLAN IEEE 802.1Q estándar con la descripción. (No se utilizan todas las opciones.)": [" ", "Tipo con Un valor para el valor de ID de protocolo de etiqueta. ID de VLAN con Un número de VLAN. Prioridad del usuario con Un valor que admite la implementación de nivel o servicio. Identificador de formato canónico Un identificador que permite que las tramas Token Ring..."],
   "34. ¿Cuáles son los cuatro pasos necesarios para configurar una red VLAN de voz en un puerto de switch? (Elija cuatro opciones.)": [
     " ",
     "Asignar la red VLAN de voz al puerto de switch.. Asegurar que el tráfico de voz sea confiable y que se etiqueta con un valor de prioridad CoS.. Agregar una red VLAN de voz.. Configurar los puertos de switch en modo de acceso."
@@ -1837,6 +1838,7 @@
     " ",
     "ASIC"
   ],
+  "57. ¿Qué tipo de VLAN es inicialmente la VLAN de administración?": [" ", "VLAN predeterminada"],
   "58. ¿Qué tipo de VLAN está diseñada para reservar ancho de banda para garantizar la calidad del teléfono IP?": [
     " ",
     "VLAN de voz"
