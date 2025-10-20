@@ -1775,6 +1775,7 @@
     " ",
     "Switch(config)# no vlan 100"
   ],
+  "40. Una el modo de DTP con su función. (No se utilizan todas las opciones).": [" ", "Espera de forma pasiva que el vecino inicie el enlace troncal con Dinámico Automático. Requiere la configuración manualde enlaces troncales o no troncales con No negociación. Intenta convertir el enlace en un enlace troncal de forma activa con Dinámico deseado. Modo de enlace troncal permanente con Enlace troncal."],
   "41. Consulte la ilustración. La PC1 no puede comunicarse con el servidor 1. El administrador de redes emite el comando show interfaces trunk para comenzar a resolver los problemas. ¿Qué conclusión puede sacarse conforme al resultado del comando?": [
     " ",
     "La interfaz G0/2 no está configurada como enlace troncal."
@@ -1795,6 +1796,7 @@
     " ",
     "Aplica una dirección IPv4 a la interfaz virtual."
   ],
+  "46. Consulte la exhibición. Un switch recibe una trama de capa 2 que contiene una dirección MAC de origen 000b.a023.c501 y una dirección MAC de destino 0050.0fae.75aa. Coloque los pasos del switch en el orden en el que se producen. (No se utilizan todas las opciones).": [" ", "El switch agrega la dirección MAC de origen a la tabla de direcciones MAC con Se produce primero. Dado que el destino no es conocido, el switch reenvía la trama a todos los puertoc con Se produce en segundo lugar."],
   "47. Consulte la ilustración. ¿En qué modo de switch se debe asignar el puerto G0/1 si se utilizan las mejores prácticas de Cisco?": [
     " ",
     "Troncal"
