@@ -2283,32 +2283,41 @@
     " ",
     "HSRP para IPv6"
   ],
-  "6. Una la característica de árbol de expansión con el tipo de protocolo. No se utilizan todas las opciones.": ["", "Propiedad exclusiva según la implementación de VLAN de IEEE 802.1w con PVST+ rápido. Implementación de IEEE 802.1D de Cisco con PVST+. Mejora en la convergencia rápida de IEEE 802.1D con RSTP. IEEE estándar que reduce el número de casos STP con MSTP."],
+  "6. Una la característica de árbol de expansión con el tipo de protocolo. No se utilizan todas las opciones.": [
+    " ",
+    "Propiedad exclusiva según la implementación de VLAN de IEEE 802.1w con PVST+ rápido. Implementación de IEEE 802.1D de Cisco con PVST+. Mejora en la convergencia rápida de IEEE 802.1D con RSTP. IEEE estándar que reduce el número de casos STP con MSTP."
+  ],
   "32. Coincida con el protocolo STP con la información correcta. (No se utilizan todas las opciones).": [
-    "",
+    " ",
     "PVST+ rápido con una mejora de Cisco de RSTP para proporcionar una instancia de árbol de expansión para cada VLAN. STP con la norma heredada para el STP que se ejecuta todas las VLAN en una única instancia de árbol de expansión. MSTP con un protocolo que permite que varias VLAN se ejecute en una única instancia de árbol de expansión."
   ],
-"1. Unir cada tipo de mensaje de DHCP con la descripción correspondiente. (No se utilizan todas las opciones).": [
-    "",
+  "1. Unir cada tipo de mensaje de DHCP con la descripción correspondiente. (No se utilizan todas las opciones).": [
+    " ",
     "DHCPDISCOVER con un cliente iniciando un mensaje para encontrar un servidor DHCP. DHCPOFFER con un servidor DHCP respondiendo a una solicitud inicial de un cliente. DHCPREQUEST con el cliente aceptando la dirección IP dada por el servidor DHCP. DHCPACK con el servidor DHCP confirmando que la dirección alquilada ha sido aceptada."
   ],
-"14. Una el propósito con el tipo de mensaje DHCP. (No se utilizan todas las opciones).": [
-    "",
+  "14. Una el propósito con el tipo de mensaje DHCP. (No se utilizan todas las opciones).": [
+    " ",
     "Mensaje que se utiliza para localizar cualquier servidor de DHCP disponible en una red con DHCPDISCOVER. Mensaje que se utiliza para identificar el servidor explícito y la oferta de concesión para aceptar con DHCPREQUEST. Mensaje que se utiliza para confirmar que la concesión se realizó correctamente con DHCPACK. Mensaje que se utiliza para sugerir una concesión a un cliente con DHCPOFFER."
   ],
   "20. Una las descripciones con el tipo de servidor de DHCPv6 correspondiente. (No se utilizan todas las opciones).": [
-    "",
+    " ",
     "DHCPv6 sin estado: Se habilita en los mensajes RA con el comando ipv6 nd other-config-flag. Los clientes solo envían mensajes DHCPv6 INFORMATION-REQUEST al servidor. Se habilita en el cliente con el comando ipv6 address autoconfig. Este modo no asigna direcciones, solo información adicional como DNS o dominio de búsqueda.",
     "DHCPv6 con estado: En los mensajes RA, el indicador M se establece en 1. Los clientes se comunican con el servidor de DHCPv6 mediante el uso de los mensajes solicitando dirección completa. Utiliza el comando address para crear un conjunto de direcciones para los clientes. Se habilita en el cliente con el comando ipv6 address dhcp. Este modo asigna direcciones IPv6 completas y parámetros de red adicionales."
   ],
-   "25. Haga coincidir el número de paso con la secuencia de etapas que se producen durante el proceso de conmutación por error de HSRP. (No se utilizan todas las opciones).": [
-    "",
+  "25. Haga coincidir el número de paso con la secuencia de etapas que se producen durante el proceso de conmutación por error de HSRP. (No se utilizan todas las opciones).": [
+    " ",
     "Paso 1: El router de reenvío falla. Paso 2: El router de reserva deja de recibir los mensajes de saludo del router de reenvío. Paso 3: El router de reserva asume la función del router de reenvío. Paso 4: El nuevo router de reenvío asume las direcciones IP y MAC del router virtual."
   ],
-"26. Una los tipos de mensaje DHCP con el orden del proceso de DHCPv4. (No se utilizan todas las opciones).": [
-    "",
+  "26. Una los tipos de mensaje DHCP con el orden del proceso de DHCPv4. (No se utilizan todas las opciones).": [
+    " ",
     "Paso 1: DHCPDISCOVER. Paso 2: DHCPOFFER. Paso 3: DHCPREQUEST. Paso 4: DHCPACK."
+  ],
+  "43. Haga coincidir los protocolos FHRP con la descripción apropiada. (No se utilizan todas las opciones).": [
+    " ",
+    "HSRP con un FHRP exclusivo de Cisco que proporciona redundancia mediante el uso de un dispositivo activo y un dispositivo de reserva. VRRP con un FHRP estándar abierto que proporciona redundancia mediante el uso de un maestro de routers virtuales y uno o más backups. GLBP con un FHRP exclusivo de Cisco que proporciona carga compartida además de redundancia."
+  ],
+  "49. Haga coincidir los tipos de mensaje de DHCP con el orden del proceso stateful de DHCPv6 cuando un cliente se conecta por primera vez a la red IPv6. (No se utilizan todas las opciones).": [
+    " ",
+    "Paso 1: DHCPv6 SOLICIT. Paso 2: DHCPv6 ADVERTISE. Paso 3: DHCPv6 REQUEST. Paso 4: DHCPv6 REPLY."
   ]
-
-
 }
