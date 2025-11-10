@@ -1751,7 +1751,10 @@
     " ",
     "Están configuradas como interfaces de enlace troncal."
   ],
-  "33. Una el campo de la etiqueta de VLAN IEEE 802.1Q estándar con la descripción. (No se utilizan todas las opciones.)": [" ", "Tipo con Un valor para el valor de ID de protocolo de etiqueta. ID de VLAN con Un número de VLAN. Prioridad del usuario con Un valor que admite la implementación de nivel o servicio. Identificador de formato canónico Un identificador que permite que las tramas Token Ring..."],
+  "33. Una el campo de la etiqueta de VLAN IEEE 802.1Q estándar con la descripción. (No se utilizan todas las opciones.)": [
+    " ",
+    "Tipo con Un valor para el valor de ID de protocolo de etiqueta. ID de VLAN con Un número de VLAN. Prioridad del usuario con Un valor que admite la implementación de nivel o servicio. Identificador de formato canónico Un identificador que permite que las tramas Token Ring..."
+  ],
   "34. ¿Cuáles son los cuatro pasos necesarios para configurar una red VLAN de voz en un puerto de switch? (Elija cuatro opciones.)": [
     " ",
     "Asignar la red VLAN de voz al puerto de switch.. Asegurar que el tráfico de voz sea confiable y que se etiqueta con un valor de prioridad CoS.. Agregar una red VLAN de voz.. Configurar los puertos de switch en modo de acceso."
@@ -1776,7 +1779,10 @@
     " ",
     "Switch(config)# no vlan 100"
   ],
-  "40. Una el modo de DTP con su función. (No se utilizan todas las opciones).": [" ", "Espera de forma pasiva que el vecino inicie el enlace troncal con Dinámico Automático. Requiere la configuración manualde enlaces troncales o no troncales con No negociación. Intenta convertir el enlace en un enlace troncal de forma activa con Dinámico deseado. Modo de enlace troncal permanente con Enlace troncal."],
+  "40. Una el modo de DTP con su función. (No se utilizan todas las opciones).": [
+    " ",
+    "Espera de forma pasiva que el vecino inicie el enlace troncal con Dinámico Automático. Requiere la configuración manualde enlaces troncales o no troncales con No negociación. Intenta convertir el enlace en un enlace troncal de forma activa con Dinámico deseado. Modo de enlace troncal permanente con Enlace troncal."
+  ],
   "41. Consulte la ilustración. La PC1 no puede comunicarse con el servidor 1. El administrador de redes emite el comando show interfaces trunk para comenzar a resolver los problemas. ¿Qué conclusión puede sacarse conforme al resultado del comando?": [
     " ",
     "La interfaz G0/2 no está configurada como enlace troncal."
@@ -1797,7 +1803,10 @@
     " ",
     "Aplica una dirección IPv4 a la interfaz virtual."
   ],
-  "46. Consulte la exhibición. Un switch recibe una trama de capa 2 que contiene una dirección MAC de origen 000b.a023.c501 y una dirección MAC de destino 0050.0fae.75aa. Coloque los pasos del switch en el orden en el que se producen. (No se utilizan todas las opciones).": [" ", "El switch agrega la dirección MAC de origen a la tabla de direcciones MAC con Se produce primero. Dado que el destino no es conocido, el switch reenvía la trama a todos los puertoc con Se produce en segundo lugar."],
+  "46. Consulte la exhibición. Un switch recibe una trama de capa 2 que contiene una dirección MAC de origen 000b.a023.c501 y una dirección MAC de destino 0050.0fae.75aa. Coloque los pasos del switch en el orden en el que se producen. (No se utilizan todas las opciones).": [
+    " ",
+    "El switch agrega la dirección MAC de origen a la tabla de direcciones MAC con Se produce primero. Dado que el destino no es conocido, el switch reenvía la trama a todos los puertoc con Se produce en segundo lugar."
+  ],
   "47. Consulte la ilustración. ¿En qué modo de switch se debe asignar el puerto G0/1 si se utilizan las mejores prácticas de Cisco?": [
     " ",
     "Troncal"
@@ -1838,7 +1847,10 @@
     " ",
     "ASIC"
   ],
-  "57. ¿Qué tipo de VLAN es inicialmente la VLAN de administración?": [" ", "VLAN predeterminada"],
+  "57. ¿Qué tipo de VLAN es inicialmente la VLAN de administración?": [
+    " ",
+    "VLAN predeterminada"
+  ],
   "58. ¿Qué tipo de VLAN está diseñada para reservar ancho de banda para garantizar la calidad del teléfono IP?": [
     " ",
     "VLAN de voz"
@@ -1882,5 +1894,393 @@
   "68. Un técnico está configurando un nuevo switch Cisco 2960. ¿Cuál es el efecto de emitir el comando branchSW (config-if) # shutdown?": [
     " ",
     "Deshabilita una interfaz de switch virtual o física."
+  ],
+  "1. ¿Qué combinan tres componentes para formar un ID de puente?": [
+    "3, 4, 5",
+    "ID de sistema extendido. dirección MAC. prioridad del puente"
+  ],
+  "2. ¿En qué estado dos un switch aprende las direcciones MAC y el proceso BPDU en una red PVST? (Elija dos).": [
+    "1, 2",
+    "reenvío. aprendizaje"
+  ],
+  "3. Si no hay una prioridad de puente configurada en PVST, ¿cuáles son los criterios que se tienen en cuenta para elegir el puente raíz?": [
+    2,
+    "La dirección MAC más baja."
+  ],
+  "4. ¿Qué dos funciones de diseño de red requieren el protocolo de árbol de expansión (STP) asegurar el correcto funcionamiento de la red? (Elija dos).": [
+    "4, 5",
+    "eliminación de puntos únicos de falla con los switches 2 de varias capas. links redundantes entre los switches de capa 2"
+  ],
+  "5. ¿Cuál es el resultado de una tormenta de difusión de capa 2?": [
+    1,
+    "El nuevo tráfico es descartado por el switch porque no puede ser procesado."
+  ],
+  "7. Cuando se ejecuta el comando show spanning-tree vlan 33 en un switch, tres puertos se muestran en el estado de reenvío. ¿En qué dos funciones de puerto podrían estas interfaces funcionan mientras está en el estado de reenvío? (Elija dos).": [
+    "2, 3",
+    "raíz. designado"
+  ],
+  "8. Un conjunto de switches se está conectando en una topología de LAN. ¿Qué valor de prioridad de Bridge STP pasará lo menos probable para que el switch esté seleccionado como la root?": [
+    4,
+    "61440"
+  ],
+  "9. ¿Cuál es el propósito del protocolo de árbol de expansión (STP)?": [
+    3,
+    "prevenir bucles en la Capa 2"
+  ],
+  "10. ¿Qué protocolo brinda hasta 16 instancias de RSTP, combina varias VLAN con la misma topología física y lógica en una instancia común RSTP, y proporciona soporte para portfast, la protección BPDU, el filtro BPDU, la protección de raíz, y el loop?": [
+    3,
+    "MST"
+  ],
+  "11. ¿De qué dos estados de puerto PVST+ se obtienen las direcciones MAC? (Elija dos opciones).": [
+    "3, 5",
+    "Desvío. Aprendizaje"
+  ],
+  "12. ¿Cuál es el valor que se utiliza para determinar qué puerto en un puente que no es raíz se convertirá en un puerto raíz en una red STP?": [
+    1,
+    "El costo de la ruta"
+  ],
+  "13. Consulte la ilustración. ¿Qué switch será el puente raíz después de que se complete el proceso de elección?": [
+    1,
+    "S2"
+  ],
+  "14. ¿Cuáles de las siguientes son dos desventajas de desactivar un árbol de expansión y tener varias rutas a través de la red de switch de capa 2? (Elija dos opciones).": [
+    "1, 2",
+    "La tabla de direcciones MAC se vuelve inestable.. Las tramas de difusión se transmiten indefinidamente."
+  ],
+  "15. Consulte la ilustración. El administrador quiso crear un EtherChannel entre el S1 y los otros dos switches mediante los comandos que se muestran, pero fue fallido. ¿Cuál es el problema?": [
+    4,
+    "El tráfico no se puede enviar a dos switches diferentes a través del mismo enlace EtherChannel."
+  ],
+  "16. ¿Qué afirmación es verdadera con respecto al uso de PAgP para crear EtherChannels?": [
+    2,
+    "Es propiedad de Cisco."
+  ],
+  "17. ¿Qué son dos requisitos de configuración ser capaz un EtherChannel entre dos switches? (Elija dos).": [
+    "1, 5",
+    "Todas las interfaces deben trabajar en el mismo modo dúplex.. Todas las interfaces deben trabajar en la misma velocidad."
+  ],
+  "18. ¿Qué dos parámetros deben coincidir en los puertos de dos switches para crear un EtherChannel PAgP entre los switches? (Elija dos).": [
+    "2, 4",
+    "Información sobre la VLAN. velocidad"
+  ],
+  "19. ¿Cuáles de los siguientes son dos métodos de balanceo de carga en la tecnología EtherChannel? (Elija dos).": [
+    "3, 5",
+    "MAC de origen a MAC de destino. IP de origen a IP de destino"
+  ],
+  "21. ¿Qué modos bidireccional de grupo pondrían una interfaz en un estado de negociación utilizando PAgP? (Elija dos).": [
+    "4, 5",
+    "Deseable. auto"
+  ],
+  "22. Un administrador de red ha configurado un EtherChannel entre dos switches conectados mediante cuatro links de trunk. Si la interfaz física para uno de los links troncales cambia a estado inactivo, ¿qué sucede con el EtherChannel?": [
+    2,
+    "El EtherChannel permanecerá funcional."
+  ],
+  "23. Consulte la ilustración. Un administrador de red está configurando un enlace EtherChannel entre dos switches, SW1 y SW2. Sin embargo, el enlace EtherChannel no se puede establecer. ¿Qué cambio en la configuración corregiría el problema?": [
+    1,
+    "Configure el modo SW2 EtherChannel como deseable."
+  ],
+  "24. ¿Qué tecnología es un estándar de protocolo abierto que permite que los switches líen automáticamente puertos físicos en un solo link lógico?": [
+    3,
+    "Protocolo de control de agregación de enlaces (LACP)"
+  ],
+  "25. ¿Cuál es uno de los requisitos para configurar un EtherChannel de enlaces troncales entre dos switches?": [
+    3,
+    "El rango de VLAN permitido debe ser el mismo en ambos switches."
+  ],
+  "26. ¿Cuáles de las siguientes son dos características de EtherChannel? (Elija dos).": [
+    "2, 5",
+    "Configuración de la interfaz EtherChannel proporciona uniformidad en la configuración de enlaces físicos.. El protocolo de árbol de expansión vea que los links físicos en un EtherChannel como una conexión lógica."
+  ],
+  "27. Un switch está configurado para ejecutar STP. ¿Cual término describe un campo utilizado para especificar un ID de VLAN?": [
+    3,
+    "ID de sistema extendido"
+  ],
+  "28. Consulte la ilustración. ¿Cuáles son los posibles roles de puerto para los puertos A, B, C y D en esta red con el protocolo RSTP habilitado?": [
+    4,
+    "Alternativo, designado, raíz, raíz"
+  ],
+  "29. Consulte la ilustración. ¿Qué tecnología de switching permitiría que cada link del switch de capa de acceso fuera agregado para proporcionar un mayor ancho de banda entre cada Switch de capa 2 y el switch de capa 3?": [
+    2,
+    "EtherChannel"
+  ],
+  "30. Consulte la ilustración. Un administrador quiera formar un EtherChannel entre los dos switches mediante el Port Aggregation Protocol. Si el switch S1 está configurado para estar en modo automático, que el modo debe ser configurado en el S2 para formar el EtherChannel?": [
+    3,
+    "deseable"
+  ],
+  "33. ¿Cuál es una de las características del árbol de expansión?": [
+    2,
+    "Está habilitado de manera predeterminada en los switches de Cisco."
+  ],
+  "34. ¿Qué estándar del árbol de expansión admite un solo puente raíz de modo que el tráfico de todas las VLAN fluya a través de la misma ruta?": [
+    1,
+    "802.1D"
+  ],
+  "35. La red de una pequeña empresa tiene seis switches de capa 2 interconectados. Actualmente, todos los switches están usando el valor de prioridad de puente predeterminado. ¿Qué valor se puede utilizar para configurar la prioridad de puente de uno de los switches para garantizar que se convierta en el puente raíz en este diseño?": [
+    5,
+    "28672"
+  ],
+  "36. ¿Qué afirmación describe una característica de EtherChannel?": [
+    2,
+    "Se obtiene al combinar varios enlaces físicos que se consideran como un enlace entre dos switches."
+  ],
+  "37. Un administrador de redes está configurado un enlace EtherChannel entre los switches SW1 y SW2 con el comando SW1(config-if-range)# channel-group 1 mode auto . ¿Qué comando debe usarse en el SW2 para habilitar este EtherChannel?": [
+    2,
+    "SW2(config-if-range)# channel-group 1 mode desirable"
+  ],
+  "38. ¿Qué afirmación describe correctamente un EtherChannel?": [
+    3,
+    "Un puerto trunk puede ser parte de un agrupamiento de EtherChannel."
+  ],
+  "39. ¿Cuál es la función del STP en una red escalable?": [
+    2,
+    "Deshabilita las rutas redundantes para eliminar bucles de capa 2."
+  ],
+  "40. ¿Qué perfil de puerto se asigna al puerto de switch con el costo más bajo para alcanzar el Bridge raíz?": [
+    2,
+    "Puerto raíz"
+  ],
+  "41. Consulte la ilustración. Según el resultado que se muestra, ¿qué se puede determinar sobre el grupo EtherChannel?": [
+    1,
+    "Para negociar el enlace EtherChannel, se utilizó un protocolo exclusivo de Cisco."
+  ],
+  "42. Consulte la ilustración. un EtherChannel fue configurado entre los switches S1 y S2, pero las interfaces no forman un EtherChannel. ¿Cuál es el problema?": [
+    4,
+    "El EtherChannel no fue configurado con el mismo rango permitido de VLAN en cada interfaz."
+  ],
+  "43. Consulte la ilustración. Un administrador de redes ejecutó el comando show etherchannel summary en el switch S1. ¿Qué conclusiones se pueden sacar?": [
+    3,
+    "EtherChannel no funciona."
+  ],
+  "44. ¿Cuando se configura el EtherChannel, que el modo forzará una interfaz en un canal de puerto sin cambiar de paquetes del protocolo de agregación?": [
+    2,
+    "on"
+  ],
+  "45. Un administrador de redes configuró un enlace EtherChannel con tres interfaces entre dos switches. ¿Cuál es el resultado si una de las tres interfaces se desactiva?": [
+    3,
+    "Las otras dos interfaces continúan con el equilibrio de carga de tráfico."
+  ],
+  "46. Un switch está configurado para ejecutar STP. ¿Qué término describe el puerto del switch más cercano, en términos de costo total, al puente raíz?": [
+    2,
+    "puerto raíz"
+  ],
+  "47. Un switch está configurado para ejecutar STP. ¿Qué término describe un campo que tiene un valor predeterminado de 32.768 y es el factor decisivo inicial al elegir un puente raíz?": [
+    1,
+    "Prioridad del puente"
+  ],
+  "48. Consulte la ilustración. Un administrador de red está configurando un enlace EtherChannel entre dos switches, SW1 y SW2. ¿Qué instrucción describe el efecto después de que se emiten los comandos en SW1 y SW2?": [
+    1,
+    "El EtherChannel no logra establecer."
+  ],
+  "49. ¿Cuáles son dos ventajas de usar LACP? (Escoja dos opciones).": [
+    "3, 4",
+    "Permite a los switches conectados directamente negociar un enlace EtherChannel.. Permite el uso de dispositivos multivendor."
+  ],
+  "50. Un switch está configurado para ejecutar STP. ¿Cual término describe un puerto-no-raíz que tiene permitido reenviar tráfico a la red?": [
+    3,
+    "puerto designado"
+  ],
+  "51. Un switch está configurado para ejecutar STP. ¿Cual término describe el punto de referencia para todos los cálculos de ruta?": [
+    4,
+    "puente raíz"
+  ],
+  "2. Una compañía usa servidores de DHCP para asignar direcciones IPv4 dinámicamente a las estaciones de trabajo de los empleados. La duración del arrendamiento de direcciones se establece en 5 días. Un empleado vuelve a la oficina después de una ausencia de una semana. Cuando el empleado arranca la estación de trabajo, esta envía un mensaje para obtener una dirección IP. ¿Qué direcciones de destino de capa 2 y capa 3 contendrá el mensaje?": [
+    2,
+    "FF-FF-FF-FF-FF-FF y 255.255.255.255"
+  ],
+  "3. ¿Qué mensaje utiliza un host IPv4 para responder cuando recibe un mensaje DHCPOFFER de un servidor de DHCP?": [
+    3,
+    "DHCPREQUEST"
+  ],
+  "4. ¿Qué comando, cuando se emite en el modo de configuración de interfaz de un router, habilita la interfaz para adquirir una dirección IPv4 automáticamente de un ISP, cuando se habilita ese enlace al ISP?": [
+    2,
+    "ip address dhcp"
+  ],
+  "6. ¿Qué clase de mensaje envía un cliente de DHCP cuando vence el arrendamiento de su dirección IP?": [
+    2,
+    "Un mensaje de unidifusión DHCPREQUEST"
+  ],
+  "7. Una PC host esta tratando rentar una dirección a través de DHCP. ¿Qué mensaje envía el servidor para que el cliente sepa que es capaz de utilizar la información IP proporcionada?": [
+    4,
+    "DHCPACK"
+  ],
+  "8. ¿Cuál es el resultado cuando los servidores DHCP no están en funcionamiento en una red?": [
+    1,
+    "Se asignan direcciones IP a las estaciones de trabajo en la red 169.254.0.0/16."
+  ],
+  "9. ¿Qué opción es un indicio de que una computadora con Windows no recibió una dirección IPv4 de un servidor DHCP?": [
+    3,
+    "La computadora recibe una dirección IP que comienza con 169.254."
+  ],
+  "10. ¿Qué información se puede comprobar con el comando show ip dhcp binding ?": [
+    3,
+    "Las direcciones IPv4 que el servidor DHCP asigna a los hosts."
+  ],
+  "11. Un dispositivo cliente en un segmento Ethernet necesita una dirección IP para comunicarse en la red. Se configuró y habilitó un servidor DHCP con la dirección IP 192.168.1.1 en la red. ¿De qué manera un dispositivo cliente obtendrá una dirección IP utilizable para esta red?": [
+    3,
+    "Enviará un mensaje DHCPDISCOVER a la dirección física FF-FF-FF-FF-FF-FF."
+  ],
+  "12. ¿Cuál es la ventaja de configurar un router Cisco como agente de retransmisión?": [
+    2,
+    "Puede proporcionar servicios de retransmisión a varios servicios UDP."
+  ],
+  "13. ¿Cuál de estas afirmaciones es verdadera acerca del funcionamiento de DHCP?": [
+    2,
+    "Cuando un dispositivo que está configurado para utilizar DHCP arranca, el cliente transmite un mensaje DHCPDISCOVER para identificar cualquier servidor de DHCP disponible en la red."
+  ],
+  "15. Una compañía utiliza el método SLAAC para configurar direcciones IPv6 para las estaciones de trabajo de los empleados. Un administrador de red configuró la dirección IPv6 en la interfaz LAN del router. El estado de la interfaz es UP (Activo). Sin embargo, las estaciones de trabajo en el segmento LAN no obtuvieron el prefijo ni la longitud de prefijo correctos. ¿Qué más se debe configurar en el router que está conectado al segmento LAN para que las estaciones de trabajo obtengan la información?": [
+    3,
+    "R1(config)# ipv6 unicast-routing"
+  ],
+  "16. Un administrador de red configura un router para enviar mensajes RA con el indicador M como 0 y el indicador O como 1. ¿Cuál de estas afirmaciones describe el efecto de esta configuración cuando una computadora intenta configurar su dirección IPv6?": [
+    4,
+    "Debe usar la información que se incluye en el mensaje RA y comunicarse con un servidor de DHCPv6 para obtener información adicional."
+  ],
+  "17. Consulte la ilustración. Un administrador de red configura un router como servidor de DHCPv6. El administrador emite un comando show ipv6 dhcp pool para verificar la configuración. ¿Cuál de estas afirmaciones explica el motivo por el que el número de clientes activos es 0?": [
+    1,
+    "El servidor de DHCPv6 no mantiene el estado cuando se implementa DHCPv6 sin estado."
+  ],
+  "18. Una compañía utiliza el método SLAAC para configurar direcciones IPv6 para las estaciones de trabajo de los empleados. ¿Qué dirección usa un cliente como gateway predeterminado?": [
+    4,
+    "La dirección link-local de la interfaz del router que está conectada a la red"
+  ],
+  "19. Consulte la exhibición. Un administrador de red configura un router para que funcione con DHCPv6. ¿A qué conclusión se puede llegar en función de los comandos?": [
+    2,
+    "El router está configurado para funcionar con DHCPv6 sin estado."
+  ],
+  "21. Un administrador de redes está analizando las características admitidas por diferentes protocolos de redundancia de router de primer salto. ¿Qué instrucción describe una característica asociada al protocolo HSRP?": [
+    3,
+    "El protocolo HSRP utiliza routers activos y de reserva."
+  ],
+  "22. Consulte la ilustración. ¿Qué protocolo se puede configurar en los routers de gateway R1 y R2 para permitir que el tráfico de la LAN interna tenga una carga equilibrada a través de los dos gateways a Internet?": [
+    4,
+    "GLBP"
+  ],
+  "23. Consulte la ilustración. Un ingeniero de red resuelve un problema de conectividad de host en una LAN que utiliza un protocolo de redundancia de primer salto. ¿Qué dirección de gateway IPv4 se debe configurar en el host?": [
+    2,
+    "192.168.2.100"
+  ],
+  "24. Consulte la ilustración. ¿Qué dirección MAC de destino se utiliza cuando las tramas se envían de la estación de trabajo al gateway predeterminado?": [
+    2,
+    "La dirección MAC del router virtual"
+  ],
+  "27. Abra la actividad de PT. Realice las tareas en las instrucciones de la actividad y luego responda la pregunta. ¿Cuál es la palabra clave que se muestra en www.netacad.com?": [
+    5,
+    "Router"
+  ],
+  "28. ¿Qué protocolo automatiza la asignación de direcciones IP en una red y qué número de puerto utiliza? (Elija dos opciones).": [
+    "1, 5",
+    "DHCP. 67"
+  ],
+  "29. ¿Qué comando permite que un administrador de red verifique la dirección IP que se asigna a una dirección MAC determinada?": [
+    1,
+    "Router# show ip dhcp binding"
+  ],
+  "30. ¿Qué mensaje DHCPv4 envía un cliente para aceptar las direcciones IPv4 que ofrece un servidor de DHCP?": [
+    4,
+    "Transmisión del DHCPREQUEST"
+  ],
+  "31. Una compañía usa DHCP para administrar la implementación de direcciones IP para las estaciones de trabajo de sus empleados. El departamento de IT implementa múltiples servidores DHCP en el centro de datos y usa agentes de retransmisión de DHCP para facilitar las solicitudes de DHCP de las estaciones de trabajo. Cuales son los dos puertos UDP que se usan para enviar trafico DHCP? (Escoja dos opciones).": [
+    "2, 5",
+    "68. 67"
+  ],
+  "32. Consulte la exhibición. La PC-A no puede recibir una dirección IPv6 del servidor de DHCPv6 con estado. ¿Cuál es el problema?": [
+    4,
+    "El comando ipv6 dhcp relay se debe aplicar a la interfaz Gig0/0."
+  ],
+  "33. Consulte la ilustración. Un administrador de red implementa el funcionamiento de DHCPv6 sin estado para la compañía. Los clientes configuran las direcciones IPv6 de la forma esperada. Sin embargo, los clientes no obtienen la información de dirección de servidor DNS y de nombre de dominio configurada en el pool de DHCP. ¿Cuál sería la causa del problema?": [
+    2,
+    "El router está configurado para la operación SLAAC"
+  ],
+  "34. ¿Cual implementación de FHRP es un protocolo propiedad de Cisco que admite el uso de carga compartida de IPv4?": [
+    1,
+    "GLBP"
+  ],
+  "35. Consulte la exhibición. La PC1 está configurada para obtener una dirección IP dinámica del servidor de DHCP. Hace dos semanas que la PC1 se encuentra apagada. Cuando la PC1 arranque e intente solicitar una dirección IP disponible, ¿qué dirección IP de destino colocará en el encabezado IP?": [
+    1,
+    "255.255.255.255"
+  ],
+  "36. ¿Qué sucede cuando un técnico en redes emite el comando ip dhcp excluded-address 10.0.15.1 10.0.15.15 en un router Cisco?": [
+    1,
+    "El router Cisco excluye 15 direcciones IP del arrendamiento a clientes DHCP."
+  ],
+  "37. Consulte la exhibición. ¿Qué se debe hacer para permitir que la PC-A reciba una dirección IPv6 del servidor de DHCPv6?": [
+    2,
+    "Agregar el comando ipv6 dhcp relay a la interfaz Fa0/0."
+  ],
+  "38. Consulte la exhibición. Sobre la base del resultado que se muestra, ¿qué clase de direccionamiento IPv6 se está configurando?": [
+    3,
+    "DHCPv6 sin estado"
+  ],
+  "39. El grupo de direcciones de un servidor DHCP se configura con 10.3.2.0/24. El administrador de la red reserva 3 direcciones IP para las impresoras. ¿Cuántas direcciones IP del conjunto quedan para asignar a otros hosts?": [
+    4,
+    "251"
+  ],
+  "40. Cuál implementación FHRP es un protocolo no propietario que depende de ICMP para proveer redundancia de IPv4?": [
+    3,
+    "IRDP"
+  ],
+  "41. Después de que un host ha generado una dirección IPv6 usando el proceso de DHCPv6 o SLAAC, como puede el host verificar que la dirección es única y por lo tanto utilizable?": [
+    4,
+    "El host envía un mensaje de solicitud de vecino ICMPv6 a la direccion aprendida por DHCPv6 o SLAAC y si no recibe anuncio de vecino de vuelta , la direccion se considera unica."
+  ],
+  "42. ¿Cuál enunciado describe HSRP?": [
+    4,
+    "Se utiliza en un grupo de routers para seleccionar un dispositivo activo y un dispositivo de reserva para darles servicios de enlace a una LAN."
+  ],
+  "44. El grupo de direcciones de un servidor DHCP se configura con 10.19.44.0/24. El administrador de la red reserva 3 direcciones IP para los servidores. ¿Cuántas direcciones IP del conjunto quedan para asignar a otros hosts?": [
+    1,
+    "251"
+  ],
+  "45. El grupo de direcciones de un servidor DHCP se configura con 10.19.44.0/24. El administrador de la red reserva 6 direcciones IP para los servidores. ¿Cuántas direcciones IP del conjunto quedan para asignar a otros hosts?": [
+    5,
+    "248"
+  ],
+  "46. Cual implementación FHRP es un protocolo no propietario que soporta balance de carga de IPv6?": [
+    2,
+    "GLBP para IPv6"
+  ],
+  "48. Cual es la razon por la cual en un ambiete SOHO un ISP comunmente asigna una direccion DHCP a un router inalambrico?": [
+    1,
+    "administración fácil de direccion IP"
+  ],
+  "50. Una pequeña cafetería ofrece conexión Wi-Fi gratuita a los clientes. La red incluye un router inalámbrico y un módem DSL que está conectado a la compañía telefónica local. ¿Qué método se utiliza normalmente para configurar la conexión con la compañía telefónica?": [
+    3,
+    "Establezca la conexión WAN en el router inalámbrico como cliente DHCP."
+  ],
+  "51. El grupo de direcciones de un servidor DHCP se configura con 172.21.121.0/25. El administrador de la red reserva 12 direcciones IP para los servidores web. ¿Cuántas direcciones IP del conjunto quedan para asignar a otros hosts?": [
+    5,
+    "114"
+  ],
+  "52. Cual implementación FHRP es un protocolo no propietario de elección solo de IPv4 con escalabilidad limitada?": [
+    2,
+    "VRRPV2"
+  ],
+  "53. El grupo de direcciones de un servidor DHCP se configura con 10.7.30.0/24. El administrador de la red reserva 5 direcciones IP para las impresoras. ¿Cuántas direcciones IP del conjunto quedan para asignar a otros hosts?": [
+    2,
+    "249"
+  ],
+  "54. El grupo de direcciones de un servidor DHCP se configura con 10.92.71.0/25. El administrador de la red reserva 8 direcciones IP para los servidores. ¿Cuántas direcciones IP del conjunto quedan para asignar a otros hosts?": [
+    2,
+    "118"
+  ],
+  "55. El grupo de direcciones de un servidor DHCP se configura con 172.18.93.0/25. El administrador de la red reserva 10 direcciones IP para los servidores web. ¿Cuántas direcciones IP del conjunto quedan para asignar a otros hosts?": [
+    5,
+    "116"
+  ],
+  "56. El grupo de direcciones de un servidor DHCP se configura con 192.168.184.0/26. El administrador de la red reserva 18 direcciones IP para los servidores. ¿Cuántas direcciones IP del conjunto quedan para asignar a otros hosts?": [
+    2,
+    "44"
+  ],
+  "57. El grupo de direcciones de un servidor DHCP se configura con 192.168.234.0/27. El administrador de la red reserva 22 direcciones IP para teléfonos IP. ¿Cuántas direcciones IP del conjunto quedan para asignar a otros hosts?": [
+    3,
+    "8"
+  ],
+  "58. El grupo de direcciones de un servidor DHCP se configura con 172.23.143.0/26. El administrador de la red reserva 14 direcciones IP para servidores de archivos. ¿Cuántas direcciones IP del conjunto quedan para asignar a otros hosts?": [
+    2,
+    "48"
+  ],
+  "59. Cual implementación FHRP es un protocolo propietario de Cisco que permite solo un router en un grupo para enviar paquetes de IPv6?": [
+    3,
+    "HSRP para IPv6"
   ]
 }
