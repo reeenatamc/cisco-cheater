@@ -2300,6 +2300,14 @@
     "",
     "DHCPv6 sin estado: Se habilita en los mensajes RA con el comando ipv6 nd other-config-flag. Los clientes solo envían mensajes DHCPv6 INFORMATION-REQUEST al servidor. Se habilita en el cliente con el comando ipv6 address autoconfig. Este modo no asigna direcciones, solo información adicional como DNS o dominio de búsqueda.",
     "DHCPv6 con estado: En los mensajes RA, el indicador M se establece en 1. Los clientes se comunican con el servidor de DHCPv6 mediante el uso de los mensajes solicitando dirección completa. Utiliza el comando address para crear un conjunto de direcciones para los clientes. Se habilita en el cliente con el comando ipv6 address dhcp. Este modo asigna direcciones IPv6 completas y parámetros de red adicionales."
+  ],
+   "25. Haga coincidir el número de paso con la secuencia de etapas que se producen durante el proceso de conmutación por error de HSRP. (No se utilizan todas las opciones).": [
+    "",
+    "Paso 1: El router de reenvío falla. Paso 2: El router de reserva deja de recibir los mensajes de saludo del router de reenvío. Paso 3: El router de reserva asume la función del router de reenvío. Paso 4: El nuevo router de reenvío asume las direcciones IP y MAC del router virtual."
+  ],
+"26. Una los tipos de mensaje DHCP con el orden del proceso de DHCPv4. (No se utilizan todas las opciones).": [
+    "",
+    "Paso 1: DHCPDISCOVER. Paso 2: DHCPOFFER. Paso 3: DHCPREQUEST. Paso 4: DHCPACK."
   ]
 
 
