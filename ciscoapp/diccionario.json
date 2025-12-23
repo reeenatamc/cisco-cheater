@@ -2319,5 +2319,290 @@
   "49. Haga coincidir los tipos de mensaje de DHCP con el orden del proceso stateful de DHCPv6 cuando un cliente se conecta por primera vez a la red IPv6. (No se utilizan todas las opciones).": [
     " ",
     "Paso 1: DHCPv6 SOLICIT. Paso 2: DHCPv6 ADVERTISE. Paso 3: DHCPv6 REQUEST. Paso 4: DHCPv6 REPLY."
-  ]
+  ],
+  "1. ¿Cuál es el resultado de un ataque de agotamiento de DHCP?": [
+    " ",
+    "Los clientes legítimos no pueden arrendar direcciones IP."
+  ],
+  "2. ¿Qué representa una práctica recomendada en relación con protocolos de descubrimiento como CDP y LLDP en dispositivos de red?": [
+    " ",
+    "Deshabilite ambos protocolos en todas las interfaces donde no sean necesarios."
+  ],
+  "3. ¿Qué declaración describe el comportamiento de un conmutador cuando la tabla de direcciones MAC está llena?": [
+    " ",
+    "Trata las tramas como unidifusión desconocida e inunda todas las tramas entrantes a todos los puertos dentro de la VLAN local."
+  ],
+  "4. ¿Qué característica de un switch lo hace vulnerable a los ataques de salto de VLAN?": [
+    " ",
+    "la función de puerto troncal automático habilitada para todos los puertos de forma predeterminada"
+  ],
+  "5. ¿Qué componente de AAA se utiliza para determinar los recursos a los que puede acceder el usuario y las operaciones que tiene permitido realizar?": [
+    " ",
+    "Autorización"
+  ],
+  "7. Un administrador de red configura la seguridad de puertos en un switch de Cisco. La política de seguridad de la compañía especifica que cuando se produce una violación, los paquetes con direcciones de origen desconocidas deben descartarse y no se debe enviar ninguna notificación. ¿Qué modo de violación se debe configurar en las interfaces?": [
+    " ",
+    "protect"
+  ],
+  "8. ¿Qué beneficio de seguridad se obtiene al habilitar la protección BPDU en interfaces habilitadas para PortFast?": [
+    " ",
+    "evitar que se agreguen conmutadores no fiables a la red"
+  ],
+  "9. ¿Qué tipo de ataque de salto de VLAN se puede evitar designando una VLAN no utilizada como VLAN nativa?": [
+    " ",
+    "VLAN double-tagging"
+  ],
+  "11. ¿Qué dos comandos se pueden usar para habilitar la protección BPDU en un switch? (Escoja dos opciones).": [
+    " ",
+    "S1(config-if)# spanning-tree bpduguard enable. S1(config)# spanning-tree portfast bpduguard default"
+  ],
+  "12. ¿Cuáles son los dos métodos utilizados por una NIC inalámbrico para descubrir un AP? (Elija dos).": [
+    " ",
+    "recepción de una trama de señal de difusión. transmisión de una solicitud de sondeo"
+  ],
+  "13. ¿Qué topología de red inalámbrica se usaría por los ingenieros de redes para brindar una red inalámbrica para un edificio entero universitarios?": [
+    " ",
+    "Infraestructura"
+  ],
+  "14. ¿Qué es un modo de seguridad inalámbrica que requiere un servidor RADIUS para autenticar usuarios inalámbricos?": [
+    " ",
+    "empresa"
+  ],
+  "15. Un técnico configura el canal en un router inalámbrico en 1, 6 u 11. ¿Cuál es la finalidad de ajustar el canal?": [
+    " ",
+    "Evitar la interferencia de dispositivos inalámbricos próximos."
+  ],
+  "16. Se le pide a un administrador de red que actualice el acceso inalámbrico para usuarios finales en un edificio. Para proporcionar velocidades de datos de hasta 1,3 Gb/s y seguir siendo compatible con dispositivos más antiguos, ¿qué estándar inalámbrico debe implementarse?": [
+    " ",
+    "802.11ac"
+  ],
+  "17. En un panel WLC de Cisco 3504, ¿qué opción proporciona acceso al menú completo de funciones?": [
+    " ",
+    "Avanzado"
+  ],
+  "18. ¿Qué protocolo se puede utilizar para supervisar la red?": [
+    " ",
+    "SNMP"
+  ],
+  "19. ¿Qué servicio se puede utilizar en un enrutador inalámbrico para priorizar el tráfico de red entre diferentes tipos de aplicaciones, de modo que los datos de voz y vídeo se prioricen sobre los datos de correo electrónico y web?": [
+    " ",
+    "QoS"
+  ],
+  "20. ¿Qué paso se requiere antes de crear una nueva WLAN en un WLC de la serie 3500 de Cisco?": [
+    " ",
+    "Crear una nueva interfaz VLAN."
+  ],
+  "21. Un administrador de red está trabajando para mejorar el rendimiento de la WLAN en un enrutador inalámbrico de doble banda. ¿Cuál es una forma simple de lograr un resultado dividido en el tráfico?": [
+    " ",
+    "Asegúrese de que se utilizan diferentes SSID para las bandas de 2,4 GHz y 5 GHz."
+  ],
+  "22. Un administrador de red está agregando una nueva WLAN en un WLC de la serie 3500 de Cisco. La configuración requiere una contraseña secreta compartida. ¿Cuál es el propósito de la contraseña secreta compartida?": [
+    " ",
+    "Se utiliza para cifrar los mensajes entre el WLC y el servidor RADIUS."
+  ],
+  "23. ¿Qué componente de control de acceso, implementación o protocolo audita las acciones de los usuarios que se realizan en la red?": [
+    " ",
+    "Registro"
+  ],
+  "24. ¿Qué tipo de red inalámbrica utiliza transmisores para proporcionar servicios inalámbricos en una gran región urbana?": [
+    " ",
+    "wireless metropolitan-area network"
+  ],
+  "26. ¿Qué dos soluciones de Cisco ayudan a prevenir los ataques de inanición de DHCP? (Escoja dos opciones).": [
+    " ",
+    "Detección DHCP. Seguridad de puertos"
+  ],
+  "27. ¿Cuáles son tres técnicas de mitigación de ataques de VLAN? (Elija tres opciones.)": [
+    " ",
+    "Configurar la VLAN nativa en una VLAN sin usar.. Desactivar el DTP.. Habilitar manualmente los enlaces troncales."
+  ],
+  "28. Consulte la ilustración. ¿Qué se puede determinar sobre la seguridad de puertos a partir de la información que se muestra?": [
+    " ",
+    "El modo de violación de puertos es el modo predeterminado para todos los puertos que tengan habilitada la seguridad de puertos."
+  ],
+  "29. Un administrador de red de una universidad está configurando el proceso de autenticación de usuario de WLAN. Los usuarios inalámbricos deben introducir credenciales de nombre de usuario y contraseña que serán verificadas por un servidor. ¿Qué servidor prestaría tal servicio?": [
+    " ",
+    "RADIUS"
+  ],
+  "30. Un técnico está solucionando problemas con una WLAN lenta que consta de dispositivos 802.11b y 802.11g. Se ha implementado un nuevo router de doble banda 802.11n/ac en la red para reemplazar el antiguo router 802.11g. ¿Qué puede hacer el técnico para abordar la velocidad inalámbrica lenta?": [
+    " ",
+    "Dividir el trafico inalambrico entre las bandas 802.11n de 2.4 GHz y 5 GHz."
+  ],
+  "31. Estados del manual de la empresa que los empleados tengan hornos microondas en sus oficinas. En cambio, todos los empleados deben utilizar hornos microondas ubicados en la cafetería de los empleados. ¿Qué riesgo de seguridad inalámbrica es la empresa que intenta evitar?": [
+    " ",
+    "interferencia accidental"
+  ],
+  "32. ¿Cuál es la función proporcionada por el protocolo CAPWAP en una red inalámbrica corporativa?": [
+    " ",
+    "CAPWAP proporciona la encapsulación y reenvío del tráfico de usuario inalámbrico entre un punto de acceso y un controlador LAN inalámbrico."
+  ],
+  "33. Abra la actividad de PT. Realice las tareas en las instrucciones de la actividad y luego responda la pregunta.\n¿Qué evento tendrá lugar si hay una violación de seguridad de puerto en la interfaz Fa0/1 del switch S1?": [
+    " ",
+    "Se descartan los paquetes con direcciones de origen desconocidas."
+  ],
+  "34. ¿Qué método de autenticación almacena nombres de usuario y contraseñas en el router y es ideal para redes pequeñas?": [
+    " ",
+    "AAA local"
+  ],
+  "35. ¿Qué protocolo se debe usar para mitigar la vulnerabilidad de usar Telnet para administrar dispositivos de red de forma remota?": [
+    " ",
+    "SSH"
+  ],
+  "36. ¿Qué dispositivo se considera un suplicante durante el proceso de autenticación de 802.1x?": [
+    " ",
+    "el cliente que solicita la autenticación"
+  ],
+  "37. Consulte la ilustración. La interfaz Fa0/2 del conmutador S1 se ha configurado con el comando switchport port-security mac-address 0023.189d.6456 y se ha conectado una estación de trabajo. ¿Cuál podría ser la razón por la que la interfaz Fa0/2 se apaga?": [
+    " ",
+    "La dirección MAC de PC1 que se conecta a la interfaz Fa0/2 no es la dirección MAC configurada."
+  ],
+  "38. Consulte la ilustración. La PC1 y la PC2 deberían poder obtener las asignaciones de direcciones IP del servidor DHCP. ¿Cuántos puertos entre los switches se deben asignar como puertos confiables como parte de la configuración de detección DHCP?": [
+    " ",
+    "7"
+  ],
+  "39. Un administrador de red está configurando DAI en un conmutador con el comando ip arp inspection validate src-mac . ¿Cuál es el objetivo de este comando de configuración?": [
+    " ",
+    "Comprueba la dirección de origen L2 en el encabezado de Ethernet contra la dirección del remitente L2 en el cuerpo ARP."
+  ],
+  "40. Como parte de la nueva política de seguridad, todos los switches de la red están configurados para aprender automáticamente las direcciones MAC de cada puerto. Todas las configuraciones en ejecución se guardan en el inicio y cierre de cada día hábil. Una tormenta fuerte causa un corte de energía prolongado varias horas después del cierre de negocio. Cuando los switches se vuelven a activar, estos conservan las direcciones MAC aprendidas dinámicamente. ¿Qué configuración de seguridad de puertos habilitó esto?": [
+    " ",
+    "direcciones MAC seguras persistentes"
+  ],
+  "41. ¿Qué tipo de antena inalámbrica es más adecuado para proporcionar cobertura en espacios abiertos grandes, como entradas o salas de conferencias grandes?": [
+    " ",
+    "omnidireccional"
+  ],
+  "42. Durante una conferencia, los participantes utilizan computadoras portátiles para obtener conectividad de red. Cuando uno de los disertantes intenta conectarse a la red, la computadora portátil no puede mostrar ninguna red inalámbrica disponible. ¿En qué modo debe de estar funcionando el punto de acceso?": [
+    " ",
+    "activa"
+  ],
+  "43. En una página Resumen del WLC 3504 de Cisco ( Avanzado > Resumen ), ¿qué pestaña permite a un administrador de red configurar una WLAN determinada con una directiva WPA2?": [
+    " ",
+    "Redes de área local inalámbrica (WLAN)"
+  ],
+  "44. Un administrador de red implementa un enrutador inalámbrico en un pequeño bufete de abogados. Los portátiles de los empleados se unen a la WLAN y reciben direcciones IP en la red 10.0.10.0/24. ¿Qué servicio se utiliza en el enrutador inalámbrico para permitir que las computadoras portátiles de los empleados accedan a Internet?": [
+    " ",
+    "NAT"
+  ],
+  "45. Un ingeniero de red resuelve problemas en una red inalámbrica que se implementó recientemente y que utiliza los últimos estándares 802.11. Cuando los usuarios acceden a servicios de ancho de banda elevado, como la transmisión de video, el rendimiento de la red inalámbrica es deficiente. Para mejorar el rendimiento, el ingeniero de red decide configurar un SSID de banda de frecuencia de 5 Ghz y capacitar a los usuarios para utilizar ese SSID para los servicios de transmisión de medios. ¿Por qué esta solución podría mejorar el rendimiento de la red inalámbrica para ese tipo de servicio?": [
+    " ",
+    "La banda de 5 Ghz tiene más canales y está menos poblada que la banda de 2,4 GHz, lo que la hace más adecuada para la transmisión de medios."
+  ],
+  "46. ¿Qué tres parámetros deberían cambiarse si se están implementando las mejores prácticas para un AP inalámbrico doméstico? (Escoja tres opciones).": [
+    " ",
+    "SSID. wireless network password. AP password"
+  ],
+  "47. ¿Qué componente de control de acceso, implementación o protocolo se implementa localmente o como una solución basada en servidor?": [
+    " ",
+    "autenticación"
+  ],
+  "48. ¿Qué tipo de red inalámbrica utiliza comúnmente dispositivos Bluetooth o ZigBee?": [
+    " ",
+    "wireless personal-area network"
+  ],
+  "49. ¿Qué componente de AAA permite que un administrador realice un seguimiento de las personas que acceden a los recursos de la red y de los cambios que se hacen en dichos recursos?": [
+    " ",
+    "Registro"
+  ],
+  "50. ¿Qué característica o configuración de un switch lo hace vulnerable a ataques de doble etiquetado de VLAN?": [
+    " ",
+    "la VLAN nativa del puerto de enlace troncal es la misma que una VLAN de usuario"
+  ],
+  "51. ¿Qué tipo de red inalámbrica utiliza transmisores para proporcionar cobertura en un área geográfica extensa?": [
+    " ",
+    "wireless wide-area network"
+  ],
+  "52. ¿Cuál es una de las ventajas de usar SSID en lugar de FTP?": [
+    " ",
+    "Los clientes deberán identificar manualmente el SSID para conectarse a la red."
+  ],
+  "53. Una empresa implementó recientemente una red inalámbrica 802.11n. Algunos usuarios se quejan de que la red inalámbrica es demasiado lenta. ¿Cuál es el mejor método para mejorar el rendimiento de la red inalámbrica?": [
+    " ",
+    "Dividir el tráfico entre las bandas de frecuencia de 2,4 GHz y 5 GHz."
+  ],
+  "54. Un especialista en seguridad de TI habilita la seguridad de puertos en un puerto de switch de un switch de Cisco. ¿Cuál es el modo de violación predeterminado que se usa hasta que el puerto de switch se configura para que use otro modo de violación?": [
+    " ",
+    "shutdown"
+  ],
+  "55. Una computadora portátil no se puede conectar a un punto de acceso inalámbrico. ¿Cuáles son los dos pasos de resolución de problemas que se deben llevar a cabo primero? (Elija dos opciones).": [
+    " ",
+    "Asegurarse de que la NIC inalámbrica esté habilitada.. Asegurarse de que se haya elegido el SSID inalámbrico."
+  ],
+  "56. Un técnico está por instalar y configurar una red inalámbrica en una sucursal pequeña. ¿Cuál es la primera medida de seguridad que el técnico debe aplicar de forma inmediata al encender el router inalámbrico?": [
+    " ",
+    "Cambiar el nombre de usuario y contraseña predeterminados en el router inalámbrico."
+  ],
+  "57. ¿Cuáles son dos protocolos que utiliza AAA para autenticar a los usuarios contra una base de datos central de nombres de usuario y contraseña? (Escoja dos opciones).": [
+    " ",
+    "RADIUS. TACACS+"
+  ],
+  "58. ¿Qué componente de control de acceso, implementación o protocolo se basa en las funciones de dispositivo del suplicante, autenticador y servidor de autenticación?": [
+    " ",
+    "802.1x"
+  ],
+  "59. ¿Qué dos estándares inalámbricos IEEE 802.11 operan solo en el rango de 5 GHz? (Escoja dos opciones).": [
+    " ",
+    "802.11ac. 802,11a"
+  ],
+  "60. ¿Qué tipo de trama de administración puede ser transmitido regularmente por un AP?": [
+    " ",
+    "beacon"
+  ],
+  "61. ¿Qué tipo de red inalámbrica utiliza transmisores de baja potencia para una red de corto alcance, generalmente de 20 a 30 pies (6 a 9 metros)?": [
+    " ",
+    "wireless personal-area network"
+  ],
+  "62. ¿Qué componente de control de acceso, implementación o protocolo controla a quién se le permite acceder a una red?": [
+    " ",
+    "autenticación"
+  ],
+  "63. ¿Qué componente de control de acceso, implementación o protocolo indica éxito o fallo de un servicio solicitado por el cliente con un mensaje PASS o FAIL?": [
+    " ",
+    "autorización"
+  ],
+  "64. ¿Qué componente de control de acceso, implementación o protocolo controla lo que los usuarios pueden hacer en la red?": [
+    " ",
+    "Autorización"
+  ],
+  "65. ¿Qué tipo de red inalámbrica es adecuada para proporcionar acceso inalámbrico a una ciudad o distrito?": [
+    " ",
+    "wireless metropolitan-area network"
+  ],
+  "67. ¿Qué componente de control de acceso, implementación o protocolo registra comandos EXEC y configuración configurados por un usuario?": [
+    " ",
+    "Registro"
+  ],
+  "68. ¿Qué tipo de red inalámbrica es adecuada para las comunicaciones nacionales y globales?": [
+    " ",
+    "wireless wide-area network"
+  ],
+  "69. ¿Que tipo de red inalambrica utiliza transmisores para cubrir una red de tamaño mediano, generalmente de hasta 300 pies (91.4metros)?": [
+    " ",
+    "wireless wide-area network"
+  ],
+  "70. ¿Qué tipo de red inalámbrica se basa en el estándar 802.11 y una frecuencia de radio de 2.4 GHz o 5 GHz?": [
+    " ",
+    "wireless local-area network"
+  ],
+  "71. ¿Qué tipo de red inalámbrica a menudo hace uso de dispositivos montados en edificios?": [
+    " ",
+    "wireless metropolitan-area network"
+  ],
+  "72. ¿Qué componente de control de acceso, implementación o protocolo se basa en nombres de usuario y contraseñas?": [
+    " ",
+    "autenticación"
+  ],
+  "73. ¿Qué tipo de red inalámbrica es adecuada para su uso en un hogar u oficina?": [
+    " ",
+    "wireless local-area network"
+  ],
+  "25. Haga coincidir cada componente funcional de AAA con su descripción. (No se utilizan todas las opciones)": [
+    " ",
+    "authentication: demuestra que los usuarios son quienes dicen ser. authorization: determina a qué recursos pueden acceder los usuarios o las operaciones que pueden realizar. Registro: calcula cuánto debe pagar un usuario por el acceso remoto a un dispositivo."
+  ],
+  "6. Consulte la ilustración. La seguridad del puerto se ha configurado en la interfaz Fa 0/12 del conmutador S1. ¿Qué acción ocurrirá cuando PC1 esté conectado al conmutador S1 con la configuración aplicada?\n\n":
+          [
+            " ",
+            "Las tramas de PC1 provocarán que la interfaz se cierre inmediatamente y se realizará una entrada de registro."
+          ]
 }
