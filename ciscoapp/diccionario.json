@@ -2791,5 +2791,10 @@
   "46. Consulte la imagen. ¿Qué interfaz será la interfaz de salida para reenviar un paquete de datos que tenga la dirección IP de destino 172.18.109.152?": [
     " ",
     "Serial0/0/0"
-  ]
+  ],
+  "6. Una la característica con el tipo de routing correspondiente. (No se utilizan todas las opciones).": [
+  " ",
+  "Enrutamiento estático: No es apto para las topologías donde se requiere más de un router. Menos sobrecarga de routing. Enrutamiento dinámico: En general, se usa en las redes de rutas internas. Las redes nuevas se agregan de forma automática a la tabla de routing. La mejor opción para redes grandes."
+]
+
 }
