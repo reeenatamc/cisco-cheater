@@ -2600,9 +2600,196 @@
     " ",
     "authentication: demuestra que los usuarios son quienes dicen ser. authorization: determina a qué recursos pueden acceder los usuarios o las operaciones que pueden realizar. Registro: calcula cuánto debe pagar un usuario por el acceso remoto a un dispositivo."
   ],
-  "6. Consulte la ilustración. La seguridad del puerto se ha configurado en la interfaz Fa 0/12 del conmutador S1. ¿Qué acción ocurrirá cuando PC1 esté conectado al conmutador S1 con la configuración aplicada?\n\n":
-          [
-            " ",
-            "Las tramas de PC1 provocarán que la interfaz se cierre inmediatamente y se realizará una entrada de registro."
-          ]
+  "6. Consulte la ilustración. La seguridad del puerto se ha configurado en la interfaz Fa 0/12 del conmutador S1. ¿Qué acción ocurrirá cuando PC1 esté conectado al conmutador S1 con la configuración aplicada?\n\n": [
+    " ",
+    "Las tramas de PC1 provocarán que la interfaz se cierre inmediatamente y se realizará una entrada de registro."
+  ],
+  "1. Consulte la exhibición. ¿Qué hace el router con un paquete que tiene una dirección IP de destino 192.168.12.227?": [
+    " ",
+    "Envía el paquete por la interfaz Serial0/0/0."
+  ],
+  "2. ¿Qué sucede con una entrada de ruta estática en una tabla de routing cuando la interfaz de salida asociada con esa ruta pasa al estado inactivo?": [
+    " ",
+    "La ruta estática se elimina de la tabla de routing."
+  ],
+  "3. ¿Cuál es una característica de una ruta estática que coincide con todos los paquetes?": [
+    " ",
+    "Identifica la dirección IP del gateway al cual el router envía todos los paquetes IP para los que no tiene una ruta descubierta o estática."
+  ],
+  "4. ¿Qué ruta tendrá una menor distancia administrativa?": [
+    " ",
+    "Una red conectada directamente"
+  ],
+  "5. ¿Cuándo sería más beneficioso usar un protocolo de routing dinámico en lugar de un routing estático?": [
+    " ",
+    "En una red donde existen muchos cambios de topología."
+  ],
+  "7. Un administrador de red configura la interfaz fa0/0 en el router R1 con el comando ip address 172.16.1.254 255.255.255.0 . Sin embargo, cuando el administrador emite el comando show ip route , en la tabla de routing no se muestra la red conectada directamente. ¿Cuál es la posible causa del problema?": [
+    " ",
+    "No se activó la interfaz fa0/0."
+  ],
+  "8. Consulte el gráfico. ¿Qué comando se usaría en el router A para configurar una ruta estática que dirija el tráfico de la LAN A que está destinado a la LAN C?": [
+    " ",
+    "A(config)# ip route 192.168.4.0 255.255.255.0 192.168.3.2"
+  ],
+  "9. ¿En qué dos routers se debe configurar una ruta estática predeterminada? (Elija dos opciones.)": [
+    " ",
+    "Conexión del router perimetral al ISP.. Conexión del router de rutas internas al resto de la red corporativa o de campus."
+  ],
+  "11. Un administrador de redes emite el comando ipv6 route 2001:db8:acad:1::/32 gigabitethernet0/0 2001:db8:acad:6::1 100 en un router. ¿Qué distancia administrativa se asigna a esta ruta?": [
+    " ",
+    "100"
+  ],
+  "12. Consulte la ilustración. ¿Qué dos comandos cambiarán la dirección de siguiente salto para la red 10.0.0.0/8 de172.16.40.2 a 192.168.1.2? (Elija dos opciones.)": [
+    " ",
+    "A(config)# ip route 10.0.0.0 255.0.0.0 192.168.1.2. A(config)# no ip route 10.0.0.0 255.0.0.0 172.16.40.2"
+  ],
+  "13. Consulte la ilustración. ¿Qué comando de ruta estática predeterminada permitiría que R1 potencialmente llegue a todas las redes desconocidas en Internet?": [
+    " ",
+    "R1(config)# ipv6 route ::/0 G0/1 fe80::2"
+  ],
+  "14. Consulte la ilustración. ¿Qué tipo de ruta estática IPv6 se configuró en la ilustración?": [
+    " ",
+    "ruta estática recursiva"
+  ],
+  "16. Consulte la exhibición. La compañía pequeña que se muestra usa routing estático. Los usuarios en la LAN del R2 informaron un problema de conectividad. ¿Cuál es el problema?": [
+    " ",
+    "El R1 necesita una ruta estática a las LAN del R2."
+  ],
+  "17. Consulte la ilustración. Un administrador intenta instalar una ruta estática IPv6 en el router R1 para llegar a la red conectada al router R2. Después de introducir el comando de ruta estática, la conectividad a la red sigue fallando. ¿Qué error se cometió en la configuración de la ruta estática?": [
+    " ",
+    "La interfaz es incorrecta."
+  ],
+  "18. Consulte la ilustración. ¿Cómo se instaló la ruta 2001:DB8:CAFE:4::1/128 del host en la tabla de routing?": [
+    " ",
+    "Un administrador introdujo la ruta de forma manual."
+  ],
+  "19. Consulte la ilustración. El HostA intenta contactarse con el ServidorB. ¿Cuáles son las dos afirmaciones que describen correctamente el direccionamiento que el HostA generará en el proceso? (Elija dos).": [
+    " ",
+    "Un paquete con la dirección IP de destino del ServidorB.. Un trama con la dirección MAC de destino del RouterA."
+  ],
+  "20. Consulte la ilustración. El ping del R1 a 10.1.1.2 se realiza correctamente, pero los pings del R1 a cualquier dirección en la red 192.168.2.0 fallan. ¿Cuál es la causa del problema?": [
+    " ",
+    "La ruta estática para 192.168.2.0 está configurada de manera incorrecta."
+  ],
+  "21. Consulte la ilustración. Un administrador está intentando instalar una ruta estática predeterminada en el router R1 para llegar a la red del sitio B en el router R2. Después de ingresar el comando static route, la ruta todavía no aparece en la tabla de ruteo del router R1. ¿Qué impide que la ruta se instale en la tabla de enrutamiento?": [
+    " ",
+    "La dirección del siguiente salto es incorrecta."
+  ],
+  "22. Consulte la ilustración. ¿Qué solución de routing permitirá que la PC A y la PC B accedan a Internet con la cantidad mínima de utilización de ancho de banda de red y CPU del router?": [
+    " ",
+    "Configurar una ruta estática predeterminada desde el R1 hasta el perímetro, una ruta predeterminada desde el perímetro hasta Internet y una ruta estática desde el perímetro hasta el R1."
+  ],
+  "23. Consulte la ilustración. ¿Qué ocurrirá después de que el administrador de TI introduzca la nueva ruta estática?": [
+    " ",
+    "La ruta 172.16.1.0 aprendida de RIP se reemplazará por la ruta estática 172.16.1.0."
+  ],
+  "24. ¿Qué dos datos se necesitan en una ruta estática completamente especificada para eliminar las búsquedas recursivas? (Elija dos opciones.)": [
+    " ",
+    "La dirección IP del vecino de siguiente salto. La ID de interfaz de la interfaz de salida"
+  ],
+  "25. Consulte la ilustración. ¿Qué comando configurará correctamente una ruta estática IPv6 en el router R2, que permitirá que el tráfico de la PC2 llegue a la PC1 sin búsquedas recurrentes del router R2?": [
+    " ",
+    "R2(config)# ipv6 route 2001:db8:10:12::/64 S0/0/0"
+  ],
+  "26. Consulte la ilustración. ¿Qué ruta estática introduciría un técnico de TI para crear una ruta de respaldo a la red 172.16.1.0 que solo se utiliza si la ruta principal aprendida a través de RIP falla?": [
+    " ",
+    "ip route 172.16.1.0 255.255.255.0 s0/0/0 121"
+  ],
+  "28. ¿Qué utiliza el router R1 como dirección MAC de destino al crear la trama que irá del R1 al servidor B?": [
+    " ",
+    "Si la dirección MAC de destino que corresponde a la dirección IPv4 no aparece en la caché ARP, R1 envía una solicitud de ARP."
+  ],
+  "29. ¿Cuáles son las ventajas del enrutamiento estático en comparación con el enrutamiento dinámico? (Elija dos).": [
+    " ",
+    "El routing estático es más seguro porque no envía anuncios a través de la red.. El routing estático usa menos recursos del router que el routing dinámico."
+  ],
+  "30. ¿Qué ruta se utiliza para reenviar un paquete con una dirección IP de origen 192.168.10.1 y una dirección IP de destino 10.1.1.1?": [
+    " ",
+    "O 10.1.1.0/24 [110/65] via 192.168.200.2, 0:01:20, Serial0/1/0"
+  ],
+  "31. ¿Qué valor de una tabla de enrutamiento representa la fiabilidad y es utilizado por el router para determinar qué ruta instalar en la tabla de enrutamiento cuando hay varias rutas hacia el mismo destino?": [
+    " ",
+    "distancia administrativa"
+  ],
+  "32. Consulte la ilustración. Esta red tiene dos conexiones al ISP, una a través del router C y otra a través del router B. El enlace serial entre el router A y el router C admite EIGRP, y es el enlace principal a Internet. Si el enlace principal falla, el administrador necesita una ruta estática flotante que evita las búsquedas recurrentes de rutas y cualquier problema posible de siguiente salto causado por la naturaleza de acceso múltiple del segmento Ethernet con el router B. ¿Qué debe configurar el administrador?": [
+    " ",
+    "Cree una ruta estática completamente especificada que apunte a Fa0/0 con una AD de 95."
+  ],
+  "35. ¿Qué característica completa la siguiente declaración?\nCuando se configura una ruta estática IPv6, como ruta de respaldo a una ruta estática en la tabla de enrutamiento, el comando “distance” se usa con…": [
+    " ",
+    "una distancia administrativa de 2."
+  ],
+  "36. Consulte la ilustración. El router de sucursal tiene una relación de vecino OSPF con el router HQ a través de la red 198.51.0.4/30. El enlace de red 198.51.0.8/30 debe servir como copia de seguridad cuando el enlace OSPF se desactiva. El comando flotante static route ip route 0.0.0.0 0.0.0.0 S0/1/1 100 se emitió en Branch y ahora el tráfico está utilizando el enlace de copia de seguridad incluso cuando el enlace OSPF está activo y funcionando. ¿Qué cambio se debe realizar en el comando static route para que el tráfico sólo utilice el enlace OSPF cuando esté activo?": [
+    " ",
+    "Cambie la distancia administrativa a 120."
+  ],
+  "37. Consulte la exposición. ¿Qué interfaz será la interfaz de salida para reenviar un paquete de datos que tenga la dirección IP de destino 10.3.86.2?": [
+    " ",
+    "Serial0/0/0"
+  ],
+  "38. Consulte la ilustración. La PC A envía una solicitud al servidor B. ¿Qué dirección IPv4 se utiliza en el campo de destino del paquete cuando el paquete sale de la PC A?": [
+    " ",
+    "192.168.12.16"
+  ],
+  "39. Consulte la ilustración. ¿Cuál es el valor de la distancia administrativa de la ruta para que el router R1 se comunique con la dirección IPv6 de destino 2001:DB8:CAFE:4::A?": [
+    " ",
+    "120"
+  ],
+  "41. Consulte la ilustración. ¿Qué conjunto de comandos configurará rutas estáticas que permitirán a los routers Park y Alta a) reenviar paquetes a cada LAN y b) dirigir todo el tráfico a Internet?": [
+    " ",
+    "Parque (config) # ruta ip 0.0.0.0 0.0.0 192.168.14.1\nAlta (config) # ruta ip 10.0.234.0 255.255.0 192.168.14.2\nAlta (config) # ruta ip 0.0.0.0 0.0.0 s0/0/0"
+  ],
+  "43. Un router usó el protocolo OSPF para descubrir una ruta a la red 172.16.32.0/19. ¿Qué comando implementa una ruta estática flotante de respaldo para esta red?": [
+    " ",
+    "ip route 172.16.32.0 255.255.224.0 S0/0/0 200"
+  ],
+  "44. ¿Qué característica completa la siguiente declaración?": [
+    " ",
+    "una dirección de enlace local IPv6 en el router adyacente."
+  ],
+  "45. Consulte la exhibición. ¿Qué comando se utilizaría para configurar una ruta estática en el R1, a fin de que el tráfico de ambas LAN pueda llegar a la red remota 2001:db8:1:4::/64?": [
+    " ",
+    "ipv6 route 2001:db8:1:4::/64 2001:db8:1:3::2"
+  ],
+  "47. Consulte la imagen. ¿Qué interfaz será la interfaz de salida para reenviar un paquete de datos que tenga la dirección IP de destino 192.168.71.52?": [
+    " ",
+    "Serial0/0/0"
+  ],
+  "48. ¿Qué característica completa la siguiente declaración?": [
+    " ",
+    "el comando “show ipv6 route static”."
+  ],
+  "50. Consulte la imagen. ¿Cual interfaz será la interfaz de salida para reenviar un paquete de datos que tenga la dirección IP de destino 10.55.99.78?": [
+    " ",
+    "Serial0/0/1"
+  ],
+  "51. ¿Qué característica completa la siguiente declaración?\nCuando se configura una ruta estática IPv6, primero es necesario configurar…": [
+    " ",
+    "el comando “ipv6 unicast-routing”."
+  ],
+  "52. ¿Qué característica completa la siguiente declaración?\nCuando se configura una ruta estática IPv6, es posible que se use la misma dirección local de enlace IPv6 para…": [
+    " ",
+    "la dirección del siguiente salto de dos diferentes routers adyacentes."
+  ],
+  "53. Consulte la exposición. ¿Qué interfaz será la interfaz de salida para reenviar un paquete de datos que tenga la dirección IP de destino 172.25.128.244?": [
+    " ",
+    "GigabitEthernet0/1"
+  ],
+  "54. Consulte la imgen. ¿Qué interfaz será la interfaz de salida para reenviar un paquete de datos que tenga la dirección IP de destino 192.168.139.244?": [
+    " ",
+    "GigabitEthernet0/1"
+  ],
+  "33. ¿Qué combinación del prefijo de red y la longitud de este se utiliza para crear una ruta estática predeterminada que coincida con cualquier destino IPv6?": [
+    " ",
+    "::/0"
+  ],
+  "40. ¿Cuál es una característica de una ruta estática flotante?": [
+    " ",
+    "Está configurado con una distancia administrativa mayor que la del protocolo de routing dinámico original."
+  ],
+  "46. Consulte la imagen. ¿Qué interfaz será la interfaz de salida para reenviar un paquete de datos que tenga la dirección IP de destino 172.18.109.152?": [
+    " ",
+    "Serial0/0/0"
+  ]
 }
