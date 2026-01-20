@@ -3515,5 +3515,65 @@
   "10. ¿Qué significa la letra C junto a una entrada en la salida del comando show ip route?": [
     " ",
     "Identifica una red que está conectada directamente al enrutador."
+  ],
+  "1. ¿Qué sucede con un puerto asociado con VLAN 10 cuando el administrador elimina VLAN 10 del switch?": [
+    " ",
+    "El puerto se vuelve inactivo."
+  ],
+  "2. ¿En qué ubicación de memoria se almacenan las configuraciones de VLAN de las VLAN de rango normal en un switch Catalyst?": [
+    " ",
+    "Memoria flash"
+  ],
+  "3. Un administrador está investigando una falla en un enlace troncal entre un switch Cisco y un switch de otro proveedor. Después de algunos show comandos, el administrador nota que los switches no están negociando un tronco. ¿Cuál es una causa probable para este problema?": [
+    " ",
+    "Los switches de otros proveedores no admiten el DTP."
+  ],
+  "4. ¿Cuál es el propósito del archivo vlan.dat en un switch?": [
+    " ",
+    "Contiene la base de datos de la VLAN."
+  ],
+  "5. ¿Cuál es el propósito de establecer la VLAN nativa separada de las VLAN de datos?": [
+    " ",
+    "Se debe usar una VLAN separada para transportar tramas sin etiquetas poco comunes a fin de evitar la contención del ancho de banda en las VLAN de datos."
+  ],
+  "6. Cuando un switch Cisco recibe tramas sin etiquetas en un puerto troncal 802.1Q, ¿a qué ID de VLAN se conmuta el tráfico de forma predeterminada?": [
+    " ",
+    "native VLAN ID"
+  ],
+  "7. Un administrador de red está determinando la mejor ubicación de los vínculos troncal de VLAN. ¿Qué dos tipos de conexiones punto a punto utilizan la conexión troncal VLAN? (Elija dos.)": [
+    " ",
+    "entre un switch y un servidor que tiene una NIC 802.1Q. En la RAM"
+  ],
+  "8. ¿Cuáles son los tres principales beneficios de usar redes VLAN? (Elija tres opciones.)": [
+    " ",
+    "Seguridad. Reducción de costos. Mayor eficiencia del personal de TI"
+  ],
+  "9. En un switch Cisco, ¿dónde se almacena la información de VLAN de rango extendido?": [
+    " ",
+    "Archivo de configuración en ejecución"
+  ],
+  "10. ¿En qué ubicación se almacenan de forma predeterminada las VLAN de rango normal en un switch Cisco?": [
+    " ",
+    "memoria flash"
+  ],
+  "11. ¿Qué tipo distinto de VLAN utiliza un administrador para acceder a un switch y configurarlo?": [
+    " ",
+    "VLAN de administración"
+  ],
+  "12. ¿Cuál es el propósito de establecer la VLAN nativa separada de las VLAN de datos?": [
+    " ",
+    "La VLAN nativa es sólo para transportar tráfico de administración de VLAN."
+  ],
+  "13. ¿Dónde se almacena el archivo vlan.dat en un switch?": [
+    " ",
+    "En la memoria flash"
+  ],
+  "14. Si una organización está cambiando para incluir los teléfonos IP de Cisco en su red, ¿qué función de diseño debe tenerse en cuenta para garantizar la calidad de la voz?": [
+    " ",
+    "Se necesita una VLAN separada para el tráfico de voz."
+  ],
+  "15. Actualmente, un switch Cisco permite el tráfico etiquetado con VLAN 10 y 20 a través del puerto troncal Fa0/5. ¿Cuál es el efecto de emitir un switchport trunk allowed vlan 30 comando en Fa0/5?": [
+    " ",
+    "Solo permite VLAN 30 en Fa0/5."
   ]
 }
