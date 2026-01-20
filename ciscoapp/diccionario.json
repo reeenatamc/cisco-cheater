@@ -3445,38 +3445,75 @@
     "Habilita portfast en una interfaz de conmutador específica."
   ],
   "3. Haga coincidir el número de paso con la secuencia de etapas que se producen durante el proceso de conmutación por error de HSRP. (No se utilizan todas las opciones).": [
-  " ",
-  "Paso 1: The forwarding router fails. Paso 2: El router en espera asume la función del router de reenvío utilizando las direcciones IP y MAC del router virtual. Paso 3: El router de reserva deja de recibir los mensajes de saludo del router de reenvío."
-],
+    " ",
+    "Paso 1: The forwarding router fails. Paso 2: El router en espera asume la función del router de reenvío utilizando las direcciones IP y MAC del router virtual. Paso 3: El router de reserva deja de recibir los mensajes de saludo del router de reenvío."
+  ],
   "26. Una la característica de reenvío con su tipo. (No se utilizan todas las opciones.)": [
-  " ",
-  "Método de corte: Adecuado para aplicaciones informáticas de alto rendimiento. Almacenamiento y envío: Verificación de errores antes de reenviar. El proceso de reenvío se puede iniciar después de recibir la dirección de destino. El proceso de reenvío solo se inicia después de recibir la trama completa. Puede reenviar tramas no válidas. Solo reenvía tramas válidas."
-],
+    " ",
+    "Método de corte: Adecuado para aplicaciones informáticas de alto rendimiento. Almacenamiento y envío: Verificación de errores antes de reenviar. El proceso de reenvío se puede iniciar después de recibir la dirección de destino. El proceso de reenvío solo se inicia después de recibir la trama completa. Puede reenviar tramas no válidas. Solo reenvía tramas válidas."
+  ],
   "54. Una el estado de enlace con el estado de la interfaz y el protocolo. (No se utilizan todas las opciones.)": [
-  " ",
-  "Disabled: administratively down. Operational: up/up. Layer 1 problem: down/down. Layer 2 problem: up/disabled."
-],
+    " ",
+    "Disabled: administratively down. Operational: up/up. Layer 1 problem: down/down. Layer 2 problem: up/disabled."
+  ],
   "56. Una la descripción del tipo de VLAN correcto. (No se utilizan todas las opciones.)": [
-  " ",
-  "Management VLAN: Configurada para transportar el tráfico generado por usuarios. VLAN predeterminada: Todos los puertos de switch se asignan a esta VLAN después del arranque inicial del switch. Redes VLAN de datos: an IP address and subnet mask are assigned to this VLAN, allowing the switch to be accessed by HTTP, Telnet, SSH, or SNMP. VLAN nativa: Transporta el tráfico sin etiquetar."
-],
+    " ",
+    "Management VLAN: Configurada para transportar el tráfico generado por usuarios. VLAN predeterminada: Todos los puertos de switch se asignan a esta VLAN después del arranque inicial del switch. Redes VLAN de datos: an IP address and subnet mask are assigned to this VLAN, allowing the switch to be accessed by HTTP, Telnet, SSH, or SNMP. VLAN nativa: Transporta el tráfico sin etiquetar."
+  ],
   "59. Una los tipos de mensaje DHCP con el orden del proceso de DHCPv4. (No se utilizan todas las opciones).": [
-  " ",
-  "Paso 1: DHCPDISCOVER. Paso 2: DHCPOFFER. Paso 3: DHCPREQUEST. Paso 4: DHCPACK."
-],
+    " ",
+    "Paso 1: DHCPDISCOVER. Paso 2: DHCPOFFER. Paso 3: DHCPREQUEST. Paso 4: DHCPACK."
+  ],
   "126. Una el paso con cada descripción de la secuencia de arranque del switch. (No se utilizan todas las opciones).": [
-  " ",
-  "Paso 1: Ejecutar el POST. Paso 2: Cargar el cargador de arranque desde la ROM. Paso 3: Inicializar los registros de la CPU. Paso 4: Inicializar el sistema de archivos flash. Paso 5: Cargar el IOS. Paso 6: Transferir el control del switch al IOS."
-],
+    " ",
+    "Paso 1: Ejecutar el POST. Paso 2: Cargar el cargador de arranque desde la ROM. Paso 3: Inicializar los registros de la CPU. Paso 4: Inicializar el sistema de archivos flash. Paso 5: Cargar el IOS. Paso 6: Transferir el control del switch al IOS."
+  ],
   "93. Una coincidir el propósito con su tipo de mensaje DHCP. (No se utilizan todas las opciones).": [
-  " ",
-  "Un mensaje que se utiliza para localizar cualquier servidor DHCP disponible en una red: DHCPDISCOVER. Un mensaje que se utiliza para identificar el servidor explícito y la oferta de arrendamiento a aceptar: DHCPREQUEST. Un mensaje que se utiliza para reconocer que el arrendamiento es exitoso: DHCPACK. Un mensaje que se utiliza para sugerir un arrendamiento a un cliente: DHCPOFFER."
-],
+    " ",
+    "Un mensaje que se utiliza para localizar cualquier servidor DHCP disponible en una red: DHCPDISCOVER. Un mensaje que se utiliza para identificar el servidor explícito y la oferta de arrendamiento a aceptar: DHCPREQUEST. Un mensaje que se utiliza para reconocer que el arrendamiento es exitoso: DHCPACK. Un mensaje que se utiliza para sugerir un arrendamiento a un cliente: DHCPOFFER."
+  ],
   "97. Una coincidir cada tipo de mensaje DHCP con su descripción. (No se utilizan todas las opciones).": [
-  " ",
-  "DHCPDISCOVER: A client initiating a message to find a DHCP server. DHCPOFFER: A DHCP server responding to the initial request by a client. DHCPREQUEST: The client accepting the IP address provided by the DHCP server. DHCPACK: The DHCP server confirming that the address lease has been accepted."
-]
-
-
-
+    " ",
+    "DHCPDISCOVER: A client initiating a message to find a DHCP server. DHCPOFFER: A DHCP server responding to the initial request by a client. DHCPREQUEST: The client accepting the IP address provided by the DHCP server. DHCPACK: The DHCP server confirming that the address lease has been accepted."
+  ],
+  "1. ¿Qué secuencia identifica correctamente el orden de los pasos que realizará un router cuando reciba un paquete en una interfaz Ethernet?": [
+    " ",
+    "1. El router examina la direccion MAC de destino.\n2. El router identifica el campo Tipo Ethernet.\n3. El router desencapsula la trama de Ethernet.\n4. El router examina la dirección IP de destino."
+  ],
+  "2. ¿Qué tres comandos de solución de problemas de IOS pueden ayudar a aislar problemas con una ruta estática? (Escoja tres opciones).": [
+    " ",
+    "show ip route. ping. show ip interface brief"
+  ],
+  "3. Un administrador de redes introdujo una ruta estática en una LAN Ethernet conectada a un router adyacente. Sin embargo, la ruta no se muestra en la tabla de routing. ¿Qué comando utilizará el administrador para comprobar que la interfaz de salida está activada?": [
+    " ",
+    "show ip interface brief"
+  ],
+  "4. Se ha configurado una ruta estática en un router. Sin embargo, la red de destino ya no existe. ¿Qué debe hacer un administrador para eliminar la ruta estática de la tabla de enrutamiento?": [
+    " ",
+    "Elimine el router usando el comando no ip route"
+  ],
+  "5. ¿Qué instrucción describe la secuencia de procesos ejecutados por un router cuando recibe un paquete de un host para ser entregado a un host en otra red?": [
+    " ",
+    "Desencapsula el paquete, selecciona la ruta adecuada y encapsula el paquete para reenviarlo al host de destino."
+  ],
+  "6. Un ingeniero de red emite el comando show cdp neighbor en varios dispositivos de red durante el proceso de documentación de red. ¿Cuál es el objetivo de este comando?": [
+    " ",
+    "Para mostrar la información detallada acerca de los dispositivos Cisco conectados directamente."
+  ],
+  "7. Un administrador de red advierte que una ruta estática correctamente ingresada no se encuentra en la tabla de routing. ¿Qué dos comandos del router usaría un administrador para determinar si la interfaz de salida estaba activa y la dirección del siguiente salto está disponible? (Elija dos opciones).": [
+    " ",
+    "show ip interface brief. ping"
+  ],
+  "8. Un administrador de red ha introducido el siguiente comando:": [
+    " ",
+    "Comprobar que la interfaz Serial 0/0/1 esté activa y disponible."
+  ],
+  "9. ¿Qué hará un router si no tiene configurado una ruta predeterminada y es necesario reenviar un paquete a una red de destino que no aparece en la tabla de enrutamiento?": [
+    " ",
+    "Abandonarla"
+  ],
+  "10. ¿Qué significa la letra C junto a una entrada en la salida del comando show ip route?": [
+    " ",
+    "Identifica una red que está conectada directamente al enrutador."
+  ]
 }
