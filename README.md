@@ -26,8 +26,27 @@
 
 * Python 3.10
 * pip
+* Tesseract OCR (requerido para procesamiento de imágenes)
 * Navegador Chrome (para usar la extensión)
 * Sistema operativo Linux o Windows
+
+### Instalación de Tesseract OCR
+
+**Linux (Ubuntu/Debian):**
+```bash
+sudo apt-get update
+sudo apt-get install tesseract-ocr tesseract-ocr-spa tesseract-ocr-eng
+```
+
+**Windows:**
+1. Descarga el instalador desde: https://github.com/UB-Mannheim/tesseract/wiki
+2. Instala Tesseract y agrega la ruta de instalación a tu PATH del sistema
+3. Por defecto se instala en: `C:\Program Files\Tesseract-OCR\tesseract.exe`
+
+**macOS:**
+```bash
+brew install tesseract tesseract-lang
+```
 
 ---
 
@@ -47,11 +66,13 @@ python3.10 -m venv venv
 source venv/bin/activate  # En Windows: venv\Scripts\activate
 ```
 
-### 3. Instala dependencias
+### 3. Instala dependencias de Python
 
 ```bash
 pip install -r requirements.txt
 ```
+
+> ⚠️ **Importante:** Asegúrate de tener Tesseract OCR instalado en tu sistema antes de continuar. Ver la sección de Requisitos arriba.
 
 ### 4. Aplica migraciones
 
