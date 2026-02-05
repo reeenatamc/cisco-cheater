@@ -1073,7 +1073,11 @@
   ],
   "13. ¿Cuáles de las siguientes son dos características de ARP? (Elija dos).": [
     " ",
-    "Si hay un dispositivo que recibe una solicitud de ARP y tiene la dirección IPv4 de destino, responde con una respuesta de ARP.. Si un host está listo para enviar un paquete a un dispositivo de destino local y tiene la dirección IP pero no la dirección MAC de destino, este genera un broadcast de ARP.. Tamaño del mensaje. Codificación del mensaje. Opciones de entrega"
+    "Si hay un dispositivo que recibe una solicitud de ARP y tiene la dirección IPv4 de destino, responde con una respuesta de ARP. Si un host está listo para enviar un paquete a un dispositivo de destino local y tiene la dirección IP pero no la dirección MAC de destino, este genera un broadcast de ARP"
+  ],
+  "14. ¿Cuáles son los tres requisitos definidos por los protocolos utilizados en las comunicaciones de red para permitir la transmisión de mensajes a través de la red? (Elija tres opciones.)": [
+    " ",
+    "Tamaño del mensaje. Codificación del mensaje. Opciones de entrega"
   ],
   "15. ¿Cuál de estas situaciones describe una función proporcionada por la capa de transporte?": [
     " ",
@@ -1145,7 +1149,7 @@
   ],
   "33. ¿Qué dos funciones se realizan en la subcapa LLC de la capa de enlace de datos OSI para facilitar la comunicación Ethernet? (Escoja dos opciones).": [
     " ",
-    "agrega información en la trama Ethernet que identifica cual protocolo de la capa de red esta siendo encapsulado en la trama.. permite que IPv4 e IPv6 utilicen el mismo medio físico"
+    "gestiona la comunicación entre el software de red de capa superior y el hardware de NIC Ethernet. permite que IPv4 e IPv6 utilicen el mismo medio físico"
   ],
   "35. ¿Qué máscara de subred se necesita si una red IPv4 tiene 40 dispositivos que necesitan direcciones IP y si no se debe desperdiciar espacio de direcciones?": [
     " ",
@@ -1273,7 +1277,7 @@
   ],
   "72. ¿Qué dos funciones se realizan en la subcapa MAC de la capa de enlace de datos OSI para facilitar la comunicación Ethernet? (Escoja dos opciones).": [
     " ",
-    "implementa CSMA/CD sobre medios semidúplex compartidos heredados. integra flujos de Capa 2 entre 10 Gigabit Ethernet sobre fibra y 1 Gigabit Ethernet sobre cobre. responsable de la estructura interna de la trama Ethernet. implementa un trailer con secuencia de verificación de trama para la detección de errores. implementa un trailer con secuencia de verificación de trama para la detección de errores. implementa un proceso para delimitar campos dentro de una trama Ethernet 2. aplica direcciones MAC de origen y destino a la trama Ethernet. aplica la delimitación de campos de trama Ethernet para sincronizar la comunicación entre nodos"
+    "aplica direcciones MAC de origen y destino a la trama Ethernet. aplica la delimitación de campos de trama Ethernet para sincronizar la comunicación entre nodos"
   ],
   "73. Un administrador de red está agregando una nueva LAN a una sucursal. La nueva LAN debe admitir 200 dispositivos conectados. ¿Cuál es la máscara de red más pequeña que el administrador de red puede usar para la nueva red?": [
     " ",
@@ -1461,7 +1465,7 @@
   ],
   "124. Se agregó un grupo de equipos Windows en una nueva subred a una red Ethernet. Al probar la conectividad, un técnico descubre que estas computadoras pueden acceder a los recursos de red local, pero no a los recursos de Internet. Para resolver el problema, el técnico desea confirmar inicialmente las configuraciones de direcciones IP y DNS en las computadoras, además de verificar la conectividad al router local. ¿Cuáles son los tres comandos y utilidades de CLI de Windows que proporcionan la información necesaria? (Elija tres).": [
     " ",
-    "ping. nslookup. ipconfig. Internet"
+    "ping. nslookup. ipconfig"
   ],
   "126. Consulte la ilustración. La PC1 emite una solicitud de ARP porque necesita enviar un paquete a la PC2. En esta situación, ¿qué sucede a continuación?": [
     " ",
@@ -1549,7 +1553,7 @@
   ],
   "153. ¿Qué servicio proporciona FTP?": [
     " ",
-    "Permite transferencias de datos entre un cliente y un servidor de archivos.. Permite la transferencia de datos entre un cliente y un servidor."
+    "Permite la transferencia de datos entre un cliente y un servidor."
   ],
   "155. ¿Qué característica describe un caballo de Troya?": [
     " ",
@@ -1557,7 +1561,7 @@
   ],
   "156. ¿Qué característica describe un ataque DoS?": [
     " ",
-    "un ataque que ralentiza o bloquea un dispositivo o servicio de red. un dispositivo de red que filtra el acceso y el tráfico que ingresa a una red"
+    "un ataque que ralentiza o bloquea un dispositivo o servicio de red"
   ],
   "158. Consulte la ilustración. Los switches tienen una configuración predeterminada. El host A necesita comunicarse con el host D, pero el host A no tiene la dirección MAC de la gateway predeterminado. ¿Qué dispositivos de red recibirán la solicitud ARP enviada por el host A?": [
     " ",

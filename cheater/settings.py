@@ -260,7 +260,11 @@ SECRET_KEY = "django-insecure-1^pagal2tm&(yhx+!$^)60q*2y2a$e6-5m&_hxc-@as2+8@s3_
 DEBUG = False
 
 ALLOWED_HOSTS = [
+    "localhost",
+    "127.0.0.1",
     ".railway.app",
+    ".up.railway.app",
+    "cisco-cheater-production-2079.up.railway.app",
     ".feuoir.com",
     "www.feuoir.com",
 ]
@@ -379,10 +383,16 @@ CORS_ALLOWED_HEADERS = [
 # Seguridad CSRF / Cookies
 # -------------------------
 CSRF_TRUSTED_ORIGINS = [
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
     "https://*.railway.app",
+    "https://*.up.railway.app",
 ]
 CSRF_ALLOWED_ORIGINS = [
+    "http://localhost:8000",
+    "http://127.0.0.1:8000",
     "https://*.railway.app",
+    "https://*.up.railway.app",
 ]
 
 CSRF_COOKIE_SECURE = True
