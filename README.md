@@ -52,6 +52,8 @@ brew install tesseract tesseract-lang
 
 ## Instalación y uso del servidor Django
 
+> **Siempre usa el entorno virtual** para instalar dependencias, ejecutar el servidor y el scraper. Todos los comandos siguientes asumen que el venv está activado.
+
 ### 1. Clona el repositorio
 
 ```bash
@@ -63,10 +65,15 @@ cd cisco-cheater
 
 ```bash
 python3.10 -m venv venv
-source venv/bin/activate  # En Windows: venv\Scripts\activate
+# Linux/macOS:
+source venv/bin/activate
+# Windows (PowerShell):
+.\venv\Scripts\Activate.ps1
+# Windows (CMD):
+venv\Scripts\activate.bat
 ```
 
-### 3. Instala dependencias de Python
+### 3. Instala dependencias (con el venv activado)
 
 ```bash
 pip install -r requirements.txt
@@ -106,13 +113,18 @@ Ya no necesitas inyectar código manualmente. Solo:
 
 ## Scraper
 
-Incluye un scraper para recolectar preguntas y respuestas desde exámenes reales de Cisco:
+Incluye un scraper para recolectar preguntas y respuestas desde exámenes reales de Cisco. **Usa siempre el entorno virtual.**
 
 ```bash
-python manage.py runscript scraper
+# Activa el venv (si no lo está)
+# Windows: .\venv\Scripts\Activate.ps1
+# Linux/macOS: source venv/bin/activate
+
+# Ejecutar el scraper (desde la raíz del proyecto)
+python ciscoapp/scraper.py
 ```
 
-Asegúrate de tener configurada la fuente de datos.
+El scraper abre Chrome, carga la página de examenredes.com, extrae preguntas/respuestas y actualiza `ciscoapp/diccionario.json`. Necesitas Chrome instalado.
 
 ---
 
