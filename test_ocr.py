@@ -3,8 +3,23 @@ Script para probar OCR localmente.
 Uso: python test_ocr.py ruta/a/imagen.png
 """
 import sys
+import os
+import shutil
 import pytesseract
 from PIL import Image
+
+# Configurar la ruta de tesseract automáticamente si no está en PATH
+if not shutil.which('tesseract'):
+    possible_paths = [
+        '/usr/bin/tesseract',
+        '/usr/local/bin/tesseract',
+        '/opt/homebrew/bin/tesseract',  # macOS
+        r'C:\Program Files\Tesseract-OCR\tesseract.exe',  # Windows
+    ]
+    for path in possible_paths:
+        if os.path.exists(path):
+            pytesseract.pytesseract.tesseract_cmd = path
+            break
 
 def test_ocr(imagen_path):
     print(f"Abriendo imagen: {imagen_path}")
