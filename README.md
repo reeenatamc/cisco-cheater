@@ -26,12 +26,33 @@
 
 * Python 3.10
 * pip
+* Tesseract OCR (requerido para procesamiento de imágenes)
 * Navegador Chrome (para usar la extensión)
 * Sistema operativo Linux o Windows
+
+### Instalación de Tesseract OCR
+
+**Linux (Ubuntu/Debian):**
+```bash
+sudo apt-get update
+sudo apt-get install tesseract-ocr tesseract-ocr-spa tesseract-ocr-eng
+```
+
+**Windows:**
+1. Descarga el instalador desde: https://github.com/UB-Mannheim/tesseract/wiki
+2. Instala Tesseract y agrega la ruta de instalación a tu PATH del sistema
+3. Por defecto se instala en: `C:\Program Files\Tesseract-OCR\tesseract.exe`
+
+**macOS:**
+```bash
+brew install tesseract tesseract-lang
+```
 
 ---
 
 ## Instalación y uso del servidor Django
+
+> **Siempre usa el entorno virtual** para instalar dependencias, ejecutar el servidor y el scraper. Todos los comandos siguientes asumen que el venv está activado.
 
 ### 1. Clona el repositorio
 
@@ -44,14 +65,21 @@ cd cisco-cheater
 
 ```bash
 python3.10 -m venv venv
-source venv/bin/activate  # En Windows: venv\Scripts\activate
+# Linux/macOS:
+source venv/bin/activate
+# Windows (PowerShell):
+.\venv\Scripts\Activate.ps1
+# Windows (CMD):
+venv\Scripts\activate.bat
 ```
 
-### 3. Instala dependencias
+### 3. Instala dependencias (con el venv activado)
 
 ```bash
 pip install -r requirements.txt
 ```
+
+> ⚠️ **Importante:** Asegúrate de tener Tesseract OCR instalado en tu sistema antes de continuar. Ver la sección de Requisitos arriba.
 
 ### 4. Aplica migraciones
 
@@ -85,13 +113,18 @@ Ya no necesitas inyectar código manualmente. Solo:
 
 ## Scraper
 
-Incluye un scraper para recolectar preguntas y respuestas desde exámenes reales de Cisco:
+Incluye un scraper para recolectar preguntas y respuestas desde exámenes reales de Cisco. **Usa siempre el entorno virtual.**
 
 ```bash
-python manage.py runscript scraper
+# Activa el venv (si no lo está)
+# Windows: .\venv\Scripts\Activate.ps1
+# Linux/macOS: source venv/bin/activate
+
+# Ejecutar el scraper (desde la raíz del proyecto)
+python ciscoapp/scraper.py
 ```
 
-Asegúrate de tener configurada la fuente de datos.
+El scraper abre Chrome, carga la página de examenredes.com, extrae preguntas/respuestas y actualiza `ciscoapp/diccionario.json`. Necesitas Chrome instalado.
 
 ---
 

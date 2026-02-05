@@ -1,6 +1,7 @@
 import json
 import os
 import base64
+import shutil
 from io import BytesIO
 from datetime import datetime
 from django.http import JsonResponse, HttpResponse
@@ -11,6 +12,20 @@ from google import genai
 from google.genai import types
 from PIL import Image
 import pytesseract
+
+# Configurar la ruta de tesseract automáticamente si no está en PATH
+# Esto es necesario para entornos de producción como Railway
+if not shutil.which('tesseract'):
+    # Intentar rutas comunes de tesseract en Linux
+    possible_paths = [
+        '/usr/bin/tesseract',
+        '/usr/local/bin/tesseract',
+        '/opt/homebrew/bin/tesseract',  # macOS
+    ]
+    for path in possible_paths:
+        if os.path.exists(path):
+            pytesseract.pytesseract.tesseract_cmd = path
+            break
 
 
 def home(request):
