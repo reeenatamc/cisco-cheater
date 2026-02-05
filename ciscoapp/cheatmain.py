@@ -140,6 +140,52 @@ def consultar_gemini(request):
     return JsonResponse({'error': 'Método no permitido'}, status=405)
 
 
+def normalizar_texto(texto):
+    """Normaliza texto para comparación: minúsculas, sin saltos de línea extra, espacios normalizados"""
+    import re
+    texto = texto.lower()
+    texto = re.sub(r'\s+', ' ', texto)  # Múltiples espacios/saltos a un solo espacio
+    texto = texto.strip()
+    return texto
+
+
+def buscar_en_diccionario(texto):
+    """Busca si el texto contiene alguna pregunta del diccionario (coincidencia parcial)"""
+    texto_normalizado = normalizar_texto(texto)
+    
+    mejor_coincidencia = None
+    mejor_longitud = 0
+    mejor_key = None
+    
+    for key in DICCIONARIO:
+        key_normalizado = normalizar_texto(key)
+        
+        # Quitar el número de la pregunta (ej: "1. ¿Cuál..." -> "¿Cuál...")
+        if '. ' in key_normalizado:
+            pregunta_sin_numero = key_normalizado.split('. ', 1)[-1]
+        else:
+            pregunta_sin_numero = key_normalizado
+        
+        # Buscar si la pregunta está contenida en el texto extraído
+        if pregunta_sin_numero in texto_normalizado:
+            # Guardar la coincidencia más larga (más específica)
+            if len(pregunta_sin_numero) > mejor_longitud:
+                mejor_longitud = len(pregunta_sin_numero)
+                mejor_coincidencia = DICCIONARIO[key]
+                mejor_key = key
+        
+        # También buscar coincidencia parcial: primeras 40+ caracteres de la pregunta
+        elif len(pregunta_sin_numero) > 40:
+            fragmento = pregunta_sin_numero[:40]
+            if fragmento in texto_normalizado:
+                if len(fragmento) > mejor_longitud:
+                    mejor_longitud = len(fragmento)
+                    mejor_coincidencia = DICCIONARIO[key]
+                    mejor_key = key
+    
+    return mejor_coincidencia, mejor_key
+
+
 @csrf_exempt
 def consultar_gemini_imagen(request):
     if request.method == 'POST':
@@ -198,6 +244,31 @@ def consultar_gemini_imagen(request):
                 print("❌ No se extrajo texto de la imagen")
                 return JsonResponse({'error': 'No se pudo extraer texto de la imagen', 'success': False}, status=400)
             
+            # PRIMERO: Buscar en el diccionario
+            print("📚 Buscando en diccionario...")
+            respuesta_diccionario, pregunta_encontrada = buscar_en_diccionario(texto_extraido)
+            
+            if respuesta_diccionario:
+                print("✅ ¡ENCONTRADO EN DICCIONARIO!")
+                print(f"📌 Pregunta: {pregunta_encontrada[:80]}...")
+                print(f"🎯 Respuesta: {respuesta_diccionario}")
+                print("="*60 + "\n")
+                
+                # Formatear respuesta igual que en /buscar/
+                if isinstance(respuesta_diccionario, list) and len(respuesta_diccionario) >= 2:
+                    respuesta_texto = f"Opción {respuesta_diccionario[0]}: {respuesta_diccionario[1]}"
+                else:
+                    respuesta_texto = str(respuesta_diccionario)
+                
+                return JsonResponse({
+                    'respuesta': f"📚 {respuesta_texto}",
+                    'success': True,
+                    'source': 'diccionario'
+                })
+            
+            print("❌ No encontrado en diccionario, consultando Gemini...")
+            
+            # SEGUNDO: Si no está en diccionario, consultar Gemini
             print("🤖 Enviando a Gemini...")
             client = genai.Client(api_key=api_key)
             
@@ -223,7 +294,11 @@ Solo da la respuesta, sin explicaciones largas."""
             print("✅ Solicitud completada exitosamente")
             print("="*60 + "\n")
             
-            return JsonResponse({'respuesta': response.text, 'success': True})
+            return JsonResponse({
+                'respuesta': response.text,
+                'success': True,
+                'source': 'gemini'
+            })
             
         except Exception as e:
             print(f"❌ ERROR: {str(e)}")
