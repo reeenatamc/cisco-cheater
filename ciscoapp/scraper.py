@@ -449,8 +449,9 @@ for i, elemento in enumerate(elementos):
 if pregunta_actual and pregunta_actual["correctas"]:
     preguntas_y_respuestas.append(pregunta_actual)
 
-# --- Cargar JSON existente ---
-diccionario_path = 'diccionario.json'
+# --- Cargar JSON existente (siempre en ciscoapp/diccionario.json) ---
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+diccionario_path = os.path.join(BASE_DIR, 'diccionario.json')
 if os.path.exists(diccionario_path):
     with open(diccionario_path, 'r', encoding='utf-8') as f:
         DICCIONARIO = json.load(f)

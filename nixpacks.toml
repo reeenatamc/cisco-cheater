@@ -1,0 +1,8 @@
+[phases.setup]
+aptPkgs = ['tesseract-ocr', 'tesseract-ocr-spa', 'tesseract-ocr-eng']
+
+[phases.build]
+cmds = ['python manage.py collectstatic --noinput']
+
+[start]
+cmd = 'gunicorn cheater.wsgi:application'

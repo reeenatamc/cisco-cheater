@@ -1073,7 +1073,7 @@
   ],
   "13. ¿Cuáles de las siguientes son dos características de ARP? (Elija dos).": [
     " ",
-    "Si hay un dispositivo que recibe una solicitud de ARP y tiene la dirección IPv4 de destino, responde con una respuesta de ARP. Si un host está listo para enviar un paquete a un dispositivo de destino local y tiene la dirección IP pero no la dirección MAC de destino, este genera un broadcast de ARP"
+    "Si hay un dispositivo que recibe una solicitud de ARP y tiene la dirección IPv4 de destino, responde con una respuesta de ARP.. Si un host está listo para enviar un paquete a un dispositivo de destino local y tiene la dirección IP pero no la dirección MAC de destino, este genera un broadcast de ARP."
   ],
   "14. ¿Cuáles son los tres requisitos definidos por los protocolos utilizados en las comunicaciones de red para permitir la transmisión de mensajes a través de la red? (Elija tres opciones.)": [
     " ",
@@ -4059,5 +4059,45 @@
   "157. ¿Qué característica describe un IPS?": [
     " ",
     "un dispositivo de red que filtra el acceso y el tráfico que entra en una red"
+  ],
+  "20. Una cada descripción con una dirección IP adecuada. (No se utilizan todas las opciones.)": [
+    " ",
+    "Una dirección link-local → 169.254.1.5 | Una dirección de bucle invertido → 127.0.0.1 | Una dirección experimental → 240.2.6.255 | Una dirección pública → 198.133.219.2"
+  ],
+  "34. Consulte la ilustración. Una cada red con la dirección de red correcta. (No se utilizan todas las opciones.)": [
+    " ",
+    "Red A → 192.168.0.0/25 | Red B → 192.168.0.128/26 | Red C → 192.168.0.192/27 | Red D → 192.168.0.224/30"
+  ],
+  "59. Una la característica con el método de reenvío. (No se utilizan todas las opciones).": [
+    " ",
+    "Baja latencia → por método de corte | Puede reenviar runt frames → por método de corte | Comienza a reenviar cuando se recibe la dirección de destino → por método de corte | Siempre almacena la trama completa → por almacenamiento y envío | Realiza la CRC antes de reenviar → por almacenamiento y envío | Revisa la longitud de la trama antes de reenviar → por almacenamiento y envío"
+  ],
+  "60. Asocie las características con las categorías. (No se utilizan todas las opciones).": [
+    " ",
+    "Dirección IP: contenido en el encabezado de Capa 3, separados en una parte de red y un identificador único, 32 o 128 bits. Dirección MAC: contenido en el encabezado de Capa 2, separados en OUI y un identificador único, 48 bits."
+  ],
+  "83. Una cada tipo de campo de trama con la función correspondiente. (No se utilizan todas las opciones.)": [
+    " ",
+    "Detección de errores: Este campo revisa si la trama se dañó durante la transferencia. Direccionamiento: Este campo ayuda a dirigir la trama hacia su destino. Inicio de trama: Este campo identifica el comienzo de una trama. Tipo: El LLC utiliza este campo para identificar el protocolo de capa 3."
+  ],
+  "105. Haga coincidir el campo de encabezado con la capa apropiada del modelo OSI. (No se utilizan todas las opciones).": [
+    " ",
+    "Capa 2: FCS (Frame Check Sequence), Encabezado 802.2, Dirección MAC de destino. Capa 3: TTL, Dirección IP de origen. Capa 4: Número de puerto de destino, Número de Acuse de Recibo."
+  ],
+  "127. Una cada descripción con el mecanismo TCP correspondiente. (No se utilizan todas las opciones).": [
+    " ",
+    "Acuse de recibo: Recibido por un emisor antes de transmitir más segmentos en una sesión. Retransmisión: Método para administrar segmentos de pérdida de datos. Números de secuencia: Se utiliza para identificar segmentos faltantes de datos. Tamaño de la ventana: Número de bytes que un dispositivo de destino puede aceptar y procesar al mismo tiempo."
+  ],
+  "130. Haga coincidir la función del firewall con el tipo de protección contra amenazas que proporciona a la red. (No se utilizan todas las opciones).": [
+    " ",
+    "Filtrado de paquetes: impide el acceso basado en la dirección IP o dirección MAC. Filtrado de direcciones URL: impide el acceso a sitios web. Inspección de paquetes con estado: evita sesiones entrantes no solicitadas. Filtrado de aplicaciones: impide el acceso por número de puerto."
+  ],
+  "149. Una las afirmaciones con el modelo de red relacionado. (No se utilizan todas las opciones).": [
+    " ",
+    "Red punto a punto → No se requiere un servidor dedicado. | Red punto a punto → Las funciones de cliente y servidor se establecen por solicitud. | Aplicación punto a punto → Requiere una interfaz de usuario específica. | Aplicación punto a punto → Se requiere un servicio en segundo plano."
+  ],
+  "154. Consulte la ilustración. Haga coincidir la red con la dirección IP y el prefijo correctos que satisfagan los requisitos de direccionamiento de host utilizables para cada red.": [
+    " ",
+    "Network A → 192.168.0.128 /25 | Network B → 192.168.0.0 /26 | Network C → 192.168.0.96 /27 | Network D → 192.168.0.80 /30"
   ]
 }
