@@ -1073,7 +1073,11 @@
   ],
   "13. ¿Cuáles de las siguientes son dos características de ARP? (Elija dos).": [
     " ",
-    "Si hay un dispositivo que recibe una solicitud de ARP y tiene la dirección IPv4 de destino, responde con una respuesta de ARP.. Si un host está listo para enviar un paquete a un dispositivo de destino local y tiene la dirección IP pero no la dirección MAC de destino, este genera un broadcast de ARP.. Tamaño del mensaje. Codificación del mensaje. Opciones de entrega"
+    "Si hay un dispositivo que recibe una solicitud de ARP y tiene la dirección IPv4 de destino, responde con una respuesta de ARP.. Si un host está listo para enviar un paquete a un dispositivo de destino local y tiene la dirección IP pero no la dirección MAC de destino, este genera un broadcast de ARP."
+  ],
+  "14. ¿Cuáles son los tres requisitos definidos por los protocolos utilizados en las comunicaciones de red para permitir la transmisión de mensajes a través de la red? (Elija tres opciones.)": [
+    " ",
+    "Tamaño del mensaje. Codificación del mensaje. Opciones de entrega"
   ],
   "15. ¿Cuál de estas situaciones describe una función proporcionada por la capa de transporte?": [
     " ",
@@ -1145,7 +1149,7 @@
   ],
   "33. ¿Qué dos funciones se realizan en la subcapa LLC de la capa de enlace de datos OSI para facilitar la comunicación Ethernet? (Escoja dos opciones).": [
     " ",
-    "agrega información en la trama Ethernet que identifica cual protocolo de la capa de red esta siendo encapsulado en la trama.. permite que IPv4 e IPv6 utilicen el mismo medio físico"
+    "gestiona la comunicación entre el software de red de capa superior y el hardware de NIC Ethernet. permite que IPv4 e IPv6 utilicen el mismo medio físico"
   ],
   "35. ¿Qué máscara de subred se necesita si una red IPv4 tiene 40 dispositivos que necesitan direcciones IP y si no se debe desperdiciar espacio de direcciones?": [
     " ",
@@ -1273,7 +1277,7 @@
   ],
   "72. ¿Qué dos funciones se realizan en la subcapa MAC de la capa de enlace de datos OSI para facilitar la comunicación Ethernet? (Escoja dos opciones).": [
     " ",
-    "implementa CSMA/CD sobre medios semidúplex compartidos heredados. integra flujos de Capa 2 entre 10 Gigabit Ethernet sobre fibra y 1 Gigabit Ethernet sobre cobre. responsable de la estructura interna de la trama Ethernet. implementa un trailer con secuencia de verificación de trama para la detección de errores. implementa un trailer con secuencia de verificación de trama para la detección de errores. implementa un proceso para delimitar campos dentro de una trama Ethernet 2. aplica direcciones MAC de origen y destino a la trama Ethernet. aplica la delimitación de campos de trama Ethernet para sincronizar la comunicación entre nodos"
+    "aplica direcciones MAC de origen y destino a la trama Ethernet. aplica la delimitación de campos de trama Ethernet para sincronizar la comunicación entre nodos"
   ],
   "73. Un administrador de red está agregando una nueva LAN a una sucursal. La nueva LAN debe admitir 200 dispositivos conectados. ¿Cuál es la máscara de red más pequeña que el administrador de red puede usar para la nueva red?": [
     " ",
@@ -1461,7 +1465,7 @@
   ],
   "124. Se agregó un grupo de equipos Windows en una nueva subred a una red Ethernet. Al probar la conectividad, un técnico descubre que estas computadoras pueden acceder a los recursos de red local, pero no a los recursos de Internet. Para resolver el problema, el técnico desea confirmar inicialmente las configuraciones de direcciones IP y DNS en las computadoras, además de verificar la conectividad al router local. ¿Cuáles son los tres comandos y utilidades de CLI de Windows que proporcionan la información necesaria? (Elija tres).": [
     " ",
-    "ping. nslookup. ipconfig. Internet"
+    "ping. nslookup. ipconfig"
   ],
   "126. Consulte la ilustración. La PC1 emite una solicitud de ARP porque necesita enviar un paquete a la PC2. En esta situación, ¿qué sucede a continuación?": [
     " ",
@@ -1549,7 +1553,7 @@
   ],
   "153. ¿Qué servicio proporciona FTP?": [
     " ",
-    "Permite transferencias de datos entre un cliente y un servidor de archivos.. Permite la transferencia de datos entre un cliente y un servidor."
+    "Permite la transferencia de datos entre un cliente y un servidor."
   ],
   "155. ¿Qué característica describe un caballo de Troya?": [
     " ",
@@ -1557,7 +1561,7 @@
   ],
   "156. ¿Qué característica describe un ataque DoS?": [
     " ",
-    "un ataque que ralentiza o bloquea un dispositivo o servicio de red. un dispositivo de red que filtra el acceso y el tráfico que ingresa a una red"
+    "un ataque que ralentiza o bloquea un dispositivo o servicio de red"
   ],
   "158. Consulte la ilustración. Los switches tienen una configuración predeterminada. El host A necesita comunicarse con el host D, pero el host A no tiene la dirección MAC de la gateway predeterminado. ¿Qué dispositivos de red recibirán la solicitud ARP enviada por el host A?": [
     " ",
@@ -4055,5 +4059,45 @@
   "157. ¿Qué característica describe un IPS?": [
     " ",
     "un dispositivo de red que filtra el acceso y el tráfico que entra en una red"
+  ],
+  "20. Una cada descripción con una dirección IP adecuada. (No se utilizan todas las opciones.)": [
+    " ",
+    "Una dirección link-local → 169.254.1.5 | Una dirección de bucle invertido → 127.0.0.1 | Una dirección experimental → 240.2.6.255 | Una dirección pública → 198.133.219.2"
+  ],
+  "34. Consulte la ilustración. Una cada red con la dirección de red correcta. (No se utilizan todas las opciones.)": [
+    " ",
+    "Red A → 192.168.0.0/25 | Red B → 192.168.0.128/26 | Red C → 192.168.0.192/27 | Red D → 192.168.0.224/30"
+  ],
+  "59. Una la característica con el método de reenvío. (No se utilizan todas las opciones).": [
+    " ",
+    "Baja latencia → por método de corte | Puede reenviar runt frames → por método de corte | Comienza a reenviar cuando se recibe la dirección de destino → por método de corte | Siempre almacena la trama completa → por almacenamiento y envío | Realiza la CRC antes de reenviar → por almacenamiento y envío | Revisa la longitud de la trama antes de reenviar → por almacenamiento y envío"
+  ],
+  "60. Asocie las características con las categorías. (No se utilizan todas las opciones).": [
+    " ",
+    "Dirección IP: contenido en el encabezado de Capa 3, separados en una parte de red y un identificador único, 32 o 128 bits. Dirección MAC: contenido en el encabezado de Capa 2, separados en OUI y un identificador único, 48 bits."
+  ],
+  "83. Una cada tipo de campo de trama con la función correspondiente. (No se utilizan todas las opciones.)": [
+    " ",
+    "Detección de errores: Este campo revisa si la trama se dañó durante la transferencia. Direccionamiento: Este campo ayuda a dirigir la trama hacia su destino. Inicio de trama: Este campo identifica el comienzo de una trama. Tipo: El LLC utiliza este campo para identificar el protocolo de capa 3."
+  ],
+  "105. Haga coincidir el campo de encabezado con la capa apropiada del modelo OSI. (No se utilizan todas las opciones).": [
+    " ",
+    "Capa 2: FCS (Frame Check Sequence), Encabezado 802.2, Dirección MAC de destino. Capa 3: TTL, Dirección IP de origen. Capa 4: Número de puerto de destino, Número de Acuse de Recibo."
+  ],
+  "127. Una cada descripción con el mecanismo TCP correspondiente. (No se utilizan todas las opciones).": [
+    " ",
+    "Acuse de recibo: Recibido por un emisor antes de transmitir más segmentos en una sesión. Retransmisión: Método para administrar segmentos de pérdida de datos. Números de secuencia: Se utiliza para identificar segmentos faltantes de datos. Tamaño de la ventana: Número de bytes que un dispositivo de destino puede aceptar y procesar al mismo tiempo."
+  ],
+  "130. Haga coincidir la función del firewall con el tipo de protección contra amenazas que proporciona a la red. (No se utilizan todas las opciones).": [
+    " ",
+    "Filtrado de paquetes: impide el acceso basado en la dirección IP o dirección MAC. Filtrado de direcciones URL: impide el acceso a sitios web. Inspección de paquetes con estado: evita sesiones entrantes no solicitadas. Filtrado de aplicaciones: impide el acceso por número de puerto."
+  ],
+  "149. Una las afirmaciones con el modelo de red relacionado. (No se utilizan todas las opciones).": [
+    " ",
+    "Red punto a punto → No se requiere un servidor dedicado. | Red punto a punto → Las funciones de cliente y servidor se establecen por solicitud. | Aplicación punto a punto → Requiere una interfaz de usuario específica. | Aplicación punto a punto → Se requiere un servicio en segundo plano."
+  ],
+  "154. Consulte la ilustración. Haga coincidir la red con la dirección IP y el prefijo correctos que satisfagan los requisitos de direccionamiento de host utilizables para cada red.": [
+    " ",
+    "Network A → 192.168.0.128 /25 | Network B → 192.168.0.0 /26 | Network C → 192.168.0.96 /27 | Network D → 192.168.0.80 /30"
   ]
 }
