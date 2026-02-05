@@ -4031,5 +4031,29 @@
   "55. Consulte la ilustración. ¿Cuál es el rendimiento máximo posible entre la PC y el servidor?": [
     " ",
     "128 kb/s"
+  ],
+  "81. Un administrador de redes quiere utilizar la misma máscara de subred para tres subredes en un sitio pequeño. El sitio tiene las siguientes redes y cantidad de dispositivos:": [
+    " ",
+    "255.255.255.240"
+  ],
+  "82. Un administrador de redes quiere utilizar la misma máscara de red para todas las redes en un sitio pequeño en particular. El sitio tiene las siguientes redes y cantidad de dispositivos:": [
+    " ",
+    "255.255.255.224"
+  ],
+  "125. ¿Qué capa del modelo TCP/IP proporciona una ruta para reenviar mensajes a través de una interconexión de redes?": [
+    " ",
+    "Internet"
+  ],
+  "128. ¿Qué servicio ofrece BOOTP?": [
+    " ",
+    "Aplicación heredada que permite a una estación de trabajo sin disco descubrir su propia dirección IP y encontrar un servidor BOOTP en la red."
+  ],
+  "129. ¿Qué característica describe un VPN?": [
+    " ",
+    "un protocolo de túnel que proporciona a los usuarios remotos acceso seguro a la red de una organización"
+  ],
+  "157. ¿Qué característica describe un IPS?": [
+    " ",
+    "un dispositivo de red que filtra el acceso y el tráfico que entra en una red"
   ]
 }
