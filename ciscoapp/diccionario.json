@@ -2740,7 +2740,7 @@
     " ",
     "120"
   ],
-  "41. Consulte la ilustración. ¿Qué conjunto de comandos configurará rutas estáticas que permitirán a los routers Park y Alta a) reenviar paquetes a cada LAN y b) dirigir todo el tráfico a Internet?": [
+  "41. Consulte la ilustración. ¿Qué conjunto de comandos configurará rutas estáticas que permitirán a los enrutadores Park y Alta a) reenviar paquetes a cada LAN y b) dirigir todo el tráfico a Internet?": [
     " ",
     "Parque (config) # ruta ip 0.0.0.0 0.0.0 192.168.14.1\nAlta (config) # ruta ip 10.0.234.0 255.255.0 192.168.14.2\nAlta (config) # ruta ip 0.0.0.0 0.0.0 s0/0/0"
   ],
@@ -4099,5 +4099,53 @@
   "154. Consulte la ilustración. Haga coincidir la red con la dirección IP y el prefijo correctos que satisfagan los requisitos de direccionamiento de host utilizables para cada red.": [
     " ",
     "Network A → 192.168.0.128 /25 | Network B → 192.168.0.0 /26 | Network C → 192.168.0.96 /27 | Network D → 192.168.0.80 /30"
+  ],
+  "1. ¿Qué tareas se pueden realizar mediante la función de historial de comandos? (Escoja dos opciones).": [
+    " ",
+    "Establece el tamaño del búfer del historial de comandos.. Recuérdese los comandos introducidos anteriormente."
+  ],
+  "2. ¿Qué declaración describe el funcionamiento del LED del sistema en los switches Catalyst de Cisco?": [
+    " ",
+    "Si el LED es de color ámbar, el sistema recibe energía pero no funciona correctamente."
+  ],
+  "3. ¿Qué tipo de cable Ethernet se utilizaría para conectar un switch a otro cuando ninguno de los dos admite la función Auto-MDIX?": [
+    " ",
+    "De conexión cruzada"
+  ],
+  "4. ¿Qué ventajas brinda SSH en comparación con Telnet?": [
+    " ",
+    "Cifrado"
+  ],
+  "5. Un administrador de red ha configurado VLAN 99 como VLAN de administración y la ha configurado con una dirección IP y una máscara de subred. El administrador emite el show interface vlan 99 comando y observa que el protocolo de línea está inhabilitado. ¿Qué acción puede cambiar el estado del protocolo de línea a arriba?": [
+    " ",
+    "Conecte un host a una interfaz asociada con VLAN 99."
+  ],
+  "6. ¿Qué enunciado describe los SVI?": [
+    " ",
+    "Se crea un SVI predeterminado para la VLAN 1 para la administración del switch."
+  ],
+  "7. ¿Qué mensaje se muestra cuando un administrador de red accede correctamente al gestor de arranque en un switch para recuperarse de un fallo del sistema?": [
+    " ",
+    "Switch>"
+  ],
+  "8. ¿Qué secuencia de arranque del router es correcta?": [
+    " ",
+    "1 – realiza la POST y carga el programa bootstrap\n2: ubique y cargue el software Cisco IOS\n3: ubica y carga el archivo de configuración de inicio o ingresa al modo de configuración"
+  ],
+  "9. ¿Cuál es la primera acción en la secuencia de arranque cuando un switch está encendido?": [
+    " ",
+    "cargar un programa de autoprueba de encendido"
+  ],
+  "10. ¿Con qué debe contar un administrador para restablecer una contraseña olvidada en un router?": [
+    " ",
+    "Acceso físico al router"
+  ],
+  "11. Al configurar un switch para el acceso SSH, ¿qué otro comando asociado con el login local comando es necesario ingresar en el switch?": [
+    " ",
+    "username username secret secret"
+  ],
+  "12. ¿Qué comando proporcionará información sobre el estado de todas las interfaces, incluyendo el número de gigantes, runts y colisiones en la interfaz?": [
+    " ",
+    "show interfaces"
   ]
 }
