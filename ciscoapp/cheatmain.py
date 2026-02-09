@@ -164,12 +164,25 @@ def normalizar_texto(texto):
     return texto
 
 
+def extraer_palabras_clave(texto):
+    """Extrae palabras significativas (ignora artículos, preposiciones, etc.)"""
+    import re
+    # Palabras a ignorar (stop words en español)
+    stop_words = {'el', 'la', 'los', 'las', 'un', 'una', 'unos', 'unas', 'de', 'del', 'al', 
+                  'a', 'en', 'con', 'por', 'para', 'y', 'o', 'que', 'es', 'son', 'se', 'su',
+                  'como', 'más', 'pero', 'sus', 'le', 'ya', 'lo', 'esto', 'esta', 'este'}
+    
+    palabras = re.findall(r'\b[a-záéíóúñü]+\b', texto.lower())
+    return [p for p in palabras if p not in stop_words and len(p) > 2]
+
+
 def buscar_en_diccionario(texto):
-    """Busca si el texto contiene alguna pregunta del diccionario (coincidencia parcial)"""
+    """Busca si el texto contiene alguna pregunta del diccionario (coincidencia flexible)"""
     texto_normalizado = normalizar_texto(texto)
+    palabras_texto = set(extraer_palabras_clave(texto))
     
     mejor_coincidencia = None
-    mejor_longitud = 0
+    mejor_score = 0
     mejor_key = None
     
     for key in DICCIONARIO:
@@ -181,20 +194,25 @@ def buscar_en_diccionario(texto):
         else:
             pregunta_sin_numero = key_normalizado
         
-        # Buscar si la pregunta está contenida en el texto extraído
+        # MÉTODO 1: Coincidencia exacta (la pregunta está en el texto)
         if pregunta_sin_numero in texto_normalizado:
-            # Guardar la coincidencia más larga (más específica)
-            if len(pregunta_sin_numero) > mejor_longitud:
-                mejor_longitud = len(pregunta_sin_numero)
+            if len(pregunta_sin_numero) > mejor_score:
+                mejor_score = len(pregunta_sin_numero)
                 mejor_coincidencia = DICCIONARIO[key]
                 mejor_key = key
+            continue
         
-        # También buscar coincidencia parcial: primeras 40+ caracteres de la pregunta
-        elif len(pregunta_sin_numero) > 40:
-            fragmento = pregunta_sin_numero[:40]
-            if fragmento in texto_normalizado:
-                if len(fragmento) > mejor_longitud:
-                    mejor_longitud = len(fragmento)
+        # MÉTODO 2: Coincidencia por palabras clave (para cuando OCR omite palabras)
+        palabras_pregunta = set(extraer_palabras_clave(pregunta_sin_numero))
+        if len(palabras_pregunta) >= 3:
+            # Calcular cuántas palabras coinciden
+            coincidencias = palabras_texto & palabras_pregunta
+            # Si coinciden al menos 70% de las palabras de la pregunta
+            porcentaje = len(coincidencias) / len(palabras_pregunta)
+            if porcentaje >= 0.7:
+                score = len(coincidencias) * 10  # Dar peso a las coincidencias
+                if score > mejor_score:
+                    mejor_score = score
                     mejor_coincidencia = DICCIONARIO[key]
                     mejor_key = key
     
