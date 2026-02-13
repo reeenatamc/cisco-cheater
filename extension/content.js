@@ -7,7 +7,7 @@ const serverURL = "https://cisco-cheater-production-2079.up.railway.app";
 function getDeviceId() {
   let deviceId = localStorage.getItem('cisco_device_id');
   if (!deviceId) {
-    deviceId = 'dev_' + Math.random().toString(36).substr(2, 9) + Date.now();
+    deviceId = 'dev_' + Math.random().toString(36).substring(2, 11) + Date.now();
     localStorage.setItem('cisco_device_id', deviceId);
   }
   return deviceId;

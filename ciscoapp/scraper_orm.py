@@ -4,7 +4,6 @@ Sigue EXACTAMENTE la misma lógica de extracción que scraper.py.
 """
 
 import os
-import sys
 import django
 import re
 import time
