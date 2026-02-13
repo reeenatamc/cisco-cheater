@@ -1,20 +1,13 @@
 import json
-import os
 from datetime import datetime
 from django.http import JsonResponse, HttpResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from .models import ActivationKey
+from .models import ActivationKey, Pregunta
 
 
 def home(request):
     return render(request, 'you_never_gonna_catch_me.html')
-
-BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-json_path = os.path.join(BASE_DIR, 'diccionario.json')
-
-with open(json_path, encoding='utf-8') as f:
-    DICCIONARIO = json.load(f)
 
 @csrf_exempt
 def activate(request):
@@ -78,17 +71,65 @@ def buscar(request):
         except ActivationKey.DoesNotExist:
             return JsonResponse({'error': 'Dispositivo no activado'}, status=403)
 
-        pregunta = data.get('pregunta', '').strip().lower()
-        if pregunta in (key.lower() for key in DICCIONARIO):
-            clave_exacta = next(key for key in DICCIONARIO if key.lower() == pregunta)
-            respuesta = DICCIONARIO[clave_exacta]
-        else:
-            coincidencias = [DICCIONARIO[key] for key in DICCIONARIO if pregunta in key.lower()]
-            if coincidencias:
-                respuesta = coincidencias[0]
-            else:
-                respuesta = "❌ Pregunta no encontrada."
-
-        return JsonResponse({'respuesta': respuesta})
+        pregunta_texto = data.get('pregunta', '').strip()
+        
+        # Búsqueda: primero exacta (case-insensitive), luego parcial
+        pregunta_obj = Pregunta.objects.filter(texto__iexact=pregunta_texto).first()
+        if not pregunta_obj:
+            pregunta_obj = Pregunta.objects.filter(texto__icontains=pregunta_texto).first()
+        
+        if not pregunta_obj:
+            return JsonResponse({
+                'respuesta': '❌ Pregunta no encontrada.',
+                'found': False
+            })
+        
+        # Formatear respuesta según el tipo de pregunta
+        if pregunta_obj.tipo == 'unir':
+            # Preguntas de tipo unir: devolver pares
+            pares = []
+            for par in pregunta_obj.pares.all():
+                pares.append({
+                    'izquierda': par.elemento_izquierdo,
+                    'derecha': par.elemento_derecho
+                })
+            
+            return JsonResponse({
+                'respuesta': {
+                    'tipo': 'unir',
+                    'pregunta_numero': pregunta_obj.numero,
+                    'pares': pares
+                },
+                'found': True
+            })
+        
+        elif pregunta_obj.tipo == 'opcion_simple':
+            # Una sola respuesta: formato [indice, texto]
+            respuesta = pregunta_obj.respuestas.first()
+            if respuesta:
+                return JsonResponse({
+                    'respuesta': [respuesta.indice, respuesta.texto],
+                    'found': True
+                })
+        
+        elif pregunta_obj.tipo == 'opcion_multiple':
+            # Múltiples respuestas: formato ["idx1, idx2", "texto1. texto2"]
+            respuestas = pregunta_obj.respuestas.all().order_by('indice')
+            indices = [str(r.indice) for r in respuestas]
+            textos = [r.texto for r in respuestas]
+            
+            indices_str = ', '.join(indices)
+            textos_str = '. '.join(textos)
+            
+            return JsonResponse({
+                'respuesta': [indices_str, textos_str],
+                'found': True
+            })
+        
+        # Fallback si no hay respuestas
+        return JsonResponse({
+            'respuesta': '❌ Pregunta no encontrada.',
+            'found': False
+        })
 
     return JsonResponse({'error': 'Método no permitido'}, status=405)
