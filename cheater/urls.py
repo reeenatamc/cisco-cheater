@@ -18,14 +18,19 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from ciscoapp.cheatmain import buscar, activate, verify_activation, home
+from ciscoapp.views import (
+    buscar, activate, verify_activation, home,
+    consultar_gemini, consultar_gemini_imagen
+)
 
 urlpatterns = [
     path("", home, name="home"),
     path("admin/", admin.site.urls),
-    path('buscar/', buscar, name='buscar'),
-    path('activate/', activate, name='activate'),
-    path('verify_activation/', verify_activation, name='verify_activation'),
+    path("buscar/", buscar, name="buscar"),
+    path("activate/", activate, name="activate"),
+    path("verify_activation/", verify_activation, name="verify_activation"),
+    path("consultar_gemini/", consultar_gemini, name="consultar_gemini"),
+    path("consultar_gemini_imagen/", consultar_gemini_imagen, name="consultar_gemini_imagen"),
 ]
 
 if settings.DEBUG:
