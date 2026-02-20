@@ -3,40 +3,40 @@ import json
 import os
 
 class Command(BaseCommand):
-    help = 'Limpia el archivo diccionario.json reemplazando el primer elemento de cada respuesta con un espacio'
+    help = 'Clean diccionario.json by replacing the first element of each answer with a space'
 
     def handle(self, *args, **options):
-        # Ruta al archivo diccionario.json
+        # Path to diccionario.json
         diccionario_path = os.path.join(os.path.dirname(__file__), '..', '..', 'diccionario.json')
         
         try:
-            # Cargar el diccionario desde el archivo JSON
+            # Load dictionary from JSON file
             with open(diccionario_path, 'r', encoding='utf-8') as f:
                 preguntas = json.load(f)
             
-            self.stdout.write(f'Cargado diccionario con {len(preguntas)} preguntas')
+            self.stdout.write(f'Loaded dictionary with {len(preguntas)} questions')
             
-            # Modificar el primer elemento de cada respuesta para que sea un espacio
+            # Replace first element of each answer with a space
             for key in preguntas:
                 preguntas[key][0] = " "
             
-            # Guardar el diccionario modificado de vuelta al archivo
+            # Save modified dictionary back to file
             with open(diccionario_path, 'w', encoding='utf-8') as f:
                 json.dump(preguntas, f, ensure_ascii=False, indent=2)
             
             self.stdout.write(
-                self.style.SUCCESS(f'✅ Diccionario limpiado exitosamente. {len(preguntas)} preguntas procesadas.')
+                self.style.SUCCESS(f'Dictionary cleaned successfully. {len(preguntas)} questions processed.')
             )
             
         except FileNotFoundError:
             self.stdout.write(
-                self.style.ERROR('❌ No se encontró el archivo diccionario.json')
+                self.style.ERROR('File diccionario.json not found')
             )
         except json.JSONDecodeError:
             self.stdout.write(
-                self.style.ERROR('❌ Error al decodificar el archivo JSON')
+                self.style.ERROR('Error decoding JSON file')
             )
         except Exception as e:
             self.stdout.write(
-                self.style.ERROR(f'❌ Error inesperado: {str(e)}')
+                self.style.ERROR(f'Unexpected error: {str(e)}')
             )

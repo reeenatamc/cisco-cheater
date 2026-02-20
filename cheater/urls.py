@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from ciscoapp.cheatmain import buscar, activate, verify_activation, home, consultar_gemini, consultar_gemini_imagen
+from ciscoapp.views import buscar, activate, verify_activation, home, consultar_gemini, consultar_gemini_imagen
 
 urlpatterns = [
     path("", home, name="home"),
