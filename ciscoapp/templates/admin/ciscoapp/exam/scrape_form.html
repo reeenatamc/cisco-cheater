@@ -1,0 +1,41 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block title %}Scrapear Examen{% endblock %}
+
+{% block content %}
+<div style="max-width: 600px; margin: 30px auto; font-family: sans-serif;">
+    <h2 style="margin-bottom: 16px;">🕷️ Scrapear Examen</h2>
+    <p style="color: #666; margin-bottom: 20px;">
+        Ingresa la URL de un examen de <strong>examenredes.com</strong>.<br>
+        El scraper extraerá preguntas, respuestas, escenarios y tipos automáticamente.
+    </p>
+
+    <form method="post" action="{% url 'admin:ciscoapp_exam_scrape' %}">
+        {% csrf_token %}
+        <div style="margin-bottom: 12px;">
+            <label for="url" style="display: block; font-weight: bold; margin-bottom: 4px;">
+                URL del examen:
+            </label>
+            <input
+                type="url"
+                name="url"
+                id="url"
+                required
+                placeholder="https://examenredes.com/ccna-1-examen-final-itnv7-preguntas-y-respuestas/"
+                style="width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; box-sizing: border-box;"
+            >
+        </div>
+        <button
+            type="submit"
+            style="padding: 8px 24px; background: #d4a373; border: none; border-radius: 4px; color: #fff; font-weight: bold; cursor: pointer;"
+        >
+            🚀 Iniciar Scraping
+        </button>
+    </form>
+
+    <p style="color: #999; font-size: 12px; margin-top: 16px;">
+        ⏱️ El proceso puede tardar ~20 segundos (espera de ads + extracción).
+    </p>
+</div>
+{% endblock %}

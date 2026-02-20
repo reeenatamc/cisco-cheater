@@ -254,10 +254,10 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # -------------------------
-# Seguridad
+# Security
 # -------------------------
 SECRET_KEY = "django-insecure-1^pagal2tm&(yhx+!$^)60q*2y2a$e6-5m&_hxc-@as2+8@s3_"
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = [
     "localhost",
@@ -270,7 +270,7 @@ ALLOWED_HOSTS = [
 ]
 
 # -------------------------
-# Aplicaciones
+# Applications
 # -------------------------
 INSTALLED_APPS = [
     "unfold",
@@ -281,6 +281,7 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    "django.contrib.postgres",
     "corsheaders",
 ]
 
@@ -319,21 +320,21 @@ TEMPLATES = [
 WSGI_APPLICATION = "cheater.wsgi.application"
 
 # -------------------------
-# Base de datos (Railway)
+# Database (Local)
 # -------------------------
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
-        "NAME": "railway",
+        "NAME": "cisco_cheater",
         "USER": "postgres",
-        "PASSWORD": "nRamsrsRdKFwIzoKzQpfaOvOzZXrvNYB",
-        "HOST": "caboose.proxy.rlwy.net",
-        "PORT": "45374",
+        "PASSWORD": "odoo",
+        "HOST": "localhost",
+        "PORT": "5432",
     }
 }
 
 # -------------------------
-# Validación de contraseñas
+# Password validation
 # -------------------------
 AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},
@@ -343,7 +344,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # -------------------------
-# Internacionalización
+# Internationalization
 # -------------------------
 LANGUAGE_CODE = "en-us"
 TIME_ZONE = "America/Guayaquil"
@@ -351,7 +352,7 @@ USE_I18N = True
 USE_TZ = True
 
 # -------------------------
-# Archivos estáticos
+# Static files
 # -------------------------
 STATIC_URL = '/static/'
 STATIC_ROOT = BASE_DIR / 'staticfiles'
@@ -363,7 +364,7 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 # -------------------------
-# Configuración CORS
+# CORS configuration
 # -------------------------
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOW_CREDENTIALS = True
@@ -380,7 +381,7 @@ CORS_ALLOWED_HEADERS = [
 ]
 
 # -------------------------
-# Seguridad CSRF / Cookies
+# CSRF / Cookie security
 # -------------------------
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:8000",
@@ -395,8 +396,8 @@ CSRF_ALLOWED_ORIGINS = [
     "https://*.up.railway.app",
 ]
 
-CSRF_COOKIE_SECURE = True
-SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = False
+SESSION_COOKIE_SECURE = False
 
 # -------------------------
 # Default primary key
@@ -413,7 +414,7 @@ UNFOLD = {
     "SITE_HEADER": "cisco cheater",
     "SITE_SUBHEADER": "renata xd",
     "SITE_URL": "/",
-    "SITE_SYMBOL": "bolt",  # Relámpago - súper cool
+    "SITE_SYMBOL": "bolt",
     "SHOW_HISTORY": True,
     "SHOW_VIEW_ON_SITE": True,
     "SHOW_BACK_BUTTON": False,
@@ -421,30 +422,30 @@ UNFOLD = {
     "BORDER_RADIUS": "8px",
     "COLORS": {
         "primary": {
-            "50": "#fefae0",   # fefae0 - crema claro
-            "100": "#faedcd",  # faedcd - beige claro
-            "200": "#e9edc9",  # e9edc9 - verde menta claro
-            "300": "#ccd5ae",  # ccd5ae - verde menta
-            "400": "#d4a373",  # d4a373 - marrón dorado
-            "500": "#d4a373",  # d4a373 - marrón dorado (principal)
-            "600": "#b8956a",  # versión más oscura
-            "700": "#9c7a5a",  # versión más oscura
-            "800": "#80604a",  # versión más oscura
-            "900": "#64453a",  # versión más oscura
-            "950": "#482a2a",  # versión más oscura
+            "50": "#eff6ff",
+            "100": "#dbeafe",
+            "200": "#bfdbfe",
+            "300": "#93c5fd",
+            "400": "#60a5fa",
+            "500": "#3b82f6",
+            "600": "#2563eb",
+            "700": "#1d4ed8",
+            "800": "#1e40af",
+            "900": "#1e3a8a",
+            "950": "#172554",
         },
         "base": {
-            "50": "#fefae0",   # fefae0 - crema claro
-            "100": "#faedcd",  # faedcd - beige claro
-            "200": "#e9edc9",  # e9edc9 - verde menta claro
-            "300": "#ccd5ae",  # ccd5ae - verde menta
-            "400": "#d4a373",  # d4a373 - marrón dorado
-            "500": "#d4a373",  # d4a373 - marrón dorado
-            "600": "#b8956a",  # versión más oscura
-            "700": "#9c7a5a",  # versión más oscura
-            "800": "#80604a",  # versión más oscura
-            "900": "#64453a",  # versión más oscura
-            "950": "#482a2a",  # versión más oscura
+            "50": "#f8fafc",
+            "100": "#f1f5f9",
+            "200": "#e2e8f0",
+            "300": "#cbd5e1",
+            "400": "#94a3b8",
+            "500": "#64748b",
+            "600": "#475569",
+            "700": "#334155",
+            "800": "#1e293b",
+            "900": "#0f172a",
+            "950": "#020617",
         },
         "font": {
             "subtle-light": "var(--color-base-600)",
@@ -467,6 +468,32 @@ UNFOLD = {
                         "title": _("Overview"),
                         "icon": "dashboard",
                         "link": reverse_lazy("admin:index"),
+                    },
+                ],
+            },
+            {
+                "title": _("Exámenes"),
+                "separator": True,
+                "items": [
+                    {
+                        "title": _("Exámenes"),
+                        "icon": "school",
+                        "link": reverse_lazy("admin:ciscoapp_exam_changelist"),
+                    },
+                    {
+                        "title": _("Preguntas"),
+                        "icon": "quiz",
+                        "link": reverse_lazy("admin:ciscoapp_question_changelist"),
+                    },
+                    {
+                        "title": _("Respuestas"),
+                        "icon": "check_circle",
+                        "link": reverse_lazy("admin:ciscoapp_answer_changelist"),
+                    },
+                    {
+                        "title": _("Scrapear Examen"),
+                        "icon": "download",
+                        "link": reverse_lazy("admin:ciscoapp_exam_scrape"),
                     },
                 ],
             },
