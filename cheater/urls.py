@@ -18,7 +18,15 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from ciscoapp.views import buscar, activate, verify_activation, home, consultar_gemini, consultar_gemini_imagen
+from ciscoapp.views import (
+    buscar,
+    activate,
+    verify_activation,
+    home,
+    consultar_gemini,
+    consultar_gemini_imagen,
+    send_instructions_whatsapp,
+)
 
 urlpatterns = [
     path("", home, name="home"),
@@ -28,6 +36,7 @@ urlpatterns = [
     path('verify_activation/', verify_activation, name='verify_activation'),
     path('consultar_gemini/', consultar_gemini, name='consultar_gemini'),
     path('consultar_gemini_imagen/', consultar_gemini_imagen, name='consultar_gemini_imagen'),
+    path('send_instructions_whatsapp/', send_instructions_whatsapp, name='send_instructions_whatsapp'),
 ]
 
 if settings.DEBUG:

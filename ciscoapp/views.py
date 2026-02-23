@@ -25,6 +25,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.postgres.search import TrigramSimilarity
 
 from .models import ActivationKey, Question, Answer
+from .whatsapp_service import send_instructions_pdf_whatsapp
 
 from google import genai
 from PIL import Image
@@ -274,6 +275,37 @@ def verify_activation(request):
 
     ak = _verify_device(device_id)
     return JsonResponse({"is_activated": ak is not None})
+
+
+@csrf_exempt
+def send_instructions_whatsapp(request):
+    if request.method != "POST":
+        return JsonResponse({"error": "Method not allowed"}, status=405)
+
+    data = _json_body(request)
+    key = data.get("key", "").strip()
+    device_id = data.get("device_id", "").strip()
+
+    if not key:
+        return JsonResponse({"error": "Key is required"}, status=400)
+
+    try:
+        ak = ActivationKey.objects.get(key=key, is_active=True)
+    except ActivationKey.DoesNotExist:
+        return JsonResponse({"error": "Invalid activation key"}, status=404)
+
+    if device_id and ak.device_id and ak.device_id != device_id:
+        return JsonResponse(
+            {"error": "This key is already in use on another device"},
+            status=403,
+        )
+
+    try:
+        result = send_instructions_pdf_whatsapp(ak)
+        return JsonResponse({"success": True, "message": "Instructions sent", "result": result})
+    except Exception as exc:
+        logger.exception("WhatsApp send failed")
+        return JsonResponse({"success": False, "error": str(exc)}, status=500)
 
 
 # ── /consultar_gemini/ ────────────────────────────────────────

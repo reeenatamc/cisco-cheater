@@ -13,6 +13,13 @@ class ActivationKey(models.Model):
     created_at = models.DateTimeField("Fecha de creación", auto_now_add=True)
     last_used = models.DateTimeField("Último uso", null=True, blank=True)
     device_id = models.CharField("ID de dispositivo", max_length=255, null=True, blank=True)
+    phone_number = models.CharField(
+        "Número de WhatsApp",
+        max_length=32,
+        null=True,
+        blank=True,
+        help_text="Formato E.164, por ejemplo: +593999999999",
+    )
     gemini_api_key = models.CharField(
         "Gemini API Key", max_length=512, null=True, blank=True
     )
