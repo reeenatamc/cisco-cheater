@@ -7,6 +7,7 @@ from django.utils.html import format_html
 
 from unfold.admin import ModelAdmin, TabularInline
 from .models import ActivationKey, Exam, Question, Answer
+from .whatsapp_service import send_whatsapp_message
 
 
 # ══════════════════════════════════════════════════════════════
@@ -31,7 +32,36 @@ class ActivationKeyAdmin(ModelAdmin):
     list_filter = ("is_active",)
     search_fields = ("key", "device_id")
     readonly_fields = ("created_at",)
-    actions = [generate_keys]
+
+    actions = [generate_keys, "reenviar_instrucciones_whatsapp"]
+
+    @admin.action(description="Reenviar instrucciones por WhatsApp")
+    def reenviar_instrucciones_whatsapp(self, request, queryset):
+        from django.template import Template, Context
+        from django.conf import settings
+        import os
+
+        # Leer el markdown de instrucciones
+        md_path = os.path.join(settings.BASE_DIR, "instructions.md")
+        with open(md_path, encoding="utf-8") as f:
+            md_template = f.read()
+
+        for key in queryset:
+            nombre = key.owner or "Usuario"
+            clave = key.key
+            # Renderizar el markdown con nombre y clave
+            template = Template(md_template)
+            context = Context({"nombre": nombre, "clave": clave})
+            mensaje = template.render(context)
+            telefono = key.phone_number
+            if not telefono:
+                self.message_user(request, f"No hay número para {nombre} ({clave})", level=messages.WARNING)
+                continue
+            try:
+                send_whatsapp_message(telefono, mensaje)
+                self.message_user(request, f"Instrucciones enviadas a {telefono}")
+            except Exception as e:
+                self.message_user(request, f"Error enviando a {telefono}: {e}", level=messages.ERROR)
 
 
 # ══════════════════════════════════════════════════════════════

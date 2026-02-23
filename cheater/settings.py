@@ -1,3 +1,7 @@
+# Configuración de la API de WhatsApp
+# Ejemplo:
+# WHATSAPP_API_URL = "https://api.tuwhatsapp.com/send"
+# WHATSAPP_API_TOKEN = "tu_token_secreto"
 # """
 # Django settings for cheater project.
 #
