@@ -16,9 +16,6 @@ class ActivationKey(models.Model):
     gemini_api_key = models.CharField(
         "Gemini API Key", max_length=512, null=True, blank=True
     )
-    phone_number = models.CharField(
-        "Número de celular", max_length=20, null=True, blank=True
-    )
 
     class Meta:
         verbose_name = "Clave de activación"
