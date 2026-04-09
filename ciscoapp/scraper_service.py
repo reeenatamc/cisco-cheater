@@ -97,11 +97,11 @@ def _build_driver() -> webdriver.Chrome:
         "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
     )
     
-    import os
-    if os.path.exists("/usr/bin/chromedriver"):
-        # Railway Production / Linux environment
-        opts.binary_location = "/usr/bin/chromium"
-        service = Service("/usr/bin/chromedriver")
+    import shutil
+    if shutil.which("chromedriver"):
+        # Railway Production / Linux environment with NixPkgs
+        opts.binary_location = shutil.which("chromium")
+        service = Service(shutil.which("chromedriver"))
     else:
         # Local Mac development environment
         from webdriver_manager.chrome import ChromeDriverManager
