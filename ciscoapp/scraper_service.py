@@ -96,7 +96,17 @@ def _build_driver() -> webdriver.Chrome:
         "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
     )
-    service = Service(ChromeDriverManager().install())
+    
+    import os
+    if os.path.exists("/usr/bin/chromedriver"):
+        # Railway Production / Linux environment
+        opts.binary_location = "/usr/bin/chromium"
+        service = Service("/usr/bin/chromedriver")
+    else:
+        # Local Mac development environment
+        from webdriver_manager.chrome import ChromeDriverManager
+        service = Service(ChromeDriverManager().install())
+        
     return webdriver.Chrome(service=service, options=opts)
 
 
