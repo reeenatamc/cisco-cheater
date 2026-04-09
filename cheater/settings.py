@@ -264,6 +264,9 @@ from dotenv import load_dotenv
 BASE_DIR = Path(__file__).resolve().parent.parent
 load_dotenv(BASE_DIR / ".env")
 
+import sys
+BUILDING_STATIC = "collectstatic" in sys.argv
+
 
 def _env_list(name: str, default: str) -> list[str]:
     raw = os.environ.get(name, default)
@@ -275,9 +278,12 @@ def _env_list(name: str, default: str) -> list[str]:
 # -------------------------
 SECRET_KEY = os.environ.get("SECRET_KEY", "").strip()
 if not SECRET_KEY:
-    raise ImproperlyConfigured(
-        "SECRET_KEY is not set. Copy .env.example to .env and assign a unique value."
-    )
+    if BUILDING_STATIC:
+        SECRET_KEY = "dummy-build-key-for-collectstatic"
+    else:
+        raise ImproperlyConfigured(
+            "SECRET_KEY is not set. Copy .env.example to .env and assign a unique value."
+        )
 
 DEBUG = os.environ.get("DEBUG", "False").lower() in ("true", "1", "yes")
 
@@ -349,10 +355,14 @@ WSGI_APPLICATION = "cheater.wsgi.application"
 # -------------------------
 # Database (PostgreSQL; Trigram search requires it)
 # -------------------------
-if not os.environ.get("DATABASE_URL", "").strip():
-    raise ImproperlyConfigured(
-        "DATABASE_URL is not set. Use .env locally; Railway/Render set it automatically."
-    )
+db_url = os.environ.get("DATABASE_URL", "").strip()
+if not db_url:
+    if BUILDING_STATIC:
+        db_url = "sqlite:///:memory:"
+    else:
+        raise ImproperlyConfigured(
+            "DATABASE_URL is not set. Use .env locally; Railway/Render set it automatically."
+        )
 
 DATABASE_SSL_REQUIRE = os.environ.get("DATABASE_SSL_REQUIRE", "").lower() in (
     "true",
@@ -361,7 +371,8 @@ DATABASE_SSL_REQUIRE = os.environ.get("DATABASE_SSL_REQUIRE", "").lower() in (
 )
 
 DATABASES = {
-    "default": dj_database_url.config(
+    "default": dj_database_url.parse(
+        db_url,
         conn_max_age=600,
         ssl_require=DATABASE_SSL_REQUIRE,
     )
