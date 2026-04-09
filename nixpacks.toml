@@ -1,5 +1,5 @@
 [phases.setup]
-aptPkgs = ['tesseract-ocr', 'tesseract-ocr-spa', 'tesseract-ocr-eng']
+aptPkgs = ['tesseract-ocr', 'tesseract-ocr-spa', 'tesseract-ocr-eng', 'chromium', 'chromium-driver']
 
 [phases.build]
 cmds = ['python manage.py collectstatic --noinput']

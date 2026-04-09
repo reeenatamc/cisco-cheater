@@ -13,3 +13,4 @@ selenium
 whitenoise
 django-ratelimit
 markdown
+webdriver-manager
