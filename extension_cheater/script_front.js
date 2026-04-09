@@ -1,4 +1,4 @@
-const serverURL = "http://localhost:8000";
+const serverURL = "https://web-production-bd98a.up.railway.app";
 
 // Flag to prevent multiple popups
 let popupActivo = null;
