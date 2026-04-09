@@ -16,10 +16,21 @@ class ActivationKey(models.Model):
     gemini_api_key = models.CharField(
         "Gemini API Key", max_length=512, null=True, blank=True
     )
+    phone_number = models.CharField(
+        "Teléfono (WhatsApp)", max_length=32, null=True, blank=True,
+        help_text="Ej. 593999999999 (Código de país sin el '+' seguido del número)"
+    )
+    expires_at = models.DateTimeField(
+        "Fecha de expiración", null=True, blank=True,
+        help_text="Dejar vacío para que no expire nunca.",
+    )
 
     class Meta:
         verbose_name = "Clave de activación"
         verbose_name_plural = "Claves de activación"
+        indexes = [
+            models.Index(fields=["device_id"], name="ak_device_id_idx"),
+        ]
 
     def __str__(self):
         return f"{self.key} - {'Activa' if self.is_active else 'Inactiva'}"

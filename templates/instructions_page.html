@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Soporte y Documentación - Cisco Cheater</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+            background-color: #f7f9fb;
+            color: #334155;
+            font-size: 15px; 
+            line-height: 1.8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        :root {
+            --primary-blue: #0ea5e9;
+            --dark-blue: #0369a1;
+        }
+
+        .top-navbar {
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 15px 30px;
+            display: flex;
+            align-items: center;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .main-wrapper {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        h1.doc-title {
+            font-weight: 700;
+            font-size: 32px;
+            color: #0f172a;
+            margin-bottom: 10px;
+            letter-spacing: -0.5px;
+        }
+
+        p.doc-subtitle {
+            font-size: 18px;
+            color: #64748b;
+            margin-bottom: 40px;
+        }
+
+        .access-block {
+            background-color: white;
+            border: 1px solid #cbd5e1;
+            border-left: 4px solid var(--primary-blue);
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        .access-block h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 700;
+            color: #64748b;
+            margin-bottom: 15px;
+        }
+
+        .key-row {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .key-display {
+            font-family: ui-monospace, SFMono-Regular, monospace;
+            font-size: 18px;
+            font-weight: 600;
+            color: #0f172a;
+            background: #f1f5f9;
+            padding: 12px 20px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+            margin: 0;
+            word-break: break-all;
+        }
+
+        .btn-copy-modern {
+            background: white;
+            border: 1px solid #cbd5e1;
+            color: #334155;
+            padding: 12px 20px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.2s;
+            cursor: pointer;
+            white-space: nowrap;
+        }
+
+        .btn-copy-modern:hover {
+            background: #f8fafc;
+            border-color: #94a3b8;
+        }
+
+        .download-box {
+            background-color: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 30px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .btn-download-big {
+            display: inline-block;
+            background-color: var(--primary-blue);
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 16px 40px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: all 0.2s;
+            box-shadow: 0 4px 12px rgba(14, 165, 233, 0.25);
+        }
+        .btn-download-big:hover {
+            background-color: var(--dark-blue);
+            color: white;
+            transform: translateY(-2px);
+        }
+
+        .doc-step {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 12px;
+            padding: 40px;
+            margin-bottom: 40px;
+        }
+
+        .step-badge {
+            display: inline-block;
+            background: var(--primary-blue);
+            color: white;
+            width: 32px;
+            height: 32px;
+            text-align: center;
+            line-height: 32px;
+            border-radius: 8px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .doc-step h2 {
+            font-size: 22px;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+
+        .doc-step p, .doc-step ul {
+            color: #475569;
+        }
+        .doc-step li {
+            margin-bottom: 10px;
+        }
+
+        .support-img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            margin-top: 25px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .img-placeholder-wrapper {
+            background-color: #f8fafc;
+            border: 2px dashed #cbd5e1;
+            border-radius: 8px;
+            padding: 40px 20px;
+            text-align: center;
+            color: #94a3b8;
+            margin-top: 25px;
+            font-size: 13px;
+        }
+
+        .faq-section {
+            padding-top: 40px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 60px;
+            margin-bottom: 40px;
+        }
+
+        .faq-card {
+            background: white;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .faq-card h4 {
+            font-size: 16px;
+            font-weight: 600;
+            color: #0f172a;
+            margin-bottom: 12px;
+        }
+
+        /* Formulario de Request de Hardware */
+        .hardware-form-box {
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            padding: 25px;
+            border-radius: 8px;
+            margin-top: 15px;
+        }
+
+        .legal-notice {
+            background: #fffbeb;
+            border: 1px solid #fde68a;
+            padding: 30px;
+            border-radius: 12px;
+            color: #92400e;
+        }
+
+        @media (max-width: 600px) {
+            .key-row {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .btn-copy-modern {
+                width: 100%;
+            }
+            .doc-step {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="top-navbar">
+        <i class="bi bi-book-half me-2" style="color: var(--primary-blue); font-size: 1.2rem;"></i>
+        Cisco Cheater / Documentación Oficial
+    </div>
+
+    <div class="main-wrapper">
+        
+        <h1 class="doc-title">Hola {{ nombre }},</h1>
+        <p class="doc-subtitle">Bienvenido al manual oficial de instalación. Sigue esta guía de 4 pasos para configurar tu extensión correctamente.</p>
+
+        <div class="access-block">
+            <h4>Tu Clave de Acceso Única</h4>
+            <div class="key-row">
+                <div class="key-display" id="keyValue">{{ clave }}</div>
+                <button class="btn-copy-modern" onclick="copiarClave()">
+                    <i class="bi bi-files me-1"></i> Copiar portapapeles
+                </button>
+            </div>
+            <div class="mt-3 text-muted" style="font-size: 13px;">
+                Guarda esta clave. Es requerida para el funcionamiento de la extensión.
+            </div>
+        </div>
+
+        <div class="download-box">
+            <h3 style="font-size: 18px; font-weight: 600; color: #0f172a; margin-bottom: 8px;">Archivos Base de la Extensión</h3>
+            <p style="color: #475569; margin-bottom: 25px;">Descarga y guarda el paquete comprimido en tus documentos antes de continuar.</p>
+            <a href="{{ download_url }}" class="btn-download-big">
+                <i class="bi bi-file-earmark-zip me-2"></i> Descargar paquete (.ZIP)
+            </a>
+        </div>
+
+        <!-- 1 -->
+        <div class="doc-step">
+            <div class="step-badge">1</div>
+            <h2>Extraer el archivo</h2>
+            <p>Una vez descargado el <code>.zip</code>:</p>
+            <ul>
+                <li>Ubícalo en tus Descargas, haz clic derecho y selecciona <strong>"Extraer todo..."</strong></li>
+                <li>Mantén la carpeta extraída a salvo.</li>
+            </ul>
+        </div>
+
+        <!-- 2 -->
+        <div class="doc-step">
+            <div class="step-badge">2</div>
+            <h2>Vincular con Chrome</h2>
+            <ul>
+                <li>Dentro de Chrome abre: <strong><code>chrome://extensions</code></strong></li>
+                <li>Activa <strong>"Modo de desarrollador"</strong> (arriba a la derecha).</li>
+                <li>Clic en <strong>"Cargar descomprimida"</strong>.</li>
+                <li>Selecciona únicamente la carpeta extraída.</li>
+            </ul>
+            <div class="img-placeholder-wrapper">
+                <img src="/static/images/paso_chrome.jpg" class="support-img mx-auto" onerror="this.onerror=null; this.src=''; this.parentNode.innerHTML='<i class=\'bi bi-image text-muted fs-2\'></i><br><b>paso_chrome.jpg</b>';">
+            </div>
+        </div>
+
+        <!-- 3 -->
+        <div class="doc-step">
+            <div class="step-badge">3</div>
+            <h2>API Gratuita de Inteligencia Artificial</h2>
+            <ul>
+                <li>Entra aquí: <a href="https://aistudio.google.com/apikey" target="_blank">Google AI Studio</a> y loguéate.</li>
+                <li>Da clic al botón <strong>"Create API Key"</strong> y copia el texto generado.</li>
+            </ul>
+            <div class="img-placeholder-wrapper">
+                <img src="/static/images/paso_gemini.jpg" class="support-img mx-auto" onerror="this.onerror=null; this.src=''; this.parentNode.innerHTML='<i class=\'bi bi-image text-muted fs-2\'></i><br><b>paso_gemini.jpg</b>';">
+            </div>
+        </div>
+
+        <!-- 4 -->
+        <div class="doc-step">
+            <div class="step-badge">4</div>
+            <h2>Cómo Usar dentro del Examen</h2>
+            <p>Ingresa a rindir tu examen oficial en <a href="https://www.netacad.com/" target="_blank" style="color: var(--primary-blue); font-weight: 500;">NetAcad (Cisco) <i class="bi bi-box-arrow-up-right ms-1"></i></a>.</p>
+            
+            <p><strong>Para Activarla el primer día:</strong></p>
+            <ul>
+                <li>Dale clic al ícono de la extensión en Chrome.</li>
+                <li>Pega tu Clave de Activación y tu Gemini API Key en el menú emergente.</li>
+            </ul>
+
+            <h5 class="mt-4 font-weight-bold">Modos de Búsqueda</h5>
+            <ul style="list-style-type: square;">
+                <li class="mb-3">
+                    <strong>Búsqueda Rápida de Texto:</strong> Cuando la página te permita seleccionar/resaltar texto, <u>simplemente selecciona el texto de la pregunta con tu mouse</u> y suelta el clic. La herramienta arrojará automáticamente un recuadro oscuro estilo Hacker con las respuestas filtradas de su Base de Datos. Si necesitas expandir la búsqueda desde el recuadro, usa el ícono para forzar una consulta externa a la IA de Gemini.
+                </li>
+                <li>
+                    <strong>Modo Captura (Cuando bloquean la selección):</strong> Hay entornos donde bloquean el <code>Clic Derecho</code> y arrastrar el cursor. En estos casos, oprime las teclas <strong><kbd>Alt</kbd> + <kbd>.</kbd></strong> <i>(Opción y punto)</i> en tu teclado. Tu pantalla se sombreará de gris para que encuadres la zona de la pregunta. La herramienta reconocerá textualmente tu recorte y buscará de modo borroso/similar en la Base de Datos; Si la similitud exacta falla, la IA entrará en acción inmediatamente al rescate mostrándote el resultado final.
+                </li>
+            </ul>
+
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <div class="img-placeholder-wrapper" style="padding: 20px 10px;">
+                        <img src="/static/images/paso_popup.jpg" class="support-img mx-auto mt-0" onerror="this.onerror=null; this.src=''; this.parentNode.innerHTML='<i class=\'bi bi-image text-muted fs-3\'></i><br><b>paso_popup.jpg</b>';">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="img-placeholder-wrapper" style="padding: 20px 10px;">
+                        <img src="/static/images/paso_uso.jpg" class="support-img mx-auto mt-0" onerror="this.onerror=null; this.src=''; this.parentNode.innerHTML='<i class=\'bi bi-image text-muted fs-3\'></i><br><b>paso_uso.jpg</b>';">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PRUEBA DIRECTA NETACAD -->
+        <div class="faq-section" style="margin-top: 20px;">
+            <h2 style="font-size: 24px; font-weight: 600; color: #0ea5e9; margin-bottom: 8px;"><i class="bi bi-shield-check"></i> Prueba de Seguridad en Vivo (NetAcad)</h2>
+            <p style="color: #64748b; margin-bottom: 25px;">Para garantizar 100% de invisibilidad, la herramienta ha sido bloqueada y está programada para <b>únicamente existir y operar dentro de los servidores de Cisco NetAcad</b>. Si la intentas usar en Google o cualquier otra página, simplemente no hará nada.</p>
+
+            <div class="doc-step" style="border-left: 4px solid #10b981; padding: 30px;">
+                <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 15px;">¿No tienes examen activo y quieres certificar que funciona?</h4>
+                <p style="font-size: 15px; color: #334155;">Puedes probarla pacíficamente en la página principal de Cisco en tres simples pasos:</p>
+                <ol style="color: #475569; margin-bottom: 0;">
+                    <li class="mb-2">Entra libremente a <a href="https://www.netacad.com/" target="_blank" style="font-weight: 500;">NetAcad.com</a> (ni siquiera necesitas iniciar sesión).</li>
+                    <li class="mb-2"><strong>(Modo Texto):</strong> Selecciona con tu puntero la frase exacta <i>"Adquiere las habilidades necesarias y consigue el trabajo de tus sueños"</i> que se encuentra en la portada de NetAcad. Al soltar tu mouse verás de inmediato la notificación negra confirmando el éxito de lectura.</li>
+                    <li><strong>(Modo Captura Segura):</strong> Estando en NetAcad, presiona la combinación secreta <strong><code>Alt + .</code></strong> y recorta visualmente cualquier botón o imagen de la página. Verás cómo recorta la imagen y extrae el texto instantáneamente.</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="faq-section" style="margin-top: 20px; border-top: none; padding-top: 0;">
+            <h2 style="font-size: 24px; font-weight: 600; color: #0f172a; margin-bottom: 20px;">Solución de Problemas</h2>
+            
+            <div class="faq-card">
+                <h4>Falta el archivo manifest.json</h4>
+                <p>Ocurre si seleccionas el ZIP en vez de la carpeta ya extraída en el Paso 2, o si seleccionas una carpeta demasiado vacía. Debes vincular explícitamente la carpeta matriz extraída que posee los archivos internos.</p>
+            </div>
+
+            <div class="faq-card">
+                <h4>Alarma de "Clave inválida o en uso" (Cambio de Hardware)</h4>
+                <p>Las licencias están programadas estrictamente de forma individualizada. Si cambias de computador o tu máquina modificó su disco/hardware, el nivel de seguridad rebotará la activación. <strong style="color: #c2410c;">Si necesitas cambiar de dispositivo, es un requisito absoluto que informes a través del formulario inferior ANTES de intentarlo</strong> por tu cuenta. Si lo intentas en otra máquina sin informarnos, la plataforma considerará que estás prestándola y tu clave actual será anulada permanentemente por riesgo de seguridad.</p>
+                
+                <div class="hardware-form-box">
+                    <h5 style="color: #166534; font-size: 15px; font-weight: bold; margin-bottom: 10px;">Solicitar Migración a Nueva Computadora</h5>
+                    <p style="font-size: 13.5px; color: #14532d; margin-bottom: 15px;">Al emitir la solicitud se dará de baja la clave actual de inmediato para crear una nueva limpia y emitírtela por WhatsApp al número registrado.</p>
+                    <div class="input-group">
+                        <input type="text" id="hwReason" class="form-control" placeholder="Motivo breve (Ej: Cambié a una Laptop)">
+                        <button class="btn btn-success" type="button" onclick="requestHardwareChange()">Enviar Solicitud a Soporte</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-card">
+                <h4>Fallo de Precisión leyendo Capturas</h4>
+                <p>Si la lectura <code>Alt + .</code> de la pregunta es imprecisa, se debe a que encuadró mucha interferencia (logos, menús). Trata de recortar delimitando cuadrada y exclusivamente al texto limpio de la pregunta.</p>
+            </div>
+        </div>
+
+        <div class="legal-notice">
+            <h3><i class="bi bi-shield-lock-fill me-2"></i> Usos Exclusivos</h3>
+            <p>
+                Esta utilidad informática funge enteramente como infraestructura de auto-estudio, revisión formativa o fortalecimiento teórico personal. Todo efecto colateral derivado de su utilización en procesos valorativos institucionales corre mediante y bajo la absoluta responsabilidad del poseedor aplicativo.
+            </p>
+        </div>
+        
+    </div>
+
+    <!-- Script de funcionalidad -->
+    <script>
+        function copiarClave() {
+            var clave = document.getElementById("keyValue").innerText;
+            navigator.clipboard.writeText(clave).then(function() {
+                var btn = document.querySelector(".btn-copy-modern");
+                var originalText = btn.innerHTML;
+                btn.innerHTML = '<i class="bi bi-check2"></i> Copiado!';
+                btn.style.backgroundColor = '#f1f5f9';
+                btn.style.color = '#059669';
+                btn.style.borderColor = '#10b981';
+                
+                setTimeout(function() {
+                    btn.innerHTML = originalText;
+                    btn.style.backgroundColor = 'white';
+                    btn.style.color = '#334155';
+                    btn.style.borderColor = '#cbd5e1';
+                }, 2500);
+            }).catch(function(err) {});
+        }
+
+        function requestHardwareChange() {
+            var claveActual = document.getElementById("keyValue").innerText;
+            var originInput = document.getElementById("hwReason").value;
+            
+            if(!originInput){
+                alert("Por favor ingresa un motivo breve para autorizar la baja de tu equipo.");
+                return;
+            }
+
+            var wpPhone = "ACA_VA_EL_NUMERO_DE_RENE"; // El admin lo ajustará en el HTML final, o lo pueden direccionar por la URL default base
+            var msg = encodeURIComponent("🚨 SOLICITUD DE CAMBIO DE EQUIPO\n\n- Clave Actual: " + claveActual + "\n- Motivo: " + originInput + "\n\nSolicito anular esta llave antigua de mis registros y que por favor me generen una nueva para mi nuevo dispositivo.");
+
+            // Si no tenemos el número exacto, podemos abrir wa.me con solo texto, permitiendo que el usuario lo mande al chat que ya tiene abierto con el administrador.
+            window.open("https://wa.me/?text=" + msg, "_blank");
+        }
+    </script>
+</body>
+</html>

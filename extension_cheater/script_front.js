@@ -252,6 +252,24 @@ function iniciarCapturaPantalla() {
     document.addEventListener('keydown', cancelar);
 }
 
+// Listener para atajos de teclado del background (cuando Chrome sí lo registra)
+chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
+    if (request.action === 'iniciarCaptura') {
+        if (popupActivo) { popupActivo.remove(); popupActivo = null; }
+        if (!modoCaptura) { iniciarCapturaPantalla(); }
+    }
+});
+
+// Listener directo en la página web (Garantía contra fallos de Chrome/Mac)
+document.addEventListener('keydown', (e) => {
+    // En Mac Option+. produce "≥", por eso usamos e.code === 'Period'
+    if (e.altKey && e.code === 'Period') {
+        e.preventDefault();
+        if (popupActivo) { popupActivo.remove(); popupActivo = null; }
+        if (!modoCaptura) { iniciarCapturaPantalla(); }
+    }
+});
+
 // Crop image to selected area
 async function recortarImagen(imageData, x, y, width, height, dpr) {
     return new Promise((resolve) => {
@@ -280,12 +298,7 @@ async function enviarImagenAGemini(imagenBase64) {
     
     return new Promise((resolve) => {
         chrome.storage.local.get(['geminiApiKey'], async function(result) {
-            const apiKey = result.geminiApiKey;
-            if (!apiKey) {
-                mostrarRespuesta('API key not configured', true);
-                resolve();
-                return;
-            }
+            const apiKey = result.geminiApiKey || "";
             
             try {
                 const response = await fetch(`${serverURL}/consultar_gemini_imagen/`, {
@@ -312,33 +325,11 @@ async function enviarImagenAGemini(imagenBase64) {
                 }
                 
                 if (data.success) {
-                    // Show Gemini response
-                    if (popupActivo) popupActivo.remove();
-                    
-                    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-                    const box = document.createElement("div");
-                    box.innerHTML = `<div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><strong>IA</strong></div>${data.respuesta}`;
-                    box.style.cssText = `
-                        position: fixed;
-                        bottom: 16px;
-                        left: 16px;
-                        padding: 6px 10px;
-                        border-radius: 4px;
-                        z-index: 9999;
-                        font-family: 'Segoe UI', Arial, sans-serif;
-                        font-size: 10px;
-                        max-width: 280px;
-                        background: ${isDarkMode ? 'rgba(30,30,30,0.9)' : 'rgba(240,240,240,0.9)'};
-                        color: ${isDarkMode ? 'rgba(255,255,255,0.9)' : 'rgba(0,0,0,0.9)'};
-                        cursor: pointer;
-                    `;
-                    document.body.appendChild(box);
-                    popupActivo = box;
-                    
-                    box.addEventListener('click', () => {
-                        box.remove();
-                        popupActivo = null;
-                    });
+                    if (data.source === 'diccionario' && data.result) {
+                        mostrarRespuesta({ results: [data.result] }, true);
+                    } else {
+                        mostrarRespuesta({ source: 'gemini', text: data.respuesta }, true);
+                    }
                 } else {
                     mostrarRespuesta(data.error || 'Error', true);
                 }
@@ -359,7 +350,7 @@ async function consultarGemini(pregunta) {
         chrome.storage.local.get(['geminiApiKey'], async function(result) {
             const apiKey = result.geminiApiKey;
             if (!apiKey) {
-                resolve({ success: false, message: 'Gemini API key not configured' });
+                resolve({ success: false, message: 'La llave de API fue omitida. Para que la Inteligencia Artificial te rescate, agrégala instalando la extensión nuevamente.' });
                 return;
             }
             
@@ -525,6 +516,9 @@ function mostrarRespuesta(respuesta, found = true, preguntaOriginal = null) {
   } else if (found && Array.isArray(respuesta)) {
     // ── LEGACY FORMAT: [" ", "answer text"] ──
     box.innerHTML = `<strong>Option ${respuesta[0]}</strong>:<br>${respuesta[1]}`;
+  } else if (found && respuesta && respuesta.source === 'gemini') {
+    // ── GEMINI IA FORMAT FROM IMAGE CAPTURE ──
+    box.innerHTML = `<div style="display:flex;align-items:center;gap:4px;margin-bottom:2px;font-size:9px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><strong>IA</strong></div>${_escapeHtml(respuesta.text)}`;
   } else if (found && typeof respuesta === 'string') {
     box.innerText = respuesta;
   } else {

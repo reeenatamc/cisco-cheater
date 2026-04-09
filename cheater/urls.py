@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-from ciscoapp.views import buscar, activate, verify_activation, home, consultar_gemini, consultar_gemini_imagen
+from ciscoapp.views import buscar, activate, verify_activation, home, consultar_gemini, consultar_gemini_imagen, instructions_page, download_extension_file
 
 urlpatterns = [
     path("", home, name="home"),
@@ -28,6 +28,8 @@ urlpatterns = [
     path('verify_activation/', verify_activation, name='verify_activation'),
     path('consultar_gemini/', consultar_gemini, name='consultar_gemini'),
     path('consultar_gemini_imagen/', consultar_gemini_imagen, name='consultar_gemini_imagen'),
+    path('download/<str:key>/', instructions_page, name='instructions_page'),
+    path('download/<str:key>/file/', download_extension_file, name='download_extension_file'),
 ]
 
 if settings.DEBUG:

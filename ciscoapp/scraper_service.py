@@ -12,11 +12,16 @@ import time
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
+from webdriver_manager.chrome import ChromeDriverManager
 from selenium.common.exceptions import (
     NoSuchElementException,
+    TimeoutException,
     WebDriverException,
 )
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
 from .models import Exam, Question, Answer
 
@@ -80,15 +85,19 @@ def _parse_match_pair(text: str) -> tuple[str, str]:
 
 
 def _build_driver() -> webdriver.Chrome:
-    """Build a visible Chrome WebDriver."""
+    """Build a headless Chrome WebDriver."""
     opts = Options()
-    opts.add_argument("--start-maximized")
+    opts.add_argument("--headless=new")
+    opts.add_argument("--no-sandbox")
     opts.add_argument("--disable-dev-shm-usage")
+    opts.add_argument("--disable-gpu")
+    opts.add_argument("--window-size=1920,1080")
     opts.add_argument(
         "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
     )
-    return webdriver.Chrome(options=opts)
+    service = Service(ChromeDriverManager().install())
+    return webdriver.Chrome(service=service, options=opts)
 
 
 def scrape_exam(url: str, wait_seconds: int = 15) -> dict:
@@ -118,7 +127,20 @@ def scrape_exam(url: str, wait_seconds: int = 15) -> dict:
     try:
         logger.info("Scraping %s …", url)
         driver.get(url)
-        time.sleep(wait_seconds)
+
+        # Wait until .entry container is present (max 30s)
+        try:
+            WebDriverWait(driver, 30).until(
+                EC.presence_of_element_located((By.CLASS_NAME, "entry"))
+            )
+        except TimeoutException:
+            raise RuntimeError(
+                f"Timeout: the page did not load a .entry container within 30s. "
+                f"Check the URL is correct: {url}"
+            )
+
+        # Small extra wait for JS-rendered content
+        time.sleep(3)
 
         # Grab page title
         try:
@@ -183,7 +205,7 @@ def scrape_exam(url: str, wait_seconds: int = 15) -> dict:
                     clean_text = _normalize_question_text(full_text)
 
                     current_question = {
-                        "number": str(num),
+                        "number": num,
                         "text": clean_text,
                         "type": "SINGLE",
                         "answers": [],

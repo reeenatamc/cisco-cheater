@@ -250,28 +250,51 @@
 Django settings for cheater project (producción Railway).
 """
 
+import os
 from pathlib import Path
+from urllib.parse import urlparse
+
+import dj_database_url
+from django.core.exceptions import ImproperlyConfigured
+from dotenv import load_dotenv
 
 # -------------------------
 # Paths
 # -------------------------
 BASE_DIR = Path(__file__).resolve().parent.parent
+load_dotenv(BASE_DIR / ".env")
+
+
+def _env_list(name: str, default: str) -> list[str]:
+    raw = os.environ.get(name, default)
+    return [x.strip() for x in raw.split(",") if x.strip()]
+
 
 # -------------------------
 # Security
 # -------------------------
-SECRET_KEY = "django-insecure-1^pagal2tm&(yhx+!$^)60q*2y2a$e6-5m&_hxc-@as2+8@s3_"
-DEBUG = True
+SECRET_KEY = os.environ.get("SECRET_KEY", "").strip()
+if not SECRET_KEY:
+    raise ImproperlyConfigured(
+        "SECRET_KEY is not set. Copy .env.example to .env and assign a unique value."
+    )
 
-ALLOWED_HOSTS = [
-    "localhost",
-    "127.0.0.1",
-    ".railway.app",
-    ".up.railway.app",
-    "cisco-cheater-production-2079.up.railway.app",
-    ".feuoir.com",
-    "www.feuoir.com",
-]
+DEBUG = os.environ.get("DEBUG", "False").lower() in ("true", "1", "yes")
+
+ALLOWED_HOSTS = _env_list(
+    "ALLOWED_HOSTS",
+    "localhost,127.0.0.1,.railway.app,.up.railway.app",
+)
+for _env_key in ("RAILWAY_PUBLIC_DOMAIN", "RAILWAY_STATIC_URL"):
+    _raw = os.environ.get(_env_key, "").strip()
+    if not _raw:
+        continue
+    _host = urlparse(_raw).hostname if "://" in _raw else _raw.split("/")[0]
+    if _host and _host not in ALLOWED_HOSTS:
+        ALLOWED_HOSTS.append(_host)
+
+if os.environ.get("USE_X_FORWARDED_PROTO", "").lower() in ("true", "1", "yes"):
+    SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 # -------------------------
 # Applications
@@ -324,17 +347,24 @@ TEMPLATES = [
 WSGI_APPLICATION = "cheater.wsgi.application"
 
 # -------------------------
-# Database (Local)
+# Database (PostgreSQL; Trigram search requires it)
 # -------------------------
+if not os.environ.get("DATABASE_URL", "").strip():
+    raise ImproperlyConfigured(
+        "DATABASE_URL is not set. Use .env locally; Railway/Render set it automatically."
+    )
+
+DATABASE_SSL_REQUIRE = os.environ.get("DATABASE_SSL_REQUIRE", "").lower() in (
+    "true",
+    "1",
+    "yes",
+)
+
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.postgresql",
-        "NAME": "cisco_cheater",
-        "USER": "postgres",
-        "PASSWORD": "odoo",
-        "HOST": "localhost",
-        "PORT": "5432",
-    }
+    "default": dj_database_url.config(
+        conn_max_age=600,
+        ssl_require=DATABASE_SSL_REQUIRE,
+    )
 }
 
 # -------------------------
@@ -370,14 +400,25 @@ MEDIA_ROOT = BASE_DIR / 'media'
 # -------------------------
 # CORS configuration
 # -------------------------
-CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_ALL_ORIGINS = DEBUG
 CORS_ALLOW_CREDENTIALS = True
 
-# CORS_ALLOWED_ORIGINS = [
-#     "https://*.railway.app",
-# ]
+CORS_ALLOWED_ORIGINS = _env_list(
+    "CORS_ALLOWED_ORIGINS",
+    "http://localhost:8000,http://127.0.0.1:8000",
+)
+# Add Railway domain automatically
+for _env_key in ("RAILWAY_PUBLIC_DOMAIN",):
+    _d = os.environ.get(_env_key, "").strip()
+    if _d:
+        _cors_origin = _d if _d.startswith("http") else f"https://{_d}"
+        if _cors_origin not in CORS_ALLOWED_ORIGINS:
+            CORS_ALLOWED_ORIGINS.append(_cors_origin)
 
-CORS_ALLOW_CREDENTIALS = True
+# Allow all chrome-extension:// origins (for the extension)
+CORS_ALLOWED_ORIGIN_REGEXES = [
+    r"^chrome-extension://.*$",
+]
 CORS_ALLOWED_METHODS = ["DELETE", "GET", "OPTIONS", "PATCH", "POST", "PUT"]
 CORS_ALLOWED_HEADERS = [
     "accept", "accept-encoding", "authorization", "content-type",
@@ -387,21 +428,26 @@ CORS_ALLOWED_HEADERS = [
 # -------------------------
 # CSRF / Cookie security
 # -------------------------
-CSRF_TRUSTED_ORIGINS = [
-    "http://localhost:8000",
-    "http://127.0.0.1:8000",
-    "https://*.railway.app",
-    "https://*.up.railway.app",
-]
-CSRF_ALLOWED_ORIGINS = [
-    "http://localhost:8000",
-    "http://127.0.0.1:8000",
-    "https://*.railway.app",
-    "https://*.up.railway.app",
-]
+CSRF_TRUSTED_ORIGINS = _env_list(
+    "CSRF_TRUSTED_ORIGINS",
+    "http://localhost:8000,http://127.0.0.1:8000",
+)
+for _env_key in ("RAILWAY_PUBLIC_DOMAIN",):
+    _d = os.environ.get(_env_key, "").strip()
+    if _d:
+        _origin = _d if _d.startswith("http") else f"https://{_d}"
+        if _origin not in CSRF_TRUSTED_ORIGINS:
+            CSRF_TRUSTED_ORIGINS.append(_origin)
 
-CSRF_COOKIE_SECURE = False
-SESSION_COOKIE_SECURE = False
+_default_secure = str(not DEBUG).lower()
+CSRF_COOKIE_SECURE = os.environ.get("CSRF_COOKIE_SECURE", _default_secure).lower() in (
+    "true",
+    "1",
+    "yes",
+)
+SESSION_COOKIE_SECURE = os.environ.get(
+    "SESSION_COOKIE_SECURE", _default_secure
+).lower() in ("true", "1", "yes")
 
 # -------------------------
 # Default primary key

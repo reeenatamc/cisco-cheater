@@ -1,7 +1,6 @@
 // Background script para captura de pantalla
 console.log('Background script cargado');
 
-// Escuchar el comando de teclado (Alt+.)
 chrome.commands.onCommand.addListener((command) => {
     console.log('Comando recibido:', command);
     
@@ -14,22 +13,11 @@ chrome.commands.onCommand.addListener((command) => {
             }
             
             const tab = tabs[0];
-            console.log('Capturando pestaña:', tab.id);
+            console.log('Enviando orden a la pestaña:', tab.id);
             
-            // Capturar la pantalla
-            chrome.tabs.captureVisibleTab(tab.windowId, { format: 'png' }, (imageData) => {
-                if (chrome.runtime.lastError) {
-                    console.error('Error capturando:', chrome.runtime.lastError);
-                    return;
-                }
-                
-                console.log('Captura exitosa, enviando al content script...');
-                
-                // Enviar la imagen al content script
-                chrome.tabs.sendMessage(tab.id, {
-                    action: 'showCaptureOverlay',
-                    imageData: imageData
-                });
+            // Enviar la orden al content script de que debe iniciar overlay
+            chrome.tabs.sendMessage(tab.id, {
+                action: 'iniciarCaptura'
             });
         });
     }

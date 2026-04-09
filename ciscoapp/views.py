@@ -18,11 +18,14 @@ import shutil
 import logging
 from io import BytesIO
 from datetime import datetime
+from django.utils import timezone
 
 from django.http import JsonResponse
 from django.shortcuts import render
 from django.views.decorators.csrf import csrf_exempt
-from django.contrib.postgres.search import TrigramSimilarity
+from django.contrib.postgres.search import TrigramSimilarity, SearchQuery, SearchVector
+
+from django_ratelimit.decorators import ratelimit
 
 from .models import ActivationKey, Question, Answer
 
@@ -54,7 +57,9 @@ def _verify_device(device_id: str):
         return None
     try:
         ak = ActivationKey.objects.get(device_id=device_id, is_active=True)
-        ak.last_used = datetime.now()
+        if ak.expires_at and ak.expires_at < timezone.now():
+            return None
+        ak.last_used = timezone.now()
         ak.save(update_fields=["last_used"])
         return ak
     except ActivationKey.DoesNotExist:
@@ -166,23 +171,26 @@ def _search_db_for_ocr(ocr_text: str, limit: int = 3):
     if results:
         return results
 
-    # Pass 2: keyword overlap (for noisy OCR)
+    # Pass 2: full-text search in DB (for noisy OCR)
     keywords = _extract_keywords(ocr_text)
     if len(keywords) < 3:
         return []
 
-    best = None
-    best_score = 0
-    for q in Question.objects.prefetch_related("answers").iterator(chunk_size=200):
-        q_keywords = _extract_keywords(q.text)
-        if len(q_keywords) < 3:
-            continue
-        overlap = keywords & q_keywords
-        score = len(overlap) / len(q_keywords)
-        if score >= 0.7 and score > best_score:
-            best_score = score
-            best = q
-    return [(best, best_score)] if best else []
+    # Build an OR query with the extracted keywords
+    query_str = " | ".join(keywords)
+    query = SearchQuery(query_str, search_type="raw", config="spanish")
+    qs = (
+        Question.objects
+        .annotate(
+            search=SearchVector("text", config="spanish"),
+            rank=TrigramSimilarity("text", " ".join(keywords)),
+        )
+        .filter(search=query)
+        .select_related("exam")
+        .prefetch_related("answers")
+        .order_by("-rank")[:limit]
+    )
+    return [(q, q.rank) for q in qs]
 
 
 # ══════════════════════════════════════════════════════════════
@@ -197,6 +205,7 @@ def home(request):
 # ── /buscar/ ──────────────────────────────────────────────────
 
 @csrf_exempt
+@ratelimit(key="ip", rate="30/m", block=True)
 def buscar(request):
     if request.method != "POST":
         return JsonResponse({"error": "Method not allowed"}, status=405)
@@ -227,6 +236,7 @@ def buscar(request):
 # ── /activate/ ────────────────────────────────────────────────
 
 @csrf_exempt
+@ratelimit(key="ip", rate="10/m", block=True)
 def activate(request):
     if request.method != "POST":
         return JsonResponse({"error": "Method not allowed"}, status=405)
@@ -247,8 +257,12 @@ def activate(request):
                 {"error": "This key is already in use on another device"},
                 status=403,
             )
+        if ak.expires_at and ak.expires_at < timezone.now():
+            return JsonResponse(
+                {"error": "This activation key has expired"}, status=403
+            )
         ak.device_id = device_id
-        ak.last_used = datetime.now()
+        ak.last_used = timezone.now()
         ak.save()
         return JsonResponse({"message": "Activation successful"})
     except ActivationKey.DoesNotExist:
@@ -260,6 +274,7 @@ def activate(request):
 # ── /verify_activation/ ──────────────────────────────────────
 
 @csrf_exempt
+@ratelimit(key="ip", rate="30/m", block=True)
 def verify_activation(request):
     if request.method != "POST":
         return JsonResponse({"error": "Method not allowed"}, status=405)
@@ -279,6 +294,7 @@ def verify_activation(request):
 # ── /consultar_gemini/ ────────────────────────────────────────
 
 @csrf_exempt
+@ratelimit(key="ip", rate="15/m", block=True)
 def consultar_gemini(request):
     if request.method != "POST":
         return JsonResponse({"error": "Method not allowed"}, status=405)
@@ -318,6 +334,7 @@ def consultar_gemini(request):
 # ── /consultar_gemini_imagen/ ─────────────────────────────────
 
 @csrf_exempt
+@ratelimit(key="ip", rate="15/m", block=True)
 def consultar_gemini_imagen(request):
     if request.method != "POST":
         return JsonResponse({"error": "Method not allowed"}, status=405)
@@ -329,10 +346,7 @@ def consultar_gemini_imagen(request):
 
     if not _verify_device(device_id):
         return JsonResponse({"error": "Device not activated"}, status=403)
-    if not api_key:
-        return JsonResponse(
-            {"error": "Gemini API key is required"}, status=400
-        )
+    # Se elimina la validación estricta superior para permitir que el OCR busque en la Base de Datos.
     if not imagen_base64:
         return JsonResponse({"error": "Image is required"}, status=400)
 
@@ -380,6 +394,9 @@ def consultar_gemini_imagen(request):
 
         # ── Fallback to Gemini ────────────────────────────────
         logger.info("No DB match for OCR text, falling back to Gemini")
+        if not api_key:
+            return JsonResponse({"error": "No encontrado en la Base de Datos pura. Omitiste añadir una llave de Inteligencia Artificial (Gemini), por lo que el sistema no puede salvarte. Añádela reinstalando.", "success": False})
+
         client = genai.Client(api_key=api_key)
         prompt = (
             "Pregunta de examen Cisco CCNA extraída de una captura:\n\n"
@@ -400,3 +417,43 @@ def consultar_gemini_imagen(request):
     except Exception as e:
         logger.exception("Error in consultar_gemini_imagen")
         return JsonResponse({"error": str(e), "success": False}, status=500)
+
+
+# ── /download/ ────────────────────────────────────────────────
+
+def instructions_page(request, key):
+    from django.http import Http404
+    from django.shortcuts import render
+    from django.conf import settings
+    import os
+
+    try:
+        ak = ActivationKey.objects.get(key=key, is_active=True)
+    except ActivationKey.DoesNotExist:
+        raise Http404("Clave de activación inválida o inactiva.")
+
+    nombre = ak.owner or "Estudiante"
+
+    context = {
+        "nombre": nombre,
+        "clave": ak.key,
+        "download_url": f"/download/{ak.key}/file/",
+    }
+    return render(request, "instructions_page.html", context)
+
+
+def download_extension_file(request, key):
+    from django.http import Http404, FileResponse
+    from django.conf import settings
+    import os
+
+    try:
+        ActivationKey.objects.get(key=key, is_active=True)
+    except ActivationKey.DoesNotExist:
+        raise Http404("Clave de activación inválida o inactiva.")
+
+    zip_path = os.path.join(settings.BASE_DIR, "extension.zip")
+    if not os.path.exists(zip_path):
+        raise Http404("El archivo de la extensión no está disponible en el servidor en este momento.")
+
+    return FileResponse(open(zip_path, 'rb'), as_attachment=True, filename='cisco-cheater-extension.zip')

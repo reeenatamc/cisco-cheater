@@ -7,7 +7,6 @@ from django.utils.html import format_html
 
 from unfold.admin import ModelAdmin, TabularInline
 from .models import ActivationKey, Exam, Question, Answer
-from .whatsapp_service import send_whatsapp_message
 
 
 # ══════════════════════════════════════════════════════════════
@@ -28,40 +27,51 @@ def generate_keys(modeladmin, request, queryset):
 
 @admin.register(ActivationKey)
 class ActivationKeyAdmin(ModelAdmin):
-    list_display = ("owner", "key", "is_active", "created_at", "last_used", "device_id")
+    list_display = (
+        "owner",
+        "key",
+        "is_active",
+        "phone_number",
+        "enviar_whatsapp_link",
+        "created_at",
+        "expires_at",
+        "last_used",
+        "device_id",
+    )
     list_filter = ("is_active",)
     search_fields = ("key", "device_id")
     readonly_fields = ("created_at",)
 
-    actions = [generate_keys, "reenviar_instrucciones_whatsapp"]
+    actions = [generate_keys]
 
-    @admin.action(description="Reenviar instrucciones por WhatsApp")
-    def reenviar_instrucciones_whatsapp(self, request, queryset):
-        from django.template import Template, Context
+    @admin.display(description="WhatsApp")
+    def enviar_whatsapp_link(self, obj):
+        if not obj.phone_number:
+            return "—"
+        
         from django.conf import settings
+        import urllib.parse
         import os
-
-        # Leer el markdown de instrucciones
-        md_path = os.path.join(settings.BASE_DIR, "instructions.md")
-        with open(md_path, encoding="utf-8") as f:
-            md_template = f.read()
-
-        for key in queryset:
-            nombre = key.owner or "Usuario"
-            clave = key.key
-            # Renderizar el markdown con nombre y clave
-            template = Template(md_template)
-            context = Context({"nombre": nombre, "clave": clave})
-            mensaje = template.render(context)
-            telefono = key.phone_number
-            if not telefono:
-                self.message_user(request, f"No hay número para {nombre} ({clave})", level=messages.WARNING)
-                continue
-            try:
-                send_whatsapp_message(telefono, mensaje)
-                self.message_user(request, f"Instrucciones enviadas a {telefono}")
-            except Exception as e:
-                self.message_user(request, f"Error enviando a {telefono}: {e}", level=messages.ERROR)
+        
+        nombre = obj.owner or "Estudiante"
+        domain = os.environ.get("RAILWAY_PUBLIC_DOMAIN", "localhost:8000")
+        prefix = "https://" if "localhost" not in domain else "http://"
+        download_url = f"{prefix}{domain}/download/{obj.key}/"
+        
+        mensaje = (
+            f"¡Hola {nombre}! Aquí tienes tu acceso a la herramienta de estudio CCNA.\n\n"
+            f"🔑 Tu clave de activación es: {obj.key}\n\n"
+            f"📥 Puedes descargar la extensión y leer las instrucciones aquí:\n"
+            f"{download_url}"
+        )
+        
+        encoded_message = urllib.parse.quote(mensaje)
+        wa_url = f"https://wa.me/{obj.phone_number}?text={encoded_message}"
+        
+        return format_html(
+            '<a href="{}" target="_blank" style="background-color: #25D366; color: white; padding: 5px 10px; border-radius: 4px; text-decoration: none; font-weight: bold; font-size: 12px; display: inline-block;">Enviar WA</a>',
+            wa_url
+        )
 
 
 # ══════════════════════════════════════════════════════════════

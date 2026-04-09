@@ -1,5 +1,6 @@
 asgiref
 Django
+python-dotenv
 django-cors-headers
 django-unfold
 dj-database-url
@@ -10,3 +11,5 @@ psycopg2-binary
 pytesseract
 selenium
 whitenoise
+django-ratelimit
+markdown
