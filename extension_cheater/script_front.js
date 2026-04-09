@@ -108,7 +108,7 @@ function iniciarCapturaPantalla() {
         left: 0;
         width: 100vw;
         height: 100vh;
-        background: rgba(0,0,0,0.3);
+        background: transparent;
         cursor: crosshair;
         z-index: 99999;
     `;
@@ -125,25 +125,8 @@ function iniciarCapturaPantalla() {
         pointer-events: none;
     `;
     
-    // Instructions
-    const instrucciones = document.createElement('div');
-    instrucciones.style.cssText = `
-        position: fixed;
-        top: 10px;
-        left: 50%;
-        transform: translateX(-50%);
-        background: rgba(0,0,0,0.8);
-        color: white;
-        padding: 8px 16px;
-        border-radius: 4px;
-        font-size: 12px;
-        z-index: 100001;
-    `;
-    instrucciones.textContent = 'Drag to select area - ESC to cancel';
-    
     document.body.appendChild(overlay);
     document.body.appendChild(seleccion);
-    document.body.appendChild(instrucciones);
     
     let startX, startY, isDrawing = false;
     
@@ -181,10 +164,9 @@ function iniciarCapturaPantalla() {
         
         const rect = seleccion.getBoundingClientRect();
         
-        // Clean up overlay
+        // Clean up
         overlay.remove();
         seleccion.remove();
-        instrucciones.remove();
         modoCaptura = false;
         
         if (rect.width < 10 || rect.height < 10) {
@@ -244,7 +226,6 @@ function iniciarCapturaPantalla() {
         if (e.key === 'Escape') {
             overlay.remove();
             seleccion.remove();
-            instrucciones.remove();
             modoCaptura = false;
             document.removeEventListener('keydown', cancelar);
         }
