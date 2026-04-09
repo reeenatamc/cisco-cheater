@@ -24,6 +24,10 @@ class ActivationKey(models.Model):
         "Fecha de expiración", null=True, blank=True,
         help_text="Dejar vacío para que no expire nunca.",
     )
+    price_paid = models.DecimalField(
+        "Precio Pagado ($)", max_digits=6, decimal_places=2, default=10.00,
+        help_text="Útil para tus cálculos del Dashboard Financiero."
+    )
 
     class Meta:
         verbose_name = "Clave de activación"

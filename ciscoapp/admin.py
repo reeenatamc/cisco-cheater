@@ -1,4 +1,6 @@
 from django.contrib import admin
+from django.db.models import Sum
+from decimal import Decimal
 from django.contrib import messages
 from django.template.response import TemplateResponse
 from django.urls import path, reverse
@@ -33,14 +35,33 @@ class ActivationKeyAdmin(ModelAdmin):
         "is_active",
         "phone_number",
         "enviar_whatsapp_link",
+        "price_paid",
         "created_at",
         "expires_at",
         "last_used",
         "device_id",
     )
+    list_display_links = ("key",)
     list_filter = ("is_active",)
-    search_fields = ("key", "device_id")
+    search_fields = ("key", "device_id", "owner")
     readonly_fields = ("created_at",)
+    list_editable = ("is_active", "price_paid", "expires_at", "owner")
+
+    change_list_template = "admin/ciscoapp/activationkey/change_list.html"
+
+    def changelist_view(self, request, extra_context=None):
+        extra_context = extra_context or {}
+        
+        # Calculate totals for Dashboard
+        total_keys = ActivationKey.objects.count()
+        total_revenue = ActivationKey.objects.aggregate(total=Sum('price_paid'))['total'] or Decimal('0.00')
+        active_keys = ActivationKey.objects.filter(is_active=True).count()
+        
+        extra_context['dashboard_revenue'] = total_revenue
+        extra_context['dashboard_total_keys'] = total_keys
+        extra_context['dashboard_active_keys'] = active_keys
+        
+        return super().changelist_view(request, extra_context=extra_context)
 
     actions = [generate_keys]
 
