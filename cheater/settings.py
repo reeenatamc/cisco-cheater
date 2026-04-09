@@ -429,6 +429,9 @@ for _env_key in ("RAILWAY_PUBLIC_DOMAIN",):
 # Allow all chrome-extension:// origins (for the extension)
 CORS_ALLOWED_ORIGIN_REGEXES = [
     r"^chrome-extension://.*$",
+    r"^https://.*\.netacad\.com$",
+    r"^https://.*\.netacad\.net$",
+    r"^https://.*\.cisco\.com$",
 ]
 CORS_ALLOWED_METHODS = ["DELETE", "GET", "OPTIONS", "PATCH", "POST", "PUT"]
 CORS_ALLOWED_HEADERS = [
