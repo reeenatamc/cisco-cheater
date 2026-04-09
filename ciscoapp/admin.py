@@ -47,7 +47,7 @@ class ActivationKeyAdmin(ModelAdmin):
     readonly_fields = ("created_at",)
     list_editable = ("is_active", "price_paid", "expires_at", "owner")
 
-    change_list_template = "admin/ciscoapp/activationkey/change_list.html"
+    list_before_template = "admin/ciscoapp/activationkey/dashboard.html"
 
     def changelist_view(self, request, extra_context=None):
         extra_context = extra_context or {}
