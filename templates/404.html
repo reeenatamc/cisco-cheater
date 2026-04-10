@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - No encontrado</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: white;
+            font-family: Arial, sans-serif;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .main-text {
+            font-size: 3rem;
+            font-weight: 300;
+            color: #333;
+            text-align: center;
+            margin-bottom: 1rem;
+            letter-spacing: 2px;
+        }
+
+        .error-message {
+            font-size: 1.2rem;
+            color: #e53e3e;
+            text-align: center;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .university {
+            font-size: 0.9rem;
+            color: #666;
+            text-align: center;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+
+        .gif-container {
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .gif {
+            max-width: 300px;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .back-home {
+            margin-top: 1rem;
+            color: #0ea5e9;
+            text-decoration: none;
+            font-size: 0.9rem;
+            border: 1px solid #0ea5e9;
+            padding: 8px 20px;
+            border-radius: 5px;
+            transition: all 0.2s;
+        }
+
+        .back-home:hover {
+            background: #0ea5e9;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .main-text { 
+                font-size: 2rem; 
+                letter-spacing: 1px;
+            }
+            .error-message {
+                font-size: 1rem;
+            }
+            .gif {
+                max-width: 250px;
+            }
+        }
+    </style>
+</head>
+<body>
+    {% load static %}
+
+    <div class="main-text">404 - Not Found</div>
+    
+    <div class="error-message">
+        {% if exception %}
+            {{ exception }}
+        {% else %}
+            Página no encontrada.
+        {% endif %}
+    </div>
+
+    <div class="gif-container">
+        <img src="{% static 'catch_me.gif' %}" class="gif" alt="catch me if you can">
+    </div>
+
+    <div class="university">made ft santiago de guayaquil university</div>
+    
+    <a href="/" class="back-home">Volver al inicio</a>
+</body>
+</html>

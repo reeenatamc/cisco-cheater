@@ -422,15 +422,13 @@ def consultar_gemini_imagen(request):
 # ── /download/ ────────────────────────────────────────────────
 
 def instructions_page(request, key):
-    from django.http import Http404
     from django.shortcuts import render
-    from django.conf import settings
-    import os
+    from .models import ActivationKey
 
     try:
         ak = ActivationKey.objects.get(key=key, is_active=True)
     except ActivationKey.DoesNotExist:
-        raise Http404("Clave de activación inválida o inactiva.")
+        return render(request, "404.html", {"exception": "Clave de activación inválida o inactiva."}, status=404)
 
     nombre = ak.owner or "Estudiante"
 
@@ -443,18 +441,19 @@ def instructions_page(request, key):
 
 
 def download_extension_file(request, key):
-    from django.http import Http404, FileResponse
+    from django.http import FileResponse
     from django.conf import settings
     import os
+    from .models import ActivationKey
 
     try:
         ActivationKey.objects.get(key=key, is_active=True)
     except ActivationKey.DoesNotExist:
-        raise Http404("Clave de activación inválida o inactiva.")
+        return render(request, "404.html", {"exception": "Clave de activación inválida o inactiva."}, status=404)
 
     zip_path = os.path.join(settings.BASE_DIR, "extension.zip")
     if not os.path.exists(zip_path):
-        raise Http404("El archivo de la extensión no está disponible en el servidor en este momento.")
+        return render(request, "404.html", {"exception": "El archivo de la extensión no está disponible en el servidor en este momento."}, status=404)
 
     return FileResponse(open(zip_path, 'rb'), as_attachment=True, filename='cisco-cheater-extension.zip')
 
