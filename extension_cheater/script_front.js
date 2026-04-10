@@ -11,94 +11,94 @@ let modoCaptura = false;
 
 // Generate a unique device ID
 function generateDeviceId() {
-  return new Promise((resolve) => {
-      chrome.storage.local.get(['deviceId'], function(result) {
-          let deviceId = result.deviceId;
-          if (!deviceId) {
-              deviceId = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-                  const r = Math.random() * 16 | 0;
-                  const v = c === 'x' ? r : (r & 0x3 | 0x8);
-                  return v.toString(16);
-              });
-              chrome.storage.local.set({ deviceId: deviceId });
-          }
-          resolve(deviceId);
-      });
-  });
+    return new Promise((resolve) => {
+        chrome.storage.local.get(['deviceId'], function (result) {
+            let deviceId = result.deviceId;
+            if (!deviceId) {
+                deviceId = 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function (c) {
+                    const r = Math.random() * 16 | 0;
+                    const v = c === 'x' ? r : (r & 0x3 | 0x8);
+                    return v.toString(16);
+                });
+                chrome.storage.local.set({ deviceId: deviceId });
+            }
+            resolve(deviceId);
+        });
+    });
 }
 
 // Check activation status
 async function checkActivation() {
-  const deviceId = await generateDeviceId();
-  try {
-      const response = await fetch(`${serverURL}/verify_activation/`, {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-              'X-Requested-With': 'XMLHttpRequest'
-          },
-          body: JSON.stringify({ device_id: deviceId })
-      });
-      
-      const text = await response.text();
-      try {
-          const data = JSON.parse(text);
-          return data.is_activated;
-      } catch (e) {
-          console.error('Response is not JSON:', text.substring(0, 100));
-          return false;
-      }
-  } catch (error) {
-      console.error('Error checking activation:', error);
-      return false;
-  }
+    const deviceId = await generateDeviceId();
+    try {
+        const response = await fetch(`${serverURL}/verify_activation/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            body: JSON.stringify({ device_id: deviceId })
+        });
+
+        const text = await response.text();
+        try {
+            const data = JSON.parse(text);
+            return data.is_activated;
+        } catch (e) {
+            console.error('Response is not JSON:', text.substring(0, 100));
+            return false;
+        }
+    } catch (error) {
+        console.error('Error checking activation:', error);
+        return false;
+    }
 }
 
 // Activate extension
 async function activateExtension(key, geminiApiKey) {
-  const deviceId = await generateDeviceId();
-  try {
-      const response = await fetch(`${serverURL}/activate/`, {
-          method: 'POST',
-          headers: {
-              'Content-Type': 'application/json',
-              'X-Requested-With': 'XMLHttpRequest'
-          },
-          body: JSON.stringify({ 
-              key: key,
-              device_id: deviceId 
-          })
-      });
-      
-      const text = await response.text();
-      let data;
-      try {
-          data = JSON.parse(text);
-      } catch (e) {
-          console.error('Response is not JSON:', text.substring(0, 200));
-          return { success: false, message: 'Server error (invalid response)' };
-      }
-      
-      if (response.ok) {
-          chrome.storage.local.set({ 
-              isActivated: true,
-              geminiApiKey: geminiApiKey 
-          });
-          return { success: true, message: data.message };
-      } else {
-          console.error('Server response:', data);
-          return { success: false, message: data.error || 'Unknown server error' };
-      }
-  } catch (error) {
-      console.error('Full error:', error);
-      return { success: false, message: `Error connecting to server: ${error.message}` };
-  }
+    const deviceId = await generateDeviceId();
+    try {
+        const response = await fetch(`${serverURL}/activate/`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'X-Requested-With': 'XMLHttpRequest'
+            },
+            body: JSON.stringify({
+                key: key,
+                device_id: deviceId
+            })
+        });
+
+        const text = await response.text();
+        let data;
+        try {
+            data = JSON.parse(text);
+        } catch (e) {
+            console.error('Response is not JSON:', text.substring(0, 200));
+            return { success: false, message: 'Server error (invalid response)' };
+        }
+
+        if (response.ok) {
+            chrome.storage.local.set({
+                isActivated: true,
+                geminiApiKey: geminiApiKey
+            });
+            return { success: true, message: data.message };
+        } else {
+            console.error('Server response:', data);
+            return { success: false, message: data.error || 'Unknown server error' };
+        }
+    } catch (error) {
+        console.error('Full error:', error);
+        return { success: false, message: `Error connecting to server: ${error.message}` };
+    }
 }
 
 // Start screen capture with area selector
 function iniciarCapturaPantalla() {
     modoCaptura = true;
-    
+
     // Create overlay
     const overlay = document.createElement('div');
     overlay.id = 'capturaOverlay';
@@ -112,7 +112,7 @@ function iniciarCapturaPantalla() {
         cursor: crosshair;
         z-index: 99999;
     `;
-    
+
     // Create selection element
     const seleccion = document.createElement('div');
     seleccion.id = 'capturaSeleccion';
@@ -124,12 +124,12 @@ function iniciarCapturaPantalla() {
         z-index: 100000;
         pointer-events: none;
     `;
-    
+
     document.body.appendChild(overlay);
     document.body.appendChild(seleccion);
-    
+
     let startX, startY, isDrawing = false;
-    
+
     overlay.addEventListener('mousedown', (e) => {
         isDrawing = true;
         startX = e.clientX;
@@ -140,73 +140,73 @@ function iniciarCapturaPantalla() {
         seleccion.style.height = '0';
         seleccion.style.display = 'block';
     });
-    
+
     overlay.addEventListener('mousemove', (e) => {
         if (!isDrawing) return;
-        
+
         const currentX = e.clientX;
         const currentY = e.clientY;
-        
+
         const width = Math.abs(currentX - startX);
         const height = Math.abs(currentY - startY);
         const left = Math.min(startX, currentX);
         const top = Math.min(startY, currentY);
-        
+
         seleccion.style.left = left + 'px';
         seleccion.style.top = top + 'px';
         seleccion.style.width = width + 'px';
         seleccion.style.height = height + 'px';
     });
-    
+
     overlay.addEventListener('mouseup', async (e) => {
         if (!isDrawing) return;
         isDrawing = false;
-        
+
         const rect = seleccion.getBoundingClientRect();
-        
+
         // Clean up
         overlay.remove();
         seleccion.remove();
         modoCaptura = false;
-        
+
         if (rect.width < 10 || rect.height < 10) {
             return; // Selection too small
         }
-        
+
         // Show loading
         mostrarRespuesta('Capturing...', true);
-        
+
         // Capture screen using background script
         console.log('Sending message to background...');
-        
+
         chrome.runtime.sendMessage({ action: 'captureScreen' }, async (response) => {
             console.log('Response from background:', response);
-            
+
             if (chrome.runtime.lastError) {
                 console.error('Error runtime:', chrome.runtime.lastError);
                 mostrarRespuesta('Error: ' + chrome.runtime.lastError.message, true);
                 return;
             }
-            
+
             if (response && response.error) {
                 console.error('Background error:', response.error);
                 mostrarRespuesta('Error: ' + response.error, true);
                 return;
             }
-            
+
             if (response && response.imageData) {
                 try {
                     console.log('Processing image...');
                     // Crop image to selected area
                     const imagenRecortada = await recortarImagen(
-                        response.imageData, 
-                        rect.left, 
-                        rect.top, 
-                        rect.width, 
+                        response.imageData,
+                        rect.left,
+                        rect.top,
+                        rect.width,
                         rect.height,
                         window.devicePixelRatio || 1
                     );
-                    
+
                     console.log('Sending to Gemini...');
                     // Send to Gemini
                     await enviarImagenAGemini(imagenRecortada);
@@ -220,7 +220,7 @@ function iniciarCapturaPantalla() {
             }
         });
     });
-    
+
     // Cancel with ESC
     const cancelar = (e) => {
         if (e.key === 'Escape') {
@@ -260,13 +260,13 @@ async function recortarImagen(imageData, x, y, width, height, dpr) {
             canvas.width = width * dpr;
             canvas.height = height * dpr;
             const ctx = canvas.getContext('2d');
-            
+
             ctx.drawImage(
                 img,
                 x * dpr, y * dpr, width * dpr, height * dpr,
                 0, 0, width * dpr, height * dpr
             );
-            
+
             resolve(canvas.toDataURL('image/png'));
         };
         img.src = imageData;
@@ -276,11 +276,11 @@ async function recortarImagen(imageData, x, y, width, height, dpr) {
 // Send image to Gemini for analysis
 async function enviarImagenAGemini(imagenBase64) {
     const deviceId = await generateDeviceId();
-    
+
     return new Promise((resolve) => {
-        chrome.storage.local.get(['geminiApiKey'], async function(result) {
+        chrome.storage.local.get(['geminiApiKey'], async function (result) {
             const apiKey = result.geminiApiKey || "";
-            
+
             try {
                 const response = await fetch(`${serverURL}/consultar_gemini_imagen/`, {
                     method: 'POST',
@@ -294,7 +294,7 @@ async function enviarImagenAGemini(imagenBase64) {
                         device_id: deviceId
                     })
                 });
-                
+
                 const text = await response.text();
                 let data;
                 try {
@@ -304,7 +304,7 @@ async function enviarImagenAGemini(imagenBase64) {
                     resolve();
                     return;
                 }
-                
+
                 if (data.success) {
                     if (data.source === 'diccionario' && data.result) {
                         mostrarRespuesta({ results: [data.result] }, true);
@@ -326,15 +326,15 @@ async function enviarImagenAGemini(imagenBase64) {
 // Query Gemini when question is not found in DB
 async function consultarGemini(pregunta) {
     const deviceId = await generateDeviceId();
-    
+
     return new Promise((resolve) => {
-        chrome.storage.local.get(['geminiApiKey'], async function(result) {
+        chrome.storage.local.get(['geminiApiKey'], async function (result) {
             const apiKey = result.geminiApiKey;
             if (!apiKey) {
                 resolve({ success: false, message: 'La llave de API fue omitida. Para que la Inteligencia Artificial te rescate, agrégala instalando la extensión nuevamente.' });
                 return;
             }
-            
+
             try {
                 const response = await fetch(`${serverURL}/consultar_gemini/`, {
                     method: 'POST',
@@ -348,7 +348,7 @@ async function consultarGemini(pregunta) {
                         device_id: deviceId
                     })
                 });
-                
+
                 const text = await response.text();
                 let data;
                 try {
@@ -358,7 +358,7 @@ async function consultarGemini(pregunta) {
                     resolve({ success: false, message: 'Server error' });
                     return;
                 }
-                
+
                 if (data.success) {
                     resolve({ success: true, message: data.respuesta });
                 } else {
@@ -374,8 +374,8 @@ async function consultarGemini(pregunta) {
 
 // Show activation dialog
 function showActivationDialog() {
-  const dialog = document.createElement('div');
-  dialog.style.cssText = `
+    const dialog = document.createElement('div');
+    dialog.style.cssText = `
       position: fixed;
       bottom: 20px;
       left: 20px;
@@ -390,8 +390,8 @@ function showActivationDialog() {
       max-width: 280px;
       font-size: 12px;
   `;
-  
-  dialog.innerHTML = `
+
+    dialog.innerHTML = `
       <div style="display: flex; align-items: center; margin-bottom: 8px;">
           <div style="width: 16px; height: 16px; background: #0078d7; margin-right: 8px; border-radius: 2px;"></div>
           <h3 style="margin: 0; font-size: 12px; font-weight: normal;">Initial setup</h3>
@@ -417,95 +417,95 @@ function showActivationDialog() {
       </div>
       <p id="activationMessage" style="margin: 8px 0 0 0; color: #666; font-size: 11px;"></p>
   `;
-  
-  document.body.appendChild(dialog);
-  
-  const activateBtn = dialog.querySelector('#activateBtn');
-  const activationKey = dialog.querySelector('#activationKey');
-  const geminiApiKeyInput = dialog.querySelector('#geminiApiKey');
-  const messageEl = dialog.querySelector('#activationMessage');
-  
-  activateBtn.onclick = async () => {
-      const result = await activateExtension(activationKey.value, geminiApiKeyInput.value);
-      messageEl.textContent = result.message;
-      messageEl.style.color = result.success ? '#2e7d32' : '#c62828';
-      
-      if (result.success) {
-          setTimeout(() => {
-              dialog.remove();
-              location.reload();
-          }, 1500);
-      }
-  };
+
+    document.body.appendChild(dialog);
+
+    const activateBtn = dialog.querySelector('#activateBtn');
+    const activationKey = dialog.querySelector('#activationKey');
+    const geminiApiKeyInput = dialog.querySelector('#geminiApiKey');
+    const messageEl = dialog.querySelector('#activationMessage');
+
+    activateBtn.onclick = async () => {
+        const result = await activateExtension(activationKey.value, geminiApiKeyInput.value);
+        messageEl.textContent = result.message;
+        messageEl.style.color = result.success ? '#2e7d32' : '#c62828';
+
+        if (result.success) {
+            setTimeout(() => {
+                dialog.remove();
+                location.reload();
+            }, 1500);
+        }
+    };
 }
 
 // Helper to escape HTML in user content
 function _escapeHtml(text) {
-  const div = document.createElement('div');
-  div.textContent = text;
-  return div.innerHTML;
+    const div = document.createElement('div');
+    div.textContent = text;
+    return div.innerHTML;
 }
 
 function mostrarRespuesta(respuesta, found = true, preguntaOriginal = null) {
-  let box = document.createElement("div");
-  
-  // Detect if system is in dark mode
-  const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-  
-  if (found && respuesta && typeof respuesta === 'object' && respuesta.results) {
-    // ── NEW FORMAT: DB results with type/answers ──
-    const result = respuesta.results[0];
-    let html = '';
+    let box = document.createElement("div");
 
-    // Helper to render answers for a given set
-    function renderAnswers(answers, type) {
-      let h = '';
-      if (type === 'MATCH') {
-        const borderColor = isDarkMode ? '#555' : '#ccc';
-        h += `<table style="border-collapse:collapse;width:100%;font-size:7px;">`;
-        answers.forEach(a => {
-          h += `<tr><td style="padding:1px 3px;border-bottom:1px solid ${borderColor};">${_escapeHtml(a.text)}</td><td style="padding:1px 2px;color:${isDarkMode ? '#aaa' : '#888'};">→</td><td style="padding:1px 3px;border-bottom:1px solid ${borderColor};">${_escapeHtml(a.match_pair || '')}</td></tr>`;
-        });
-        h += `</table>`;
-      } else {
-        const correct = answers.filter(a => a.is_correct);
-        if (correct.length === 1) {
-          h += `<span style="display:inline-flex;align-items:center;margin-right:3px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="${isDarkMode ? '#8f8' : '#2a7a2a'}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> ${_escapeHtml(correct[0].text)}`;
+    // Detect if system is in dark mode
+    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+    if (found && respuesta && typeof respuesta === 'object' && respuesta.results) {
+        // ── NEW FORMAT: DB results with type/answers ──
+        const result = respuesta.results[0];
+        let html = '';
+
+        // Helper to render answers for a given set
+        function renderAnswers(answers, type) {
+            let h = '';
+            if (type === 'MATCH') {
+                const borderColor = isDarkMode ? '#555' : '#ccc';
+                h += `<table style="border-collapse:collapse;width:100%;font-size:7px;">`;
+                answers.forEach(a => {
+                    h += `<tr><td style="padding:1px 3px;border-bottom:1px solid ${borderColor};">${_escapeHtml(a.text)}</td><td style="padding:1px 2px;color:${isDarkMode ? '#aaa' : '#888'};">→</td><td style="padding:1px 3px;border-bottom:1px solid ${borderColor};">${_escapeHtml(a.match_pair || '')}</td></tr>`;
+                });
+                h += `</table>`;
+            } else {
+                const correct = answers.filter(a => a.is_correct);
+                if (correct.length === 1) {
+                    h += `<span style="display:inline-flex;align-items:center;margin-right:3px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="${isDarkMode ? '#8f8' : '#2a7a2a'}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> ${_escapeHtml(correct[0].text)}`;
+                } else {
+                    correct.forEach(a => {
+                        h += `<div style="margin:1px 0;"><span style="display:inline-flex;align-items:center;margin-right:3px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="${isDarkMode ? '#8f8' : '#2a7a2a'}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> ${_escapeHtml(a.text)}</div>`;
+                    });
+                }
+            }
+            return h;
+        }
+
+        // Check if there are multiple variants
+        if (result.variants && result.variants.length > 1) {
+            const sepColor = isDarkMode ? '#555' : '#ccc';
+            result.variants.forEach((v, i) => {
+                if (i > 0) {
+                    html += `<div style="border-top:1px dashed ${sepColor};margin:3px 0;padding-top:2px;font-size:6px;color:${isDarkMode ? '#888' : '#999'};">Caso ${v.variant}</div>`;
+                }
+                html += renderAnswers(v.answers, result.type);
+            });
         } else {
-          correct.forEach(a => {
-            h += `<div style="margin:1px 0;"><span style="display:inline-flex;align-items:center;margin-right:3px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="${isDarkMode ? '#8f8' : '#2a7a2a'}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg></span> ${_escapeHtml(a.text)}</div>`;
-          });
+            html += renderAnswers(result.answers, result.type);
         }
-      }
-      return h;
-    }
 
-    // Check if there are multiple variants
-    if (result.variants && result.variants.length > 1) {
-      const sepColor = isDarkMode ? '#555' : '#ccc';
-      result.variants.forEach((v, i) => {
-        if (i > 0) {
-          html += `<div style="border-top:1px dashed ${sepColor};margin:3px 0;padding-top:2px;font-size:6px;color:${isDarkMode ? '#888' : '#999'};">Caso ${v.variant}</div>`;
-        }
-        html += renderAnswers(v.answers, result.type);
-      });
+        box.innerHTML = html;
+    } else if (found && Array.isArray(respuesta)) {
+        // ── LEGACY FORMAT: [" ", "answer text"] ──
+        box.innerHTML = `<strong>Option ${respuesta[0]}</strong>:<br>${respuesta[1]}`;
+    } else if (found && respuesta && respuesta.source === 'gemini') {
+        // ── GEMINI IA FORMAT FROM IMAGE CAPTURE ──
+        box.innerHTML = `<div style="display:flex;align-items:center;gap:4px;margin-bottom:2px;font-size:9px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><strong>IA</strong></div>${_escapeHtml(respuesta.text)}`;
+    } else if (found && typeof respuesta === 'string') {
+        box.innerText = respuesta;
     } else {
-      html += renderAnswers(result.answers, result.type);
-    }
-
-    box.innerHTML = html;
-  } else if (found && Array.isArray(respuesta)) {
-    // ── LEGACY FORMAT: [" ", "answer text"] ──
-    box.innerHTML = `<strong>Option ${respuesta[0]}</strong>:<br>${respuesta[1]}`;
-  } else if (found && respuesta && respuesta.source === 'gemini') {
-    // ── GEMINI IA FORMAT FROM IMAGE CAPTURE ──
-    box.innerHTML = `<div style="display:flex;align-items:center;gap:4px;margin-bottom:2px;font-size:9px;"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><strong>IA</strong></div>${_escapeHtml(respuesta.text)}`;
-  } else if (found && typeof respuesta === 'string') {
-    box.innerText = respuesta;
-  } else {
-    // Not found - show query buttons
-    const iconColor = isDarkMode ? '#aaa' : '#555';
-    box.innerHTML = `
+        // Not found - show query buttons
+        const iconColor = isDarkMode ? '#aaa' : '#555';
+        box.innerHTML = `
       <span style="display: inline-flex; align-items: center; margin-right: 6px;">
         <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="${iconColor}" stroke-width="2.5" stroke-linecap="round">
           <line x1="18" y1="6" x2="6" y2="18"></line>
@@ -547,119 +547,119 @@ function mostrarRespuesta(respuesta, found = true, preguntaOriginal = null) {
         </svg>
       </button>
     `;
-  }
-
-  // Base styles
-  box.style.position = "fixed";
-  box.style.bottom = "16px";
-  box.style.left = "16px";
-  box.style.padding = "3px 6px";
-  box.style.borderRadius = "4px";
-  box.style.zIndex = "9999";
-  box.style.fontFamily = "'Segoe UI', Arial, sans-serif";
-  box.style.fontSize = "8px";
-  box.style.maxWidth = "220px";
-  box.style.backdropFilter = "blur(2px)";
-  box.style.transition = "opacity 0.3s ease, background-color 0.3s ease, color 0.3s ease";
-  box.style.opacity = "0.3"; // low initial opacity
-  box.style.cursor = "pointer";
-
-  if (isDarkMode) {
-    box.style.backgroundColor = "rgba(30, 30, 30, 0.1)";
-    box.style.color = "rgba(255, 255, 255, 0.3)";
-  } else {
-    box.style.backgroundColor = "rgba(240, 240, 240, 0.1)";
-    box.style.color = "rgba(0, 0, 0, 0.3)";
-  }
-
-  // Remove previous popup if exists
-  if (popupActivo) {
-      popupActivo.remove();
-  }
-  
-  document.body.appendChild(box);
-  popupActivo = box;
-
-  // Initial animation
-  requestAnimationFrame(() => { box.style.opacity = "1"; });
-
-  // If not found, add event listeners to buttons
-  if (!found && preguntaOriginal) {
-    // Text query button (eye icon)
-    const geminiBtn = box.querySelector('#consultarGeminiBtn');
-    if (geminiBtn) {
-      geminiBtn.addEventListener('click', async (e) => {
-        e.stopPropagation();
-        geminiBtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="32"><animate attributeName="stroke-dashoffset" dur="1s" values="32;0" repeatCount="indefinite"/></circle></svg>';
-        geminiBtn.disabled = true;
-        
-        const resultado = await consultarGemini(preguntaOriginal);
-        
-        if (resultado.success) {
-          box.innerHTML = `<div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><strong>IA</strong></div>${resultado.message}`;
-          // Make result visible
-          box.style.backgroundColor = isDarkMode ? "rgba(33, 28, 28, 0.5)" : "rgba(240,240,240,0.5)";
-          box.style.color = isDarkMode ? "rgba(255,255,255,0.9)" : "rgba(0,0,0,0.9)";
-          box.style.maxWidth = "250px";
-        } else {
-          geminiBtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e55" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
-        }
-      });
     }
-    
-    // Screen capture button (camera icon)
-    const capturaBtn = box.querySelector('#capturarPantallaBtn');
-    if (capturaBtn) {
-      capturaBtn.addEventListener('click', (e) => {
-        e.stopPropagation();
-        box.remove();
-        popupActivo = null;
-        iniciarCapturaPantalla();
-      });
-    }
-  }
 
-  // Handle clicks on the popup
-  let activo = false;
-  box.addEventListener("click", (e) => {
-    // Don't toggle if a button was clicked
-    if (e.target.id === 'consultarGeminiBtn' || e.target.id === 'capturarPantallaBtn') return;
-    
-    e.stopPropagation(); // Prevent click from propagating to body
-    if (!activo) {
-      // Make brighter
-      box.style.backgroundColor = isDarkMode ? "rgba(30,30,30,0.3)" : "rgba(240,240,240,0.3)";
-      box.style.color = isDarkMode ? "rgba(255,255,255,0.8)" : "rgba(0,0,0,0.8)";
+    // Base styles
+    box.style.position = "fixed";
+    box.style.bottom = "16px";
+    box.style.left = "16px";
+    box.style.padding = "3px 6px";
+    box.style.borderRadius = "4px";
+    box.style.zIndex = "9999";
+    box.style.fontFamily = "'Segoe UI', Arial, sans-serif";
+    box.style.fontSize = "8px";
+    box.style.maxWidth = "220px";
+    box.style.backdropFilter = "blur(2px)";
+    box.style.transition = "opacity 0.3s ease, background-color 0.3s ease, color 0.3s ease";
+    box.style.opacity = "0.3"; // low initial opacity
+    box.style.cursor = "pointer";
+
+    if (isDarkMode) {
+        box.style.backgroundColor = "rgba(30, 30, 30, 0.1)";
+        box.style.color = "rgba(255, 255, 255, 0.3)";
     } else {
-      // Return to original state
-      box.style.backgroundColor = isDarkMode ? "rgba(30,30,30,0.1)" : "rgba(240,240,240,0.1)";
-      box.style.color = isDarkMode ? "rgba(255,255,255,0.3)" : "rgba(0,0,0,0.3)";
+        box.style.backgroundColor = "rgba(240, 240, 240, 0.1)";
+        box.style.color = "rgba(0, 0, 0, 0.3)";
     }
-    activo = !activo;
-  });
 
-  // Click outside the popup
-  const clickFuera = (e) => {
-    if (!box.contains(e.target)) {
-      box.remove();
-      popupActivo = null;
-      document.removeEventListener("click", clickFuera);
+    // Remove previous popup if exists
+    if (popupActivo) {
+        popupActivo.remove();
     }
-  };
-  document.addEventListener("click", clickFuera);
+
+    document.body.appendChild(box);
+    popupActivo = box;
+
+    // Initial animation
+    requestAnimationFrame(() => { box.style.opacity = "1"; });
+
+    // If not found, add event listeners to buttons
+    if (!found && preguntaOriginal) {
+        // Text query button (eye icon)
+        const geminiBtn = box.querySelector('#consultarGeminiBtn');
+        if (geminiBtn) {
+            geminiBtn.addEventListener('click', async (e) => {
+                e.stopPropagation();
+                geminiBtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-dasharray="32" stroke-dashoffset="32"><animate attributeName="stroke-dashoffset" dur="1s" values="32;0" repeatCount="indefinite"/></circle></svg>';
+                geminiBtn.disabled = true;
+
+                const resultado = await consultarGemini(preguntaOriginal);
+
+                if (resultado.success) {
+                    box.innerHTML = `<div style="display:flex;align-items:center;gap:4px;margin-bottom:4px;"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg><strong>IA</strong></div>${resultado.message}`;
+                    // Make result visible
+                    box.style.backgroundColor = isDarkMode ? "rgba(33, 28, 28, 0.5)" : "rgba(240,240,240,0.5)";
+                    box.style.color = isDarkMode ? "rgba(255,255,255,0.9)" : "rgba(0,0,0,0.9)";
+                    box.style.maxWidth = "250px";
+                } else {
+                    geminiBtn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#e55" stroke-width="2.5" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>';
+                }
+            });
+        }
+
+        // Screen capture button (camera icon)
+        const capturaBtn = box.querySelector('#capturarPantallaBtn');
+        if (capturaBtn) {
+            capturaBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                box.remove();
+                popupActivo = null;
+                iniciarCapturaPantalla();
+            });
+        }
+    }
+
+    // Handle clicks on the popup
+    let activo = false;
+    box.addEventListener("click", (e) => {
+        // Don't toggle if a button was clicked
+        if (e.target.id === 'consultarGeminiBtn' || e.target.id === 'capturarPantallaBtn') return;
+
+        e.stopPropagation(); // Prevent click from propagating to body
+        if (!activo) {
+            // Make brighter
+            box.style.backgroundColor = isDarkMode ? "rgba(30,30,30,0.3)" : "rgba(240,240,240,0.3)";
+            box.style.color = isDarkMode ? "rgba(255,255,255,0.8)" : "rgba(0,0,0,0.8)";
+        } else {
+            // Return to original state
+            box.style.backgroundColor = isDarkMode ? "rgba(30,30,30,0.1)" : "rgba(240,240,240,0.1)";
+            box.style.color = isDarkMode ? "rgba(255,255,255,0.3)" : "rgba(0,0,0,0.3)";
+        }
+        activo = !activo;
+    });
+
+    // Click outside the popup
+    const clickFuera = (e) => {
+        if (!box.contains(e.target)) {
+            box.remove();
+            popupActivo = null;
+            document.removeEventListener("click", clickFuera);
+        }
+    };
+    document.addEventListener("click", clickFuera);
 }
 
 
 // Initialization
 async function initialize() {
-  return new Promise((resolve) => {
-      chrome.storage.local.get(['isActivated'], async function(result) {
-          const isActivated = result.isActivated === true;
-          const deviceId = await generateDeviceId();
-          
-          // Add style to make selection transparent
-          const style = document.createElement('style');
-          style.textContent = `
+    return new Promise((resolve) => {
+        chrome.storage.local.get(['isActivated'], async function (result) {
+            const isActivated = result.isActivated === true;
+            const deviceId = await generateDeviceId();
+
+            // Add style to make selection transparent
+            const style = document.createElement('style');
+            style.textContent = `
               ::selection {
                   background: transparent;
                   color: inherit;
@@ -669,70 +669,70 @@ async function initialize() {
                   color: inherit;
               }
           `;
-          document.head.appendChild(style);
-          
-          if (!isActivated) {
-              const isActuallyActivated = await checkActivation();
-              if (!isActuallyActivated) {
-                  showActivationDialog();
-                  return;
-              }
-              chrome.storage.local.set({ isActivated: true });
-          }
-          
-          // Original event listener code
-          document.addEventListener("mouseup", async (e) => {
-              // Ignore if in capture mode
-              if (modoCaptura) {
-                  return;
-              }
-              
-              // Ignore if click was inside an active popup
-              if (popupActivo && popupActivo.contains(e.target)) {
-                  return;
-              }
-              
-              const seleccion = window.getSelection().toString().trim();
-              if (seleccion.length > 0) {
-                  try {
-                      await navigator.clipboard.writeText(seleccion);
-                      const response = await fetch(`${serverURL}/buscar/`, {
-                          method: "POST",
-                          headers: {
-                              "Content-Type": "application/json",
-                              "X-Requested-With": "XMLHttpRequest"
-                          },
-                          body: JSON.stringify({ 
-                              pregunta: seleccion,
-                              device_id: deviceId
-                          })
-                      });
-                      
-                      if (response.status === 403) {
-                          chrome.storage.local.remove('isActivated');
-                          location.reload();
-                          return;
-                      }
-                      
-                      const text = await response.text();
-                      let data;
-                      try {
-                          data = JSON.parse(text);
-                      } catch (e) {
-                          console.error('Response is not JSON:', text.substring(0, 200));
-                          mostrarRespuesta("Server error", true);
-                          return;
-                      }
-                      mostrarRespuesta(data.results ? data : data.respuesta, data.found, seleccion);
-                  } catch (err) {
-                      console.error("Error:", err);
-                      mostrarRespuesta("Error connecting to server.", true);
-                  }
-              }
-          });
-          resolve();
-      });
-  });
+            document.head.appendChild(style);
+
+            if (!isActivated) {
+                const isActuallyActivated = await checkActivation();
+                if (!isActuallyActivated) {
+                    showActivationDialog();
+                    return;
+                }
+                chrome.storage.local.set({ isActivated: true });
+            }
+
+            // Original event listener code
+            document.addEventListener("mouseup", async (e) => {
+                // Ignore if in capture mode
+                if (modoCaptura) {
+                    return;
+                }
+
+                // Ignore if click was inside an active popup
+                if (popupActivo && popupActivo.contains(e.target)) {
+                    return;
+                }
+
+                const seleccion = window.getSelection().toString().trim();
+                if (seleccion.length > 0) {
+                    try {
+                        await navigator.clipboard.writeText(seleccion);
+                        const response = await fetch(`${serverURL}/buscar/`, {
+                            method: "POST",
+                            headers: {
+                                "Content-Type": "application/json",
+                                "X-Requested-With": "XMLHttpRequest"
+                            },
+                            body: JSON.stringify({
+                                pregunta: seleccion,
+                                device_id: deviceId
+                            })
+                        });
+
+                        if (response.status === 403) {
+                            chrome.storage.local.remove('isActivated');
+                            location.reload();
+                            return;
+                        }
+
+                        const text = await response.text();
+                        let data;
+                        try {
+                            data = JSON.parse(text);
+                        } catch (e) {
+                            console.error('Response is not JSON:', text.substring(0, 200));
+                            mostrarRespuesta("Server error", true);
+                            return;
+                        }
+                        mostrarRespuesta(data.results ? data : data.respuesta, data.found, seleccion);
+                    } catch (err) {
+                        console.error("Error:", err);
+                        mostrarRespuesta("Error connecting to server.", true);
+                    }
+                }
+            });
+            resolve();
+        });
+    });
 }
 
 // Start the extension

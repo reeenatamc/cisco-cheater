@@ -40,6 +40,28 @@ class ActivationKey(models.Model):
         return f"{self.key} - {'Activa' if self.is_active else 'Inactiva'}"
 
 
+# ─── Requests / Support ──────────────────────────────────────
+
+
+class HardwareChangeRequest(models.Model):
+    activation_key = models.ForeignKey(
+        ActivationKey, on_delete=models.CASCADE, related_name="hardware_requests",
+        verbose_name="Clave original"
+    )
+    reason = models.TextField("Motivo del cambio")
+    old_device_id = models.CharField("ID Dispositivo Antiguo", max_length=255, null=True, blank=True)
+    created_at = models.DateTimeField("Fecha de solicitud", auto_now_add=True)
+    is_processed = models.BooleanField("Procesado", default=False)
+
+    class Meta:
+        verbose_name = "Solicitud de Cambio de Hardware"
+        verbose_name_plural = "Solicitudes de Cambio de Hardware"
+        ordering = ["-created_at"]
+
+    def __str__(self):
+        return f"Solicitud para {self.activation_key.key} ({self.created_at.strftime('%Y-%m-%d')})"
+
+
 # ─── Exam / Question / Answer ────────────────────────────────
 
 

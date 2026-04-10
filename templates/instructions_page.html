@@ -35,8 +35,8 @@
         }
 
         .main-wrapper {
-            max-width: 800px;
-            margin: 50px auto;
+            max-width: 1000px;
+            margin: 40px auto;
             padding: 0 20px;
         }
 
@@ -51,21 +51,44 @@
         p.doc-subtitle {
             font-size: 18px;
             color: #64748b;
+            margin-bottom: 30px;
+        }
+
+        /* Access and Download Header */
+        .header-section {
+            display: flex;
+            gap: 20px;
             margin-bottom: 40px;
+            flex-wrap: wrap;
         }
 
         .access-block {
+            flex: 1.5;
+            min-width: 300px;
             background-color: white;
             border: 1px solid #cbd5e1;
             border-left: 4px solid var(--primary-blue);
             border-radius: 8px;
-            padding: 30px;
-            margin-bottom: 50px;
+            padding: 25px;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
         }
 
+        .download-box {
+            flex: 1;
+            min-width: 300px;
+            background-color: #f0f9ff;
+            border: 1px solid #bae6fd;
+            border-radius: 12px;
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+        }
+
         .access-block h4 {
-            font-size: 14px;
+            font-size: 13px;
             text-transform: uppercase;
             font-weight: 700;
             color: #64748b;
@@ -75,7 +98,8 @@
         .key-row {
             display: flex;
             align-items: center;
-            gap: 15px;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
         .key-display {
@@ -108,22 +132,13 @@
             border-color: #94a3b8;
         }
 
-        .download-box {
-            background-color: #f0f9ff;
-            border: 1px solid #bae6fd;
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
         .btn-download-big {
             display: inline-block;
             background-color: var(--primary-blue);
             color: white;
             font-weight: 600;
             font-size: 16px;
-            padding: 16px 40px;
+            padding: 15px 35px;
             border-radius: 8px;
             text-decoration: none;
             transition: all 0.2s;
@@ -135,40 +150,46 @@
             transform: translateY(-2px);
         }
 
-        .doc-step {
-            background: white;
+        /* Accordion Custom Styles */
+        .accordion-item {
             border: 1px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 40px;
-            margin-bottom: 40px;
+            border-radius: 12px !important;
+            margin-bottom: 20px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .accordion-button {
+            padding: 22px 25px;
+            font-weight: 600;
+            font-size: 19px;
+            color: #0f172a;
+            background-color: white;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background-color: #f8fafc;
+            color: var(--primary-blue);
+            box-shadow: none;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .accordion-body {
+            padding: 35px 45px;
         }
 
         .step-badge {
             display: inline-block;
             background: var(--primary-blue);
             color: white;
-            width: 32px;
-            height: 32px;
+            width: 30px;
+            height: 30px;
             text-align: center;
-            line-height: 32px;
+            line-height: 30px;
             border-radius: 8px;
             font-weight: 700;
             font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .doc-step h2 {
-            font-size: 22px;
-            font-weight: 600;
-            color: #0f172a;
-            margin-bottom: 15px;
-        }
-
-        .doc-step p, .doc-step ul {
-            color: #475569;
-        }
-        .doc-step li {
-            margin-bottom: 10px;
+            margin-right: 15px;
         }
 
         .support-img {
@@ -183,24 +204,17 @@
 
         .img-placeholder-wrapper {
             background-color: #f8fafc;
-            border: 2px dashed #cbd5e1;
+            border: 1px solid #e2e8f0;
             border-radius: 8px;
-            padding: 40px 20px;
+            padding: 30px;
             text-align: center;
             color: #94a3b8;
             margin-top: 25px;
             font-size: 13px;
         }
 
-        .faq-section {
-            padding-top: 40px;
-            border-top: 1px solid #e2e8f0;
-            margin-top: 60px;
-            margin-bottom: 40px;
-        }
-
         .faq-card {
-            background: white;
+            background: #f8fafc;
             border: 1px solid #e2e8f0;
             border-radius: 8px;
             padding: 25px;
@@ -214,7 +228,6 @@
             margin-bottom: 12px;
         }
 
-        /* Formulario de Request de Hardware */
         .hardware-form-box {
             background-color: #f0fdf4;
             border: 1px solid #bbf7d0;
@@ -229,18 +242,15 @@
             padding: 30px;
             border-radius: 12px;
             color: #92400e;
+            margin-top: 40px;
         }
 
-        @media (max-width: 600px) {
-            .key-row {
+        @media (max-width: 768px) {
+            .header-section {
                 flex-direction: column;
-                align-items: stretch;
             }
-            .btn-copy-modern {
-                width: 100%;
-            }
-            .doc-step {
-                padding: 25px;
+            .accordion-body {
+                padding: 20px;
             }
         }
     </style>
@@ -254,151 +264,245 @@
 
     <div class="main-wrapper">
         
-        <h1 class="doc-title">Hola {{ nombre }},</h1>
-        <p class="doc-subtitle">Bienvenido al manual oficial de instalación. Sigue esta guía de 4 pasos para configurar tu extensión correctamente.</p>
+        <div class="mb-5">
+            <h1 class="doc-title">Hola {{ nombre }},</h1>
+            <p class="doc-subtitle">Bienvenido al manual oficial de instalación. Sigue esta guía detallada para configurar tu extensión correctamente.</p>
+        </div>
 
-        <div class="access-block">
-            <h4>Tu Clave de Acceso Única</h4>
-            <div class="key-row">
-                <div class="key-display" id="keyValue">{{ clave }}</div>
-                <button class="btn-copy-modern" onclick="copiarClave()">
-                    <i class="bi bi-files me-1"></i> Copiar portapapeles
-                </button>
+        <!-- Header: Key and Download -->
+        <div class="header-section">
+            <div class="access-block">
+                <h4>Tu Clave de Acceso Única</h4>
+                <div class="key-row">
+                    <div class="key-display" id="keyValue">{{ clave }}</div>
+                    <button class="btn-copy-modern" onclick="copiarClave()">
+                        <i class="bi bi-files me-1"></i> Copiar portapapeles
+                    </button>
+                </div>
+                <div class="mt-3 text-muted" style="font-size: 13px;">
+                    Guarda esta clave. Es requerida para el funcionamiento de la extensión.
+                </div>
             </div>
-            <div class="mt-3 text-muted" style="font-size: 13px;">
-                Guarda esta clave. Es requerida para el funcionamiento de la extensión.
-            </div>
-        </div>
 
-        <div class="download-box">
-            <h3 style="font-size: 18px; font-weight: 600; color: #0f172a; margin-bottom: 8px;">Archivos Base de la Extensión</h3>
-            <p style="color: #475569; margin-bottom: 25px;">Descarga y guarda el paquete comprimido en tus documentos antes de continuar.</p>
-            <a href="{{ download_url }}" class="btn-download-big">
-                <i class="bi bi-file-earmark-zip me-2"></i> Descargar paquete (.ZIP)
-            </a>
-        </div>
-
-        <!-- 1 -->
-        <div class="doc-step">
-            <div class="step-badge">1</div>
-            <h2>Extraer el archivo</h2>
-            <p>Una vez descargado el <code>.zip</code>:</p>
-            <ul>
-                <li>Ubícalo en tus Descargas, haz clic derecho y selecciona <strong>"Extraer todo..."</strong></li>
-                <li>Mantén la carpeta extraída a salvo.</li>
-            </ul>
-        </div>
-
-        <!-- 2 -->
-        <div class="doc-step">
-            <div class="step-badge">2</div>
-            <h2>Vincular con Chrome</h2>
-            <ul>
-                <li>Dentro de Chrome abre: <strong><code>chrome://extensions</code></strong></li>
-                <li>Activa <strong>"Modo de desarrollador"</strong> (arriba a la derecha).</li>
-                <li>Clic en <strong>"Cargar descomprimida"</strong>.</li>
-                <li>Selecciona únicamente la carpeta extraída.</li>
-            </ul>
-            <div class="img-placeholder-wrapper">
-                <img src="/static/images/paso_chrome.jpg" class="support-img mx-auto" onerror="this.onerror=null; this.src=''; this.parentNode.innerHTML='<i class=\'bi bi-image text-muted fs-2\'></i><br><b>paso_chrome.jpg</b>';">
+            <div class="download-box">
+                <h3 style="font-size: 18px; font-weight: 600; color: #0f172a; margin-bottom: 8px;">Archivos Base de la Extensión</h3>
+                <p style="color: #475569; margin-bottom: 20px;" class="small">Descarga y guarda el paquete comprimido en tus documentos antes de continuar.</p>
+                <a href="{{ download_url }}" class="btn-download-big">
+                    <i class="bi bi-file-earmark-zip me-2"></i> Descargar paquete (.ZIP)
+                </a>
             </div>
         </div>
 
-        <!-- 3 -->
-        <div class="doc-step">
-            <div class="step-badge">3</div>
-            <h2>API Gratuita de Inteligencia Artificial</h2>
-            <ul>
-                <li>Entra aquí: <a href="https://aistudio.google.com/apikey" target="_blank">Google AI Studio</a> y loguéate.</li>
-                <li>Da clic al botón <strong>"Create API Key"</strong> y copia el texto generado.</li>
-            </ul>
-            <div class="img-placeholder-wrapper">
-                <img src="/static/images/paso_gemini.jpg" class="support-img mx-auto" onerror="this.onerror=null; this.src=''; this.parentNode.innerHTML='<i class=\'bi bi-image text-muted fs-2\'></i><br><b>paso_gemini.jpg</b>';">
-            </div>
-        </div>
-
-        <!-- 4 -->
-        <div class="doc-step">
-            <div class="step-badge">4</div>
-            <h2>Cómo Usar dentro del Examen</h2>
-            <p>Ingresa a rindir tu examen oficial en <a href="https://www.netacad.com/" target="_blank" style="color: var(--primary-blue); font-weight: 500;">NetAcad (Cisco) <i class="bi bi-box-arrow-up-right ms-1"></i></a>.</p>
+        <!-- Main Accordion -->
+        <div class="accordion" id="instructionsAccordion">
             
-            <p><strong>Para Activarla el primer día:</strong></p>
-            <ul>
-                <li>Dale clic al ícono de la extensión en Chrome.</li>
-                <li>Pega tu Clave de Activación y tu Gemini API Key en el menú emergente.</li>
-            </ul>
+            <!-- SECCION 1: INSTALACION -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+                        <span class="step-badge">1</span> Instalación y Vinculación con Chrome
+                    </button>
+                </h2>
+                <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#instructionsAccordion">
+                    <div class="accordion-body">
+                        <h5>Extraer el archivo</h5>
+                        <p>Una vez descargado el <code>.zip</code>:</p>
+                        <ul>
+                            <li>Ubícalo en tus Descargas, haz clic derecho y selecciona <strong>"Extraer todo..."</strong></li>
+                            <li>Mantén la carpeta extraída a salvo en tus documentos o una ubicación segura.</li>
+                        </ul>
 
-            <h5 class="mt-4 font-weight-bold">Modos de Búsqueda</h5>
-            <ul style="list-style-type: square;">
-                <li class="mb-3">
-                    <strong>Búsqueda Rápida de Texto:</strong> Cuando la página te permita seleccionar/resaltar texto, <u>simplemente selecciona el texto de la pregunta con tu mouse</u> y suelta el clic. La herramienta arrojará automáticamente un recuadro oscuro estilo Hacker con las respuestas filtradas de su Base de Datos. Si necesitas expandir la búsqueda desde el recuadro, usa el ícono para forzar una consulta externa a la IA de Gemini.
-                </li>
-                <li>
-                    <strong>Modo Captura (Cuando bloquean la selección):</strong> Hay entornos donde bloquean el <code>Clic Derecho</code> y arrastrar el cursor. En estos casos, oprime las teclas <strong><kbd>Alt</kbd> + <kbd>.</kbd></strong> <i>(Opción y punto)</i> en tu teclado. Tu pantalla se sombreará de gris para que encuadres la zona de la pregunta. La herramienta reconocerá textualmente tu recorte y buscará de modo borroso/similar en la Base de Datos; Si la similitud exacta falla, la IA entrará en acción inmediatamente al rescate mostrándote el resultado final.
-                </li>
-            </ul>
-
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <div class="img-placeholder-wrapper" style="padding: 20px 10px;">
-                        <img src="/static/images/paso_popup.jpg" class="support-img mx-auto mt-0" onerror="this.onerror=null; this.src=''; this.parentNode.innerHTML='<i class=\'bi bi-image text-muted fs-3\'></i><br><b>paso_popup.jpg</b>';">
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="img-placeholder-wrapper" style="padding: 20px 10px;">
-                        <img src="/static/images/paso_uso.jpg" class="support-img mx-auto mt-0" onerror="this.onerror=null; this.src=''; this.parentNode.innerHTML='<i class=\'bi bi-image text-muted fs-3\'></i><br><b>paso_uso.jpg</b>';">
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- PRUEBA DIRECTA NETACAD -->
-        <div class="faq-section" style="margin-top: 20px;">
-            <h2 style="font-size: 24px; font-weight: 600; color: #0ea5e9; margin-bottom: 8px;"><i class="bi bi-shield-check"></i> Prueba de Seguridad en Vivo (NetAcad)</h2>
-            <p style="color: #64748b; margin-bottom: 25px;">Para garantizar 100% de invisibilidad, la herramienta ha sido bloqueada y está programada para <b>únicamente existir y operar dentro de los servidores de Cisco NetAcad</b>. Si la intentas usar en Google o cualquier otra página, simplemente no hará nada.</p>
-
-            <div class="doc-step" style="border-left: 4px solid #10b981; padding: 30px;">
-                <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 15px;">¿No tienes examen activo y quieres certificar que funciona?</h4>
-                <p style="font-size: 15px; color: #334155;">Puedes probarla pacíficamente en la página principal de Cisco en tres simples pasos:</p>
-                <ol style="color: #475569; margin-bottom: 0;">
-                    <li class="mb-2">Entra libremente a <a href="https://www.netacad.com/" target="_blank" style="font-weight: 500;">NetAcad.com</a> (ni siquiera necesitas iniciar sesión).</li>
-                    <li class="mb-2"><strong>(Modo Texto):</strong> Selecciona con tu puntero la frase exacta <i>"Adquiere las habilidades necesarias y consigue el trabajo de tus sueños"</i> que se encuentra en la portada de NetAcad. Al soltar tu mouse verás de inmediato la notificación negra confirmando el éxito de lectura.</li>
-                    <li><strong>(Modo Captura Segura):</strong> Estando en NetAcad, presiona la combinación secreta <strong><code>Alt + .</code></strong> y recorta visualmente cualquier botón o imagen de la página. Verás cómo recorta la imagen y extrae el texto instantáneamente.</li>
-                </ol>
-            </div>
-        </div>
-
-        <div class="faq-section" style="margin-top: 20px; border-top: none; padding-top: 0;">
-            <h2 style="font-size: 24px; font-weight: 600; color: #0f172a; margin-bottom: 20px;">Solución de Problemas</h2>
-            
-            <div class="faq-card">
-                <h4>Falta el archivo manifest.json</h4>
-                <p>Ocurre si seleccionas el ZIP en vez de la carpeta ya extraída en el Paso 2, o si seleccionas una carpeta demasiado vacía. Debes vincular explícitamente la carpeta matriz extraída que posee los archivos internos.</p>
-            </div>
-
-            <div class="faq-card">
-                <h4>Alarma de "Clave inválida o en uso" (Cambio de Hardware)</h4>
-                <p>Las licencias están programadas estrictamente de forma individualizada. Si cambias de computador o tu máquina modificó su disco/hardware, el nivel de seguridad rebotará la activación. <strong style="color: #c2410c;">Si necesitas cambiar de dispositivo, es un requisito absoluto que informes a través del formulario inferior ANTES de intentarlo</strong> por tu cuenta. Si lo intentas en otra máquina sin informarnos, la plataforma considerará que estás prestándola y tu clave actual será anulada permanentemente por riesgo de seguridad.</p>
-                
-                <div class="hardware-form-box">
-                    <h5 style="color: #166534; font-size: 15px; font-weight: bold; margin-bottom: 10px;">Solicitar Migración a Nueva Computadora</h5>
-                    <p style="font-size: 13.5px; color: #14532d; margin-bottom: 15px;">Al emitir la solicitud se dará de baja la clave actual de inmediato para crear una nueva limpia y emitírtela por WhatsApp al número registrado.</p>
-                    <div class="input-group">
-                        <input type="text" id="hwReason" class="form-control" placeholder="Motivo breve (Ej: Cambié a una Laptop)">
-                        <button class="btn btn-success" type="button" onclick="requestHardwareChange()">Enviar Solicitud a Soporte</button>
+                        <h5 class="mt-4">Vincular con el navegador</h5>
+                        <ul>
+                            <li>Dentro de Chrome abre la dirección: <strong><code>chrome://extensions</code></strong></li>
+                            <li>Activa el interruptor de <strong>"Modo de desarrollador"</strong> (ubicado arriba a la derecha).</li>
+                            <li>Haz clic en el botón <strong>"Cargar descomprimida"</strong>.</li>
+                            <li>Selecciona únicamente la carpeta matriz extraída que contiene los archivos de la extensión.</li>
+                        </ul>
+                        <div class="img-placeholder-wrapper" style="max-width: 700px; margin: 25px auto;">
+                            <img src="/static/images/paso_chrome.jpg" class="support-img mx-auto" onerror="this.onerror=null; this.src=''; this.parentNode.innerHTML='<i class=\'bi bi-image text-muted fs-2\'></i><br><b>paso_chrome.jpg</b>';">
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <div class="faq-card">
-                <h4>Fallo de Precisión leyendo Capturas</h4>
-                <p>Si la lectura <code>Alt + .</code> de la pregunta es imprecisa, se debe a que encuadró mucha interferencia (logos, menús). Trata de recortar delimitando cuadrada y exclusivamente al texto limpio de la pregunta.</p>
+            <!-- SECCION 2: GEMINI -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+                        <span class="step-badge">2</span> Obtener Llave de Inteligencia Artificial (Gemini)
+                    </button>
+                </h2>
+                <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#instructionsAccordion">
+                    <div class="accordion-body">
+                        <p>Sigue estos pasos para obtener tu llave de conexión con la IA de Google (necesaria para resolver preguntas que no estén en la base de datos):</p>
+                        <ol>
+                            <li>Entra aquí: <a href="https://aistudio.google.com/apikey" target="_blank">Google AI Studio</a> y loguéate con tu cuenta de Gmail.</li>
+                            <li>Crea tu API Key gratuita y cópiala para activarla en la extensión.</li>
+                        </ol>
+                        
+                        <div class="row mt-4">
+                            <div class="col-md-4">
+                                <div class="img-placeholder-wrapper" style="padding: 20px 10px;">
+                                    <img src="/static/images/paso_gemini_1.jpg" class="support-img mx-auto mt-0" onerror="this.onerror=null; this.src=''; this.parentNode.innerHTML='<i class=\'bi bi-image text-muted fs-3\'></i><br><b>paso_gemini_1.jpg</b>';">
+                                    <div class="mt-2 text-muted small">1. Ir a Google AI Studio</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="img-placeholder-wrapper" style="padding: 20px 10px;">
+                                    <img src="/static/images/paso_gemini_2.jpg" class="support-img mx-auto mt-0" onerror="this.onerror=null; this.src=''; this.parentNode.innerHTML='<i class=\'bi bi-image text-muted fs-3\'></i><br><b>paso_gemini_2.jpg</b>';">
+                                    <div class="mt-2 text-muted small">2. Crear Clave</div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="img-placeholder-wrapper" style="padding: 20px 10px;">
+                                    <img src="/static/images/paso_gemini_3.jpg" class="support-img mx-auto mt-0" onerror="this.onerror=null; this.src=''; this.parentNode.innerHTML='<i class=\'bi bi-image text-muted fs-3\'></i><br><b>paso_gemini_3.jpg</b>';">
+                                    <div class="mt-2 text-muted small">3. Copiar la Clave</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <!-- SECCION 3: USO Y ACTIVACION -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+                        <span class="step-badge">3</span> Activación Inicial y Modos de Búsqueda
+                    </button>
+                </h2>
+                <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#instructionsAccordion">
+                    <div class="accordion-body">
+                        <h5 class="fw-bold">Para Activarla el primer día:</h5>
+                        <p>Ingresa a rendir tu examen oficial en <a href="https://www.netacad.com/" target="_blank" style="color: var(--primary-blue); font-weight: 500;">NetAcad (Cisco) <i class="bi bi-box-arrow-up-right ms-1"></i></a>.</p>
+                        <ul>
+                            <li>Al entrar a la página del examen, verás aparecer un <strong>cuadro de configuración</strong> inicial (como se muestra abajo).</li>
+                            <li>Pega tu Clave de Activación y tu Gemini API Key en los campos correspondientes.</li>
+                            <li>Finalmente, haz clic en el botón <strong>"Aceptar"</strong> para validar tus datos e iniciar la herramienta.</li>
+                        </ul>
+
+                        <div class="img-placeholder-wrapper" style="max-width: 350px; margin: 25px auto;">
+                            <img src="/static/images/paso_activacion.jpg" class="support-img mx-auto" onerror="this.onerror=null; this.src=''; this.parentNode.innerHTML='<i class=\'bi bi-image text-muted fs-2\'></i><br><b>paso_activacion.jpg</b>';">
+                            <div class="mt-2 text-muted small">Ejemplo del cuadro de activación</div>
+                        </div>
+
+                        <hr class="my-5">
+
+                        <h5 class="fw-bold mb-3">Modos de Búsqueda Post-Activación</h5>
+                        <p>Una vez activada, la herramienta funciona de dos formas según lo necesites:</p>
+                        
+                        <div class="alert alert-info py-2" style="font-size: 13.5px; background-color: #f8fafc; border: 1px solid #e2e8f0; color: #475569;">
+                            <i class="bi bi-info-circle me-1"></i> <b>Nota sobre el Tema:</b> El cuadro de respuestas (Pop-up) es oscuro o claro dependiendo de la configuración de tema de tu sistema operativo. Si el texto no es legible o prefieres otro estilo, ajusta el tema (Light/Dark mode) de tu sistema.
+                        </div>
+
+                        <ul style="list-style-type: square;" class="mt-3">
+                            <li class="mb-4">
+                                <strong>Búsqueda Rápida de Texto:</strong> Cuando la página te permita seleccionar/resaltar texto, <u>simplemente selecciona el texto de la pregunta con tu mouse</u> y suelta el clic. La herramienta arrojará automáticamente un recuadro con las respuestas filtradas de su Base de Datos. Si necesitas expandir la búsqueda desde el recuadro, usa el ícono para forzar una consulta externa a la IA de Gemini.
+                            </li>
+                            <li class="mb-4">
+                                <strong>Modo Captura (Cuando bloquean la selección):</strong> Hay entornos donde bloquean el <code>Clic Derecho</code> y arrastrar el cursor. En estos casos, oprime las teclas <strong><kbd>Alt</kbd> + <kbd>.</kbd></strong> <i>(Opción y punto)</i> en tu teclado. Tu pantalla se sombreará de gris para que encuadres la zona de la pregunta. La herramienta reconocerá textualmente tu recorte y buscará de modo borroso/similar en la Base de Datos; Si la similitud exacta falla, la IA entrará en acción inmediatamente al rescate mostrándote el resultado final.
+                            </li>
+                        </ul>
+
+                        <div class="row mt-4">
+                            <div class="col-md-6">
+                                <div class="img-placeholder-wrapper" style="padding: 20px 10px;">
+                                    <img src="/static/images/paso_popup.jpg" class="support-img mx-auto mt-0" onerror="this.onerror=null; this.src=''; this.parentNode.innerHTML='<i class=\'bi bi-image text-muted fs-3\'></i><br><b>paso_popup.jpg</b>';">
+                                    <div class="mt-2 text-muted small">Visualización en Modo Texto</div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="img-placeholder-wrapper" style="padding: 20px 10px;">
+                                    <img src="/static/images/paso_uso.jpg" class="support-img mx-auto mt-0" onerror="this.onerror=null; this.src=''; this.parentNode.innerHTML='<i class=\'bi bi-image text-muted fs-3\'></i><br><b>paso_uso.jpg</b>';">
+                                    <div class="mt-2 text-muted small">Visualización en Modo Captura</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="alert alert-warning py-2 mt-4" style="font-size: 13.5px; background-color: #fffbeb; border: 1px solid #fde68a; color: #92400e;">
+                            <i class="bi bi-shield-shaded me-1"></i> <strong>Nota de Seguridad:</strong> Por motivos de demostración, las imágenes de arriba muestran la selección con color y los puntos de captura visibles. En la práctica, <u>la selección es totalmente transparente</u> y al capturar con <strong>Alt + .</strong> solo verás una pequeña flecha. Este diseño garantiza que la herramienta permanezca indetectable durante tu examen.
+                        </div>
+
+                        <h5 class="mt-5 font-weight-bold"><i class="bi bi-window-stack me-1"></i> Control y Visibilidad del Recuadro</h5>
+                        <p>El recuadro de respuestas está diseñado para ser discreto y no interrumpir tu flujo visual a menos que tú lo decidas:</p>
+                        <ul style="list-style-type: disc;">
+                            <li class="mb-2"><strong>Aparición Discreta:</strong> Cuando seleccionas una pregunta, el recuadro aparecerá en la esquina inferior izquierda de forma <strong>opaca/tenue</strong> (casi invisible) para no llamar la atención.</li>
+                            <li class="mb-2"><strong>Activar Lectura:</strong> Si deseas leer la respuesta claramente, haz <u>un clic dentro</u> del recuadro. Esto lo volverá nítido y legible. Haz otro clic dentro si deseas que vuelva a su estado tenue.</li>
+                            <li class="mb-2"><strong>Cerrar y Limpiar:</strong> Para hacer desaparecer el recuadro, simplemente haz <u>un clic en cualquier lugar fuera</u> del mismo.</li>
+                            <li class="mb-2"><strong>Nueva Búsqueda:</strong> Si quieres buscar otra pregunta, es obligatorio <u>hacer clic afuera</u> primero. Esto cierra el recuadro anterior y limpia la selección invisible de Chrome, permitiéndote resaltar un nuevo texto correctamente.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCION 4: PRUEBA NETACAD -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour">
+                        <span class="step-badge">4</span> Prueba de Seguridad en Vivo (NetAcad)
+                    </button>
+                </h2>
+                <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#instructionsAccordion">
+                    <div class="accordion-body">
+                        <h2 style="font-size: 24px; font-weight: 600; color: #0ea5e9; margin-bottom: 8px;"><i class="bi bi-shield-check"></i> Prueba de Seguridad en Vivo (NetAcad)</h2>
+                        <p style="color: #64748b; margin-bottom: 25px;">Para garantizar 100% de invisibilidad, la herramienta ha sido bloqueada y está programada para <b>únicamente existir y operar dentro de los servidores de Cisco NetAcad</b>. Si la intentas usar en Google o cualquier otra página, simplemente no hará nada.</p>
+
+                        <div class="doc-step" style="border-left: 4px solid #10b981; padding: 30px; background: #f0fdf4;">
+                            <h4 style="font-size: 18px; font-weight: 600; margin-bottom: 15px;">¿No tienes examen activo y quieres certificar que funciona?</h4>
+                            <p style="font-size: 15px; color: #334155;">Puedes probarla pacíficamente en la página principal de Cisco en tres simples pasos:</p>
+                            <ol style="color: #475569; margin-bottom: 0;">
+                                <li class="mb-3">Entra libremente a <a href="https://www.netacad.com/" target="_blank" style="font-weight: 500;">NetAcad.com</a> (ni siquiera necesitas iniciar sesión).</li>
+                                <li class="mb-3"><strong>(Modo Texto):</strong> Selecciona con tu puntero la frase exacta <i>"Adquiere las habilidades necesarias y consigue el trabajo de tus sueños"</i> que se encuentra en la portada de NetAcad. Al soltar tu mouse verás de inmediato la notificación (según el tema de tu sistema) confirmando el éxito de lectura.</li>
+                                <li><strong>(Modo Captura Segura):</strong> Estando en NetAcad, presiona la combinación secreta <strong><code>Alt + .</code></strong> y recorta visualmente cualquier botón o imagen de la página. Verás cómo recorta la imagen y extrae el texto instantáneamente.</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECCION 5: SOPORTE -->
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive">
+                        <span class="step-badge">5</span> Solución de Problemas y Migración
+                    </button>
+                </h2>
+                <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#instructionsAccordion">
+                    <div class="accordion-body">
+                        <div class="faq-card">
+                            <h4>Falta el archivo manifest.json</h4>
+                            <p>Ocurre si seleccionas el ZIP en vez de la carpeta ya extraída en el Paso 1, o si seleccionas una carpeta demasiado vacía. Debes vincular explícitamente la carpeta matriz extraída que posee los archivos internos.</p>
+                        </div>
+
+                        <div class="faq-card">
+                            <h4>¿Necesitas cambiar de dispositivo?</h4>
+                            <p>Para proteger tu acceso, cada licencia es personal y se vincula a un solo equipo. Entendemos que a veces es necesario renovar tu computadora; por ello, permitimos **una única migración de hardware** por cada clave adquirida. Al solicitar este cambio, tu acceso en el equipo anterior se desactivará automáticamente para procesar el nuevo.</p>
+                            
+                            <p>Es muy importante que utilices el formulario de abajo <strong>antes</strong> de intentar activarla en una nueva máquina. Si el sistema detecta un intento de activación en un segundo equipo sin previo aviso, podría interpretarse como un intento de compartir la clave y el sistema de seguridad la bloqueará de forma permanente. En ese caso, lamentablemente tendrías que adquirir una nueva licencia para recuperar el acceso.</p>
+                            
+                            <div class="hardware-form-box" id="hardwareFormContainer">
+                                <h5 style="color: #166534; font-size: 15px; font-weight: bold; margin-bottom: 10px;">Solicitar Migración a Nueva Computadora (Anónimo)</h5>
+                                <p style="font-size: 13.5px; color: #14532d; margin-bottom: 15px;">Al enviar esta solicitud, tu clave actual se desactivará de inmediato para que podamos procesar tu cambio de equipo de forma segura y anónima.</p>
+                                <div class="input-group">
+                                    <input type="text" id="hwReason" class="form-control" placeholder="Motivo breve (Ej: Cambié a una Laptop)">
+                                    <button class="btn btn-success" type="button" onclick="requestHardwareChange()">Enviar Solicitud Anónima</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="faq-card">
+                            <h4>Fallo de Precisión leyendo Capturas</h4>
+                            <p>Si la lectura <code>Alt + .</code> de la pregunta es imprecisa, se debe a que encuadró mucha interferencia (logos, menús). Trata de recortar delimitando cuadrada y exclusivamente al texto limpio de la pregunta.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div> <!-- End Accordion -->
 
         <div class="legal-notice">
-            <h3><i class="bi bi-shield-lock-fill me-2"></i> Usos Exclusivos</h3>
+            <h3 class="fw-bold"><i class="bi bi-shield-lock-fill me-2"></i> Usos Exclusivos</h3>
             <p>
                 Esta utilidad informática funge enteramente como infraestructura de auto-estudio, revisión formativa o fortalecimiento teórico personal. Todo efecto colateral derivado de su utilización en procesos valorativos institucionales corre mediante y bajo la absoluta responsabilidad del poseedor aplicativo.
             </p>
@@ -406,7 +510,8 @@
         
     </div>
 
-    <!-- Script de funcionalidad -->
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
         function copiarClave() {
             var clave = document.getElementById("keyValue").innerText;
@@ -436,11 +541,47 @@
                 return;
             }
 
-            var wpPhone = "ACA_VA_EL_NUMERO_DE_RENE"; // El admin lo ajustará en el HTML final, o lo pueden direccionar por la URL default base
-            var msg = encodeURIComponent("🚨 SOLICITUD DE CAMBIO DE EQUIPO\n\n- Clave Actual: " + claveActual + "\n- Motivo: " + originInput + "\n\nSolicito anular esta llave antigua de mis registros y que por favor me generen una nueva para mi nuevo dispositivo.");
+            if(!confirm("¿Estás seguro? Tu clave actual dejará de funcionar inmediatamente para que el administrador pueda procesar tu cambio.")) {
+                return;
+            }
 
-            // Si no tenemos el número exacto, podemos abrir wa.me con solo texto, permitiendo que el usuario lo mande al chat que ya tiene abierto con el administrador.
-            window.open("https://wa.me/?text=" + msg, "_blank");
+            var btn = document.querySelector("#hardwareFormContainer button");
+            var originalBtnText = btn.innerText;
+            btn.disabled = true;
+            btn.innerText = "Enviando...";
+
+            fetch("/request-hardware-change/", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    key: claveActual,
+                    reason: originInput
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if(data.error) {
+                    alert("Error: " + data.error);
+                    btn.disabled = false;
+                    btn.innerText = originalBtnText;
+                } else {
+                    document.getElementById("hardwareFormContainer").innerHTML = `
+                        <div class="alert alert-success m-0">
+                            <i class="bi bi-check-circle-fill me-2"></i>
+                            <strong>Solicitud enviada.</strong><br>
+                            Tu clave anterior ha sido desactivada. El administrador revisará tu caso y te contactará para tu nueva llave.
+                        </div>
+                    `;
+                }
+            })
+            .catch(error => {
+                console.error("Error:", error);
+                alert("Ocurrió un error al enviar la solicitud.");
+                btn.disabled = false;
+                btn.innerText = originalBtnText;
+            });
         }
     </script>
 </body>

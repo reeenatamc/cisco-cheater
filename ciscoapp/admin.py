@@ -8,7 +8,29 @@ from django.shortcuts import redirect
 from django.utils.html import format_html
 
 from unfold.admin import ModelAdmin, TabularInline
-from .models import ActivationKey, Exam, Question, Answer
+from .models import ActivationKey, Exam, Question, Answer, HardwareChangeRequest
+
+
+# ══════════════════════════════════════════════════════════════
+# HardwareChangeRequest
+# ══════════════════════════════════════════════════════════════
+
+@admin.register(HardwareChangeRequest)
+class HardwareChangeRequestAdmin(ModelAdmin):
+    list_display = (
+        "activation_key",
+        "created_at",
+        "is_processed",
+        "reason_short",
+    )
+    list_filter = ("is_processed", "created_at")
+    search_fields = ("activation_key__key", "reason")
+    list_editable = ("is_processed",)
+    readonly_fields = ("created_at", "activation_key", "reason", "old_device_id")
+
+    @admin.display(description="Motivo")
+    def reason_short(self, obj):
+        return obj.reason[:100] + "…" if len(obj.reason) > 100 else obj.reason
 
 
 # ══════════════════════════════════════════════════════════════

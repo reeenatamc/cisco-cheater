@@ -27,7 +27,7 @@ from django.contrib.postgres.search import TrigramSimilarity, SearchQuery, Searc
 
 from django_ratelimit.decorators import ratelimit
 
-from .models import ActivationKey, Question, Answer
+from .models import ActivationKey, Question, Answer, HardwareChangeRequest
 
 from google import genai
 from PIL import Image
@@ -457,3 +457,43 @@ def download_extension_file(request, key):
         raise Http404("El archivo de la extensión no está disponible en el servidor en este momento.")
 
     return FileResponse(open(zip_path, 'rb'), as_attachment=True, filename='cisco-cheater-extension.zip')
+
+
+# ── /request_hardware_change/ ──────────────────────────────
+
+@csrf_exempt
+@ratelimit(key="ip", rate="5/h", block=True)
+def request_hardware_change(request):
+    if request.method != "POST":
+        return JsonResponse({"error": "Method not allowed"}, status=405)
+
+    try:
+        data = _json_body(request)
+        key_str = data.get("key", "").strip()
+        reason = data.get("reason", "").strip()
+
+        if not key_str or not reason:
+            return JsonResponse({"error": "Faltan datos requeridos."}, status=400)
+
+        try:
+            ak = ActivationKey.objects.get(key=key_str, is_active=True)
+            
+            # Save the request
+            HardwareChangeRequest.objects.create(
+                activation_key=ak,
+                reason=reason,
+                old_device_id=ak.device_id
+            )
+            
+            # Deactivate the key as requested
+            ak.is_active = False
+            ak.save(update_fields=["is_active"])
+            
+            return JsonResponse({"message": "Solicitud enviada con éxito. Tu clave anterior ha sido desactivada."})
+            
+        except ActivationKey.DoesNotExist:
+            return JsonResponse({"error": "Clave de activación inválida o ya inactiva."}, status=404)
+
+    except Exception as e:
+        logger.exception("Hardware change request error")
+        return JsonResponse({"error": "Error interno del servidor."}, status=500)
