@@ -87,11 +87,9 @@ def _parse_match_pair(text: str) -> tuple[str, str]:
 def _build_driver() -> webdriver.Chrome:
     """Build a headless Chrome WebDriver."""
     opts = Options()
-    opts.add_argument("--headless=new")
     opts.add_argument("--no-sandbox")
     opts.add_argument("--disable-dev-shm-usage")
     opts.add_argument("--disable-gpu")
-    opts.add_argument("--window-size=1920,1080")
     opts.add_argument(
         "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
         "AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
@@ -99,11 +97,12 @@ def _build_driver() -> webdriver.Chrome:
     
     import shutil
     if shutil.which("chromedriver"):
-        # Railway Production / Linux environment with NixPkgs
+        # Railway Production / Linux environment with NixPkgs (Headless)
+        opts.add_argument("--headless=new")
         opts.binary_location = shutil.which("chromium")
         service = Service(shutil.which("chromedriver"))
     else:
-        # Local Mac development environment
+        # Local Mac development environment (VENTANA VISIBLE)
         from webdriver_manager.chrome import ChromeDriverManager
         service = Service(ChromeDriverManager().install())
         
