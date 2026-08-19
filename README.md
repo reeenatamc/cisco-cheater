@@ -8,7 +8,15 @@
 
 **cisco-cheater** es una herramienta diseñada para ayudarte a obtener respuestas automáticamente en los exámenes en línea de Cisco. Incluye una extensión de navegador que detecta las preguntas seleccionadas y consulta un servidor Django local para mostrar la respuesta en una pequeña ventana flotante. Además, incluye un scraper para alimentar la base de datos con preguntas y respuestas.
 
-> ⚠️ Este proyecto tiene fines educativos. No se recomienda ni aprueba el uso indebido de esta herramienta. Úsala bajo tu propia responsabilidad.
+> **Sobre este proyecto.** Lo construí en mis ratos libres para practicar scraping, OCR
+> e integración de LLM sobre Django. Está publicado como pieza de portafolio.
+>
+> El uso que cada quien le dé es su propia responsabilidad, y también sus consecuencias,
+> incluidas las políticas de integridad académica que le apliquen. No respaldo usarlo
+> para obtener ventaja indebida en un examen.
+>
+> Los datos de preguntas y respuestas no son obra mía y no están cubiertos por la
+> licencia MIT de este repositorio — ver [NOTICE](NOTICE).
 
 ---
 
