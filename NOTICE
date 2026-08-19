@@ -5,12 +5,15 @@ Scope of the MIT licence
 ------------------------
 The MIT licence in LICENSE covers the original source code in this repository:
 the Django application, the scraper, the OCR integration and the browser
-extension.
+extension. All of it is mine.
 
-It does NOT cover the question and answer data (`ciscoapp/diccionario.json` and
-any equivalent file on other branches). That content was collected from Cisco
-Networking Academy exam material. It is not my work, I hold no copyright in it,
-and the MIT licence grants you no rights to it whatsoever.
+No exam content is distributed here
+-----------------------------------
+This repository contains the scraper, not what it scrapes. Question and answer
+data collected from Cisco Networking Academy material is not my work, I hold no
+copyright in it, and it is deliberately absent from every branch and from the
+history. If you run the scraper, whatever it collects is yours to be responsible
+for, and it is not covered by the licence above.
 
 Purpose and responsibility
 --------------------------
