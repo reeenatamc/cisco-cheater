@@ -8,7 +8,7 @@ browser extension that puts the answer where you are looking.
 > piece.
 >
 > How anyone chooses to use it is their own responsibility, and so are the
-> consequences — including any academic integrity policy they may be bound by.
+> consequences, including any academic integrity policy they may be bound by.
 > I do not endorse using it to gain an unfair advantage in an examination.
 >
 > No exam content is distributed here. See [NOTICE](NOTICE).
@@ -56,4 +56,4 @@ and expects the server on localhost.
 
 ## Licence
 
-MIT for the code — see [LICENSE](LICENSE) and [NOTICE](NOTICE).
+MIT for the code. See [LICENSE](LICENSE) and [NOTICE](NOTICE).
